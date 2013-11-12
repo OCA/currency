@@ -1,16 +1,16 @@
-# Translation of OpenERP Server.
-# This file contains the translation of the following modules:
-#	* c2c_currency_rate_update
+# Brazilian Portuguese translation for account-financial-tools
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the account-financial-tools package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 5.0.0\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
+"Project-Id-Version: account-financial-tools\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-10-18 17:52+0000\n"
-"PO-Revision-Date: 2013-11-11 16:24+0000\n"
-"Last-Translator: Alexandre Fayolle - camptocamp "
-"<alexandre.fayolle@camptocamp.com>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2014-01-10 11:21+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,47 +20,47 @@ msgstr ""
 #. module: currency_rate_update
 #: view:res.company:0
 msgid "Currency auto update configuration"
-msgstr "Configuration de la mise à jour automatique des taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: view:res.company:0
 msgid "Currency updates services"
-msgstr "Services de mise à jour des taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: field:currency.rate.update.service,company_id:0
 msgid "linked company"
-msgstr "Société liée"
+msgstr ""
 
 #. module: currency_rate_update
 #: view:currency.rate.update.service:0
 msgid "Rate"
-msgstr "Taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: view:currency.rate.update.service:0
 msgid "Rates"
-msgstr "Taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: field:res.company,multi_company_currency_enable:0
 msgid "Multi company currency"
-msgstr "Devies mutli société"
+msgstr ""
 
 #. module: currency_rate_update
 #: field:res.company,interval_type:0
 msgid "Currency update frequence"
-msgstr "Fréquence de mise à jour"
+msgstr ""
 
 #. module: currency_rate_update
 #: selection:res.company,interval_type:0
 msgid "Day(s)"
-msgstr "Quotidien"
+msgstr ""
 
 #. module: currency_rate_update
 #: field:currency.rate.update.service,currency_to_update:0
 msgid "currency to update with this service"
-msgstr "Taux de change à mettre à jour avec ce service"
+msgstr ""
 
 #. module: currency_rate_update
 #: selection:currency.rate.update.service,service:0
@@ -70,12 +70,12 @@ msgstr ""
 #. module: currency_rate_update
 #: field:currency.rate.update.service,note:0
 msgid "update notice"
-msgstr "Notice de mise à jour"
+msgstr ""
 
 #. module: currency_rate_update
 #: field:currency.rate.update.service,service:0
 msgid "Webservice to use"
-msgstr "Service web à utliser"
+msgstr ""
 
 #. module: currency_rate_update
 #: help:currency.rate.update.service,max_delta_days:0
@@ -88,7 +88,7 @@ msgstr ""
 #. module: currency_rate_update
 #: field:res.company,services_to_use:0
 msgid "Currency update services"
-msgstr "Service de mise à jour des taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: constraint:currency.rate.update.service:0
@@ -100,7 +100,7 @@ msgstr ""
 #: sql_constraint:currency.rate.update.service:0
 #, python-format
 msgid "You can use a service one time per company !"
-msgstr "Vous ne pouvez utiliser un service qu'une fois par société"
+msgstr ""
 
 #. module: currency_rate_update
 #: selection:currency.rate.update.service,service:0
@@ -130,15 +130,13 @@ msgstr ""
 #. module: currency_rate_update
 #: selection:res.company,interval_type:0
 msgid "Week(s)"
-msgstr "Hebdomadaire"
+msgstr ""
 
 #. module: currency_rate_update
 #: help:res.company,multi_company_currency_enable:0
 msgid ""
 "if this case is not check you can not set currency is active on two company"
 msgstr ""
-"Si cette case n'est pas cochée vous ne pouvez pas utiliser la mise à jour "
-"sur plusieurs sociétés"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/currency_rate_update.py:153
@@ -146,7 +144,7 @@ msgstr ""
 #: model:ir.model,name:currency_rate_update.model_currency_rate_update_service
 #, python-format
 msgid "Currency Rate Update"
-msgstr "Mise à jour des taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: view:currency.rate.update.service:0
@@ -156,12 +154,12 @@ msgstr ""
 #. module: currency_rate_update
 #: field:res.company,auto_currency_up:0
 msgid "Automatical update of the currency this company"
-msgstr "Mise à jour automatique des taux de change"
+msgstr ""
 
 #. module: currency_rate_update
 #: selection:res.company,interval_type:0
 msgid "Month(s)"
-msgstr "Mensuelle"
+msgstr ""
 
 #. module: currency_rate_update
 #: selection:currency.rate.update.service,service:0
@@ -173,9 +171,9 @@ msgstr ""
 msgid ""
 "changing this value will\n"
 "                                                 also affect other compagnies"
-msgstr "Modifier cette devise va aussi affecter les autre sociétés"
+msgstr ""
 
 #. module: currency_rate_update
 #: view:res.company:0
 msgid "Refresh currencies"
-msgstr "Mettre à jour les taux de change"
+msgstr ""
