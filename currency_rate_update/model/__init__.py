@@ -19,4 +19,5 @@
 #
 ##############################################################################
 
-from . import model
+from . import currency_rate_update
+from . import company
