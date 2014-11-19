@@ -58,6 +58,25 @@ supported_currency_array = [
     "ZWD"
 ]
 
+YAHOO_supported_currency_array = [
+    "AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN",
+    "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL",
+    "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLF", "CLP",
+    "CNH", "CNY", "COP", "CRC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP",
+    "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GHS",
+    "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF",
+    "IDR", "IEP", "ILS", "INR", "IQD", "IRR", "ISK", "JMD", "JOD", "JPY",
+    "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK",
+    "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA",
+    "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MXV",
+    "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB",
+    "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB",
+    "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS",
+    "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP",
+    "TRY", "TTD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF",
+    "VND", "VUV", "WST", "XAF", "XAG", "XAU", "XCD", "XCP", "XDR", "XOF",
+    "XPD", "XPF", "XPT", "YER", "ZAR", "ZMW", "ZWL"]
+
 RO_BNR_supported_currency_array = [
     "AED", "AUD", "BGN", "BRL", "CAD", "CHF", "CNY", "CZK", "DKK", "EGP",
     "EUR", "GBP", "HUF", "INR", "JPY", "KRW", "MDL", "MXN", "NOK", "NZD",
@@ -103,6 +122,16 @@ PL_NBP_supported_currency_array = [
     "LTL", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK",
     "SGD", "THB", "TRY", "UAH", "USD", "XDR", "ZAR"]
 
+supported_currecies = {
+    'YAHOO_getter': YAHOO_supported_currency_array,
+    'ECB_getter': ECB_supported_currency_array,
+    'RO_BNR_getter': RO_BNR_supported_currency_array,
+    'CA_BOC_getter': CA_BOC_supported_currency_array,
+    'CH_ADMIN_getter': CH_ADMIN_supported_currency_array,
+    'MX_BdM_getter': MX_BdM_supported_currency_array,
+    'PL_NBP_getter': PL_NBP_supported_currency_array,
+    }
+
 
 class Currency_rate_update_service(models.Model):
     """Class keep services and currencies that
@@ -125,8 +154,8 @@ class Currency_rate_update_service(models.Model):
     @api.onchange('interval_number')
     def _onchange_interval_number(self):
         if self.interval_number == 0:
-            self.note = "%s Service deactivated. Currencies will no longer " \
-                        "be updated. \n%s" % (fields.Datetime.now(),
+            self.note = '%s Service deactivated. Currencies will no longer ' \
+                        'be updated. \n%s' % (fields.Datetime.now(),
                                               self.note and self.note or '')
 
     @api.onchange('service')
@@ -138,18 +167,7 @@ class Currency_rate_update_service(models.Model):
             company_id = False
             if self.company_id.multi_company_currency_enable:
                 company_id = self.company_id.id
-            if self.service == 'ECB_getter':
-                currency_list = ECB_supported_currency_array
-            if self.service == 'RO_BNR_getter':
-                currency_list = RO_BNR_supported_currency_array
-            if self.service == 'CA_BOC_getter':
-                currency_list = CA_BOC_supported_currency_array
-            if self.service == 'CH_ADMIN_getter':
-                currency_list = CH_ADMIN_supported_currency_array
-            if self.service == 'MX_BdM_getter':
-                currency_list = MX_BdM_supported_currency_array
-            if self.service == 'PL_NBP_getter':
-                currency_list = PL_NBP_supported_currency_array
+            currency_list = supported_currecies[self.service]
             if company_id:
                 currencies = self.env['res.currency'].search(
                     [('name', 'in', currency_list),
@@ -167,9 +185,9 @@ class Currency_rate_update_service(models.Model):
          ('ECB_getter', 'European Central Bank'),
          ('YAHOO_getter', 'Yahoo Finance'),
          # Added for polish rates
-         ('PL_NBP_getter', 'Narodowy Bank Polski'),
+         ('PL_NBP_getter', 'National Bank of Poland'),
          # Added for mexican rates
-         ('MX_BdM_getter', 'Banco de México'),
+         ('MX_BdM_getter', 'Bank of Mexico'),
          # Bank of Canada is using RSS-CB
          # http://www.cbwiki.net/wiki/index.php/Specification_1.1
          # This RSS format is used by other national banks
@@ -178,27 +196,27 @@ class Currency_rate_update_service(models.Model):
          # Added for romanian rates
          ('RO_BNR_getter', 'National Bank of Romania')
          ],
-        "Webservice to use",
+        string="Webservice to use",
         required=True)
     # List of currencies available on webservice
     currency_list = fields.Many2many('res.currency',
                                      'res_currency_update_avail_rel',
                                      'service_id',
                                      'currency_id',
-                                     'Currencies available')
+                                     string='Currencies available')
     # List of currency to update
     currency_to_update = fields.Many2many('res.currency',
                                           'res_currency_auto_update_rel',
                                           'service_id',
                                           'currency_id',
-                                          'Currencies to update with this '
-                                          'service')
+                                          string='Currencies to update with '
+                                          'this service')
     # Link with company
     company_id = fields.Many2one('res.company', 'Linked Company')
     # Note fileds that will be used as a logger
-    note = fields.Text('Update notice')
+    note = fields.Text('Update logs')
     max_delta_days = fields.Integer(
-        'Max delta days', default=4, required=True,
+        string='Max delta days', default=4, required=True,
         help="If the time delta between the rate date given by the "
         "webservice and the current date exceeds this value, "
         "then the currency rate is not updated in OpenERP.")
@@ -208,8 +226,8 @@ class Currency_rate_update_service(models.Model):
         ('months', 'Month(s)')],
         string='Currency update frequency',
         default='days')
-    interval_number = fields.Integer('Frequency', default=1)
-    next_run = fields.Date('Next run on', default=fields.Date.today())
+    interval_number = fields.Integer(string='Frequency', default=1)
+    next_run = fields.Date(string='Next run on', default=fields.Date.today())
 
     _sql_constraints = [('curr_service_unique',
                          'unique (service, company_id)',
@@ -273,14 +291,14 @@ class Currency_rate_update_service(models.Model):
                         rate_obj.create(vals)
 
                 # Show the most recent note at the top
-                msg = "%s \n%s currency updated. %s" % (
+                msg = '%s \n%s currency updated. %s' % (
                     log_info or '',
                     fields.Datetime.to_string(datetime.today()),
                     note
                 )
                 self.write({'note': msg})
             except Exception as exc:
-                error_msg = "\n%s ERROR : %s %s" % (
+                error_msg = '\n%s ERROR : %s %s' % (
                     fields.Datetime.to_string(datetime.today()),
                     repr(exc),
                     note
@@ -298,7 +316,7 @@ class Currency_rate_update_service(models.Model):
 
     @api.multi
     def run_currency_update(self):
-        "Update currency at the given frequence"
+        # Update currency at the given frequence
         services = self.search([('next_run', '=', fields.Date.today())])
         services.with_context(cron=True).refresh_currency()
 
