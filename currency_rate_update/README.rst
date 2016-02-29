@@ -106,6 +106,7 @@ Contributors
 * Miku Laitinen
 * Assem Bayahi
 * Daniel Dico <ddico@oerp.ca> (BOC)
+* Dmytro Katyukha <firemage.dima@gmail.com>
 
 
 Maintainer
