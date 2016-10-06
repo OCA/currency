@@ -48,6 +48,6 @@ for any help or question about this module.
     'images': [
         'images/date_check_error_popup.jpg',
         'images/date_check_company_config.jpg',
-    ],
+        ],
     'installable': False,
 }
