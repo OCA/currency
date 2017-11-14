@@ -6,36 +6,10 @@
 Currency Rate Update
 ====================
 
-Download exchange rates automatically from the Internet.
+Base module to download exchange rates automatically from the Internet.
 
-The module is able to use the following sources:
-
-1. Admin.ch
-   Updated daily, source in CHF.
-
-2. European Central Bank (ported by Grzegorz Grzelak - OpenGLOBE.pl)
-   The reference rates are based on the regular daily query
-   procedure between central banks within and outside the European
-   System of Central Banks, which normally takes place at 2.15 p.m.
-   (14:15) ECB time. Source in EUR.
-   http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
-
-3. Yahoo Finance
-   Updated daily
-
-4. Polish National Bank (Narodowy Bank Polski) (by Grzegorz Grzelak - OpenGLOBE.pl)
-   Takes official rates from www.nbp.pl. Adds rate table symbol in log.
-   You should check when rates should apply to bookkeeping.
-   If next day you should change the update hour in schedule settings
-   because in Odoo they apply from date of update (date - no hours).
-
-5. Banxico for USD & MXN (created by Agustín Cruz)
-   Updated daily
-
-6. Bank of Canada
-   (WARNING: Currently not working)
-
-7. National Bank of Romania (Banca Nationala a Romaniei)
+This module download exchange rates automatically from European central bank service (ported by Grzegorz Grzelak - OpenGLOBE.pl)
+The reference rates are based on the regular daily query procedure between central banks within and outside the European System of Central Banks, which normally takes place at 2.15 p.m. (14:15) ECB time. Source in EUR. http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html
 
 Configuration
 =============
@@ -65,9 +39,11 @@ Know issues / Roadmap
 =====================
 
 To fix:
+
 * Bank of Canada
 
 Roadmap:
+
 * Google Finance.
 * Updated daily from Citibank N.A., source in EUR. Information may be delayed.
   This is parsed from an HTML page, so it may be broken at anytime.
@@ -105,6 +81,7 @@ Contributors
 * Assem Bayahi
 * Daniel Dico <ddico@oerp.ca> (BOC)
 * Dmytro Katyukha <firemage.dima@gmail.com>
+* Jesús Ventosinos Mayor <jesus@comunitea.com>
 
 Maintainer
 ----------
