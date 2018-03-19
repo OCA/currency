@@ -9,7 +9,12 @@ class TestCurrencyRateUpdate(common.SavepointCase):
 
     def setUp(self):
         super(TestCurrencyRateUpdate, self).setUp()
-        self.env.user.company_id.currency_id = self.env.ref('base.EUR')
+        self.company = self.env['res.company'].create({
+            'name': 'Test company',
+            'currency_id': self.env.ref('base.EUR').id,
+        })
+        self.env.user.company_ids += self.company
+        self.env.user.company_id = self.company
         self.currency = self.env.ref('base.USD')
         self.update_service = self.env['currency.rate.update.service'].create({
             'service': 'ECB',
