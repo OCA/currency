@@ -65,7 +65,6 @@ class CurrencyRateUpdateService(models.Model):
             'currency_to_update': "[('id', '=', False)]",
             }}
         if self.service:
-            currencies = []
             getter = CurrencyGetterType.get(self.service)
             currency_list = getter.supported_currency_array
             currencies = self.env['res.currency'].search(
@@ -171,9 +170,19 @@ class CurrencyRateUpdateService(models.Model):
                             ('company_id', '=', company.id),
                             ('name', '=', rate_name)])
                         if not rates:
+                            rate = res[curr.name]
+                            # Used in currency_rate_inverted module. We do
+                            # not want to add a glue module for the currency
+                            # update.
+                            if 'rate_inverted' in self.env[
+                                    'res.currency']._fields:
+                                if curr.with_context(
+                                        force_company=company.id).\
+                                        rate_inverted:
+                                    rate = 1/rate
                             vals = {
                                 'currency_id': curr.id,
-                                'rate': res[curr.name],
+                                'rate': rate,
                                 'name': rate_name,
                                 'company_id': company.id,
                             }
