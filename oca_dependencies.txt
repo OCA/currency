@@ -1,0 +1,2 @@
+currency https://github.com/Eficent/currency 11.0-mig-account_rate_update
+currency https://github.com/Eficent/currency 11.0-mig-currency_rate_inverted
