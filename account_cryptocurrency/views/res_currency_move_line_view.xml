@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_currency_move_line_search" model="ir.ui.view">
+            <field name="name">res.currency.move.line.search</field>
+            <field name="model">res.currency.move.line</field>
+            <field name="arch" type="xml">
+                <search string="Currency Move Lines">
+                    <field name="move_id"/>
+                    <field name="direction"/>
+                    <field name="currency_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_currency_move_line_tree" model="ir.ui.view">
+            <field name="name">res.currency.move.line.tree</field>
+            <field name="model">res.currency.move.line</field>
+            <field name="arch" type="xml">
+                <tree string="Currency Move Lines" create="false">
+                    <field name="move_id"/>
+                    <field name="date"/>
+                    <field name="currency_id"/>
+                    <field name="direction"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="quantity" widget="monetary"/>
+                    <field name="remaining_qty" widget="monetary"/>
+                    <field name="company_currency" invisible="1"/>
+                    <field name="price_unit" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                    <field name="amount" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_currency_move_line_form" model="ir.ui.view">
+            <field name="name">res.currency.move.line.form</field>
+            <field name="model">res.currency.move.line</field>
+            <field name="arch" type="xml">
+                <form string="Currency Move">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="move_id"/>
+                                <field name="currency_id"/>
+                                <field name="date"/>
+                                <field name="direction"/>
+                                <field name="quantity" widget="monetary"/>
+                                <field name="remaining_qty" widget="monetary"/>
+                                <field name="company_currency" invisible="1"/>
+                                <field name="price_unit" widget="monetary"/>
+                                <field name="amount" widget="monetary" options="{'currency_field': 'company_currency'}"/>
+                                <field name="in_move_line_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="out_move_lines"
+                                  string="Outgoing Move Lines">
+                                <group>
+                                    <field name="out_move_line_ids"
+                                           nolabel="1"/>
+                                </group>
+                            </page>
+                            <page name="account_moves" string="Journal Entries">
+                                <group>
+                                    <field name="account_move_ids" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_currency_move_line_form" model="ir.actions.act_window">
+            <field name="name">Currency Move Lines</field>
+            <field name="res_model">res.currency.move.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_currency_move_line_search"/>
+        </record>
+
+        <menuitem action="action_currency_move_line_form"
+                  id="menu_action_currency_move_line"
+                  parent="menu_currency_moves" sequence="20"/>
+
+    </data>
+</odoo>
