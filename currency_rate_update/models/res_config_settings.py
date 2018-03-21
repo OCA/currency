@@ -8,4 +8,6 @@ class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
     auto_currency_up = fields.Boolean(
-        related='company_id.auto_currency_up')
+        related='company_id.auto_currency_up',
+        help='Update exchange rates automatically'
+             'from currency_rate_update module.')
