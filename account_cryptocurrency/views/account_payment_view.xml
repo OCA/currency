@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_payment_form" model="ir.ui.view">
+        <field name="name">account.payment.form</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button class="oe_stat_button" name="button_currency_moves"
+                        string="Crypto moves" type="object"
+                        attrs="{'invisible':[('has_currency_move_ids','=',False)]}"
+                        icon="fa-bars"/>
+                <field name="has_currency_move_ids" invisible="1"/>
+            </div>
+        </field>
+    </record>
+
+</odoo>

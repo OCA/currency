@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_currency_tree" model="ir.ui.view">
+            <field name="name">res.currency.tree</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_tree"/>
+            <field name="arch" type="xml">
+                <field name="symbol" position="after">
+                    <field name="inventoried"/>
+                    <field name="valuation_method"/>
+                    <field name="inventory_account_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_currency_form" model="ir.ui.view">
+            <field name="name">res.currency.form</field>
+            <field name="model">res.currency</field>
+            <field name="inherit_id" ref="base.view_currency_form"/>
+            <field name="arch" type="xml">
+                <sheet position="inside">
+                    <group string="Cryptocurrency" name="crypto">
+                        <group>
+                            <field name="inventoried"/>
+                        </group>
+                        <group attrs="{'invisible': [('inventoried', '=', False)]}">
+                            <field name="valuation_method"/>
+                            <field name="inventory_account_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </field>
+        </record>
+
+    </data>
+</odoo>
