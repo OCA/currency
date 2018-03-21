@@ -1,4 +1,5 @@
-[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/255/11.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-currency-259)
+![Licence](https://img.shields.io/badge/licence-AGPL--3-blue.svg)
+[![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/259/11.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-currency-259)
 [![Build Status](https://travis-ci.org/OCA/currency.svg?branch=11.0)](https://travis-ci.org/OCA/currency)
 [![codecov](https://codecov.io/gh/OCA/currency/branch/11.0/graph/badge.svg)](https://codecov.io/gh/OCA/currency)
 
