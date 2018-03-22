@@ -114,15 +114,11 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id": self.company.currency_id.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.curr1.id,
         })
         # Test onchange methods:
-        transaction._onchange_amounts()
         self.assertEqual(transaction.rate, 1.5)
-        transaction._onchange_rate()
-        self.assertEqual(transaction.amount_in, 150.0)
         # Test error raise:
         with self.assertRaises(UserError):
             transaction.action_done()
@@ -175,7 +171,6 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id":  self.curr2.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.company.currency_id.id,
         })
@@ -202,7 +197,6 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id":  self.curr2.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.curr1.id,
         })
@@ -229,7 +223,6 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id": self.company.currency_id.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.curr1.id,
         })
@@ -237,7 +230,6 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id":  self.curr2.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.company.currency_id.id,
         })
@@ -245,7 +237,6 @@ class TestAccountFxSpot(common.TransactionCase):
             "partner_id": self.test_partner.id,
             "amount_out": 100.0,
             "out_currency_id":  self.curr2.id,
-            "rate": 1.5,
             "amount_in": 150.0,
             "in_currency_id": self.curr1.id,
         })
