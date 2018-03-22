@@ -12,7 +12,6 @@
                 <field name="partner_id"/>
                 <field name="amount_out"/>
                 <field name="out_currency_id" invisible="1"/>
-                <field name="rate"/>
                 <field name="amount_in"/>
                 <field name="in_currency_id" invisible="1"/>
                 <field name="state"/>
@@ -73,18 +72,25 @@
                         </group>
                     </group>
                     <group name="transaction" col="3">
-                        <group name="out" string="Outgoing">
-                            <field name="amount_out"/>
-                            <field name="out_currency_id"/>
-                            <field name="residual_out"/>
-                        </group>
-                        <group name="rate" string="Spot Exchange Rate">
-                            <field name="rate" nolabel="1"/>
-                        </group>
                         <group name="in" string="Incoming">
                             <field name="amount_in"/>
                             <field name="in_currency_id"/>
                             <field name="residual_in"/>
+                        </group>
+                        <group name="rate" string="Spot Exchange Rate">
+                            <field name="rate" nolabel="1"/>
+                            <div>
+                                (Incoming/Outgoing)
+                            </div>
+                            <field name="rate_inv" nolabel="1"/>
+                            <div>
+                                (Outgoing/Incoming)
+                            </div>
+                        </group>
+                        <group name="out" string="Outgoing">
+                            <field name="amount_out"/>
+                            <field name="out_currency_id"/>
+                            <field name="residual_out"/>
                         </group>
                     </group>
 

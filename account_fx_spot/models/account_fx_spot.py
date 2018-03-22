@@ -99,8 +99,14 @@ class AccountFxSpot(models.Model):
         compute="_compute_payments", store=True,
     )
     rate = fields.Float(
-        required=True,
-        readonly=True, states={"draft": [("readonly", False)]},
+        compute="_compute_rate",
+        readonly=True,
+        digits=dp.get_precision('Exchange Rate'),
+    )
+    rate_inv = fields.Float(
+        string="Rate Inverted",
+        compute="_compute_rate",
+        readonly=True,
         digits=dp.get_precision('Exchange Rate'),
     )
     company_id = fields.Many2one(
@@ -204,14 +210,13 @@ class AccountFxSpot(models.Model):
             rec.payment_move_line_ids = self.env[
                 "account.move.line"].browse(list(payment_lines))
 
-    @api.onchange("amount_out", "amount_in")
-    def _onchange_amounts(self):
-        self.rate = \
-            self.amount_in / self.amount_out if self.amount_out else 0.0
-
-    @api.onchange("rate")
-    def _onchange_rate(self):
-        self.amount_in = self.amount_out * self.rate
+    @api.multi
+    def _compute_rate(self):
+        for rec in self:
+            rec.rate = rec.amount_in / rec.amount_out if \
+                rec.amount_out else 0.0
+            rec.rate_inv = rec.amount_out / rec.amount_in if \
+                rec.amount_in else 0.0
 
     @api.multi
     def _prepare_account_move(self):
