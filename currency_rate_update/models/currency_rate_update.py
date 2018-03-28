@@ -141,7 +141,7 @@ class CurrencyRateUpdateService(models.Model):
                 # No need to test if main_currency exists, because it is a
                 # required field
                 if float_compare(
-                        main_currency.rate, 1,
+                        main_currency.with_context(company_id=company.id).rate, 1,
                         precision_rounding=main_currency.rounding):
                     raise UserError(_(
                         "In company '%s', the rate of the main currency (%s) "
