@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_currency_move_sequence" model="ir.sequence">
+        <field name="name">Currency Move Sequence</field>
+        <field name="code">res.currency.move</field>
+        <field name="prefix">CM%(range_year)s/</field>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="True" name="use_date_range"/>
+        <field eval="False" name="company_id"/>
+    </record>
+
+</odoo>

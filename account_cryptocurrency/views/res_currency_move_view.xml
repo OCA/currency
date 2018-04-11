@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_currency_move_search" model="ir.ui.view">
+            <field name="name">res.currency.move.search</field>
+            <field name="model">res.currency.move</field>
+            <field name="arch" type="xml">
+                <search string="Currency Moves">
+                    <field name="name"/>
+                    <field name="payment_id"/>
+                    <field name="direction"/>
+                    <field name="currency_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="state"/>
+                    <field name="date"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_currency_move_tree" model="ir.ui.view">
+            <field name="name">res.currency.move.tree</field>
+            <field name="model">res.currency.move</field>
+            <field name="arch" type="xml">
+                <tree string="Currency Moves"
+                      decoration-info="state == 'draft'"
+                      decoration-muted="state == 'cancelled'" >
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="payment_id"/>
+                    <field name="direction"/>
+                    <field name="currency_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="amount" widget="monetary"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_currency_move_form" model="ir.ui.view">
+            <field name="name">res.currency.move.form</field>
+            <field name="model">res.currency.move</field>
+            <field name="arch" type="xml">
+                <form string="Currency Move">
+                    <header>
+                        <button name="post" string="Post" type="object"
+                                states="draft"
+                                class="oe_highlight"/>
+                        <button name="cancel" string="Cancel" type="object"
+                                states="posted"/>
+                        <button name="action_draft" string="Draft" type="object"
+                                states="cancelled"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancelled"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="payment_id"/>
+                                <field name="currency_id"/>
+                                <field name="date"/>
+                                <field name="direction"/>
+                                <field name="amount" widget="monetary"/>
+                                <field name="journal_id"/>
+                                <field name="debit_account_id"/>
+                                <field name="credit_account_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="move_lines" string="Move Lines">
+                                <group>
+                                    <field name="move_line_ids" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_currency_move_form" model="ir.actions.act_window">
+            <field name="name">Currency Moves</field>
+            <field name="res_model">res.currency.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_currency_move_search"/>
+        </record>
+
+        <menuitem action="action_currency_move_form"
+                  id="menu_action_currency_move"
+                  parent="menu_currency_moves" sequence="10"/>
+
+    </data>
+</odoo>
