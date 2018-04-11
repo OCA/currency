@@ -30,11 +30,11 @@ you have to go to 'Accounting / Configuration / Miscellaneous / Currencies'.
 Then select the foreign currency that you wish to maintain inversion for
 and set the flag 'Inverted exchange rate'.
 
-* Go to *Invoicing / Configuration / Accounting / Currencies* and create the
+#. Go to *Invoicing / Configuration / Accounting / Currencies* and create the
   required crypto currencies. See https://coinmarketcap.com/coins/views/all
   for supported currencies.
 
-* Go to *Invoicing / Configuration / Accounting / Currency Rate Update* and
+#. Go to *Invoicing / Configuration / Accounting / Currency Rate Update* and
   create a new Update Service indicating Webservice to use = 'Coin Market Cap'.
 
 

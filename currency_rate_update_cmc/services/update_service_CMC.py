@@ -10,6 +10,8 @@ import json
 import logging
 _logger = logging.getLogger(__name__)
 
+CMC_URL_PREFIX = 'https://api.coinmarketcap.com/v1/ticker/?convert='
+
 
 class CMCGetter(CurrencyGetterInterface):
     """Implementation of Currency_getter_factory interface
@@ -133,14 +135,13 @@ class CMCGetter(CurrencyGetterInterface):
 
     def get_updated_currency(self, currency_array, main_currency,
                              max_delta_days):
-        """implementation of abstract method of Curreny_getter_interface"""
+        """implementation of abstract method of curreny_getter_interface"""
         if main_currency not in self.allowed_base_currencies:
             raise Exception('Company currency %s is not allowed in '
                             'CoinMarketCap service ' % main_currency)
         if main_currency in currency_array:
             currency_array.remove(main_currency)
-        url = 'https://api.coinmarketcap.com/v1/ticker/?convert=' + \
-              main_currency
+        url = CMC_URL_PREFIX + main_currency
         for curr in currency_array:
             rawfile = self.get_url(url)
             rawfile_str = str(rawfile, 'utf-8')
@@ -154,8 +155,14 @@ class CMCGetter(CurrencyGetterInterface):
                     raise Exception('Attribute %s not found.' %
                                     main_currency_attr)
                 if val['symbol'] == curr:
-                    self.updated_currency[curr] = \
-                        1.0 / float(val[main_currency_attr])
+                    try:
+                        self.updated_currency[curr] = \
+                            1.0 / float(val[main_currency_attr])
+
+                    except ZeroDivisionError as e:
+                        raise Exception(
+                            'Cannot convert a price for %s that is '
+                            'zero.' % main_currency)
             if curr not in self.updated_currency:
                 raise Exception('Could not fetch values for main '
                                 'currency %s and crypto currency %s.' %
