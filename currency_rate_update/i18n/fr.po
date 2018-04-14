@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2018
+# Quentin THEURET <odoo@kerpeo.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-21 21:33+0000\n"
-"PO-Revision-Date: 2018-03-21 21:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"POT-Creation-Date: 2018-04-11 12:43+0000\n"
+"PO-Revision-Date: 2018-04-11 12:43+0000\n"
+"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2018\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,12 +23,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_company_auto_currency_up
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings_auto_currency_up
 msgid "Automatic Currency Rates Download"
-msgstr ""
+msgstr "Téléchargement automatique des taux de change"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_company_auto_currency_up
 msgid "Automatic download of currency rates for this company"
-msgstr ""
+msgstr "Téléchargement automatique des taux de change pour cette société"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_company
@@ -107,6 +108,9 @@ msgid ""
 "current date exceeds this value, then the currency rate is not updated in "
 "Odoo."
 msgstr ""
+"Si la durée entre la date du taux donnée par le service Web et la date "
+"actuelle est supérieure à cette valeur, alors le taux de change ne sera pas "
+"mis à jour dans Odoo."
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/currency_rate_update.py:146
@@ -115,6 +119,8 @@ msgid ""
 "In company '%s', the rate of the main currency (%s) must be 1.00 (current "
 "rate: %s)."
 msgstr ""
+"Dans la société '%s', le taux de la devise principale (%s) doit être 1,00 "
+"(taux actuel : %s)."
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/currency_rate_update.py:48
@@ -162,34 +168,36 @@ msgstr "Prochain lancement"
 #: model:ir.actions.act_window,name:currency_rate_update.currency_rate_update_action
 #: model:ir.ui.menu,name:currency_rate_update.currency_rate_update_menu
 msgid "Rate Auto-download"
-msgstr ""
+msgstr "Téléchargement auto. du taux"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/services/currency_getter_interface.py:147
 #, python-format
 msgid "Unable to import urllib."
-msgstr ""
+msgstr "Impossible d'importer urllib."
 
 #. module: currency_rate_update
 #: model:ir.ui.view,arch_db:currency_rate_update.view_res_config_settings
 msgid "Update exchange rates automatic from currency_rate_update module"
 msgstr ""
+"Mettre à jour automatiquement les taux de change depuis le module "
+"currency_rate_update"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings_auto_currency_up
 msgid "Update exchange rates automaticallyfrom currency_rate_update module."
-msgstr ""
+msgstr "Mettre à jour automatiquement depuis le module currency_rate_update."
 
 #. module: currency_rate_update
 #: model:ir.ui.view,arch_db:currency_rate_update.currency_rate_update_form
 msgid "Update now"
-msgstr ""
+msgstr "Mettre à jour maintenant"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/services/currency_getter_interface.py:150
 #, python-format
 msgid "Web Service does not exist (%s)!"
-msgstr ""
+msgstr "Le service Web n'existe pas (%s) !"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service_service
@@ -211,4 +219,4 @@ msgstr "Vous ne pouvez utiliser un service qu'une seule fois par société !"
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_config_settings
 msgid "res.config.settings"
-msgstr ""
+msgstr "res.config.settings"
