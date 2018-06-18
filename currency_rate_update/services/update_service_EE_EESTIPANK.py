@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# © 2017 Binh Lam
+# © 2018 Xpansa Group
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
