@@ -65,7 +65,7 @@ class CurrencyGetterType(type):
         return mcs.getters[code](*args, **kwargs)
 
 
-class CurrencyGetterInterface(object):
+class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
     """ Abstract class of currency getter
 
         To create new getter, just subclass this class
@@ -90,7 +90,7 @@ class CurrencyGetterInterface(object):
                     return self.updated_currency, self.log_info
 
     """
-    __metaclass__ = CurrencyGetterType
+
     # attributes required for currency getters
     code = None  # code for service selection
     name = None  # displayed name
