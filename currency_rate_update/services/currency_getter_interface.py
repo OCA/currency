@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # © 2008-2016 Camptocamp
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
@@ -64,7 +65,7 @@ class CurrencyGetterType(type):
         return mcs.getters[code](*args, **kwargs)
 
 
-class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
+class CurrencyGetterInterface(object):
     """ Abstract class of currency getter
 
         To create new getter, just subclass this class
@@ -89,7 +90,7 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
                     return self.updated_currency, self.log_info
 
     """
-
+    __metaclass__ = CurrencyGetterType
     # attributes required for currency getters
     code = None  # code for service selection
     name = None  # displayed name
@@ -135,16 +136,13 @@ class CurrencyGetterInterface(object, metaclass=CurrencyGetterType):
     def get_url(self, url):
         """Return a string of a get url query"""
         try:
-            import urllib.request
-            import urllib.parse
-            import urllib.error
-            objfile = urllib.request.urlopen(url)
-            rawfile = objfile.read()
-            objfile.close()
+            import requests
+            objfile = requests.get(url)
+            rawfile = objfile.content
             return rawfile
         except ImportError:
             raise UserError(
-                _('Unable to import urllib.'))
+                _('Unable to import requests.'))
         except IOError:
             raise UserError(
                 _('Web Service does not exist (%s)!') % url)
