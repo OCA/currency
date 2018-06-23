@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * account_fx_spot
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2018
 # Quentin THEURET <odoo@kerpeo.com>, 2018
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2018-04-11 12:43+0000\n"
 "Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2018\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: account_fx_spot
@@ -402,8 +402,8 @@ msgstr "Date de transaction"
 #, python-format
 msgid "Transaction must be in draft or open state in order to be cancelled."
 msgstr ""
-"La transaction doit être dans un état brouillon ou ouverte pour pouvoir être"
-" annulée"
+"La transaction doit être dans un état brouillon ou ouverte pour pouvoir être "
+"annulée"
 
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:304
@@ -432,8 +432,7 @@ msgstr "Valider"
 #, python-format
 msgid "You can only register payments for open transactions"
 msgstr ""
-"Vous pouvez seulement enregistrer des paiements sur des transactions "
-"ouvertes"
+"Vous pouvez seulement enregistrer des paiements sur des transactions ouvertes"
 
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:332
@@ -442,15 +441,15 @@ msgid ""
 "You cannot cancel a transaction which is partially paid. You need to "
 "unreconcile related payment entries first."
 msgstr ""
-"Vous ne pouvez pas annuler une transaction qui est payée partiellement. Vous"
-" devez auparavant annuler le lettrage des écritures de paiement."
+"Vous ne pouvez pas annuler une transaction qui est payée partiellement. Vous "
+"devez auparavant annuler le lettrage des écritures de paiement."
 
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:308
 #, python-format
 msgid ""
-"You cannot pay an transaction which is partially paid. You need to reconcile"
-" payment entries first."
+"You cannot pay an transaction which is partially paid. You need to reconcile "
+"payment entries first."
 msgstr ""
 "Vous ne pouvez pas payer une transaction qui est payée partiellement. Vous "
 "devez auparavant lettrer les écritures de paiement."
