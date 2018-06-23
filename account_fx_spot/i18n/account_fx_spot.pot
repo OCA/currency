@@ -1,22 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * account_fx_spot
+#	* account_fx_spot
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-29 16:20+0000\n"
-"PO-Revision-Date: 2018-03-29 16:20+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
-"Language: it\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: account_fx_spot
 #: model:ir.ui.view,arch_db:account_fx_spot.view_account_fx_spot_form
@@ -52,7 +47,7 @@ msgstr ""
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_company_id
 msgid "Company"
-msgstr "Azienda"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.ui.view,arch_db:account_fx_spot.view_account_fx_spot_form
@@ -63,13 +58,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_create_uid
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_create_uid
 msgid "Created by"
-msgstr "Creato da"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_create_date
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_create_date
 msgid "Created on"
-msgstr "Creato il"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_company_currency_id
@@ -80,7 +75,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_display_name
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_display_name
 msgid "Display Name"
-msgstr "Nome da visualizzare"
+msgstr ""
 
 #. module: account_fx_spot
 #: selection:account.fx.spot,state:0
@@ -115,8 +110,7 @@ msgstr ""
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:316
 #, python-format
-msgid ""
-"FX Spot Transaction must be done in order to set it to register payment."
+msgid "FX Spot Transaction must be done in order to set it to register payment."
 msgstr ""
 
 #. module: account_fx_spot
@@ -145,14 +139,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_id
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot_payment.py:82
 #, python-format
-msgid ""
-"In order to pay multiple transactions at once, they must use the same "
-"outgoing or incoming currency."
+msgid "In order to pay multiple transactions at once, they must use the same outgoing or incoming currency."
 msgstr ""
 
 #. module: account_fx_spot
@@ -195,19 +187,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot___last_update
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment___last_update
 msgid "Last Modified on"
-msgstr "Ultima modifica il"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_write_uid
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_write_date
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
+msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,field_description:account_fx_spot.field_account_fx_spot_payment_multi
@@ -286,8 +278,7 @@ msgstr ""
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot_payment.py:104
 #, python-format
-msgid ""
-"Programming error: wizard action executed without active_ids in context."
+msgid "Programming error: wizard action executed without active_ids in context."
 msgstr ""
 
 #. module: account_fx_spot
@@ -375,9 +366,7 @@ msgstr ""
 
 #. module: account_fx_spot
 #: model:ir.model.fields,help:account_fx_spot.field_account_fx_spot_payment_multi
-msgid ""
-"Technical field indicating if the user selected transactions from multiple "
-"partners or from different types."
+msgid "Technical field indicating if the user selected transactions from multiple partners or from different types."
 msgstr ""
 
 #. module: account_fx_spot
@@ -422,15 +411,12 @@ msgstr ""
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:332
 #, python-format
-msgid ""
-"You cannot cancel a transaction which is partially paid. You need to "
-"unreconcile related payment entries first."
+msgid "You cannot cancel a transaction which is partially paid. You need to unreconcile related payment entries first."
 msgstr ""
 
 #. module: account_fx_spot
 #: code:addons/account_fx_spot/models/account_fx_spot.py:308
 #, python-format
-msgid ""
-"You cannot pay an transaction which is partially paid. You need to reconcile "
-"payment entries first."
+msgid "You cannot pay an transaction which is partially paid. You need to reconcile payment entries first."
 msgstr ""
+
