@@ -1,23 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * account_cryptocurrency
+#	* account_cryptocurrency
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-11 12:43+0000\n"
-"PO-Revision-Date: 2018-04-11 12:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
-"Language-Team: Spanish (Spain) (https://www.transifex.com/oca/teams/23907/"
-"es_ES/)\n"
-"Language: es_ES\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_account_account
@@ -64,7 +58,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_company_id
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_company_id
 msgid "Company"
-msgstr "Compañía"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_company_currency
@@ -75,13 +69,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_create_uid
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_create_date
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_credit_account_id
@@ -188,7 +182,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_id
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_in_move_line_id
@@ -227,13 +221,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_write_uid
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_write_date
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_date
@@ -353,9 +347,7 @@ msgstr ""
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:177
 #, python-format
-msgid ""
-"You can not cancel a currency move that is linked to a payment. Please "
-"cancel the payment first."
+msgid "You can not cancel a currency move that is linked to a payment. Please cancel the payment first."
 msgstr ""
 
 #. module: account_cryptocurrency
@@ -373,9 +365,7 @@ msgstr ""
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/account_account.py:19
 #, python-format
-msgid ""
-"You cannot change the account currency as it is already being referenced to "
-"cryptocurrency %s as an Inventory Account."
+msgid "You cannot change the account currency as it is already being referenced to cryptocurrency %s as an Inventory Account."
 msgstr ""
 
 #. module: account_cryptocurrency
@@ -395,3 +385,4 @@ msgstr ""
 #, python-format
 msgid "You must indicate a valuation method for currency %s"
 msgstr ""
+
