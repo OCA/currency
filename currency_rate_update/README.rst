@@ -16,11 +16,13 @@ Configuration
 
 To configure the module:
 
-1. Go to *Invoicing > Configuration > Rate Auto-download* and create one or several services to download rates from the Internet.
-
-2. Go to the page *Invoicing > Configuration > Settings* and, in the section *Multi Currencies*, make sure that the option *Automatic Currency Rates Download* is enabled.
-
-3. In developper mode, in the menu *Settings > Technical > Scheduled Actions*, make sure that the action *Currency Rate Update* is active. If you want to run it immediately, use the button *Run Manually*.
+1. Go to *Invoicing > Configuration > Rate Auto-download*
+2. Create one or several services to download rates from the Internet.
+3. Go to the page *Invoicing > Configuration > Settings* 
+4. In the section *Multi Currencies*, make sure that the option *Automatic Currency Rates Download* is enabled.
+5. Switch to developper mode, 
+6. In the menu *Settings > Technical > Scheduled Actions*, make sure that the action *Currency Rate Update* is active. 
+7. If you want to run it immediately, use the button *Run Manually*.
 
 
 This module is compatible with OCA module 'currency_rate_inverted' also found in OCA/currency repository, that allows to maintain exchange rates in inverted format, helping to resolve rounding issues.
