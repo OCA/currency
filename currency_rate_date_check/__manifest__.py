@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 ##############################################################################
 #
 #    Currency rate date check module for Odoo
@@ -23,7 +22,7 @@
 
 {
     'name': 'Currency Rate Date Check',
-    'version': '8.0.1.0.0',
+    'version': '11.0.1.0.0',
     'category': 'Financial Management/Configuration',
     'license': 'AGPL-3',
     'summary': "Make sure currency rates used are always up-to-update",
@@ -34,6 +33,7 @@ Currency Rate Date Check
 This module adds a check on dates when doing currency conversion in Odoo.
 It checks that the currency rate used to make the conversion
 is not more than N days away from the date of the amount to convert.
+If no rates have been defined for the currency, a warning is displayed too.
 
 The maximum number of days of the interval can be
 configured on the company form.
@@ -41,13 +41,13 @@ configured on the company form.
 Please contact Alexis de Lattre from Akretion <alexis.delattre@akretion.com>
 for any help or question about this module.
     """,
-    'author': "Akretion,Odoo Community Association (OCA)",
+    'author': "Akretion, Odoo Community Association (OCA), FIEF Management S.A.",
     'website': 'http://www.akretion.com',
     'depends': ['base'],
-    'data': ['company_view.xml'],
+    'data': ['views/company_view.xml'],
     'images': [
         'images/date_check_error_popup.jpg',
         'images/date_check_company_config.jpg',
         ],
-    'installable': False,
+    'installable': True,
 }
