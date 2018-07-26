@@ -33,10 +33,9 @@ class ResCurrency(models.Model):
         if ctx.get('date') and not ctx.get('disable_rate_date_check'):
             date = ctx.get('date')
             for currency in self:
-                # We could get the company from the currency, but it's not a required field, so
-                # we should probably continue to get it from the user, shouldn't we ?
                 if ctx.get('company_id'):
-                    company = self.env['res.company'].browse(ctx.get('company_id'))
+                    comp_obj = self.env['res.company']
+                    company = comp_obj.browse(ctx.get('company_id'))
                 else:
                     company = self.env['res.users']._get_company()
                 # If it's the company currency, don't do anything
@@ -62,9 +61,11 @@ class ResCurrency(models.Model):
                                 _("You are requesting a rate conversion on {} "
                                   "for currency {} but the nearest "
                                   "rate before that date is dated {} and the "
-                                  "maximum currency rate time delta for your company "
-                                  "is {} days").format(date, currency.name,
-                                                       rate_date, max_delta)
+                                  "maximum currency rate time delta for your "
+                                  "company is {} days").format(date,
+                                                               currency.name,
+                                                               rate_date,
+                                                               max_delta)
                             )
                     else:
                         raise Warning(
