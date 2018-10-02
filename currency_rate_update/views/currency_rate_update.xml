@@ -5,7 +5,7 @@
         <field name="name">Update Rates service</field>
         <field name="model">currency.rate.update.service</field>
         <field name="arch" type="xml">
-            <tree string="Currency update services">
+            <tree name="currency_update_services">
                 <field name="service"/>
                 <field name="company_id" groups="base.group_multi_company"/>
                 <field name="currency_to_update"/>

@@ -107,7 +107,7 @@ class CurrencyRateUpdateService(models.Model):
         default=lambda self: self.env['res.company']._company_default_get(
             'currency.rate.update.service'))
     max_delta_days = fields.Integer(
-        string='Max delta days', default=4, required=True,
+        default=4, required=True,
         help="If the time delta between the rate date given by the "
         "webservice and the current date exceeds this value, "
         "then the currency rate is not updated in Odoo.")
