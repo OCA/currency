@@ -1,0 +1,1445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="base.AED" model="res.currency">
+	    <field name="full_name">UAE Dirham</field>
+	    <field name="numeric_code">784</field>
+	</record>
+
+	<record id="base.AFN" model="res.currency">
+	    <field name="full_name">Afghani</field>
+	    <field name="numeric_code">971</field>
+	</record>
+
+	<record id="base.ALL" model="res.currency">
+	    <field name="full_name">Lek</field>
+	    <field name="numeric_code">8</field>
+	</record>
+
+	<record id="base.AMD" model="res.currency">
+	    <field name="full_name">Armenian Dram</field>
+	    <field name="numeric_code">51</field>
+	</record>
+
+	<record id="base.ANG" model="res.currency">
+	    <field name="full_name">Netherlands Antillean Guilder</field>
+	    <field name="numeric_code">532</field>
+	</record>
+
+	<record id="base.ANG" model="res.currency">
+	    <field name="full_name">Netherlands Antillean Guilder</field>
+	    <field name="numeric_code">532</field>
+	</record>
+
+	<record id="base.ANG" model="res.currency">
+	    <field name="full_name">Netherlands Antillean Guilder</field>
+	    <field name="numeric_code">532</field>
+	</record>
+
+	<record id="base.AOA" model="res.currency">
+	    <field name="full_name">Kwanza</field>
+	    <field name="numeric_code">973</field>
+	</record>
+
+	<record id="base.ARS" model="res.currency">
+	    <field name="full_name">Argentine Peso</field>
+	    <field name="numeric_code">32</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AUD" model="res.currency">
+	    <field name="full_name">Australian Dollar</field>
+	    <field name="numeric_code">36</field>
+	</record>
+
+	<record id="base.AWG" model="res.currency">
+	    <field name="full_name">Aruban Florin</field>
+	    <field name="numeric_code">533</field>
+	</record>
+
+	<record id="base.AZN" model="res.currency">
+	    <field name="full_name">Azerbaijanian Manat</field>
+	    <field name="numeric_code">944</field>
+	</record>
+
+	<record id="base.BAM" model="res.currency">
+	    <field name="full_name">Convertible Mark</field>
+	    <field name="numeric_code">977</field>
+	</record>
+
+	<record id="base.BBD" model="res.currency">
+	    <field name="full_name">Barbados Dollar</field>
+	    <field name="numeric_code">52</field>
+	</record>
+
+	<record id="base.BDT" model="res.currency">
+	    <field name="full_name">Taka</field>
+	    <field name="numeric_code">50</field>
+	</record>
+
+	<record id="base.BGN" model="res.currency">
+	    <field name="full_name">Bulgarian Lev</field>
+	    <field name="numeric_code">975</field>
+	</record>
+
+	<record id="base.BHD" model="res.currency">
+	    <field name="full_name">Bahraini Dinar</field>
+	    <field name="numeric_code">48</field>
+	</record>
+
+	<record id="base.BIF" model="res.currency">
+	    <field name="full_name">Burundi Franc</field>
+	    <field name="numeric_code">108</field>
+	</record>
+
+	<record id="base.BMD" model="res.currency">
+	    <field name="full_name">Bermudian Dollar</field>
+	    <field name="numeric_code">60</field>
+	</record>
+
+	<record id="base.BND" model="res.currency">
+	    <field name="full_name">Brunei Dollar</field>
+	    <field name="numeric_code">96</field>
+	</record>
+
+	<record id="base.BOB" model="res.currency">
+	    <field name="full_name">Boliviano</field>
+	    <field name="numeric_code">68</field>
+	</record>
+
+	<record id="base.BRL" model="res.currency">
+	    <field name="full_name">Brazilian Real</field>
+	    <field name="numeric_code">986</field>
+	</record>
+
+	<record id="base.BSD" model="res.currency">
+	    <field name="full_name">Bahamian Dollar</field>
+	    <field name="numeric_code">44</field>
+	</record>
+
+	<record id="base.BTN" model="res.currency">
+	    <field name="full_name">Ngultrum</field>
+	    <field name="numeric_code">64</field>
+	</record>
+
+	<record id="base.BWP" model="res.currency">
+	    <field name="full_name">Pula</field>
+	    <field name="numeric_code">72</field>
+	</record>
+
+	<record id="base.BYN" model="res.currency">
+	    <field name="full_name">Belarusian Ruble</field>
+	    <field name="numeric_code">933</field>
+	</record>
+
+	<record id="base.BYR" model="res.currency">
+	    <field name="full_name">Belarusian Ruble</field>
+	    <field name="numeric_code">974</field>
+	</record>
+
+	<record id="base.BZD" model="res.currency">
+	    <field name="full_name">Belize Dollar</field>
+	    <field name="numeric_code">84</field>
+	</record>
+
+	<record id="base.CAD" model="res.currency">
+	    <field name="full_name">Canadian Dollar</field>
+	    <field name="numeric_code">124</field>
+	</record>
+
+	<record id="base.CDF" model="res.currency">
+	    <field name="full_name">Congolese Franc</field>
+	    <field name="numeric_code">976</field>
+	</record>
+
+	<record id="base.CHF" model="res.currency">
+	    <field name="full_name">Swiss Franc</field>
+	    <field name="numeric_code">756</field>
+	</record>
+
+	<record id="base.CHF" model="res.currency">
+	    <field name="full_name">Swiss Franc</field>
+	    <field name="numeric_code">756</field>
+	</record>
+
+	<record id="base.CLP" model="res.currency">
+	    <field name="full_name">Chilean Peso</field>
+	    <field name="numeric_code">152</field>
+	</record>
+
+	<record id="base.CNY" model="res.currency">
+	    <field name="full_name">Yuan Renminbi</field>
+	    <field name="numeric_code">156</field>
+	</record>
+
+	<record id="base.COP" model="res.currency">
+	    <field name="full_name">Colombian Peso</field>
+	    <field name="numeric_code">170</field>
+	</record>
+
+	<record id="base.CRC" model="res.currency">
+	    <field name="full_name">Costa Rican Colon</field>
+	    <field name="numeric_code">188</field>
+	</record>
+
+	<record id="base.CUP" model="res.currency">
+	    <field name="full_name">Cuban Peso</field>
+	    <field name="numeric_code">192</field>
+	</record>
+
+	<record id="base.CVE" model="res.currency">
+	    <field name="full_name">Cabo Verde Escudo</field>
+	    <field name="numeric_code">132</field>
+	</record>
+
+	<record id="base.CYP" model="res.currency">
+	    <field name="full_name">Cyprus Pound</field>
+	    <field name="numeric_code">196</field>
+	</record>
+
+	<record id="base.CZK" model="res.currency">
+	    <field name="full_name">Czech Koruna</field>
+	    <field name="numeric_code">203</field>
+	</record>
+
+	<record id="base.DJF" model="res.currency">
+	    <field name="full_name">Djibouti Franc</field>
+	    <field name="numeric_code">262</field>
+	</record>
+
+	<record id="base.DKK" model="res.currency">
+	    <field name="full_name">Danish Krone</field>
+	    <field name="numeric_code">208</field>
+	</record>
+
+	<record id="base.DKK" model="res.currency">
+	    <field name="full_name">Danish Krone</field>
+	    <field name="numeric_code">208</field>
+	</record>
+
+	<record id="base.DKK" model="res.currency">
+	    <field name="full_name">Danish Krone</field>
+	    <field name="numeric_code">208</field>
+	</record>
+
+	<record id="base.DOP" model="res.currency">
+	    <field name="full_name">Dominican Peso</field>
+	    <field name="numeric_code">214</field>
+	</record>
+
+	<record id="base.DZD" model="res.currency">
+	    <field name="full_name">Algerian Dinar</field>
+	    <field name="numeric_code">12</field>
+	</record>
+
+	<record id="base.ECS" model="res.currency">
+	    <field name="full_name">Sucre</field>
+	    <field name="numeric_code">218</field>
+	</record>
+
+	<record id="base.EGP" model="res.currency">
+	    <field name="full_name">Egyptian Pound</field>
+	    <field name="numeric_code">818</field>
+	</record>
+
+	<record id="base.ERN" model="res.currency">
+	    <field name="full_name">Nakfa</field>
+	    <field name="numeric_code">232</field>
+	</record>
+
+	<record id="base.ETB" model="res.currency">
+	    <field name="full_name">Ethiopian Birr</field>
+	    <field name="numeric_code">230</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.EUR" model="res.currency">
+	    <field name="full_name">Euro</field>
+	    <field name="numeric_code">978</field>
+	</record>
+
+	<record id="base.FJD" model="res.currency">
+	    <field name="full_name">Fiji Dollar</field>
+	    <field name="numeric_code">242</field>
+	</record>
+
+	<record id="base.FKP" model="res.currency">
+	    <field name="full_name">Falkland Islands Pound</field>
+	    <field name="numeric_code">238</field>
+	</record>
+
+	<record id="base.GBP" model="res.currency">
+	    <field name="full_name">Pound Sterling</field>
+	    <field name="numeric_code">826</field>
+	</record>
+
+	<record id="base.GBP" model="res.currency">
+	    <field name="full_name">Pound Sterling</field>
+	    <field name="numeric_code">826</field>
+	</record>
+
+	<record id="base.GBP" model="res.currency">
+	    <field name="full_name">Pound Sterling</field>
+	    <field name="numeric_code">826</field>
+	</record>
+
+	<record id="base.GBP" model="res.currency">
+	    <field name="full_name">Pound Sterling</field>
+	    <field name="numeric_code">826</field>
+	</record>
+
+	<record id="base.GEL" model="res.currency">
+	    <field name="full_name">Lari</field>
+	    <field name="numeric_code">981</field>
+	</record>
+
+	<record id="base.GHS" model="res.currency">
+	    <field name="full_name">Ghana Cedi</field>
+	    <field name="numeric_code">936</field>
+	</record>
+
+	<record id="base.GIP" model="res.currency">
+	    <field name="full_name">Gibraltar Pound</field>
+	    <field name="numeric_code">292</field>
+	</record>
+
+	<record id="base.GMD" model="res.currency">
+	    <field name="full_name">Dalasi</field>
+	    <field name="numeric_code">270</field>
+	</record>
+
+	<record id="base.GNF" model="res.currency">
+	    <field name="full_name">Guinea Franc</field>
+	    <field name="numeric_code">324</field>
+	</record>
+
+	<record id="base.GTQ" model="res.currency">
+	    <field name="full_name">Quetzal</field>
+	    <field name="numeric_code">320</field>
+	</record>
+
+	<record id="base.GYD" model="res.currency">
+	    <field name="full_name">Guyana Dollar</field>
+	    <field name="numeric_code">328</field>
+	</record>
+
+	<record id="base.HKD" model="res.currency">
+	    <field name="full_name">Hong Kong Dollar</field>
+	    <field name="numeric_code">344</field>
+	</record>
+
+	<record id="base.HNL" model="res.currency">
+	    <field name="full_name">Lempira</field>
+	    <field name="numeric_code">340</field>
+	</record>
+
+	<record id="base.HRK" model="res.currency">
+	    <field name="full_name">Kuna</field>
+	    <field name="numeric_code">191</field>
+	</record>
+
+	<record id="base.HRK" model="res.currency">
+	    <field name="full_name">Croatian Kuna</field>
+	    <field name="numeric_code">191</field>
+	</record>
+
+	<record id="base.HTG" model="res.currency">
+	    <field name="full_name">Gourde</field>
+	    <field name="numeric_code">332</field>
+	</record>
+
+	<record id="base.HUF" model="res.currency">
+	    <field name="full_name">Forint</field>
+	    <field name="numeric_code">348</field>
+	</record>
+
+	<record id="base.IDR" model="res.currency">
+	    <field name="full_name">Rupiah</field>
+	    <field name="numeric_code">360</field>
+	</record>
+
+	<record id="base.IDR" model="res.currency">
+	    <field name="full_name">Rupiah</field>
+	    <field name="numeric_code">360</field>
+	</record>
+
+	<record id="base.ILS" model="res.currency">
+	    <field name="full_name">New Israeli Sheqel</field>
+	    <field name="numeric_code">376</field>
+	</record>
+
+	<record id="base.INR" model="res.currency">
+	    <field name="full_name">Indian Rupee</field>
+	    <field name="numeric_code">356</field>
+	</record>
+
+	<record id="base.INR" model="res.currency">
+	    <field name="full_name">Indian Rupee</field>
+	    <field name="numeric_code">356</field>
+	</record>
+
+	<record id="base.IQD" model="res.currency">
+	    <field name="full_name">Iraqi Dinar</field>
+	    <field name="numeric_code">368</field>
+	</record>
+
+	<record id="base.IRR" model="res.currency">
+	    <field name="full_name">Iranian Rial</field>
+	    <field name="numeric_code">364</field>
+	</record>
+
+	<record id="base.ISK" model="res.currency">
+	    <field name="full_name">Iceland Krona</field>
+	    <field name="numeric_code">352</field>
+	</record>
+
+	<record id="base.ITL" model="res.currency">
+	    <field name="full_name">Italian Lira</field>
+	    <field name="numeric_code">380</field>
+	</record>
+
+	<record id="base.ITL" model="res.currency">
+	    <field name="full_name">Italian Lira</field>
+	    <field name="numeric_code">380</field>
+	</record>
+
+	<record id="base.ITL" model="res.currency">
+	    <field name="full_name">Italian Lira</field>
+	    <field name="numeric_code">380</field>
+	</record>
+
+	<record id="base.JMD" model="res.currency">
+	    <field name="full_name">Jamaican Dollar</field>
+	    <field name="numeric_code">388</field>
+	</record>
+
+	<record id="base.JOD" model="res.currency">
+	    <field name="full_name">Jordanian Dinar</field>
+	    <field name="numeric_code">400</field>
+	</record>
+
+	<record id="base.JPY" model="res.currency">
+	    <field name="full_name">Yen</field>
+	    <field name="numeric_code">392</field>
+	</record>
+
+	<record id="base.KES" model="res.currency">
+	    <field name="full_name">Kenyan Shilling</field>
+	    <field name="numeric_code">404</field>
+	</record>
+
+	<record id="base.KGS" model="res.currency">
+	    <field name="full_name">Som</field>
+	    <field name="numeric_code">417</field>
+	</record>
+
+	<record id="base.KHR" model="res.currency">
+	    <field name="full_name">Riel</field>
+	    <field name="numeric_code">116</field>
+	</record>
+
+	<record id="base.KMF" model="res.currency">
+	    <field name="full_name">Comoro Franc</field>
+	    <field name="numeric_code">174</field>
+	</record>
+
+	<record id="base.KPW" model="res.currency">
+	    <field name="full_name">North Korean Won</field>
+	    <field name="numeric_code">408</field>
+	</record>
+
+	<record id="base.KRW" model="res.currency">
+	    <field name="full_name">Won</field>
+	    <field name="numeric_code">410</field>
+	</record>
+
+	<record id="base.KWD" model="res.currency">
+	    <field name="full_name">Kuwaiti Dinar</field>
+	    <field name="numeric_code">414</field>
+	</record>
+
+	<record id="base.KYD" model="res.currency">
+	    <field name="full_name">Cayman Islands Dollar</field>
+	    <field name="numeric_code">136</field>
+	</record>
+
+	<record id="base.KZT" model="res.currency">
+	    <field name="full_name">Tenge</field>
+	    <field name="numeric_code">398</field>
+	</record>
+
+	<record id="base.LAK" model="res.currency">
+	    <field name="full_name">Kip</field>
+	    <field name="numeric_code">418</field>
+	</record>
+
+	<record id="base.LBP" model="res.currency">
+	    <field name="full_name">Lebanese Pound</field>
+	    <field name="numeric_code">422</field>
+	</record>
+
+	<record id="base.LKR" model="res.currency">
+	    <field name="full_name">Sri Lanka Rupee</field>
+	    <field name="numeric_code">144</field>
+	</record>
+
+	<record id="base.LRD" model="res.currency">
+	    <field name="full_name">Liberian Dollar</field>
+	    <field name="numeric_code">430</field>
+	</record>
+
+	<record id="base.LSL" model="res.currency">
+	    <field name="full_name">Loti</field>
+	    <field name="numeric_code">426</field>
+	</record>
+
+	<record id="base.LTL" model="res.currency">
+	    <field name="full_name">Lithuanian Litas</field>
+	    <field name="numeric_code">440</field>
+	</record>
+
+	<record id="base.LVL" model="res.currency">
+	    <field name="full_name">Latvian Lats</field>
+	    <field name="numeric_code">428</field>
+	</record>
+
+	<record id="base.LYD" model="res.currency">
+	    <field name="full_name">Libyan Dinar</field>
+	    <field name="numeric_code">434</field>
+	</record>
+
+	<record id="base.MAD" model="res.currency">
+	    <field name="full_name">Moroccan Dirham</field>
+	    <field name="numeric_code">504</field>
+	</record>
+
+	<record id="base.MAD" model="res.currency">
+	    <field name="full_name">Moroccan Dirham</field>
+	    <field name="numeric_code">504</field>
+	</record>
+
+	<record id="base.MDL" model="res.currency">
+	    <field name="full_name">Moldovan Leu</field>
+	    <field name="numeric_code">498</field>
+	</record>
+
+	<record id="base.MGA" model="res.currency">
+	    <field name="full_name">Malagasy Ariary</field>
+	    <field name="numeric_code">969</field>
+	</record>
+
+	<record id="base.MKD" model="res.currency">
+	    <field name="full_name">Denar</field>
+	    <field name="numeric_code">807</field>
+	</record>
+
+	<record id="base.MMK" model="res.currency">
+	    <field name="full_name">Kyat</field>
+	    <field name="numeric_code">104</field>
+	</record>
+
+	<record id="base.MNT" model="res.currency">
+	    <field name="full_name">Tugrik</field>
+	    <field name="numeric_code">496</field>
+	</record>
+
+	<record id="base.MOP" model="res.currency">
+	    <field name="full_name">Pataca</field>
+	    <field name="numeric_code">446</field>
+	</record>
+
+	<record id="base.MRO" model="res.currency">
+	    <field name="full_name">Ouguiya</field>
+	    <field name="numeric_code">478</field>
+	</record>
+
+	<record id="base.MUR" model="res.currency">
+	    <field name="full_name">Mauritius Rupee</field>
+	    <field name="numeric_code">480</field>
+	</record>
+
+	<record id="base.MVR" model="res.currency">
+	    <field name="full_name">Rufiyaa</field>
+	    <field name="numeric_code">462</field>
+	</record>
+
+	<record id="base.MWK" model="res.currency">
+	    <field name="full_name">Malawi Kwacha</field>
+	    <field name="numeric_code">454</field>
+	</record>
+
+	<record id="base.MWK" model="res.currency">
+	    <field name="full_name">Kwacha</field>
+	    <field name="numeric_code">454</field>
+	</record>
+
+	<record id="base.MXN" model="res.currency">
+	    <field name="full_name">Mexican Peso</field>
+	    <field name="numeric_code">484</field>
+	</record>
+
+	<record id="base.MYR" model="res.currency">
+	    <field name="full_name">Malaysian Ringgit</field>
+	    <field name="numeric_code">458</field>
+	</record>
+
+	<record id="base.MZN" model="res.currency">
+	    <field name="full_name">Mozambique Metical</field>
+	    <field name="numeric_code">943</field>
+	</record>
+
+	<record id="base.NAD" model="res.currency">
+	    <field name="full_name">Namibia Dollar</field>
+	    <field name="numeric_code">516</field>
+	</record>
+
+	<record id="base.NGN" model="res.currency">
+	    <field name="full_name">Naira</field>
+	    <field name="numeric_code">566</field>
+	</record>
+
+	<record id="base.NIO" model="res.currency">
+	    <field name="full_name">Cordoba Oro</field>
+	    <field name="numeric_code">558</field>
+	</record>
+
+	<record id="base.NOK" model="res.currency">
+	    <field name="full_name">Norwegian Krone</field>
+	    <field name="numeric_code">578</field>
+	</record>
+
+	<record id="base.NOK" model="res.currency">
+	    <field name="full_name">Norwegian Krone</field>
+	    <field name="numeric_code">578</field>
+	</record>
+
+	<record id="base.NOK" model="res.currency">
+	    <field name="full_name">Norwegian Krone</field>
+	    <field name="numeric_code">578</field>
+	</record>
+
+	<record id="base.NPR" model="res.currency">
+	    <field name="full_name">Nepalese Rupee</field>
+	    <field name="numeric_code">524</field>
+	</record>
+
+	<record id="base.NZD" model="res.currency">
+	    <field name="full_name">New Zealand Dollar</field>
+	    <field name="numeric_code">554</field>
+	</record>
+
+	<record id="base.NZD" model="res.currency">
+	    <field name="full_name">New Zealand Dollar</field>
+	    <field name="numeric_code">554</field>
+	</record>
+
+	<record id="base.NZD" model="res.currency">
+	    <field name="full_name">New Zealand Dollar</field>
+	    <field name="numeric_code">554</field>
+	</record>
+
+	<record id="base.NZD" model="res.currency">
+	    <field name="full_name">New Zealand Dollar</field>
+	    <field name="numeric_code">554</field>
+	</record>
+
+	<record id="base.NZD" model="res.currency">
+	    <field name="full_name">New Zealand Dollar</field>
+	    <field name="numeric_code">554</field>
+	</record>
+
+	<record id="base.OMR" model="res.currency">
+	    <field name="full_name">Rial Omani</field>
+	    <field name="numeric_code">512</field>
+	</record>
+
+	<record id="base.PAB" model="res.currency">
+	    <field name="full_name">Balboa</field>
+	    <field name="numeric_code">590</field>
+	</record>
+
+	<record id="base.PEN" model="res.currency">
+	    <field name="full_name">Sol</field>
+	    <field name="numeric_code">604</field>
+	</record>
+
+	<record id="base.PEN" model="res.currency">
+	    <field name="full_name">Nuevo Sol </field>
+	    <field name="numeric_code">604</field>
+	</record>
+
+	<record id="base.PGK" model="res.currency">
+	    <field name="full_name">Kina</field>
+	    <field name="numeric_code">598</field>
+	</record>
+
+	<record id="base.PHP" model="res.currency">
+	    <field name="full_name">Philippine Peso</field>
+	    <field name="numeric_code">608</field>
+	</record>
+
+	<record id="base.PKR" model="res.currency">
+	    <field name="full_name">Pakistan Rupee</field>
+	    <field name="numeric_code">586</field>
+	</record>
+
+	<record id="base.PLN" model="res.currency">
+	    <field name="full_name">Zloty</field>
+	    <field name="numeric_code">985</field>
+	</record>
+
+	<record id="base.PLZ" model="res.currency">
+	    <field name="full_name">Zloty</field>
+	    <field name="numeric_code">616</field>
+	</record>
+
+	<record id="base.PYG" model="res.currency">
+	    <field name="full_name">Guarani</field>
+	    <field name="numeric_code">600</field>
+	</record>
+
+	<record id="base.QAR" model="res.currency">
+	    <field name="full_name">Qatari Rial</field>
+	    <field name="numeric_code">634</field>
+	</record>
+
+	<record id="base.RON" model="res.currency">
+	    <field name="full_name">Romanian Leu</field>
+	    <field name="numeric_code">946</field>
+	</record>
+
+	<record id="base.RON" model="res.currency">
+	    <field name="full_name">New Romanian Leu </field>
+	    <field name="numeric_code">946</field>
+	</record>
+
+	<record id="base.RSD" model="res.currency">
+	    <field name="full_name">Serbian Dinar</field>
+	    <field name="numeric_code">941</field>
+	</record>
+
+	<record id="base.RUB" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">643</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RUR" model="res.currency">
+	    <field name="full_name">Russian Ruble</field>
+	    <field name="numeric_code">810</field>
+	</record>
+
+	<record id="base.RWF" model="res.currency">
+	    <field name="full_name">Rwanda Franc</field>
+	    <field name="numeric_code">646</field>
+	</record>
+
+	<record id="base.SAR" model="res.currency">
+	    <field name="full_name">Saudi Riyal</field>
+	    <field name="numeric_code">682</field>
+	</record>
+
+	<record id="base.SBD" model="res.currency">
+	    <field name="full_name">Solomon Islands Dollar</field>
+	    <field name="numeric_code">90</field>
+	</record>
+
+	<record id="base.SCR" model="res.currency">
+	    <field name="full_name">Seychelles Rupee</field>
+	    <field name="numeric_code">690</field>
+	</record>
+
+	<record id="base.SDD" model="res.currency">
+	    <field name="full_name">Sudanese Dinar</field>
+	    <field name="numeric_code">736</field>
+	</record>
+
+	<record id="base.SDG" model="res.currency">
+	    <field name="full_name">Sudanese Pound</field>
+	    <field name="numeric_code">938</field>
+	</record>
+
+	<record id="base.SDG" model="res.currency">
+	    <field name="full_name">Sudanese Pound</field>
+	    <field name="numeric_code">938</field>
+	</record>
+
+	<record id="base.SEK" model="res.currency">
+	    <field name="full_name">Swedish Krona</field>
+	    <field name="numeric_code">752</field>
+	</record>
+
+	<record id="base.SGD" model="res.currency">
+	    <field name="full_name">Singapore Dollar</field>
+	    <field name="numeric_code">702</field>
+	</record>
+
+	<record id="base.SHP" model="res.currency">
+	    <field name="full_name">Saint Helena Pound</field>
+	    <field name="numeric_code">654</field>
+	</record>
+
+	<record id="base.SKK" model="res.currency">
+	    <field name="full_name">Slovak Koruna</field>
+	    <field name="numeric_code">703</field>
+	</record>
+
+	<record id="base.SLL" model="res.currency">
+	    <field name="full_name">Leone</field>
+	    <field name="numeric_code">694</field>
+	</record>
+
+	<record id="base.SRG" model="res.currency">
+	    <field name="full_name">Surinam Guilder</field>
+	    <field name="numeric_code">740</field>
+	</record>
+
+	<record id="base.SSP" model="res.currency">
+	    <field name="full_name">South Sudanese Pound</field>
+	    <field name="numeric_code">728</field>
+	</record>
+
+	<record id="base.STD" model="res.currency">
+	    <field name="full_name">Dobra</field>
+	    <field name="numeric_code">678</field>
+	</record>
+
+	<record id="base.SVC" model="res.currency">
+	    <field name="full_name">El Salvador Colon</field>
+	    <field name="numeric_code">222</field>
+	</record>
+
+	<record id="base.SYP" model="res.currency">
+	    <field name="full_name">Syrian Pound</field>
+	    <field name="numeric_code">760</field>
+	</record>
+
+	<record id="base.SZL" model="res.currency">
+	    <field name="full_name">Lilangeni</field>
+	    <field name="numeric_code">748</field>
+	</record>
+
+	<record id="base.THB" model="res.currency">
+	    <field name="full_name">Baht</field>
+	    <field name="numeric_code">764</field>
+	</record>
+
+	<record id="base.TJS" model="res.currency">
+	    <field name="full_name">Somoni</field>
+	    <field name="numeric_code">972</field>
+	</record>
+
+	<record id="base.TMM" model="res.currency">
+	    <field name="full_name">Turkmenistan Manat</field>
+	    <field name="numeric_code">795</field>
+	</record>
+
+	<record id="base.TND" model="res.currency">
+	    <field name="full_name">Tunisian Dinar</field>
+	    <field name="numeric_code">788</field>
+	</record>
+
+	<record id="base.TOP" model="res.currency">
+	    <field name="full_name">Pa’anga</field>
+	    <field name="numeric_code">776</field>
+	</record>
+
+	<record id="base.TRY" model="res.currency">
+	    <field name="full_name">Turkish Lira</field>
+	    <field name="numeric_code">949</field>
+	</record>
+
+	<record id="base.TRY" model="res.currency">
+	    <field name="full_name">New Turkish Lira</field>
+	    <field name="numeric_code">949</field>
+	</record>
+
+	<record id="base.TTD" model="res.currency">
+	    <field name="full_name">Trinidad and Tobago Dollar</field>
+	    <field name="numeric_code">780</field>
+	</record>
+
+	<record id="base.TWD" model="res.currency">
+	    <field name="full_name">New Taiwan Dollar</field>
+	    <field name="numeric_code">901</field>
+	</record>
+
+	<record id="base.TZS" model="res.currency">
+	    <field name="full_name">Tanzanian Shilling</field>
+	    <field name="numeric_code">834</field>
+	</record>
+
+	<record id="base.UAH" model="res.currency">
+	    <field name="full_name">Hryvnia</field>
+	    <field name="numeric_code">980</field>
+	</record>
+
+	<record id="base.UGX" model="res.currency">
+	    <field name="full_name">Uganda Shilling</field>
+	    <field name="numeric_code">800</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.USD" model="res.currency">
+	    <field name="full_name">US Dollar</field>
+	    <field name="numeric_code">840</field>
+	</record>
+
+	<record id="base.UYU" model="res.currency">
+	    <field name="full_name">Peso Uruguayo</field>
+	    <field name="numeric_code">858</field>
+	</record>
+
+	<record id="base.UZS" model="res.currency">
+	    <field name="full_name">Uzbekistan Sum</field>
+	    <field name="numeric_code">860</field>
+	</record>
+
+	<record id="base.VEF" model="res.currency">
+	    <field name="full_name">Bolívar</field>
+	    <field name="numeric_code">937</field>
+	</record>
+
+	<record id="base.VEF" model="res.currency">
+	    <field name="full_name">Bolivar Fuerte</field>
+	    <field name="numeric_code">937</field>
+	</record>
+
+	<record id="base.VEF" model="res.currency">
+	    <field name="full_name">Bolivar</field>
+	    <field name="numeric_code">937</field>
+	</record>
+
+	<record id="base.VND" model="res.currency">
+	    <field name="full_name">Dong</field>
+	    <field name="numeric_code">704</field>
+	</record>
+
+	<record id="base.VUV" model="res.currency">
+	    <field name="full_name">Vatu</field>
+	    <field name="numeric_code">548</field>
+	</record>
+
+	<record id="base.WST" model="res.currency">
+	    <field name="full_name">Tala</field>
+	    <field name="numeric_code">882</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XAF" model="res.currency">
+	    <field name="full_name">CFA Franc BEAC</field>
+	    <field name="numeric_code">950</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XCD" model="res.currency">
+	    <field name="full_name">East Caribbean Dollar</field>
+	    <field name="numeric_code">951</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XOF" model="res.currency">
+	    <field name="full_name">CFA Franc BCEAO</field>
+	    <field name="numeric_code">952</field>
+	</record>
+
+	<record id="base.XPF" model="res.currency">
+	    <field name="full_name">CFP Franc</field>
+	    <field name="numeric_code">953</field>
+	</record>
+
+	<record id="base.XPF" model="res.currency">
+	    <field name="full_name">CFP Franc</field>
+	    <field name="numeric_code">953</field>
+	</record>
+
+	<record id="base.XPF" model="res.currency">
+	    <field name="full_name">CFP Franc</field>
+	    <field name="numeric_code">953</field>
+	</record>
+
+	<record id="base.YER" model="res.currency">
+	    <field name="full_name">Yemeni Rial</field>
+	    <field name="numeric_code">886</field>
+	</record>
+
+	<record id="base.YUM" model="res.currency">
+	    <field name="full_name">New Dinar</field>
+	    <field name="numeric_code">891</field>
+	</record>
+
+	<record id="base.ZAR" model="res.currency">
+	    <field name="full_name">Rand</field>
+	    <field name="numeric_code">710</field>
+	</record>
+
+	<record id="base.ZAR" model="res.currency">
+	    <field name="full_name">Rand</field>
+	    <field name="numeric_code">710</field>
+	</record>
+
+	<record id="base.ZAR" model="res.currency">
+	    <field name="full_name">Rand</field>
+	    <field name="numeric_code">710</field>
+	</record>
+
+	<record id="base.ZMK" model="res.currency">
+	    <field name="full_name">Zambian Kwacha</field>
+	    <field name="numeric_code">894</field>
+	</record>
+
+	<record id="base.ZRZ" model="res.currency">
+	    <field name="full_name">Zaire</field>
+	    <field name="numeric_code">180</field>
+	</record>
+
+	<record id="base.ZWD" model="res.currency">
+	    <field name="full_name">Zimbabwe Dollar (old)</field>
+	    <field name="numeric_code">716</field>
+	</record>
+
+	<record id="base.ZWD" model="res.currency">
+	    <field name="full_name">Zimbabwe Dollar</field>
+	    <field name="numeric_code">716</field>
+	</record>
+
+
+</odoo>
