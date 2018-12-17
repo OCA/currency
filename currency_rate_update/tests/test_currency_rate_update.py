@@ -1,8 +1,12 @@
 # © 2017 Comunitea
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+from importlib import invalidate_caches, reload
 
 from odoo.tests import common
 from odoo import exceptions, fields
+
+from ..services import currency_getter_interface
+from ..services.currency_getter_interface import CurrencyGetterType
 
 
 class TestCurrencyRateUpdate(common.SavepointCase):
@@ -94,3 +98,84 @@ class TestCurrencyRateUpdate(common.SavepointCase):
         currency_rates = self.env['res.currency.rate'].search(
             [('currency_id', '=', self.chf.id)])
         self.assertTrue(currency_rates)
+
+    def test_direct_rate_update_EUR_USD(self):
+        invalidate_caches()
+        reload(currency_getter_interface)
+        dict_update_service = \
+            self.env['currency.rate.update.service'].create({
+                'service': 'TSRDU',
+                'currency_to_update':
+                    [(4, self.currency.id),
+                     (4, self.env.user.company_id.currency_id.id)]
+            })
+        self.usd = self.env.ref('base.USD')
+        dict_update_service.write({
+            'currency_to_update': [(4, self.usd.id)]
+        })
+        currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.usd.id)])
+        currency_rates.unlink()
+        main_currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.env.user.company_id.currency_id.id)])
+        main_currency_rates.unlink()
+        dict_update_service.refresh_currency()
+        currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.usd.id)])
+        # Delete the test service (TSRDU) to remove it from the actual lists
+        del CurrencyGetterType.getters['TSRDU']
+        self.assertTrue(currency_rates)
+
+    def test_inverted_rate_update_EUR_USD(self):
+        invalidate_caches()
+        reload(currency_getter_interface)
+        dict_update_service = \
+            self.env['currency.rate.update.service'].create({
+                'service': 'TSRIU',
+                'currency_to_update':
+                    [(4, self.currency.id),
+                     (4, self.env.user.company_id.currency_id.id)]
+            })
+        self.usd = self.env.ref('base.USD')
+        dict_update_service.write({
+            'currency_to_update': [(4, self.usd.id)]
+        })
+        currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.usd.id)])
+        currency_rates.unlink()
+        main_currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.env.user.company_id.currency_id.id)])
+        main_currency_rates.unlink()
+        dict_update_service.refresh_currency()
+        currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.usd.id)])
+        # Delete the test service (TSRIU) to remove it from the actual lists
+        del CurrencyGetterType.getters['TSRIU']
+        self.assertTrue(currency_rates)
+
+    def test_wrong_rate_update_EUR_USD(self):
+        invalidate_caches()
+        reload(currency_getter_interface)
+        dict_update_service = \
+            self.env['currency.rate.update.service'].create({
+                'service': 'TSWRU',
+                'currency_to_update':
+                    [(4, self.currency.id),
+                     (4, self.env.user.company_id.currency_id.id)]
+            })
+        self.usd = self.env.ref('base.USD')
+        dict_update_service.write({
+            'currency_to_update': [(4, self.usd.id)]
+        })
+        currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.usd.id)])
+        currency_rates.unlink()
+        main_currency_rates = self.env['res.currency.rate'].search(
+            [('currency_id', '=', self.env.user.company_id.currency_id.id)])
+        main_currency_rates.unlink()
+        with self.assertLogs(level="ERROR") as log_catcher:
+            dict_update_service.refresh_currency()
+        # Delete the test service (TSWRU) to remove it from the actual lists
+        del CurrencyGetterType.getters['TSWRU']
+        self.assertIn(
+            'UserError("Invalid rate from TSWRU', str(log_catcher[1]))

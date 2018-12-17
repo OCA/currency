@@ -171,6 +171,30 @@ class CurrencyRateUpdateService(models.Model):
                             ('name', '=', rate_name)])
                         if not rates:
                             rate = res[curr.name]
+                            if type(rate) is dict:
+                                inverted = rate.get('inverted', None)
+                                direct = rate.get('direct', None)
+                                if inverted is None and direct is None:
+                                    raise UserError(
+                                        _(
+                                            'Invalid rate from %(provider)s '
+                                            'for %(currency)s : %(rate)s'
+                                        ) % {
+                                            'provider': self.service,
+                                            'currency': curr.name,
+                                            'rate': rate,
+                                        }
+                                    )
+                                elif inverted is None:
+                                    inverted = 1/direct
+                                elif direct is None:
+                                    direct = 1/inverted
+                            else:
+                                rate = float(rate)
+                                direct = rate
+                                inverted = 1/rate
+
+                            rate = direct
                             # Used in currency_rate_inverted module. We do
                             # not want to add a glue module for the currency
                             # update.
@@ -179,7 +203,7 @@ class CurrencyRateUpdateService(models.Model):
                                 if curr.with_context(
                                         force_company=company.id).\
                                         rate_inverted:
-                                    rate = 1/rate
+                                    rate = inverted
                             vals = {
                                 'currency_id': curr.id,
                                 'rate': rate,
