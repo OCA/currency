@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
@@ -8,11 +9,11 @@ class ResCurrency(models.Model):
     _inherit = "res.currency"
 
     monthly_rate = fields.Float(compute='_compute_current_monthly_rate',
-                                string='Current Monthly Rate', digits=(12, 6),
-                                help='The monthly rate of the currency to '
-                                     'the currency of rate 1.')
+                                string=u'Current Monthly Rate', digits=(12, 6),
+                                help=u'The monthly rate of the currency to '
+                                     u'the currency of rate 1.')
     monthly_rate_ids = fields.One2many('res.currency.rate.monthly',
-                                       'currency_id', string='Monthly rates')
+                                       'currency_id', string=u'Monthly rates')
 
     @api.multi
     def _compute_current_monthly_rate(self):
@@ -40,7 +41,9 @@ class ResCurrency(models.Model):
     def _get_conversion_rate(self, from_currency, to_currency):
         monthly = self.env.context.get('monthly_rate')
         if not monthly:
-            return super()._get_conversion_rate(from_currency, to_currency)
+            return super(ResCurrency, self)._get_conversion_rate(
+                from_currency, to_currency
+            )
         from_currency = from_currency.with_env(self.env)
         to_currency = to_currency.with_env(self.env)
         return to_currency.monthly_rate / from_currency.monthly_rate
@@ -50,7 +53,7 @@ class ResCurrencyRateMonthly(models.Model):
 
     _inherit = "res.currency.rate"
     _name = "res.currency.rate.monthly"
-    _description = "Currency monthly rate"
+    _description = u"Currency monthly rate"
 
     def _default_get_month(self):
         return fields.Date.from_string(
@@ -60,22 +63,21 @@ class ResCurrencyRateMonthly(models.Model):
         return fields.Date.from_string(
             fields.Date.context_today(self)).strftime('%Y')
 
-    name = fields.Date(compute='_compute_name', store=True, required=True,
-                       index=True)
+    name = fields.Date(compute='_compute_name', store=True, index=True)
     year = fields.Char(size=4, required=True,
                        default=lambda self: self._default_get_year())
-    month = fields.Selection([('01', 'January'),
-                              ('02', 'February'),
-                              ('03', 'March'),
-                              ('04', 'April'),
-                              ('05', 'May'),
-                              ('06', 'June'),
-                              ('07', 'July'),
-                              ('08', 'August'),
-                              ('09', 'September'),
-                              ('10', 'October'),
-                              ('11', 'November'),
-                              ('12', 'December')], required=True,
+    month = fields.Selection([('01', u'January'),
+                              ('02', u'February'),
+                              ('03', u'March'),
+                              ('04', u'April'),
+                              ('05', u'May'),
+                              ('06', u'June'),
+                              ('07', u'July'),
+                              ('08', u'August'),
+                              ('09', u'September'),
+                              ('10', u'October'),
+                              ('11', u'November'),
+                              ('12', u'December')], required=True,
                              default=lambda self: self._default_get_month())
 
     @api.depends('year', 'month')
@@ -89,7 +91,7 @@ class ResCurrencyRateMonthly(models.Model):
     # the second makes it stronger
     _sql_constraints = [
         ('unique_name_per_day', 'unique (name,currency_id,company_id)',
-         _('Only one currency monthly rate per month allowed!')),
+         _(u'Only one currency monthly rate per month allowed!')),
         ('unique_year_month', 'unique (year,month,currency_id,company_id)',
-         _('Only one currency monthly rate per month allowed!'))
+         _(u'Only one currency monthly rate per month allowed!'))
     ]

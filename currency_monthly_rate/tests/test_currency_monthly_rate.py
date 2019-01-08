@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
@@ -9,7 +10,7 @@ class TestCurrencyMonthlyRate(SavepointCase):
 
     @classmethod
     def setUpClass(cls):
-        super().setUpClass()
+        super(TestCurrencyMonthlyRate, cls).setUpClass()
 
         cls.usd = cls.env.ref('base.USD')
         cls.eur = cls.env.ref('base.EUR')
