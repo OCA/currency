@@ -67,11 +67,6 @@ msgid "Current Monthly Rate"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly_name
-msgid "Date"
-msgstr ""
-
-#. module: currency_monthly_rate
 #: selection:res.currency.rate.monthly,month:0
 msgid "December"
 msgstr ""
@@ -149,6 +144,11 @@ msgid "Monthly rates"
 msgstr ""
 
 #. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly_name
+msgid "Name"
+msgstr ""
+
+#. module: currency_monthly_rate
 #: selection:res.currency.rate.monthly,month:0
 msgid "November"
 msgstr ""
@@ -159,8 +159,8 @@ msgid "October"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: code:addons/currency_monthly_rate/models/res_currency.py:92
 #: code:addons/currency_monthly_rate/models/res_currency.py:94
+#: code:addons/currency_monthly_rate/models/res_currency.py:96
 #: sql_constraint:res.currency.rate.monthly:0
 #, python-format
 msgid "Only one currency monthly rate per month allowed!"
