@@ -9,24 +9,25 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-15 02:52+0000\n"
-"PO-Revision-Date: 2018-05-15 02:52+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2019-02-06 15:50+0000\n"
+"Last-Translator: Marta Vázquez Rodríguez <vazrodmar@gmail.com>\n"
 "Language-Team: Galician (https://www.transifex.com/oca/teams/23907/gl/)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.4\n"
 
 #. module: currency_monthly_rate
 #: selection:res.currency.rate.monthly,month:0
 msgid "April"
-msgstr ""
+msgstr "Abril"
 
 #. module: currency_monthly_rate
 #: selection:res.currency.rate.monthly,month:0
 msgid "August"
-msgstr ""
+msgstr "Agosto"
 
 #. module: currency_monthly_rate
 #: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly_create_uid
@@ -41,7 +42,7 @@ msgstr "Creado en"
 #. module: currency_monthly_rate
 #: model:ir.model,name:currency_monthly_rate.model_res_currency
 msgid "Currency"
-msgstr ""
+msgstr "Moeda"
 
 #. module: currency_monthly_rate
 #: model:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
