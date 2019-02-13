@@ -1,23 +1,31 @@
-# © 2008-2016 Camptocamp
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2008-2016 Camptocamp
+# Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 {
-    "name": "Currency Rate Update",
-    "version": "11.0.1.0.0",
-    "author": "Camptocamp,Odoo Community Association (OCA)",
-    "website": "http://camptocamp.com",
-    "license": "AGPL-3",
-    "category": "Financial Management/Configuration",
-    "depends": [
-        "base",
-        "mail",
-        "account",  # Added to ensure account security groups are present
+    'name': 'Currency Rate Update',
+    'version': '12.0.1.0.0',
+    'author':
+        'Camptocamp, '
+        'Brainbean Apps, '
+        'Odoo Community Association (OCA)',
+    'website': 'https://github.com/OCA/currency',
+    'license': 'AGPL-3',
+    'category': 'Financial Management/Configuration',
+    'summary': 'Update exchange rates using OCA modules',
+    'depends': [
+        'base',
+        'mail',
+        'account',
     ],
-    "data": [
-        "data/cron.xml",
-        "views/currency_rate_update.xml",
-        "views/res_config_settings.xml",
-        "security/rule.xml",
-        "security/ir.model.access.csv",
+    'data': [
+        'data/cron.xml',
+        'security/ir.model.access.csv',
+        'security/res_currency_rate_provider.xml',
+        'views/res_currency_rate.xml',
+        'views/res_currency_rate_provider.xml',
+        'views/res_config_settings.xml',
+        'wizards/res_currency_rate_update_wizard.xml',
     ],
-    'installable': True
+    'installable': True,
 }
