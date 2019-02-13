@@ -1,2 +1,4 @@
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+
 from . import models
-from .services.currency_getter_interface import CurrencyGetterInterface
+from . import wizards

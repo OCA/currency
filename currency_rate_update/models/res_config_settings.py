@@ -1,5 +1,6 @@
-# © 2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2016 Akretion (Alexis de Lattre <alexis.delattre@akretion.com>)
+# Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields
 
@@ -7,7 +8,9 @@ from odoo import models, fields
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    auto_currency_up = fields.Boolean(
-        related='company_id.auto_currency_up',
-        help='Update exchange rates automatically'
-             'from currency_rate_update module.')
+    currency_rates_autoupdate = fields.Boolean(
+        string='Automatic Currency Rates (OCA)',
+        related='company_id.currency_rates_autoupdate',
+        readonly=False,
+        help='Enable regular automatic currency rates updates',
+    )
