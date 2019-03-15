@@ -1,7 +1,7 @@
 # Copyright 2018 Camptocamp SA
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields, api, _
+from odoo import models, fields, api
 
 
 class ResCurrency(models.Model):
@@ -15,8 +15,9 @@ class ResCurrency(models.Model):
                                        'currency_id', string='Monthly rates')
 
     @api.multi
-    def _compute_current_monthly_rate(self):
-        date = self.env.context.get('date') or fields.Date.today()
+    def _select_currencies(self, date=None):
+        if not date:
+            date = self.env.context.get('date') or fields.Date.today()
         company_id = self.env.context.get('company_id') or self.env[
             'res.users']._get_company().id
         # the subquery selects the first rate before 'date' for the given
@@ -31,19 +32,33 @@ class ResCurrency(models.Model):
                                  LIMIT 1) AS rate
                    FROM res_currency c
                    WHERE c.id IN %s"""
-        self._cr.execute(query, (date, company_id, tuple(self.ids)))
-        currency_rates = dict(self._cr.fetchall())
+        self.env.cr.execute(query, (date, company_id, tuple(self.ids)))
+        return dict(self._cr.fetchall())
+
+    @api.multi
+    def _compute_current_monthly_rate(self):
+        currency_rates = self._select_currencies()
         for currency in self:
-            currency.monthly_rate = currency_rates.get(currency.id) or 1.0
+                currency.monthly_rate = currency_rates.get(currency.id) or 1.0
+
+    @api.multi
+    def _get_current_monthly_rate(self, date):
+        # to be consistent with odoo currency behavior we add direct
+        # interaction with date parameter
+        self.ensure_one()
+        currency_rates = self._select_currencies(date)
+        return currency_rates.get(self.id) or 1.0
 
     @api.model
-    def _get_conversion_rate(self, from_currency, to_currency):
+    def _get_conversion_rate(self, from_currency, to_currency, company, date):
         monthly = self.env.context.get('monthly_rate')
         if not monthly:
-            return super()._get_conversion_rate(from_currency, to_currency)
+            return super()._get_conversion_rate(from_currency, to_currency,
+                                                company, date)
         from_currency = from_currency.with_env(self.env)
         to_currency = to_currency.with_env(self.env)
-        return to_currency.monthly_rate / from_currency.monthly_rate
+        return (to_currency._get_current_monthly_rate(date)
+                / from_currency._get_current_monthly_rate(date))
 
 
 class ResCurrencyRateMonthly(models.Model):
@@ -89,7 +104,7 @@ class ResCurrencyRateMonthly(models.Model):
     # the second makes it stronger
     _sql_constraints = [
         ('unique_name_per_day', 'unique (name,currency_id,company_id)',
-         _('Only one currency monthly rate per month allowed!')),
+         'Only one currency monthly rate per month allowed!'),
         ('unique_year_month', 'unique (year,month,currency_id,company_id)',
-         _('Only one currency monthly rate per month allowed!'))
+         'Only one currency monthly rate per month allowed!')
     ]
