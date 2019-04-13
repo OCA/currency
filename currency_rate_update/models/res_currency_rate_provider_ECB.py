@@ -19,9 +19,11 @@ class ResCurrencyRateProviderECB(models.Model):
         selection_add=[('ECB', 'European Central Bank')],
     )
 
-    @api.model
-    def _get_supported_currencies(self, service):
-        if service == 'ECB':
+    @api.multi
+    def _get_supported_currencies(self):
+        self.ensure_one()
+
+        if self.service == 'ECB':
             # https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip
             return \
                 [
@@ -32,12 +34,13 @@ class ResCurrencyRateProviderECB(models.Model):
                     'INR', 'KRW', 'MXN', 'MYR', 'NZD', 'PHP', 'SGD', 'THB',
                     'ZAR',
                 ]
-        return super()._get_supported_currencies(service)
+        return super()._get_supported_currencies()
 
-    @api.model
-    def _obtain_rates(self, service, base_currency, currencies, date_from,
-                      date_to):
-        if service == 'ECB':
+    @api.multi
+    def _obtain_rates(self, base_currency, currencies, date_from, date_to):
+        self.ensure_one()
+
+        if self.service == 'ECB':
             if base_currency != 'EUR':
                 raise UserError(_(
                     'European Central Bank is suitable only for companies'
@@ -58,8 +61,8 @@ class ResCurrencyRateProviderECB(models.Model):
 
             return handler.content
 
-        return super()._obtain_rates(service, base_currency, currencies,
-                                     date_from, date_to)
+        return super()._obtain_rates(base_currency, currencies, date_from,
+                                     date_to)
 
 
 class EcbRatesHandler(xml.sax.ContentHandler):
