@@ -123,7 +123,7 @@ class ResCurrencyRateProvider(models.Model):
                 [(
                     'name',
                     'in',
-                    self._get_supported_currencies(provider.service)
+                    provider._get_supported_currencies()
                 )],
             )
 
@@ -134,8 +134,7 @@ class ResCurrencyRateProvider(models.Model):
 
         for provider in self:
             try:
-                data = self._obtain_rates(
-                    provider.service,
+                data = provider._obtain_rates(
                     provider.company_id.currency_id.name,
                     provider.currency_ids.mapped('name'),
                     date_from,
@@ -285,11 +284,14 @@ class ResCurrencyRateProvider(models.Model):
 
         _logger.info('Scheduled currency rates update complete.')
 
-    @api.model
-    def _get_supported_currencies(self, service):
+    @api.multi
+    def _get_supported_currencies(self):
+        self.ensure_one()
+
         return []
 
-    @api.model
-    def _obtain_rates(self, service, base_currency, currencies, date_from,
-                      date_to):
+    @api.multi
+    def _obtain_rates(self, base_currency, currencies, date_from, date_to):
+        self.ensure_one()
+
         return {}
