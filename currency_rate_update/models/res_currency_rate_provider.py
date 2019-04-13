@@ -141,6 +141,7 @@ class ResCurrencyRateProvider(models.Model):
                     date_to
                 ).items()
             except Exception as e:
+                _logger.error('Currency Rate Provider Failure: %s' % e)
                 provider.message_post(
                     body=str(e),
                     subject=_('Currency Rate Provider Failure'),
