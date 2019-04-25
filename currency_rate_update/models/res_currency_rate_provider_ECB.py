@@ -22,47 +22,48 @@ class ResCurrencyRateProviderECB(models.Model):
     @api.multi
     def _get_supported_currencies(self):
         self.ensure_one()
+        if self.service != 'ECB':
+            return super()._get_supported_currencies()  # pragma: no cover
 
-        if self.service == 'ECB':
-            # https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip
-            return \
-                [
-                    'USD', 'JPY', 'BGN', 'CYP', 'CZK', 'DKK', 'EEK', 'GBP',
-                    'HUF', 'LTL', 'LVL', 'MTL', 'PLN', 'ROL', 'RON', 'SEK',
-                    'SIT', 'SKK', 'CHF', 'ISK', 'NOK', 'HRK', 'RUB', 'TRL',
-                    'TRY', 'AUD', 'BRL', 'CAD', 'CNY', 'HKD', 'IDR', 'ILS',
-                    'INR', 'KRW', 'MXN', 'MYR', 'NZD', 'PHP', 'SGD', 'THB',
-                    'ZAR',
-                ]
-        return super()._get_supported_currencies()  # pragma: no cover
+        # List of currencies obrained from:
+        # https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip
+        return \
+            [
+                'USD', 'JPY', 'BGN', 'CYP', 'CZK', 'DKK', 'EEK', 'GBP',
+                'HUF', 'LTL', 'LVL', 'MTL', 'PLN', 'ROL', 'RON', 'SEK',
+                'SIT', 'SKK', 'CHF', 'ISK', 'NOK', 'HRK', 'RUB', 'TRL',
+                'TRY', 'AUD', 'BRL', 'CAD', 'CNY', 'HKD', 'IDR', 'ILS',
+                'INR', 'KRW', 'MXN', 'MYR', 'NZD', 'PHP', 'SGD', 'THB',
+                'ZAR',
+            ]
 
     @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
+        if self.service != 'ECB':
+            return super()._obtain_rates(base_currency, currencies, date_from,
+                                         date_to)  # pragma: no cover
 
-        if self.service == 'ECB':
-            if base_currency != 'EUR':  # pragma: no cover
-                raise UserError(_(
-                    'European Central Bank is suitable only for companies'
-                    ' with EUR as base currency!'
-                ))
+        # This provider only serves EUR-to-??? exchange rates
+        if base_currency != 'EUR':  # pragma: no cover
+            raise UserError(_(
+                'European Central Bank is suitable only for companies'
+                ' with EUR as base currency!'
+            ))
 
-            url = 'https://www.ecb.europa.eu/stats/eurofxref'
-            if date_from == date_to and date_from == date.today():
-                url = url + '/eurofxref-daily.xml'
-            elif (date.today() - date_from) / timedelta(days=90) < 1.0:
-                url = url + '/eurofxref-hist-90d.xml'
-            else:
-                url = url + '/eurofxref-hist.xml'
+        # Depending on the date range, different URLs are used
+        url = 'https://www.ecb.europa.eu/stats/eurofxref'
+        if date_from == date_to and date_from == date.today():
+            url = url + '/eurofxref-daily.xml'
+        elif (date.today() - date_from) / timedelta(days=90) < 1.0:
+            url = url + '/eurofxref-hist-90d.xml'
+        else:
+            url = url + '/eurofxref-hist.xml'
 
-            handler = EcbRatesHandler(currencies, date_from, date_to)
-            with urlopen(url) as response:
-                xml.sax.parse(response, handler)
-
-            return handler.content
-
-        return super()._obtain_rates(base_currency, currencies, date_from,
-                                     date_to)  # pragma: no cover
+        handler = EcbRatesHandler(currencies, date_from, date_to)
+        with urlopen(url) as response:
+            xml.sax.parse(response, handler)
+        return handler.content
 
 
 class EcbRatesHandler(xml.sax.ContentHandler):
@@ -80,7 +81,6 @@ class EcbRatesHandler(xml.sax.ContentHandler):
                 all([x in attrs for x in ['currency', 'rate']]):
             currency = attrs['currency']
             rate = attrs['rate']
-
             if (self.date_from is None or self.date >= self.date_from) and \
                     (self.date_to is None or self.date <= self.date_to) and \
                     currency in self.currencies:
