@@ -3,9 +3,20 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from dateutil.relativedelta import relativedelta
+from unittest import mock
 
 from odoo.tests import common
 from odoo import fields
+
+_module_ns = 'odoo.addons.currency_rate_update'
+_file_ns = (
+    _module_ns
+    + '.models.res_currency_rate_provider_ECB'
+)
+_ECB_provider_class = (
+    _file_ns
+    + '.ResCurrencyRateProviderECB'
+)
 
 
 class TestCurrencyRateUpdate(common.SavepointCase):
@@ -34,6 +45,16 @@ class TestCurrencyRateUpdate(common.SavepointCase):
             ],
         })
         self.CurrencyRate.search([]).unlink()
+
+    def test_supported_currencies_ECB(self):
+        self.ecb_provider._get_supported_currencies()
+
+    def test_error_ECB(self):
+        with mock.patch(
+            _ECB_provider_class + '._obtain_rates',
+            return_value=None,
+        ):
+            self.ecb_provider._update(self.today, self.today)
 
     def test_update_ECB_today(self):
         """No checks are made since today may not be a banking day"""

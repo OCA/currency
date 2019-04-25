@@ -34,14 +34,14 @@ class ResCurrencyRateProviderECB(models.Model):
                     'INR', 'KRW', 'MXN', 'MYR', 'NZD', 'PHP', 'SGD', 'THB',
                     'ZAR',
                 ]
-        return super()._get_supported_currencies()
+        return super()._get_supported_currencies()  # pragma: no cover
 
     @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
 
         if self.service == 'ECB':
-            if base_currency != 'EUR':
+            if base_currency != 'EUR':  # pragma: no cover
                 raise UserError(_(
                     'European Central Bank is suitable only for companies'
                     ' with EUR as base currency!'
@@ -62,7 +62,7 @@ class ResCurrencyRateProviderECB(models.Model):
             return handler.content
 
         return super()._obtain_rates(base_currency, currencies, date_from,
-                                     date_to)
+                                     date_to)  # pragma: no cover
 
 
 class EcbRatesHandler(xml.sax.ContentHandler):
