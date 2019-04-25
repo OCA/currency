@@ -141,7 +141,7 @@ class ResCurrencyRateProvider(models.Model):
                     date_to
                 ).items()
             except Exception as e:
-                _logger.error('Currency Rate Provider Failure: %s' % e)
+                _logger.warning('Currency Rate Provider Failure: %s' % e)
                 provider.message_post(
                     body=str(e),
                     subject=_('Currency Rate Provider Failure'),
@@ -286,13 +286,13 @@ class ResCurrencyRateProvider(models.Model):
         _logger.info('Scheduled currency rates update complete.')
 
     @api.multi
-    def _get_supported_currencies(self):
+    def _get_supported_currencies(self):  # pragma: no cover
         self.ensure_one()
-
         return []
 
     @api.multi
-    def _obtain_rates(self, base_currency, currencies, date_from, date_to):
+    def _obtain_rates(
+        self, base_currency, currencies, date_from, date_to
+    ):  # pragma: no cover
         self.ensure_one()
-
         return {}
