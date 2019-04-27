@@ -161,7 +161,7 @@ msgid "European Central Bank"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider_ECB.py:42
+#: code:addons/currency_rate_update/models/res_currency_rate_provider_ECB.py:49
 #, python-format
 msgid "European Central Bank is suitable only for companies with EUR as base currency!"
 msgstr ""
