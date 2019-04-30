@@ -94,20 +94,24 @@ class TestCurrencyRateUpdate(common.SavepointCase):
         ]).unlink()
 
     def test_update_ECB_scheduled(self):
-        self.ecb_provider.next_run = fields.Date.today()
+        self.ecb_provider.next_run = (
+            fields.Date.today() - relativedelta(days=15)
+        )
         self.ecb_provider._scheduled_update()
 
         rates = self.CurrencyRate.search([
             ('currency_id', '=', self.usd_currency.id),
-        ])
-        self.assertEquals(len(rates), 1)
+        ], limit=1)
+        self.assertTrue(rates)
 
         self.CurrencyRate.search([
             ('currency_id', '=', self.usd_currency.id),
         ]).unlink()
 
     def test_update_ECB_no_base_update(self):
-        self.ecb_provider.next_run = fields.Date.today()
+        self.ecb_provider.next_run = (
+            fields.Date.today() - relativedelta(days=15)
+        )
         self.ecb_provider._scheduled_update()
 
         rates = self.CurrencyRate.search([
@@ -116,8 +120,8 @@ class TestCurrencyRateUpdate(common.SavepointCase):
                 self.usd_currency.id,
                 self.eur_currency.id,
             ]),
-        ])
-        self.assertEquals(len(rates), 1)
+        ], limit=1)
+        self.assertTrue(rates)
 
         self.CurrencyRate.search([
             ('company_id', '=', self.company.id),
