@@ -56,6 +56,9 @@
                             </div>
                         </group>
                         <group>
+                            <field name="last_successful_run"/>
+                        </group>
+                        <group>
                             <field name="next_run"/>
                         </group>
                         <group>

@@ -69,6 +69,9 @@ class ResCurrencyRateProvider(models.Model):
         string='Update Schedule',
         compute='_compute_update_schedule',
     )
+    last_successful_run = fields.Date(
+        string='Last successful update',
+    )
     next_run = fields.Date(
         string='Next scheduled update',
         default=fields.Date.today,
@@ -199,6 +202,7 @@ class ResCurrencyRateProvider(models.Model):
                         })
 
             if self.env.context.get('scheduled'):
+                provider.last_successful_run = provider.next_run
                 provider.next_run = (
                     datetime.combine(
                         provider.next_run,
@@ -268,19 +272,22 @@ class ResCurrencyRateProvider(models.Model):
     def _scheduled_update(self):
         _logger.info('Scheduled currency rates update...')
 
-        today = fields.Date.today()
         providers = self.search([
             ('company_id.currency_rates_autoupdate', '=', True),
             ('active', '=', True),
-            ('next_run', '<=', today),
+            ('next_run', '<=', fields.Date.today()),
         ])
         if providers:
             _logger.info('Scheduled currency rates update of: %s' % ', '.join(
                 providers.mapped('name')
             ))
             for provider in providers.with_context({'scheduled': True}):
-                date_from = today - provider._get_next_run_period()
-                date_to = today
+                date_from = (
+                    provider.last_successful_run + relativedelta(days=1)
+                ) if provider.last_successful_run else (
+                    provider.next_run - provider._get_next_run_period()
+                )
+                date_to = provider.next_run
                 provider._update(date_from, date_to, newest_only=True)
 
         _logger.info('Scheduled currency rates update complete.')
