@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo12-addon-currency_monthly_rate',
         'odoo12-addon-currency_rate_update',
+        'odoo12-addon-currency_rate_update_oxr',
     ],
     classifiers=[
         'Programming Language :: Python',
