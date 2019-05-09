@@ -293,6 +293,11 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "OpenExchangeRates.org"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__provider_id
 msgid "Provider"
