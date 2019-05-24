@@ -1,0 +1,50 @@
+---Fields in module 'currency_rate_update'---
+currency_rate_update / res.company              / auto_currency_up (boolean)    : was renamed to currency_rates_autoupdate [nothing to do]
+# DONE: pre-migration: renamed fields
+
+currency_rate_update / res.currency.rate        / message_follower_ids (one2many): NEW relation: mail.followers
+currency_rate_update / res.currency.rate        / message_ids (one2many)        : NEW relation: mail.message
+currency_rate_update / res.currency.rate        / message_main_attachment_id (many2one): NEW relation: ir.attachment
+currency_rate_update / res.currency.rate        / provider_id (many2one)        : NEW relation: res.currency.rate.provider
+currency_rate_update / res.currency.rate        / website_message_ids (one2many): NEW relation: mail.message
+currency_rate_update / res.currency.rate.provider / active (boolean)              : NEW
+currency_rate_update / res.currency.rate.provider / company_id (many2one)         : NEW relation: res.company, required: required, req_default: function
+currency_rate_update / res.currency.rate.provider / currency_ids (many2many)      : NEW relation: res.currency
+currency_rate_update / res.currency.rate.provider / interval_number (integer)     : NEW required: required, req_default: function
+currency_rate_update / res.currency.rate.provider / interval_type (selection)     : NEW required: required, selection_keys: ['days', 'months', 'weeks'], req_default: function
+currency_rate_update / res.currency.rate.provider / last_successful_run (date)    : NEW
+currency_rate_update / res.currency.rate.provider / message_follower_ids (one2many): NEW relation: mail.followers
+currency_rate_update / res.currency.rate.provider / message_ids (one2many)        : NEW relation: mail.message
+currency_rate_update / res.currency.rate.provider / message_main_attachment_id (many2one): NEW relation: ir.attachment
+currency_rate_update / res.currency.rate.provider / name (char)                   : NEW
+currency_rate_update / res.currency.rate.provider / next_run (date)               : NEW required: required, req_default: function
+currency_rate_update / res.currency.rate.provider / service (selection)           : NEW required: required, selection_keys: ['ECB']
+currency_rate_update / res.currency.rate.provider / website_message_ids (one2many): NEW relation: mail.message
+# NOTHING TO DO
+
+---XML records in module 'currency_rate_update'---
+NEW ir.actions.act_window: currency_rate_update.action_res_currency_rate_provider
+DEL ir.actions.act_window: currency_rate_update.currency_rate_update_action
+NEW ir.actions.server: currency_rate_update.action_res_currency_rate_provider_update_wizard
+NEW ir.cron: currency_rate_update.ir_cron_currency_rates_update_every_day
+DEL ir.cron: currency_rate_update.ir_cron_currency_update_every_day
+NEW ir.model.access: currency_rate_update.access_res_currency_rate_update_service_admin
+NEW ir.model.access: currency_rate_update.access_res_currency_rate_update_service_manager
+DEL ir.model.access: currency_rate_update.access_account_currency_rate_update_service_financial
+DEL ir.model.access: currency_rate_update.access_account_currency_rate_update_service_settings
+NEW ir.ui.menu: currency_rate_update.menu_res_currency_rate_provider
+DEL ir.ui.menu: currency_rate_update.currency_rate_update_menu
+NEW ir.ui.view: currency_rate_update.res_config_settings_view_form
+NEW ir.ui.view: currency_rate_update.res_currency_rate_provider_filter
+NEW ir.ui.view: currency_rate_update.res_currency_rate_provider_form_view
+NEW ir.ui.view: currency_rate_update.res_currency_rate_provider_tree_view
+NEW ir.ui.view: currency_rate_update.res_currency_rate_update_wizard_form
+NEW ir.ui.view: currency_rate_update.view_currency_rate_form
+DEL ir.ui.view: currency_rate_update.currency_rate_update_form
+DEL ir.ui.view: currency_rate_update.currency_rate_update_tree
+DEL ir.ui.view: currency_rate_update.view_res_config_settings
+# NOTHING TO DO
+
+NEW ir.rule: currency_rate_update.res_currency_rate_provider_multicompany (noupdate)
+DEL ir.rule: currency_rate_update.currency_rate_update_service_multicompany_rule (noupdate)
+# DONE: pre-migration: renamed xmlids
