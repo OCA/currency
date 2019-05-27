@@ -11,19 +11,6 @@
         </field>
     </record>
 
-    <record id="view_currency_rate_monthly_form" model="ir.ui.view">
-        <field name="name">res.currency.rate.monthly.form</field>
-        <field name="model">res.currency.rate.monthly</field>
-        <field name="arch" type="xml">
-            <form string="Currency Monthly Rates">
-                <field name="year"/>
-                <field name="month"/>
-                <field name="rate"/>
-                <field name="company_id" groups="base.group_multi_company"/>
-            </form>
-        </field>
-    </record>
-
     <record id="view_currency_rate_monthly_tree" model="ir.ui.view">
         <field name="name">res.currency.rate.monthly.tree</field>
         <field name="model">res.currency.rate.monthly</field>
