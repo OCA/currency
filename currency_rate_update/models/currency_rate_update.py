@@ -129,6 +129,7 @@ class CurrencyRateUpdateService(models.Model):
     def refresh_currency(self):
         """Refresh the currencies rates !!for all companies now"""
         rate_obj = self.env['res.currency.rate']
+        ir_config_parameter_obj = self.env['ir.config_parameter'].sudo()
         for srv in self:
             _logger.info(
                 'Starting to refresh currencies with service %s (company: %s)',
@@ -154,11 +155,26 @@ class CurrencyRateUpdateService(models.Model):
                     # and return a dict of rate
                     getter = CurrencyGetterType.get(srv.service)
                     curr_to_fetch = [x.name for x in srv.currency_to_update]
-                    res, log_info = getter.get_updated_currency(
-                        curr_to_fetch,
-                        main_currency.name,
-                        srv.max_delta_days
-                        )
+                    service_parameters = getattr(
+                        getter,'service_parameters', False)
+                    if service_parameters:
+                        kwargs = {}
+                        for param in service_parameters:
+                            param_value = ir_config_parameter_obj.get_param(
+                                param)
+                            kwargs.update({param:param_value})
+                        res, log_info = getter.get_updated_currency(
+                            curr_to_fetch,
+                            main_currency.name,
+                            srv.max_delta_days,
+                            **kwargs
+                            )
+                    else:
+                        res, log_info = getter.get_updated_currency(
+                            curr_to_fetch,
+                            main_currency.name,
+                            srv.max_delta_days
+                            )
                     rate_name = \
                         fields.Datetime.to_string(datetime.utcnow().replace(
                             hour=0, minute=0, second=0, microsecond=0))
