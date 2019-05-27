@@ -34,7 +34,6 @@ class TestAccountFxSpot(common.TransactionCase):
                 "name": "Journal Company Currency Test",
                 "code": "TESTC",
                 "type": "bank",
-                "currency_id": self.company.currency_id.id,
                 "default_debit_account_id": acc_curr_c.id,
                 "default_credit_account_id": acc_curr_c.id,
             })
@@ -101,7 +100,8 @@ class TestAccountFxSpot(common.TransactionCase):
             "payment_type": payment_type,
             "partner_type": partner_type,
             "journal_id": journal.id,
-            "currency_id": journal.currency_id.id,
+            "currency_id": journal.currency_id.id or
+            self.company.currency_id.id,
             "amount": amount,
             "payment_method_id": payment_method.id,
         }
