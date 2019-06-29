@@ -123,6 +123,12 @@ msgid "Interval number must be >= 0"
 msgstr "Aralık numarası> = 0 olmalıdır"
 
 #. module: currency_rate_update
+#: code:addons/currency_rate_update/models/currency_rate_update.py:179
+#, python-format
+msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_currency_rate_update_service___last_update
 msgid "Last Modified on"
 msgstr "Son güncellenme"
