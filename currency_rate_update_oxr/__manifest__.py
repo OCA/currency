@@ -3,7 +3,7 @@
 
 {
     'name': 'Currency Rate Update: OpenExchangeRates.org',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'Financial Management/Configuration',
     'summary': 'Update exchange rates using OpenExchangeRates.org',
     'author':
