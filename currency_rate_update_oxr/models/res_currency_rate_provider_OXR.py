@@ -33,7 +33,7 @@ class ResCurrencyRateProviderOXR(models.Model):
                 else 'Unknown error'
             )
 
-        return data.keys()
+        return list(data.keys())
 
     @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
