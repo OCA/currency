@@ -232,7 +232,7 @@ msgid "Inactive"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:229
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:236
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr ""
@@ -381,7 +381,7 @@ msgid "Units of scheduled update interval"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:173
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:175
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
