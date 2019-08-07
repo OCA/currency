@@ -4,7 +4,7 @@
 
 {
     'name': 'Currency Rate Update',
-    'version': '12.0.1.1.1',
+    'version': '12.0.1.1.2',
     'author':
         'Camptocamp, '
         'Brainbean Apps, '

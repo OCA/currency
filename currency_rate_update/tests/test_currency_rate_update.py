@@ -171,3 +171,36 @@ class TestCurrencyRateUpdate(common.SavepointCase):
         self.CurrencyRate.search([
             ('company_id', '=', self.company.id),
         ]).unlink()
+
+    def test_update_ECB_weekend(self):
+        self.ecb_provider.interval_type = 'days'
+        self.ecb_provider.interval_number = 1
+        self.ecb_provider.last_successful_run = None
+        self.ecb_provider.next_run = date(2019, 7, 1)
+
+        self.ecb_provider._scheduled_update()
+        self.ecb_provider._scheduled_update()
+        self.ecb_provider._scheduled_update()
+        self.ecb_provider._scheduled_update()
+        self.ecb_provider._scheduled_update()
+
+        self.assertEqual(
+            self.ecb_provider.last_successful_run,
+            date(2019, 7, 5)
+        )
+        self.assertEqual(
+            self.ecb_provider.next_run,
+            date(2019, 7, 6)
+        )
+
+        self.ecb_provider._scheduled_update()
+        self.ecb_provider._scheduled_update()
+
+        self.assertEqual(
+            self.ecb_provider.last_successful_run,
+            date(2019, 7, 7)
+        )
+        self.assertEqual(
+            self.ecb_provider.next_run,
+            date(2019, 7, 8)
+        )
