@@ -406,3 +406,8 @@ msgstr ""
 msgid "Week(s)"
 msgstr ""
 
+#. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
