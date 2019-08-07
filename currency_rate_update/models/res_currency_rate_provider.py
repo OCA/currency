@@ -134,7 +134,7 @@ class ResCurrencyRateProvider(models.Model):
     def _update(self, date_from, date_to, newest_only=False):
         Currency = self.env['res.currency']
         CurrencyRate = self.env['res.currency.rate']
-
+        is_scheduled = self.env.context.get('scheduled')
         for provider in self:
             try:
                 data = provider._obtain_rates(
@@ -152,6 +152,8 @@ class ResCurrencyRateProvider(models.Model):
                 continue
 
             if not data:
+                if is_scheduled:
+                    provider._schedule_next_run()
                 continue
             if newest_only:
                 data = [max(
@@ -201,14 +203,19 @@ class ResCurrencyRateProvider(models.Model):
                             'provider_id': provider.id,
                         })
 
-            if self.env.context.get('scheduled'):
-                provider.last_successful_run = provider.next_run
-                provider.next_run = (
-                    datetime.combine(
-                        provider.next_run,
-                        time.min
-                    ) + provider._get_next_run_period()
-                ).date()
+            if is_scheduled:
+                provider._schedule_next_run()
+
+    @api.multi
+    def _schedule_next_run(self):
+        self.ensure_one()
+        self.last_successful_run = self.next_run
+        self.next_run = (
+            datetime.combine(
+                self.next_run,
+                time.min
+            ) + self._get_next_run_period()
+        ).date()
 
     @api.multi
     def _process_rate(self, currency, rate):
