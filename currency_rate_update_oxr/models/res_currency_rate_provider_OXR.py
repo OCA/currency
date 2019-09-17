@@ -103,6 +103,6 @@ class ResCurrencyRateProviderOXR(models.Model):
         request = urllib.request.Request(url)
         request.add_header(
             'Authorization',
-            'Bearer %s' % self.company_id.openexchangerates_app_id
+            'Token %s' % self.company_id.openexchangerates_app_id
         )
         return urllib.request.urlopen(request)
