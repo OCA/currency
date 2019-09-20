@@ -67,6 +67,11 @@ msgid "Source Service"
 msgstr ""
 
 #. module: currency_rate_update_oxr
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
+#. module: currency_rate_update_oxr
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_oxr.res_config_settings_view_form
 msgid "credentials"
 msgstr ""
