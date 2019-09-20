@@ -12,6 +12,7 @@ setuptools.setup(
         'odoo12-addon-currency_rate_inverted',
         'odoo12-addon-currency_rate_update',
         'odoo12-addon-currency_rate_update_oxr',
+        'odoo12-addon-currency_rate_update_xe',
     ],
     classifiers=[
         'Programming Language :: Python',
