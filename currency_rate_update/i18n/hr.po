@@ -436,6 +436,11 @@ msgstr ""
 msgid "Week(s)"
 msgstr "Tjedan(a)"
 
+#. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
 #~ msgid "Currency update frequency"
 #~ msgstr "Frekvencija ažuriranja tečajna"
 
