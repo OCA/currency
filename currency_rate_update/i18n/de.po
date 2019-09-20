@@ -429,6 +429,11 @@ msgstr ""
 msgid "Week(s)"
 msgstr "Woche(n)"
 
+#. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
 #~ msgid "Max delta days"
 #~ msgstr "Höchsttagesabweichung"
 
