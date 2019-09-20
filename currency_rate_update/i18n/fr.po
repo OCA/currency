@@ -446,6 +446,11 @@ msgstr ""
 msgid "Week(s)"
 msgstr "Semaines(s)"
 
+#. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
 #~ msgid "Automatic download of currency rates for this company"
 #~ msgstr "Téléchargement automatique des taux de change pour cette société"
 
