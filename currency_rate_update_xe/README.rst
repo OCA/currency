@@ -26,7 +26,7 @@ Currency Rate Update: XE.com
 |badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module provides adds `XE.com <https://xe.com/>`_. currency exchange rates
-provider and bundles.
+provider.
 
 **Table of contents**
 
