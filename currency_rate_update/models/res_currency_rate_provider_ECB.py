@@ -24,7 +24,7 @@ class ResCurrencyRateProviderECB(models.Model):
         if self.service != 'ECB':
             return super()._get_supported_currencies()  # pragma: no cover
 
-        # List of currencies obrained from:
+        # List of currencies obtained from:
         # https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist.zip
         return \
             [
