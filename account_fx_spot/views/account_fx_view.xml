@@ -52,7 +52,7 @@
                           </button>
                     </div>
                     <div class="oe_title">
-                        <label string="FX Spot Transaction"/>
+                        <label string="FX Spot Transaction" for="name"/>
                         <h1>
                             <field name="name"/>
                         </h1>
@@ -124,10 +124,10 @@
                 <group expand="0" string="Group By">
                     <filter name="group_by_partner_id" string="Partner"
                             context="{'group_by':'commercial_partner_id'}"/> <!--TODO: FIX-->
-                    <filter name="status" string="Status"
+                    <filter name="group_by_status" string="Status"
                             context="{'group_by':'state'}"/>
                     <separator/>
-                    <filter string="Transaction Date"
+                    <filter name="group_by_date" string="Transaction Date"
                             context="{'group_by':'date_transaction'}"/>
                 </group>
             </search>

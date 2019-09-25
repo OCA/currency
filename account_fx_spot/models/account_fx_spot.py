@@ -39,7 +39,6 @@ class AccountFxSpot(models.Model):
     )
     commercial_partner_id = fields.Many2one(
         related='partner_id.commercial_partner_id', store=True,
-        readonly=True,
         compute_sudo=True,
     )  # TODO: fix payment logic to usi this.
     in_currency_id = fields.Many2one(
@@ -54,13 +53,11 @@ class AccountFxSpot(models.Model):
     residual_in = fields.Monetary(
         string="Remaining amount to receive",
         currency_field="in_currency_id",
-        readonly=True,
         compute="_compute_residual", store=True,
     )
     residual_company_in = fields.Monetary(
         string="Remaining amount to receive in company currency",
         currency_field="company_currency_id",
-        readonly=True,
         compute="_compute_residual", store=True,
     )
     out_currency_id = fields.Many2one(
@@ -75,13 +72,11 @@ class AccountFxSpot(models.Model):
     residual_out = fields.Monetary(
         string="Remaining amount due",
         currency_field="out_currency_id",
-        readonly=True,
         compute="_compute_residual", store=True,
     )
     residual_company_out = fields.Monetary(
         string="Remaining amount due in company currency",
         currency_field="company_currency_id",
-        readonly=True,
         compute="_compute_residual", store=True,
     )
     payment_ids = fields.Many2many(
@@ -100,13 +95,11 @@ class AccountFxSpot(models.Model):
     )
     rate = fields.Float(
         compute="_compute_rate",
-        readonly=True,
         digits=dp.get_precision('Exchange Rate'),
     )
     rate_inv = fields.Float(
         string="Rate Inverted",
         compute="_compute_rate",
-        readonly=True,
         digits=dp.get_precision('Exchange Rate'),
     )
     company_id = fields.Many2one(
@@ -131,7 +124,7 @@ class AccountFxSpot(models.Model):
     )
     reconciled = fields.Boolean(
         string="Paid/Reconciled", store=True,
-        readonly=True, compute="_compute_residual",
+        compute="_compute_residual",
     )
     comment = fields.Text(
         string="Additional Information",
@@ -165,9 +158,9 @@ class AccountFxSpot(models.Model):
                              with_context(date=line.date)) or
                             line.company_id.currency_id.
                             with_context(date=line.date))
-                        in_residual += from_currency.compute(
+                        in_residual += from_currency._convert(
                             line.amount_residual,
-                            rec.in_currency_id)
+                            rec.in_currency_id, rec.company_id, line.date)
                 elif line.account_id.internal_type == "payable":
                     out_residual_company += line.amount_residual
                     if line.currency_id == rec.out_currency_id:
@@ -179,9 +172,9 @@ class AccountFxSpot(models.Model):
                              with_context(date=line.date)) or
                             line.company_id.currency_id.
                             with_context(date=line.date))
-                        out_residual += from_currency.compute(
+                        out_residual += from_currency._convert(
                             line.amount_residual,
-                            rec.out_currency_id)
+                            rec.out_currency_id, rec.company_id, line.date)
             rec.residual_company_in = abs(in_residual_company)
             rec.residual_in = abs(in_residual)
             rec.residual_company_out = abs(out_residual_company)
@@ -224,8 +217,9 @@ class AccountFxSpot(models.Model):
         if self.company_currency_id == self.in_currency_id:
             amount = self.amount_in
         elif self.company_id.currency_id != self.out_currency_id:
-            amount = self.out_currency_id.compute(
-                self.amount_out, self.company_id.currency_id)
+            amount = self.out_currency_id._convert(
+                self.amount_out, self.company_id.currency_id,
+                self.company_id, self.date_transaction)
         else:
             amount = self.amount_out
         receivable = {
