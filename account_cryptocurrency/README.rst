@@ -33,11 +33,6 @@ This module provides basic support for the management of cryptocurrencies.
    operating normal currency.
 
 
-Installation
-============
-
-* Install the module 'account_invoicing' to be able to display the menus.
-
 Configuration
 =============
 
@@ -88,7 +83,7 @@ Usage
 
 .. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
    :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/259/11.0
+   :target: https://runbot.odoo-community.org/runbot/259/12.0
 
 
 Bug Tracker
@@ -101,6 +96,11 @@ help us smash it by providing detailed and welcomed feedback.
 
 Credits
 =======
+
+Images
+------
+
+* Odoo Community Association: `Icon <https://odoo-community.org/logo.png>`_.
 
 Contributors
 ------------

@@ -31,21 +31,18 @@ class ResCurrencyMoveLine(models.Model):
                        )
     company_id = fields.Many2one('res.company', string='Company',
                                  related='move_id.company_id', store=True,
-                                 readonly=True,
                                  )
     company_currency = fields.Many2one('res.currency',
                                        string='Company currency',
                                        related='company_id.currency_id',
-                                       store=True, readonly=True,
+                                       store=True,
                                        )
     currency_id = fields.Many2one('res.currency', string='Currency',
                                   related='move_id.currency_id', store=True,
-                                  readonly=True,
                                   )
     direction = fields.Selection(selection=_DIRECTIONS,
                                  string='Direction',
                                  related='move_id.direction', store=True,
-                                 readonly=True,
                                  )
     quantity = fields.Float('Quantity', readonly=True,
                             )
@@ -53,11 +50,10 @@ class ResCurrencyMoveLine(models.Model):
                           readonly=True,
                           )
     price_unit = fields.Float('Price Unit', compute='_compute_price_unit',
-                              store=True, readonly=True,
+                              store=True,
                               )
     remaining_qty = fields.Float('Remaing quantity',
                                  compute='_compute_remaining_qty', store=True,
-                                 readonly=True,
                                  )
     in_move_line_id = fields.Many2one('res.currency.move.line',
                                       string='Incoming move line',
