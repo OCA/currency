@@ -60,8 +60,8 @@ class AccountPayment(models.Model):
     @api.onchange('currency_id')
     def _onchange_currency(self):
         if self.currency_id and self.currency_id.inventoried:
-                return {'domain': {'journal_id': [('currency_id', '=',
-                                                   self.currency_id.id)]}}
+            return {'domain': {'journal_id': [
+                ('currency_id', '=', self.currency_id.id)]}}
         return {}
 
     @api.constrains('payment_type')

@@ -51,10 +51,10 @@ class ResCurrencyMove(models.Model):
                                  states={'draft': [('readonly', False)]},
                                  )
     debit_account_id = fields.Many2one(
-        'account.account', readonly=True,
+        'account.account',
         compute='_compute_accounts')
     credit_account_id = fields.Many2one(
-        'account.account', readonly=True,
+        'account.account',
         compute='_compute_accounts')
     state = fields.Selection(selection=_STATES, required=True,
                              readonly=True, default='draft',
@@ -107,8 +107,10 @@ class ResCurrencyMove(models.Model):
 
     def _prepare_incoming_move_line(self):
         self.ensure_one()
-        amount = self.currency_id.with_context(date=self.date).compute(
-            self.amount, self.company_id.currency_id)
+        amount = self.currency_id._convert(
+            self.amount, self.company_id.currency_id, self.company_id,
+            self.date,
+        )
         return {
             'move_id': self.id,
             'quantity': self.amount,

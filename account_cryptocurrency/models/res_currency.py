@@ -16,13 +16,13 @@ class ResCurrency(models.Model):
     # Ethereum can be divided.
     rounding = fields.Float(digits=(12, 18))
     inventoried = fields.Boolean('Inventoried')
-    valuation_method = fields.Selection(selection=_VALUATION_METHODS,
-                                        string='Valuation Method',
-                                        )
-    inventory_account_id = fields.Many2one('account.account',
-                                           string='Inventory Account',
-                                           company_dependent=True,
-                                           )
+    valuation_method = fields.Selection(
+        selection=_VALUATION_METHODS, string='Valuation Method',
+    )
+    inventory_account_id = fields.Many2one(
+        'account.account', string='Inventory Account',
+        company_dependent=True,
+    )
 
     @api.constrains('inventory_account_id')
     def _check_inventory_account_id(self):
