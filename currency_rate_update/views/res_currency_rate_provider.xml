@@ -44,6 +44,11 @@
                     <group name="options">
                         <group>
                             <field name="service"/>
+                            <field name="currency_name" invisible="1"/>
+                            <div attrs="{'invisible':['|',('service','!=','ECB'),('currency_name','=','EUR')]}" class="alert alert-warning" colspan="2" role="alert">
+                              <strong>! </strong>You are using European Central Bank exchange rate service with a base currency different from EUR.<br/>
+                              As long as the European Central Bank only provides exchange rates based on EUR, other foreign currency rates are recalculated and might differ from real rates.
+                            </div>
                         </group>
                         <group groups="base.group_multi_company">
                             <field name="company_id"/>

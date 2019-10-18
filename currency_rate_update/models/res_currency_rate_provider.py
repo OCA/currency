@@ -25,6 +25,10 @@ class ResCurrencyRateProvider(models.Model):
         required=True,
         default=lambda self: self._default_company_id(),
     )
+    currency_name = fields.Char(
+        string='Currency Name',
+        related='company_id.currency_id.name'
+    )
     active = fields.Boolean(
         default=True,
     )
