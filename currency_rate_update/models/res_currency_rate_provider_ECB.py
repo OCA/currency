@@ -8,8 +8,7 @@ from datetime import date, timedelta
 from urllib.request import urlopen
 import xml.sax
 
-from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+from odoo import models, fields, api
 
 
 class ResCurrencyRateProviderECB(models.Model):
@@ -34,7 +33,7 @@ class ResCurrencyRateProviderECB(models.Model):
                 'SIT', 'SKK', 'CHF', 'ISK', 'NOK', 'HRK', 'RUB', 'TRL',
                 'TRY', 'AUD', 'BRL', 'CAD', 'CNY', 'HKD', 'IDR', 'ILS',
                 'INR', 'KRW', 'MXN', 'MYR', 'NZD', 'PHP', 'SGD', 'THB',
-                'ZAR',
+                'ZAR', 'EUR'
             ]
 
     @api.multi
@@ -43,13 +42,11 @@ class ResCurrencyRateProviderECB(models.Model):
         if self.service != 'ECB':
             return super()._obtain_rates(base_currency, currencies, date_from,
                                          date_to)  # pragma: no cover
-
-        # This provider only serves EUR-to-??? exchange rates
-        if base_currency != 'EUR':  # pragma: no cover
-            raise UserError(_(
-                'European Central Bank is suitable only for companies'
-                ' with EUR as base currency!'
-            ))
+        invert_calculation = False
+        if base_currency != 'EUR':
+            invert_calculation = True
+            if base_currency not in currencies:
+                currencies.append(base_currency)
 
         # Depending on the date range, different URLs are used
         url = 'https://www.ecb.europa.eu/stats/eurofxref'
@@ -63,7 +60,14 @@ class ResCurrencyRateProviderECB(models.Model):
         handler = EcbRatesHandler(currencies, date_from, date_to)
         with urlopen(url) as response:
             xml.sax.parse(response, handler)
-        return handler.content
+        content = handler.content
+        if invert_calculation:
+            for k in content.keys():
+                base_rate = float(content[k][base_currency])
+                for rate in content[k].keys():
+                    content[k][rate] = str(float(content[k][rate])/base_rate)
+                content[k]['EUR'] = str(1.0/base_rate)
+        return content
 
 
 class EcbRatesHandler(xml.sax.ContentHandler):
