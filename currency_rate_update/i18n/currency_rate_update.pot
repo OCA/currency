@@ -351,6 +351,11 @@ msgid "The rate of the currency to the currency of rate 1"
 msgstr ""
 
 #. module: currency_rate_update
+#: selection:res.currency.rate.provider,service:0
+msgid "TransferWise.com"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
 msgid "Units of scheduled update interval"
 msgstr ""
