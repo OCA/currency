@@ -9,21 +9,22 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 21:33+0000\n"
-"PO-Revision-Date: 2018-03-21 21:33+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2019-11-13 15:34+0000\n"
+"Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.8\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:111
 #, python-format
 msgid "%(number)s %(type)s"
-msgstr ""
+msgstr "%(number)s %(type)s"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
@@ -36,38 +37,38 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Potrebna radnja"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__active
 msgid "Active"
-msgstr ""
+msgstr "Aktivan"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Archived"
-msgstr ""
+msgstr "Arhivirano"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Broj priloga"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 msgid "Automatic Currency Rates (OCA)"
-msgstr ""
+msgstr "Automatsko preuzimanje tečaja (OCA)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__available_currency_ids
 msgid "Available Currencies"
-msgstr ""
+msgstr "Raspoložive valute"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "Otkaži"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_company
@@ -82,7 +83,7 @@ msgstr "Organizacija"
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Postavke"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_uid
@@ -98,46 +99,35 @@ msgstr "Kreirano"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
-#, fuzzy
-#| msgid "Currencies available"
 msgid "Currencies"
-msgstr "Raspoložive valute"
+msgstr "Valute"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
-#, fuzzy
-#| msgid "Currencies to update with this service"
 msgid "Currencies to be updated by this provider"
 msgstr "Valute za ažuriranje putem ovog servisa"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
-#, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate"
-msgstr "Ažuriranje tečajne liste"
+msgstr "Tečaj"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:150
-#, fuzzy, python-format
-#| msgid "Currency Rate Update"
+#, python-format
 msgid "Currency Rate Provider Failure"
-msgstr "Ažuriranje tečajne liste"
+msgstr "Greška kod pružatelja tečajne liste"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
-#, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Update Wizard"
-msgstr "Ažuriranje tečajne liste"
+msgstr "Čarobnjak za Ažuriranje tečajne liste"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
-#, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Provider"
-msgstr "Ažuriranje tečajne liste"
+msgstr "Pružatelj tečajne liste"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
@@ -152,10 +142,8 @@ msgstr "Servisi za ažuriranje tečaja"
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
-#, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Update (OCA) daily"
-msgstr "Ažuriranje tečajne liste"
+msgstr "Ažuriranje tečajne liste (OCA) dnevno"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,interval_type:0
@@ -172,17 +160,17 @@ msgstr "Naziv "
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 msgid "Enable regular automatic currency rates updates"
-msgstr ""
+msgstr "Omogući redovno automatsko preuzimanje tečaja"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_to
 msgid "End Date"
-msgstr ""
+msgstr "Završni datum"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,service:0
 msgid "European Central Bank"
-msgstr ""
+msgstr "Centralna Evropska Banka"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider_ECB.py:49
@@ -191,21 +179,23 @@ msgid ""
 "European Central Bank is suitable only for companies with EUR as base "
 "currency!"
 msgstr ""
+"Centralna Evropska Banka je prihvatljiva jedino tvrtkama kojima je EUR "
+"valuta tvrtke!"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Pratitelji"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Pratitelji (kanali)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Pratitelji (partneri)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -216,7 +206,7 @@ msgstr "ID"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Ako je označeno, nove poruke zahtijevaju vašu pozornost."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
@@ -232,7 +222,7 @@ msgstr ""
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:108
 #, python-format
 msgid "Inactive"
-msgstr ""
+msgstr "Neaktivno"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:236
@@ -243,7 +233,7 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Je pratitelj"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
@@ -266,47 +256,47 @@ msgstr "Zadnje ažuriranje"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
 msgid "Last successful update"
-msgstr ""
+msgstr "Zadnje uspješno ažuriranje"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Glavni prilog"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Greška pri isporuci"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Poruke"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,interval_type:0
 msgid "Month(s)"
-msgstr ""
+msgstr "Mjesec(i)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
 msgid "Name"
-msgstr ""
+msgstr "Naziv"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__next_run
 msgid "Next scheduled update"
-msgstr ""
+msgstr "Sljedeće zakazano ažuriranje"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Broj radnji"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of error"
-msgstr ""
+msgstr "Broj grešaka"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
