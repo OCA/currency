@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 21:33+0000\n"
-"PO-Revision-Date: 2019-12-03 14:04+0000\n"
+"PO-Revision-Date: 2020-02-04 12:13+0000\n"
 "Last-Translator: Bole <bole@dajmi5.com>\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "Language: hr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
 "4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 3.10\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:111
@@ -344,7 +344,7 @@ msgstr "Zakazani interval ažuriranja"
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
 msgid "Scheduled update interval must be greater than zero!"
-msgstr ""
+msgstr "Zakazani interval ažuriranja mora bit veći od nula!"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
@@ -395,8 +395,6 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
-#, fuzzy
-#| msgid "Update now"
 msgid "Update"
 msgstr "Ažuriraj sada"
 
