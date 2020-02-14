@@ -16,12 +16,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
-"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.10\n"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:111
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:115
 #, python-format
 msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
@@ -36,6 +36,16 @@ msgstr ""
 "<span class=\"fa fa-lg fa-building-o\" title=\"Ove vrijednosti su specifične "
 "za tvrtku.\" role=\"img\" aria-label=\"Ove vrijednosti su specifične za "
 "tvrtku.\" groups=\"base.group_multi_company\"/>"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid ""
+"<strong>! </strong>You are using European Central Bank exchange rate service "
+"with a base currency different from EUR.<br/>\n"
+"                              As long as the European Central Bank only "
+"provides exchange rates based on EUR, other foreign currency rates are "
+"recalculated and might differ from real rates."
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
@@ -111,12 +121,24 @@ msgid "Currencies to be updated by this provider"
 msgstr "Valute za ažuriranje putem ovog servisa"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
+msgid "Currency Code (ISO 4217)"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
+#, fuzzy
+#| msgid "Currency Rate"
+msgid "Currency Name"
+msgstr "Tečaj"
+
+#. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
 msgid "Currency Rate"
 msgstr "Tečaj"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:150
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:154
 #, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Greška kod pružatelja tečajne liste"
@@ -174,16 +196,6 @@ msgid "European Central Bank"
 msgstr "Centralna Evropska Banka"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider_ECB.py:49
-#, python-format
-msgid ""
-"European Central Bank is suitable only for companies with EUR as base "
-"currency!"
-msgstr ""
-"Centralna Evropska Banka je prihvatljiva jedino tvrtkama kojima je EUR "
-"valuta tvrtke!"
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
 msgstr "Pratitelji"
@@ -220,13 +232,13 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:108
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:112
 #, python-format
 msgid "Inactive"
 msgstr "Neaktivno"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:236
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:240
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr "Neispravan tečaj iz %(provider)s za %(currency)s : %(rate)s"
@@ -378,7 +390,7 @@ msgid "Units of scheduled update interval"
 msgstr "Jedinice zakazanog intervala ažuriranja"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:175
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:179
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
@@ -432,6 +444,13 @@ msgstr "Tjedan(a)"
 #: selection:res.currency.rate.provider,service:0
 msgid "XE.com"
 msgstr ""
+
+#~ msgid ""
+#~ "European Central Bank is suitable only for companies with EUR as base "
+#~ "currency!"
+#~ msgstr ""
+#~ "Centralna Evropska Banka je prihvatljiva jedino tvrtkama kojima je EUR "
+#~ "valuta tvrtke!"
 
 #~ msgid "Currency update frequency"
 #~ msgstr "Frekvencija ažuriranja tečajna"
