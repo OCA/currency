@@ -74,7 +74,6 @@ class ResCurrencyRateProvider(models.Model):
         ),
     ]
 
-    @api.multi
     @api.depends("service")
     def _compute_name(self):
         for provider in self:
@@ -85,7 +84,6 @@ class ResCurrencyRateProvider(models.Model):
                 )
             )[0][1]
 
-    @api.multi
     @api.depends("active", "interval_type", "interval_number")
     def _compute_update_schedule(self):
         for provider in self:
@@ -103,7 +101,6 @@ class ResCurrencyRateProvider(models.Model):
                 )[0][1],
             }
 
-    @api.multi
     @api.depends("service")
     def _compute_available_currency_ids(self):
         Currency = self.env["res.currency"]
@@ -113,7 +110,6 @@ class ResCurrencyRateProvider(models.Model):
                 [("name", "in", provider._get_supported_currencies())]
             )
 
-    @api.multi
     def _update(self, date_from, date_to, newest_only=False):
         Currency = self.env["res.currency"]
         CurrencyRate = self.env["res.currency.rate"]
@@ -178,7 +174,6 @@ class ResCurrencyRateProvider(models.Model):
             if is_scheduled:
                 provider._schedule_next_run()
 
-    @api.multi
     def _schedule_next_run(self):
         self.ensure_one()
         self.last_successful_run = self.next_run
@@ -186,7 +181,6 @@ class ResCurrencyRateProvider(models.Model):
             datetime.combine(self.next_run, time.min) + self._get_next_run_period()
         ).date()
 
-    @api.multi
     def _process_rate(self, currency, rate):
         self.ensure_one()
 
@@ -202,7 +196,7 @@ class ResCurrencyRateProvider(models.Model):
             direct = rate.get("direct", None)
             if inverted is None and direct is None:
                 raise UserError(
-                    _("Invalid rate from %(provider)s for" " %(currency)s : %(rate)s")
+                    _("Invalid rate from %(provider)s for %(currency)s : %(rate)s")
                     % {"provider": self.name, "currency": currency.name, "rate": rate}
                 )
             elif inverted is None:
@@ -223,7 +217,6 @@ class ResCurrencyRateProvider(models.Model):
 
         return value
 
-    @api.multi
     def _get_next_run_period(self):
         self.ensure_one()
 
@@ -265,14 +258,12 @@ class ResCurrencyRateProvider(models.Model):
 
         _logger.info("Scheduled currency rates update complete.")
 
-    @api.multi
-    def _get_supported_currencies(self):  # pragma: no cover
+    def _get_supported_currencies(self):
+        # pragma: no cover
         self.ensure_one()
         return []
 
-    @api.multi
-    def _obtain_rates(
-        self, base_currency, currencies, date_from, date_to
-    ):  # pragma: no cover
+    def _obtain_rates(self, base_currency, currencies, date_from, date_to):
+        # pragma: no cover
         self.ensure_one()
         return {}

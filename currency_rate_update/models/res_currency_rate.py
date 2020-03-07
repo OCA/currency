@@ -1,7 +1,7 @@
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResCurrencyRate(models.Model):
@@ -16,7 +16,6 @@ class ResCurrencyRate(models.Model):
         track_visibility="onchange",
     )
 
-    @api.multi
     def write(self, values):
         """Unset link to provider in case 'rate' or 'name' are manually changed
         """
