@@ -1,7 +1,7 @@
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResCurrencyRateUpdateWizard(models.TransientModel):
@@ -21,7 +21,6 @@ class ResCurrencyRateUpdateWizard(models.TransientModel):
         column2="provider_id",
     )
 
-    @api.multi
     def action_update(self):
         self.ensure_one()
 
