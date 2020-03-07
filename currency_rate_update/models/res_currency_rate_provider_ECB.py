@@ -8,7 +8,7 @@ from collections import defaultdict
 from datetime import date, timedelta
 from urllib.request import urlopen
 
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResCurrencyRateProviderECB(models.Model):
@@ -16,7 +16,6 @@ class ResCurrencyRateProviderECB(models.Model):
 
     service = fields.Selection(selection_add=[("ECB", "European Central Bank")])
 
-    @api.multi
     def _get_supported_currencies(self):
         self.ensure_one()
         if self.service != "ECB":
@@ -69,7 +68,6 @@ class ResCurrencyRateProviderECB(models.Model):
             "EUR",
         ]
 
-    @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
         if self.service != "ECB":

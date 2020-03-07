@@ -8,40 +8,44 @@ from unittest import mock
 from dateutil.relativedelta import relativedelta
 
 from odoo import fields
-from odoo.tests import common
+from odoo.tests import tagged
+
+from odoo.addons.account.tests.account_test_savepoint import AccountingSavepointCase
 
 _module_ns = "odoo.addons.currency_rate_update"
 _file_ns = _module_ns + ".models.res_currency_rate_provider_ECB"
 _ECB_provider_class = _file_ns + ".ResCurrencyRateProviderECB"
 
 
-class TestCurrencyRateUpdate(common.SavepointCase):
-    def setUp(self):
-        super().setUp()
+@tagged("post_install", "-at_install")
+class TestCurrencyRateUpdate(AccountingSavepointCase):
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
 
-        self.Company = self.env["res.company"]
-        self.CurrencyRate = self.env["res.currency.rate"]
-        self.CurrencyRateProvider = self.env["res.currency.rate.provider"]
+        cls.Company = cls.env["res.company"]
+        cls.CurrencyRate = cls.env["res.currency.rate"]
+        cls.CurrencyRateProvider = cls.env["res.currency.rate.provider"]
 
-        self.today = fields.Date.today()
-        self.eur_currency = self.env.ref("base.EUR")
-        self.usd_currency = self.env.ref("base.USD")
-        self.chf_currency = self.env.ref("base.CHF")
-        self.company = self.Company.create(
-            {"name": "Test company", "currency_id": self.eur_currency.id}
+        cls.today = fields.Date.today()
+        cls.eur_currency = cls.env.ref("base.EUR")
+        cls.usd_currency = cls.env.ref("base.USD")
+        cls.chf_currency = cls.env.ref("base.CHF")
+        cls.company = cls.Company.create(
+            {"name": "Test company", "currency_id": cls.eur_currency.id}
         )
-        self.env.user.company_ids += self.company
-        self.env.user.company_id = self.company
-        self.ecb_provider = self.CurrencyRateProvider.create(
+        cls.env.user.company_ids += cls.company
+        cls.env.user.company_id = cls.company
+        cls.ecb_provider = cls.CurrencyRateProvider.create(
             {
                 "service": "ECB",
                 "currency_ids": [
-                    (4, self.usd_currency.id),
-                    (4, self.env.user.company_id.currency_id.id),
+                    (4, cls.usd_currency.id),
+                    (4, cls.env.user.company_id.currency_id.id),
                 ],
             }
         )
-        self.CurrencyRate.search([]).unlink()
+        cls.CurrencyRate.search([]).unlink()
 
     def test_supported_currencies_ECB(self):
         self.ecb_provider._get_supported_currencies()
