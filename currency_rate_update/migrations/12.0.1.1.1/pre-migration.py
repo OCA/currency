@@ -3,13 +3,14 @@
 from openupgradelib import openupgrade
 
 _field_renames = [
-    ('res.company', 'res_company', 'auto_currency_up',
-     'currency_rates_autoupdate'),
+    ("res.company", "res_company", "auto_currency_up", "currency_rates_autoupdate")
 ]
 
 xmlid_renames = [
-    ('currency_rate_update.currency_rate_update_service_multicompany_rule',
-     'currency_rate_update.res_currency_rate_provider_multicompany'),
+    (
+        "currency_rate_update.currency_rate_update_service_multicompany_rule",
+        "currency_rate_update.res_currency_rate_provider_multicompany",
+    )
 ]
 
 
