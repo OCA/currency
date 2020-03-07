@@ -12,5 +12,4 @@ class ResCompany(models.Model):
         string="Automatic Currency Rates (OCA)",
         default=True,
         help="Enable regular automatic currency rates updates",
-        oldname="auto_currency_up",
     )
