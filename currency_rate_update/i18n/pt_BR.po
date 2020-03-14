@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:115
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "%(number)s %(type)s"
 msgstr ""
@@ -132,7 +132,7 @@ msgid "Currency Rate"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:154
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Currency Rate Provider Failure"
 msgstr ""
@@ -163,7 +163,7 @@ msgid "Currency Rates Update (OCA) daily"
 msgstr ""
 
 #. module: currency_rate_update
-#: selection:res.currency.rate.provider,interval_type:0
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
 msgid "Day(s)"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgid "End Date"
 msgstr ""
 
 #. module: currency_rate_update
-#: selection:res.currency.rate.provider,service:0
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__ecb
 msgid "European Central Bank"
 msgstr ""
 
@@ -211,28 +211,25 @@ msgid "ID"
 msgstr "Identificação"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
-msgid "If checked new messages require your attention."
-msgstr ""
-
-#. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:112
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Inactive"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:240
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr ""
@@ -281,7 +278,7 @@ msgid "Messages"
 msgstr ""
 
 #. module: currency_rate_update
-#: selection:res.currency.rate.provider,interval_type:0
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__months
 msgid "Month(s)"
 msgstr ""
 
@@ -302,7 +299,7 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
-msgid "Number of error"
+msgid "Number of errors"
 msgstr ""
 
 #. module: currency_rate_update
@@ -321,13 +318,7 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: currency_rate_update
-#: selection:res.currency.rate.provider,service:0
-msgid "OpenExchangeRates.org"
-msgstr ""
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__provider_id
 msgid "Provider"
 msgstr ""
 
@@ -338,8 +329,12 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "Rate"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
+msgid "SMS Delivery error"
 msgstr ""
 
 #. module: currency_rate_update
@@ -348,12 +343,12 @@ msgid "Scheduled update interval"
 msgstr ""
 
 #. module: currency_rate_update
-#: sql_constraint:res.currency.rate.provider:0
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_valid_interval_number
 msgid "Scheduled update interval must be greater than zero!"
 msgstr ""
 
 #. module: currency_rate_update
-#: sql_constraint:res.currency.rate.provider:0
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
 msgid "Service can only be used in one provider per company!"
 msgstr ""
 
@@ -369,13 +364,7 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "The rate of the currency to the currency of rate 1"
-msgstr ""
-
-#. module: currency_rate_update
-#: selection:res.currency.rate.provider,service:0
-msgid "TransferWise.com"
 msgstr ""
 
 #. module: currency_rate_update
@@ -384,7 +373,7 @@ msgid "Units of scheduled update interval"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:179
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
@@ -431,11 +420,6 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: currency_rate_update
-#: selection:res.currency.rate.provider,interval_type:0
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
-msgstr ""
-
-#. module: currency_rate_update
-#: selection:res.currency.rate.provider,service:0
-msgid "XE.com"
 msgstr ""
