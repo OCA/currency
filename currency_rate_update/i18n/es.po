@@ -140,6 +140,14 @@ msgstr "Tipo de Cambio"
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
+msgid ""
+"Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
+"%s"
+msgstr ""
+
+#. module: currency_rate_update
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Fallo de Proveedor de Tipo de Cambio"
 
@@ -287,6 +295,12 @@ msgstr "Mensajes"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__months
 msgid "Month(s)"
 msgstr "Mes(es)"
+
+#. module: currency_rate_update
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "N/A"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
