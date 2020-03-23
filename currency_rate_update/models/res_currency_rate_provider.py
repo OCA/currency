@@ -1,11 +1,12 @@
 # Copyright 2009-2016 Camptocamp
 # Copyright 2010 Akretion
-# Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+# Copyright 2019-2020 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import logging
 from datetime import datetime, time
 from dateutil.relativedelta import relativedelta
+from sys import exc_info
 
 from odoo import models, fields, api, _
 from odoo.exceptions import UserError
@@ -147,11 +148,28 @@ class ResCurrencyRateProvider(models.Model):
                     date_from,
                     date_to
                 ).items()
-            except Exception as e:
-                _logger.warning('Currency Rate Provider Failure: %s' % e)
+            except:
+                e = exc_info()[1]
+                _logger.warning(
+                    'Currency Rate Provider "%s" failed to obtain data since'
+                    ' %s until %s' % (
+                        provider.name,
+                        date_from,
+                        date_to,
+                    ),
+                    exc_info=True,
+                )
                 provider.message_post(
-                    body=str(e),
                     subject=_('Currency Rate Provider Failure'),
+                    body=_(
+                        'Currency Rate Provider "%s" failed to obtain data'
+                        ' since %s until %s:\n%s'
+                    ) % (
+                        provider.name,
+                        date_from,
+                        date_to,
+                        str(e) if e else _('N/A'),
+                    ),
                 )
                 continue
 
