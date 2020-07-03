@@ -113,7 +113,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
 #, fuzzy
-#| msgid "Currencies to update with this service"
 msgid "Currencies to be updated by this provider"
 msgstr "Währungen, die mit diesem Dienst aktualisiert werden sollen"
 
@@ -125,14 +124,12 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Name"
 msgstr "Währungskursaktualisierung"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate"
 msgstr "Währungskursaktualisierung"
 
@@ -147,14 +144,12 @@ msgstr ""
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, fuzzy, python-format
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Provider Failure"
 msgstr "Währungskursaktualisierung"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Update Wizard"
 msgstr "Währungskursaktualisierung"
 
@@ -162,7 +157,6 @@ msgstr "Währungskursaktualisierung"
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Provider"
 msgstr "Währungskursaktualisierung"
 
@@ -171,7 +165,6 @@ msgstr "Währungskursaktualisierung"
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 #, fuzzy
-#| msgid "Currency update services"
 msgid "Currency Rates Providers"
 msgstr "Währungsaktualisierungsdienst"
 
@@ -180,7 +173,6 @@ msgstr "Währungsaktualisierungsdienst"
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Update (OCA) daily"
 msgstr "Währungskursaktualisierung"
 

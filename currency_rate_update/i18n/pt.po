@@ -67,7 +67,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 #, fuzzy
-#| msgid "Automatic Currency Rates Download"
 msgid "Automatic Currency Rates (OCA)"
 msgstr "Atualização Automática de Taxas de Câmbio"
 
@@ -94,7 +93,6 @@ msgstr "Empresa"
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_config_settings
 #, fuzzy
-#| msgid "res.config.settings"
 msgid "Config Settings"
 msgstr "res.config.settings"
 
@@ -113,14 +111,12 @@ msgstr "Criado em"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
 #, fuzzy
-#| msgid "Currencies available"
 msgid "Currencies"
 msgstr "Moedas disponíveis"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
 #, fuzzy
-#| msgid "Currencies to update with this service"
 msgid "Currencies to be updated by this provider"
 msgstr "Moedas a atualizar com este serviço"
 
@@ -132,14 +128,12 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Name"
 msgstr "Atualização da Taxas de Câmbio"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate"
 msgstr "Atualização da Taxas de Câmbio"
 
@@ -154,14 +148,12 @@ msgstr ""
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, fuzzy, python-format
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Provider Failure"
 msgstr "Atualização da Taxas de Câmbio"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Update Wizard"
 msgstr "Atualização da Taxas de Câmbio"
 
@@ -169,7 +161,6 @@ msgstr "Atualização da Taxas de Câmbio"
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Provider"
 msgstr "Atualização da Taxas de Câmbio"
 
@@ -178,7 +169,6 @@ msgstr "Atualização da Taxas de Câmbio"
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 #, fuzzy
-#| msgid "Currency update services"
 msgid "Currency Rates Providers"
 msgstr "Serviços de atualização de câmbios"
 
@@ -187,7 +177,6 @@ msgstr "Serviços de atualização de câmbios"
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Update (OCA) daily"
 msgstr "Atualização da Taxas de Câmbio"
 
@@ -206,7 +195,6 @@ msgstr "Nome a Apresentar"
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 #, fuzzy
-#| msgid "Update exchange rates automatic from currency_rate_update module"
 msgid "Enable regular automatic currency rates updates"
 msgstr ""
 "Atualizar automaticamente as taxas de câmbio através do módulo "
@@ -389,7 +377,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
 #, fuzzy
-#| msgid "You can use a service only one time per company !"
 msgid "Service can only be used in one provider per company!"
 msgstr "Só pode usar o serviço uma vez por empresa !"
 
@@ -432,7 +419,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
 #, fuzzy
-#| msgid "Update now"
 msgid "Update"
 msgstr "Atualizar agora"
 
@@ -449,7 +435,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
 #, fuzzy
-#| msgid "Update exchange rates automaticallyfrom currency_rate_update module."
 msgid "Update exchange rates automatically using OCA modules"
 msgstr ""
 "Atualizar automaticamente as taxas de câmbio através do módulo "
