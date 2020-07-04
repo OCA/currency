@@ -41,6 +41,7 @@ class ResCurrencyRateProvider(models.Model):
         comodel_name="res.currency",
         column1="provider_id",
         column2="currency_id",
+        required=True,
         help="Currencies to be updated by this provider",
     )
     name = fields.Char(string="Name", compute="_compute_name", store=True)
