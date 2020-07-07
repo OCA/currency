@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:116
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:117
 #, python-format
 msgid "%(number)s %(type)s"
 msgstr "%(number)s%(type)s"
@@ -138,7 +138,7 @@ msgid "Currency Rate"
 msgstr "Tipo de Cambio"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:165
 #, python-format
 msgid ""
 "Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
@@ -146,7 +146,7 @@ msgid ""
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:163
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
 #, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Fallo de Proveedor de Tipo de Cambio"
@@ -240,13 +240,13 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si activado, algunos mensajes tienen un error de entrega."
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:113
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:114
 #, python-format
 msgid "Inactive"
 msgstr "Inactivo"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:258
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:259
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr "Tipo de Cambio no válido de %(provider)s para %(currency)s : %(rate)s"
@@ -300,7 +300,7 @@ msgid "Month(s)"
 msgstr "Mes(es)"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:171
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:172
 #, python-format
 msgid "N/A"
 msgstr ""
@@ -404,7 +404,7 @@ msgid "Units of scheduled update interval"
 msgstr "Unidades de intervalo de actualización programada"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:197
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:198
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "Tipo de cambio desconocido %(provider)s: %(rate)s"

@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:116
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:117
 #, python-format
 msgid "%(number)s %(type)s"
 msgstr ""
@@ -131,7 +131,7 @@ msgid "Currency Rate"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:165
 #, python-format
 msgid ""
 "Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
@@ -139,7 +139,7 @@ msgid ""
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:163
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
 #, python-format
 msgid "Currency Rate Provider Failure"
 msgstr ""
@@ -233,13 +233,13 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:113
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:114
 #, python-format
 msgid "Inactive"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:258
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:259
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr ""
@@ -293,7 +293,7 @@ msgid "Month(s)"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:171
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:172
 #, python-format
 msgid "N/A"
 msgstr ""
@@ -397,7 +397,7 @@ msgid "Units of scheduled update interval"
 msgstr ""
 
 #. module: currency_rate_update
-#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:197
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:198
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
