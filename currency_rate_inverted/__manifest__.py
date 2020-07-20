@@ -5,19 +5,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Currency Rate Inverted',
-    'version': '12.0.1.0.0',
-    'category': 'Accounting & Finance',
-    'summary': 'Allows to maintain an exchange rate using the inversion '
-               'method',
-    'author': 'Eficent,Odoo Community Association (OCA)',
-    'website': 'https://github.com/OCA/currency',
-    'license': 'AGPL-3',
-    'depends': [
-        'base'
-    ],
-    'data': [
-        'views/res_currency_view.xml'
-    ],
-    "installable": True
+    "name": "Currency Rate Inverted",
+    "version": "13.0.1.0.0",
+    "category": "Accounting & Finance",
+    "summary": "Allows to maintain an exchange rate using the inversion method",
+    "author": "Eficent, Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/currency",
+    "license": "AGPL-3",
+    "depends": ["base"],
+    "data": ["views/res_currency_view.xml"],
+    "installable": True,
 }
