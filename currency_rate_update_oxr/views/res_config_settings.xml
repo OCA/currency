@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='account']//field[@name='currency_rates_autoupdate']/../.." position="after">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="o_form_label">OpenExchangeRates.org Provider</span>
+                        <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." role="img" aria-label="Values set here are company-specific." groups="base.group_multi_company"/>
+                        <div class="text-muted">
+                            <a href="https://openexchangerates.org/">OpenExchangeRates.org</a> credentials
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16">
+                                <label for="openexchangerates_app_id" class="col-lg-3 o_light_label"/>
+                                <field name="openexchangerates_app_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

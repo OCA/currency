@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* currency_rate_update_oxr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: currency_rate_update_oxr
+#: model_terms:ir.ui.view,arch_db:currency_rate_update_oxr.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">OpenExchangeRates.org Provider</span>\n"
+"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model.fields,field_description:currency_rate_update_oxr.field_res_config_settings__openexchangerates_app_id
+msgid "App ID"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model,name:currency_rate_update_oxr.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model,name:currency_rate_update_oxr.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model,name:currency_rate_update_oxr.model_res_currency_rate_provider
+msgid "Currency Rates Provider"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: selection:res.currency.rate.provider,service:0
+msgid "European Central Bank"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: code:addons/currency_rate_update_oxr/models/res_currency_rate_provider_OXR.py:89
+#, python-format
+msgid "No OpenExchangeRates.org credentials specified!"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model_terms:ir.ui.view,arch_db:currency_rate_update_oxr.res_config_settings_view_form
+#: selection:res.currency.rate.provider,service:0
+msgid "OpenExchangeRates.org"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model.fields,field_description:currency_rate_update_oxr.field_res_company__openexchangerates_app_id
+msgid "OpenExchangeRates.org App ID"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model:ir.model.fields,field_description:currency_rate_update_oxr.field_res_currency_rate_provider__service
+msgid "Source Service"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: selection:res.currency.rate.provider,service:0
+msgid "TransferWise.com"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: selection:res.currency.rate.provider,service:0
+msgid "XE.com"
+msgstr ""
+
+#. module: currency_rate_update_oxr
+#: model_terms:ir.ui.view,arch_db:currency_rate_update_oxr.res_config_settings_view_form
+msgid "credentials"
+msgstr ""
+
