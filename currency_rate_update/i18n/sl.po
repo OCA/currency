@@ -109,14 +109,12 @@ msgstr "Ustvarjeno"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
 #, fuzzy
-#| msgid "Currencies available"
 msgid "Currencies"
 msgstr "Razpoložljive valute"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
 #, fuzzy
-#| msgid "Currencies to update with this service"
 msgid "Currencies to be updated by this provider"
 msgstr "Valute, ki se posodabljajo s to storitvijo"
 
@@ -128,14 +126,12 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Name"
 msgstr "Posodobitev menjalnega tečaja"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate"
 msgstr "Posodobitev menjalnega tečaja"
 
@@ -150,14 +146,12 @@ msgstr ""
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, fuzzy, python-format
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Provider Failure"
 msgstr "Posodobitev menjalnega tečaja"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rate Update Wizard"
 msgstr "Posodobitev menjalnega tečaja"
 
@@ -165,7 +159,6 @@ msgstr "Posodobitev menjalnega tečaja"
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Provider"
 msgstr "Posodobitev menjalnega tečaja"
 
@@ -174,7 +167,6 @@ msgstr "Posodobitev menjalnega tečaja"
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 #, fuzzy
-#| msgid "Currency update services"
 msgid "Currency Rates Providers"
 msgstr "Storitve posodabljanja valut"
 
@@ -183,7 +175,6 @@ msgstr "Storitve posodabljanja valut"
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #, fuzzy
-#| msgid "Currency Rate Update"
 msgid "Currency Rates Update (OCA) daily"
 msgstr "Posodobitev menjalnega tečaja"
 
@@ -381,7 +372,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
 #, fuzzy
-#| msgid "You can use a service only one time per company !"
 msgid "Service can only be used in one provider per company!"
 msgstr "Storitev lahko uporabljate le enkrat za vsako družbo!"
 
