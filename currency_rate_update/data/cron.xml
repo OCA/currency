@@ -3,12 +3,12 @@
     Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 -->
-<odoo>
+<odoo noupdate="1">
 
     <record model="ir.cron" id="ir_cron_currency_rates_update_every_day">
         <field name="name">Currency Rates Update (OCA) daily</field>
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
+        <field name="interval_number">12</field>
+        <field name="interval_type">hours</field>
         <field name="numbercall">-1</field>
         <field name="state">code</field>
         <field name="nextcall" >2019-01-01 00:01:00</field>

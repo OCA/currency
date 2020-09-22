@@ -1,6 +1,7 @@
 # Copyright 2009-2016 Camptocamp
 # Copyright 2010 Akretion
 # Copyright 2019-2020 Brainbean Apps (https://brainbeanapps.com)
+# Copyright 2020 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import logging
@@ -96,6 +97,10 @@ class ResCurrencyRateProvider(models.Model):
             'Scheduled update interval must be greater than zero!'
         )
     ]
+
+    @api.model
+    def _get_close_date(self):
+        return False
 
     @api.multi
     @api.depends('service')
@@ -318,7 +323,13 @@ class ResCurrencyRateProvider(models.Model):
                     provider.next_run - provider._get_next_run_period()
                 )
                 date_to = provider.next_run
-                provider._update(date_from, date_to, newest_only=True)
+                if (date_to != fields.Date.today()) or (
+                    date_to == fields.Date.today() and (
+                        not provider._get_close_time()
+                        or datetime.now().hour >= provider._get_close_time()
+                    )
+                ):
+                    provider._update(date_from, date_to, newest_only=True)
 
         _logger.info('Scheduled currency rates update complete.')
 

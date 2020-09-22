@@ -18,6 +18,12 @@ class ResCurrencyRateProviderECB(models.Model):
         selection_add=[('ECB', 'European Central Bank')],
     )
 
+    @api.model
+    def _get_close_time(self):
+        if self.service == 'ECB':
+            return 17
+        return super()._get_close_time()
+
     @api.multi
     def _get_supported_currencies(self):
         self.ensure_one()
