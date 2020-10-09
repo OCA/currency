@@ -9,6 +9,8 @@
         <field name="model">res.currency.rate.provider</field>
         <field name="arch" type="xml">
             <search string="Currency Rates Providers">
+                <field name="service" />
+                <field name="company_id" groups="base.group_multi_company" />
                 <filter
                     name="active"
                     string="Archived"
@@ -37,23 +39,15 @@
         <field name="arch" type="xml">
             <form string="Currency Rates Provider">
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button
-                            class="oe_stat_button"
-                            type="object"
-                            name="toggle_active"
-                            icon="fa-archive"
-                            groups="base.group_system"
-                        >
-                            <field
-                                name="active"
-                                widget="boolean_button"
-                                options='{"terminology": "archive"}'
-                            />
-                        </button>
-                    </div>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
                     <group name="options">
                         <group>
+                            <field name="active" invisible="1" />
                             <field name="service" />
                             <field name="currency_name" invisible="1" />
                             <div
@@ -62,10 +56,13 @@
                                 colspan="2"
                                 role="alert"
                             >
-                              <strong
-                                >! </strong>You are using European Central Bank exchange rate service with a base currency different from EUR.<br
-                                />
-                              As long as the European Central Bank only provides exchange rates based on EUR, other foreign currency rates are recalculated and might differ from real rates.
+                                <strong>!</strong>
+                                You are using European Central Bank exchange rate
+                                service with a base currency different from EUR.
+                                <br />
+                                As long as the European Central Bank only provides
+                                exchange rates based on EUR, other foreign currency
+                                rates are recalculated and might differ from real rates.
                             </div>
                         </group>
                         <group groups="base.group_multi_company">

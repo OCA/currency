@@ -10,7 +10,7 @@ from dateutil.relativedelta import relativedelta
 from odoo import fields
 from odoo.tests import tagged
 
-from odoo.addons.account.tests.account_test_savepoint import AccountingSavepointCase
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
 _module_ns = "odoo.addons.currency_rate_update"
 _file_ns = _module_ns + ".models.res_currency_rate_provider_ECB"
@@ -18,7 +18,7 @@ _ECB_provider_class = _file_ns + ".ResCurrencyRateProviderECB"
 
 
 @tagged("post_install", "-at_install")
-class TestCurrencyRateUpdate(AccountingSavepointCase):
+class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
