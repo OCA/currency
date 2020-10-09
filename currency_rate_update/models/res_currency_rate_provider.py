@@ -30,7 +30,12 @@ class ResCurrencyRateProvider(models.Model):
         string="Currency Name", related="company_id.currency_id.name"
     )
     active = fields.Boolean(default=True)
-    service = fields.Selection(string="Source Service", selection=[], required=True)
+    service = fields.Selection(
+        string="Source Service",
+        selection=[("none", "None")],
+        default="none",
+        required=True,
+    )
     available_currency_ids = fields.Many2many(
         string="Available Currencies",
         comodel_name="res.currency",
@@ -126,7 +131,12 @@ class ResCurrencyRateProvider(models.Model):
             except BaseException as e:
                 _logger.warning(
                     'Currency Rate Provider "%s" failed to obtain data since'
-                    " %s until %s" % (provider.name, date_from, date_to,),
+                    " %s until %s"
+                    % (
+                        provider.name,
+                        date_from,
+                        date_to,
+                    ),
                     exc_info=True,
                 )
                 provider.message_post(
@@ -135,7 +145,12 @@ class ResCurrencyRateProvider(models.Model):
                         'Currency Rate Provider "%s" failed to obtain data'
                         " since %s until %s:\n%s"
                     )
-                    % (provider.name, date_from, date_to, str(e) if e else _("N/A"),),
+                    % (
+                        provider.name,
+                        date_from,
+                        date_to,
+                        str(e) if e else _("N/A"),
+                    ),
                 )
                 continue
 
