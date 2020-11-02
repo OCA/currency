@@ -6,7 +6,7 @@
 
 {
     "name": "Currency Rate Inverted",
-    "version": "13.0.1.0.0",
+    "version": "13.0.1.0.1",
     "category": "Accounting & Finance",
     "summary": "Allows to maintain an exchange rate using the inversion method",
     "author": "ForgeFlow, Odoo Community Association (OCA)",
