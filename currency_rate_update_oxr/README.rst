@@ -23,7 +23,7 @@ Currency Rate Update: OpenExchangeRates.org
     :target: https://runbot.odoo-community.org/runbot/259/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5|
+|badge1| |badge2| |badge3| |badge4| |badge5| 
 
 This module adds `OpenExchangeRates.org <https://openexchangerates.org/>`_
 currency exchange rates provider.
