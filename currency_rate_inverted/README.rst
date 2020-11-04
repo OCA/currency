@@ -23,7 +23,7 @@ Currency Rate Inverted
     :target: https://runbot.odoo-community.org/runbot/259/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module applies the inverse method in the conversion between two currencies.
 
@@ -75,7 +75,9 @@ Contributors
 * Techrifiv Solutions Pte Ltd (www.techrifiv.com.sg)
 * Statecraft Systems Pte Ltd (www.statecraftsystems.sg)
 * Komit (Jean-Charles Drubay <jc@komit-consulting.com>)
-* Alexey Pelykh <alexey.pelykh@brainbeanapps.com>
+* `CorporateHub <https://corporatehub.eu/>`__
+
+  * Alexey Pelykh <alexey.pelykh@corphub.eu>
 
 Maintainers
 ~~~~~~~~~~~

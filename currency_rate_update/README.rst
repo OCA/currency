@@ -23,7 +23,7 @@ Currency Rate Update
     :target: https://runbot.odoo-community.org/runbot/259/12.0
     :alt: Try me on Runbot
 
-|badge1| |badge2| |badge3| |badge4| |badge5| 
+|badge1| |badge2| |badge3| |badge4| |badge5|
 
 This module provides base for building exchange rates providers and bundles
 following built-in providers:
@@ -83,7 +83,7 @@ Authors
 ~~~~~~~
 
 * Camptocamp
-* Brainbean Apps
+* CorporateHub
 
 Contributors
 ~~~~~~~~~~~~
@@ -109,7 +109,9 @@ Contributors
 * Daniel Dico <ddico@oerp.ca> (BOC)
 * Dmytro Katyukha <firemage.dima@gmail.com>
 * Jesús Ventosinos Mayor <jesus@comunitea.com>
-* Alexey Pelykh <alexey.pelykh@brainbeanapps.com>
+* `CorporateHub <https://corporatehub.eu/>`__
+
+  * Alexey Pelykh <alexey.pelykh@corphub.eu>
 
 Maintainers
 ~~~~~~~~~~~
