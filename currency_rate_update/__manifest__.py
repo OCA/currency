@@ -1,11 +1,12 @@
 # Copyright 2008-2016 Camptocamp
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+# Copyright 2020 CorporateHub (https://corporatehub.eu)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
     "name": "Currency Rate Update",
     "version": "15.0.1.0.0",
-    "author": "Camptocamp, Brainbean Apps, Odoo Community Association (OCA)",
+    "author": "Camptocamp, CorporateHub, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/currency",
     "license": "AGPL-3",
     "category": "Financial Management/Configuration",
