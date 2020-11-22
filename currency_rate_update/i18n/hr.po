@@ -128,7 +128,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
 #, fuzzy
-#| msgid "Currency Rate"
 msgid "Currency Name"
 msgstr "Tečaj"
 
