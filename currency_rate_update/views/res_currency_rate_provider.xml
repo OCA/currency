@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record model="ir.ui.view" id="res_currency_rate_provider_filter">
+        <field name="name">res.currency.rate.provider.filter</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <search string="Currency Rates Providers">
+                <field name="service" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <filter
+                    name="active"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_currency_rate_provider_tree_view">
+        <field name="name">res.currency.rate.provider.tree</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="service" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="update_schedule" />
+                <field name="available_currency_ids" invisible="1" />
+                <field name="currency_ids" widget="many2many_tags" />
+                <field name="next_run" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_currency_rate_provider_form_view">
+        <field name="name">res.currency.rate.provider.form</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <form string="Currency Rates Provider">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group name="options">
+                        <group>
+                            <field name="active" invisible="1" />
+                            <field name="service" />
+                            <field name="currency_name" invisible="1" />
+                            <div
+                                attrs="{'invisible':['|',('service','!=','ECB'),('currency_name','=','EUR')]}"
+                                class="alert alert-warning"
+                                colspan="2"
+                                role="alert"
+                            >
+                                <strong>!</strong>
+                                You are using European Central Bank exchange rate
+                                service with a base currency different from EUR.
+                                <br />
+                                As long as the European Central Bank only provides
+                                exchange rates based on EUR, other foreign currency
+                                rates are recalculated and might differ from real rates.
+                            </div>
+                        </group>
+                        <group groups="base.group_multi_company">
+                            <field name="company_id" />
+                        </group>
+                        <group>
+                            <label for="interval_number" />
+                            <div class="o_row">
+                                <field name="interval_number" class="ml8" />
+                                <field name="interval_type" />
+                            </div>
+                        </group>
+                        <group>
+                            <field name="last_successful_run" />
+                        </group>
+                        <group>
+                            <field name="next_run" />
+                        </group>
+                        <group>
+                            <field name="available_currency_ids" invisible="1" />
+                            <field
+                                name="currency_ids"
+                                widget="many2many_tags"
+                                options="{'no_create_edit': True}"
+                                domain="[('id', 'in', available_currency_ids)]"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+    <record
+        id="action_res_currency_rate_provider_update_wizard"
+        model="ir.actions.server"
+    >
+        <field name="name">Update Rates Wizard</field>
+        <field name="type">ir.actions.server</field>
+        <field
+            name="model_id"
+            ref="currency_rate_update.model_res_currency_rate_provider"
+        />
+        <field
+            name="binding_model_id"
+            ref="currency_rate_update.model_res_currency_rate_provider"
+        />
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = {
+                    'type': 'ir.actions.act_window',
+                    'res_model': 'res.currency.rate.update.wizard',
+                    'views': [[False, 'form']],
+                    'target': 'new',
+                    'context': {
+                        'default_provider_ids': [(6, False, records.ids)],
+                    },
+                }
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_res_currency_rate_provider">
+        <field name="name">Currency Rates Providers</field>
+        <field name="res_model">res.currency.rate.provider</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem
+        id="menu_res_currency_rate_provider"
+        action="action_res_currency_rate_provider"
+        parent="account.account_account_menu"
+        sequence="30"
+    />
+</odoo>
