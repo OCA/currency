@@ -9,19 +9,20 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 12:43+0000\n"
-"PO-Revision-Date: 2018-04-11 12:43+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2018\n"
+"PO-Revision-Date: 2021-01-24 23:45+0000\n"
+"Last-Translator: Bosd <c5e2fd43-d292-4c90-9d1f-74ff3436329a@anonaddy.me>\n"
 "Language-Team: Dutch (https://www.transifex.com/oca/teams/23907/nl/)\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_account_account
 msgid "Account"
-msgstr ""
+msgstr "Rekening"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_account_move
@@ -37,7 +38,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_amount
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_amount
 msgid "Amount"
-msgstr ""
+msgstr "Bedrag"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,help:account_cryptocurrency.field_res_currency_move_line_amount
@@ -47,17 +48,17 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_account_bank_statement
 msgid "Bank Statement"
-msgstr ""
+msgstr "Bankafschrift"
 
 #. module: account_cryptocurrency
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #. module: account_cryptocurrency
 #: selection:res.currency.move,state:0
 msgid "Cancelled"
-msgstr ""
+msgstr "Geannuleerd"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_company_id
@@ -68,7 +69,7 @@ msgstr "Bedrijf"
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_company_currency
 msgid "Company currency"
-msgstr ""
+msgstr "Bedrijfsvaluta"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_create_uid
@@ -95,19 +96,19 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_form
 msgid "Cryptocurrency"
-msgstr ""
+msgstr "Cryptocurrency"
 
 #. module: account_cryptocurrency
 #: model:res.groups,name:account_cryptocurrency.group_cryptocurrency_user
 msgid "Cryptocurrency user"
-msgstr ""
+msgstr "Cryptocurrency gebruiker"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_res_currency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_currency_id
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Valuta"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_res_currency_move
@@ -159,24 +160,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_direction
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_direction
 msgid "Direction"
-msgstr ""
+msgstr "richting"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_display_name
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_display_name
 msgid "Display Name"
-msgstr "Te tonen naam"
+msgstr "Weergavenaam"
 
 #. module: account_cryptocurrency
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 #: selection:res.currency.move,state:0
 msgid "Draft"
-msgstr ""
+msgstr "Concept"
 
 #. module: account_cryptocurrency
 #: selection:res.currency,valuation_method:0
 msgid "First-in-First-Out"
-msgstr ""
+msgstr "First-in-First-Out"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_account_payment_has_currency_move_ids
@@ -206,15 +207,17 @@ msgstr ""
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:155
-#, python-format
+#, fuzzy, python-format
 msgid "It was not possible to find enough currency units from incoming moves"
 msgstr ""
+"Het was niet mogelijk om voldoende valuta eenheden te vinden voor de "
+"transactie"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_account_move_ids
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
 msgid "Journal Entries"
-msgstr ""
+msgstr "Dagboek regels"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move___last_update
@@ -237,7 +240,7 @@ msgstr "Laatst bijgewerkt op"
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_date
 msgid "Move Date"
-msgstr ""
+msgstr "Transactiedatum"
 
 #. module: account_cryptocurrency
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
@@ -247,14 +250,14 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_name
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:26
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:105
 #, python-format
 msgid "New"
-msgstr ""
+msgstr "Nieuw"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_out_move_line_ids
@@ -265,17 +268,17 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_payment_id
 msgid "Payment"
-msgstr ""
+msgstr "Betaling"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_date
 msgid "Payment Date"
-msgstr ""
+msgstr "Betaaldatum"
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_account_payment
 msgid "Payments"
-msgstr ""
+msgstr "Betalingen"
 
 #. module: account_cryptocurrency
 #: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
@@ -290,17 +293,17 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_price_unit
 msgid "Price Unit"
-msgstr ""
+msgstr "Prijseenheid"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_quantity
 msgid "Quantity"
-msgstr ""
+msgstr "Aantal"
 
 #. module: account_cryptocurrency
 #: selection:res.currency.move,direction:0
 msgid "Receive"
-msgstr ""
+msgstr "Ontvangen"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_remaining_qty
@@ -320,34 +323,34 @@ msgstr ""
 #. module: account_cryptocurrency
 #: selection:res.currency.move,direction:0
 msgid "Send"
-msgstr ""
+msgstr "verzend"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_state
 msgid "State"
-msgstr ""
+msgstr "Status"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,help:account_cryptocurrency.field_account_payment_has_currency_move_ids
 msgid "Technical field used for usability purposes"
-msgstr ""
+msgstr "Technisch veld dat wordt gebruikt voor gebruiksdoeleinden"
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:196
 #, python-format
 msgid "The amount must always be positive."
-msgstr ""
+msgstr "Het bedrag moet altijd positief zijn."
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency.py:33
-#, python-format
+#, fuzzy, python-format
 msgid "The currency of the Inventory Account should be %s"
-msgstr ""
+msgstr "De valuta van het Inventory Account mijn zijn %s"
 
 #. module: account_cryptocurrency
 #: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_valuation_method
 msgid "Valuation Method"
-msgstr ""
+msgstr "Waarderingsmethode"
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency_move.py:177
@@ -388,9 +391,10 @@ msgstr ""
 #, python-format
 msgid "You cannot make internal transfers using crypto currencies."
 msgstr ""
+"Er kunnen geen interne transacties worden uitgevoerd met crypto currencies."
 
 #. module: account_cryptocurrency
 #: code:addons/account_cryptocurrency/models/res_currency.py:41
 #, python-format
 msgid "You must indicate a valuation method for currency %s"
-msgstr ""
+msgstr "Er dient een waarderingsmethode te worden opgegeven voor de valuta %s"
