@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-27 00:40+0000\n"
-"PO-Revision-Date: 2019-12-03 14:04+0000\n"
-"Last-Translator: Galoperd <jvcsan@gmail.com>\n"
+"PO-Revision-Date: 2021-03-11 18:45+0000\n"
+"Last-Translator: Ana Suárez <ana.suarez@qubiq.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:117
@@ -46,6 +46,11 @@ msgid ""
 "provides exchange rates based on EUR, other foreign currency rates are "
 "recalculated and might differ from real rates."
 msgstr ""
+"<strong>! </strong>Está usando el servicio de tipos de cambio del Banco "
+"Central Europeo con una moneda base diferente de EUR.<br/>\n"
+"                              Mientras el Banco Central Europeo solo "
+"proporcione tipos de cambio basados en EUR, otros tipos de cambio de moneda "
+"extranjera serán recalculados y pueden diferir de los reales."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
@@ -123,13 +128,12 @@ msgstr "Monedas a actualizar por este proveedor"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
 msgid "Currency Code (ISO 4217)"
-msgstr ""
+msgstr "Código Divisa (ISO 4217)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
-#, fuzzy
 msgid "Currency Name"
-msgstr "Tipo de Cambio"
+msgstr "Nombre Divisa"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
@@ -143,6 +147,8 @@ msgid ""
 "Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
 "%s"
 msgstr ""
+"Proveedor de tipos de cambio \"%s\" falló al obtener datos desde %s a %s:\n"
+"%s"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
@@ -300,9 +306,9 @@ msgstr "Mes(es)"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:172
-#, python-format
+#, fuzzy, python-format
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
