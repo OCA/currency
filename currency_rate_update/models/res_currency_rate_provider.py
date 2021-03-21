@@ -122,12 +122,13 @@ class ResCurrencyRateProvider(models.Model):
         is_scheduled = self.env.context.get("scheduled")
         for provider in self:
             try:
-                data = provider._obtain_rates(
+                rates_data = provider._obtain_rates(
                     provider.company_id.currency_id.name,
                     provider.currency_ids.mapped("name"),
                     date_from,
                     date_to,
-                ).items()
+                )
+                data = rates_data.items() if rates_data else False
             except BaseException as e:
                 _logger.warning(
                     'Currency Rate Provider "%s" failed to obtain data since'
@@ -254,7 +255,7 @@ class ResCurrencyRateProvider(models.Model):
 
     @api.model
     def _default_company_id(self):
-        return self.env["res.company"]._company_default_get()
+        return self.env.company
 
     @api.model
     def _scheduled_update(self):
