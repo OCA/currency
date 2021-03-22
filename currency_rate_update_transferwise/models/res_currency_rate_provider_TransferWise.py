@@ -89,7 +89,7 @@ class ResCurrencyRateProviderTransferWise(models.Model):
     def _transferwise_provider_retrieve(self, url):
         self.ensure_one()
         with self._transferwise_provider_urlopen(url) as response:
-            content = response.read().decode(response.headers.get_content_charset())
+            content = response.read().decode(response.headers.get_content_charset('utf-8'))
         return content
 
     def _transferwise_provider_urlopen(self, url):
