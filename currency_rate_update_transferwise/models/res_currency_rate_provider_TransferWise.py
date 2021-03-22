@@ -10,7 +10,7 @@ from datetime import timedelta
 
 import dateutil.parser
 
-from odoo import _, api, fields, models
+from odoo import _, fields, models
 from odoo.exceptions import UserError
 
 
@@ -19,7 +19,6 @@ class ResCurrencyRateProviderTransferWise(models.Model):
 
     service = fields.Selection(selection_add=[("TransferWise", "TransferWise.com")],)
 
-    @api.multi
     def _get_supported_currencies(self):
         self.ensure_one()
         if self.service != "TransferWise":
@@ -42,7 +41,6 @@ class ResCurrencyRateProviderTransferWise(models.Model):
             )
         )
 
-    @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
         if self.service != "TransferWise":
@@ -88,14 +86,14 @@ class ResCurrencyRateProviderTransferWise(models.Model):
 
         return content
 
-    @api.multi
     def _transferwise_provider_retrieve(self, url):
         self.ensure_one()
         with self._transferwise_provider_urlopen(url) as response:
-            content = response.read().decode(response.headers.get_content_charset())
+            content = response.read().decode(
+                response.headers.get_content_charset("utf-8")
+            )
         return content
 
-    @api.multi
     def _transferwise_provider_urlopen(self, url):
         self.ensure_one()
 
