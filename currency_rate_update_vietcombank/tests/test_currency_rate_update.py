@@ -8,7 +8,7 @@ from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
-_module_ns = "odoo.addons.currency_rate_update"
+_module_ns = "odoo.addons.currency_rate_update_vietcombank"
 _file_ns = _module_ns + ".models.res_currency_rate_provider_VCB"
 _VCB_provider_class = _file_ns + ".ResCurrencyRateProviderVCB"
 
