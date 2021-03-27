@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="res_currency_rate_provider_form_view">
+        <field name="name">res.currency.rate.provider.form</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field
+            name="inherit_id"
+            ref="currency_rate_update.res_currency_rate_provider_form_view"
+        />
+        <field name="arch" type="xml">
+
+            <field name="currency_name" position="after">
+                <div
+                    attrs="{'invisible':[('service','!=','VCB')]}"
+                    class="alert alert-warning"
+                    colspan="2"
+                    role="alert"
+                >
+                    <strong>!</strong>
+                    We only can get currency today. VBC do not support get currency by date.
+                    <br />
+                    Currency is come from the website. Maybe you need to modify by 1/curreny rate because Odoo do not support Vietnam currency.
+                </div>
+            </field>
+
+        </field>
+    </record>
+
+</odoo>
