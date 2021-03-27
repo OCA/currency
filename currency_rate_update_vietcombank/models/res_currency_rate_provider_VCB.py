@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 from odoo import fields, models
 
 
-class ResCurrencyRateProviderECB(models.Model):
+class ResCurrencyRateProviderVCB(models.Model):
     _inherit = "res.currency.rate.provider"
 
     service = fields.Selection(
