@@ -19,7 +19,8 @@ class ResCurrencyRateProviderECB(models.Model):
             return super()._get_supported_currencies()
 
         # List of currencies obrained from:
-        # https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=68
+        # https://portal.vietcombank.com.vn/
+        # Usercontrols/TVPortal.TyGia/pXML.aspx?b=68
         return [
             "AUD",
             "CAD",
@@ -55,7 +56,8 @@ class ResCurrencyRateProviderECB(models.Model):
                 currencies.append(base_currency)
 
         # Depending on the date range, different URLs are used
-        url = "https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx?b=68"
+        url = "https://portal.vietcombank.com.vn/Usercontrols/"
+        url += "TVPortal.TyGia/pXML.aspx?b=68"
 
         response = urllib.request.urlopen(url).read()
         root = ET.fromstring(response)
