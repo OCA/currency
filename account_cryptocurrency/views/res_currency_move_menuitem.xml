@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="Currency Moves"
+            id="menu_currency_moves"
+            groups="account.group_account_user,account.group_account_manager,account.group_account_invoice"
+            parent="account.menu_finance_entries"/>
+
+    </data>
+</odoo>
+

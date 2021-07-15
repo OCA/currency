@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="group_cryptocurrency_user" model="res.groups">
+        <field name="name">Cryptocurrency user</field>
+        <field name="category_id" ref="base.module_category_accounting_and_finance"/>
+        <field name="implied_ids"
+               eval="[(4, ref('account.group_account_invoice'))]"/>
+    </record>
+
+    <record model="ir.rule" id="res_currency_move_comp_rule">
+        <field name="name">Res Currency Move Multi-company rule</field>
+        <field name="model_id" ref="model_res_currency_move"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+    <record model="ir.rule" id="res_currency_move_line_comp_rule">
+        <field name="name">Res Currency Move Line Multi-company rule</field>
+        <field name="model_id" ref="model_res_currency_move_line"/>
+        <field name="global" eval="True"/>
+        <field name="domain_force">['|',('company_id','=',False),('company_id','child_of',[user.company_id.id])]</field>
+    </record>
+
+</odoo>
