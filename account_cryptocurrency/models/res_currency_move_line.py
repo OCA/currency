@@ -1,11 +1,11 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
-_STATES = [("draft", "Draft"), ("posted", "Posted"), ("cancelled", "Cancelled")]
+_STATES = [("draft", "Draft"), ("posted", "Posted"), ("cancel", "Cancelled")]
 
 _DIRECTIONS = [
     ("inbound", "Receive Money"),
@@ -50,7 +50,6 @@ class ResCurrencyMoveLine(models.Model):
         store=True,
     )
     direction = fields.Selection(
-        selection=_DIRECTIONS,
         string="Direction",
         related="move_id.direction",
         store=True,
@@ -79,7 +78,7 @@ class ResCurrencyMoveLine(models.Model):
         string="Incoming move line",
         readonly=True,
     )
-    out_move_line_ids = fields.One2many(
+    out_line_ids = fields.One2many(
         "res.currency.move.line",
         "in_move_line_id",
         "Outgoing Move Lines",
@@ -90,11 +89,9 @@ class ResCurrencyMoveLine(models.Model):
         "res_currency_move_line_id",
         string="Journal Entries",
         readonly=True,
-        ondelete="restrict",
     )
 
     @api.depends("amount", "quantity")
-    @api.multi
     def _compute_price_unit(self):
         for rec in self:
             if rec.quantity:
@@ -104,10 +101,10 @@ class ResCurrencyMoveLine(models.Model):
     def _get_in_base_domain(self, company_id=False):
         return [("company_id", "=", company_id), ("direction", "=", "inbound")]
 
-    @api.depends("out_move_line_ids")
+    @api.depends("out_line_ids")
     def _compute_remaining_qty(self):
         for rec in self:
-            out_qty = sum(rec.mapped("out_move_line_ids").mapped("quantity"))
+            out_qty = sum(rec.mapped("out_line_ids").mapped("quantity"))
             rec.remaining_qty = rec.quantity - out_qty
 
     @api.model
@@ -150,7 +147,7 @@ class ResCurrencyMoveLine(models.Model):
         move_line = super().create(vals)
         am_data = move_line._prepare_account_move()
         account_move = self.env["account.move"].create(am_data)
-        account_move.post()
+        account_move.action_post()
         return move_line
 
     def unlink(self):

@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -11,7 +11,7 @@ class AccountBankStatement(models.Model):
     @api.constrains("journal_id")
     def _check_journal_id_crypto(self):
         if self.filtered("journal_id.currency_id.inventoried"):
-            raise exceptions.Warning(
+            raise exceptions.ValidationError(
                 _(
                     "You cannot encode bank statements associated to "
                     "crypto currencies."

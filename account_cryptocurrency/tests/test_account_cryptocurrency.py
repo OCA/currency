@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -96,7 +96,7 @@ class TestAccountCryptocurrency(common.TransactionCase):
         )
         self.currency_cc = (
             self.env["res.currency"]
-            .with_context(company_id=self.company.id, force_company=self.company.id)
+            .with_company(self.company)
             .create(
                 {
                     "name": "CC",
@@ -112,13 +112,31 @@ class TestAccountCryptocurrency(common.TransactionCase):
         self.customer = self.env["res.partner"].create(
             {
                 "name": "Test customer",
-                "customer": True,
+                "property_account_receivable_id": self.receivable_account.id,
             }
         )
         self.supplier = self.env["res.partner"].create(
             {
                 "name": "Test supplier",
-                "customer": True,
+                "property_account_payable_id": self.payable_account.id,
+            }
+        )
+        self.sale_journal = self.env["account.journal"].create(
+            {
+                "name": "Customer Invoices (TEST)",
+                "code": "INVT",
+                "type": "sale",
+                "company_id": self.company.id,
+                "default_account_id": self.account_revenue.id,
+            }
+        )
+        self.purchase_journal = self.env["account.journal"].create(
+            {
+                "name": "Vendor Bills (TEST)",
+                "code": "BILLT",
+                "type": "purchase",
+                "company_id": self.company.id,
+                "default_account_id": self.account_expenses.id,
             }
         )
         self.cc_journal = self.env["account.journal"].create(
@@ -127,8 +145,9 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "code": "CC",
                 "type": "bank",
                 "company_id": self.company.id,
-                "default_debit_account_id": self.to_inventory_account.id,
-                "default_credit_account_id": self.to_inventory_account.id,
+                "default_account_id": self.to_inventory_account.id,
+                "payment_debit_account_id": self.to_inventory_account.id,
+                "payment_credit_account_id": self.to_inventory_account.id,
             }
         )
         # We want to make sure that the company has no rates, that would
@@ -143,7 +162,7 @@ class TestAccountCryptocurrency(common.TransactionCase):
     def _check_account_balance(self, account):
         balance = sum(
             self.env["account.move.line"]
-            .search([("account_id", "=", account.id)])
+            .search([("account_id", "=", account.id), ("move_id.state", "=", "posted")])
             .mapped("balance")
         )
         return balance
@@ -164,29 +183,32 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "rate": 2,
             }
         )
-        invoice_cust_001 = self.env["account.invoice"].create(
+        invoice_cust_001 = self.env["account.move"].create(
             {
                 "partner_id": self.customer.id,
-                "account_id": self.receivable_account.id,
-                "type": "out_invoice",
+                "journal_id": self.sale_journal.id,
+                "move_type": "out_invoice",
                 "currency_id": self.currency_cc.id,
                 "company_id": self.company.id,
-                "date_invoice": time.strftime("%Y") + "-01-01",
+                "date": time.strftime("%Y") + "-01-01",
+                "invoice_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "product_id": self.env.ref("product.product_product_4").id,
+                            "quantity": 1.0,
+                            "price_unit": 100.0,
+                            "name": "product that cost 100",
+                            "account_id": self.account_revenue.id,
+                        },
+                    )
+                ],
             }
         )
-        self.env["account.invoice.line"].create(
-            {
-                "product_id": self.env.ref("product.product_product_4").id,
-                "quantity": 1.0,
-                "price_unit": 100.0,
-                "invoice_id": invoice_cust_001.id,
-                "name": "product that cost 100",
-                "account_id": self.account_revenue.id,
-            }
-        )
-        invoice_cust_001.action_invoice_open()
-        self.assertEqual(invoice_cust_001.residual_company_signed, 50.0)
-        aml = invoice_cust_001.move_id.mapped("line_ids").filtered(
+        invoice_cust_001.action_post()
+        self.assertEqual(invoice_cust_001.amount_residual_signed, 50.0)
+        aml = invoice_cust_001.mapped("line_ids").filtered(
             lambda x: x.account_id == self.account_revenue
         )
         self.assertEqual(aml.credit, 50.0)
@@ -223,31 +245,30 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "partner_id": self.customer.id,
                 "amount": 50,
                 "currency_id": self.currency_cc.id,
-                "payment_date": time.strftime("%Y") + "-01-02",
+                "date": time.strftime("%Y") + "-01-02",
                 "journal_id": self.cc_journal.id,
             }
         )
-        payment.post()
-        payment_move_line = False
-        for l in payment.move_line_ids:
-            if l.account_id == self.receivable_account:
-                payment_move_line = l
-        invoice_cust_001.register_payment(payment_move_line)
-        self.assertEqual(invoice_cust_001.state, "open")
-        aml = payment.move_line_ids.filtered(
+        payment.action_post()
+        invoice_line_id = invoice_cust_001.line_ids.filtered(
             lambda x: x.account_id == self.receivable_account
         )
-        self.assertEqual(aml.amount_currency, -50.0)
-        self.assertEqual(aml.credit, 40.0)
+        payment_line_id = payment.move_id.line_ids.filtered(
+            lambda x: x.account_id == self.receivable_account
+        )
+        (invoice_line_id + payment_line_id).reconcile()
+        self.assertEqual(invoice_cust_001.state, "posted")
+        self.assertEqual(payment_line_id.amount_currency, -50.0)
+        self.assertEqual(payment_line_id.credit, 40.0)
         # Inventory of CC (day 2)
         # ----------------------
         # day 2:
         # 50 CC @$0,8/CC (total valuation of coins received /
         # number of coins received)
-        cc_ml = payment.res_currency_move_ids.mapped("move_line_ids")[0]
-        self.assertEqual(cc_ml.quantity, 50.0)
+        cc_ml = payment.res_currency_move_ids.mapped("line_ids")[0]
+        self.assertEqual(round(cc_ml.quantity, 2), 50.0)
         self.assertEqual(cc_ml.amount, 40.0)
-        self.assertEqual(cc_ml.price_unit, 0.8)
+        self.assertEqual(round(cc_ml.price_unit, 2), 0.8)
         # Balance of the To Inventory account should be 0
         to_inventory_balance = self._check_account_balance(self.to_inventory_account)
         self.assertEqual(to_inventory_balance, 0.0)
@@ -290,32 +311,28 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "partner_id": self.customer.id,
                 "amount": 50,
                 "currency_id": self.currency_cc.id,
-                "payment_date": time.strftime("%Y") + "-01-03",
+                "date": time.strftime("%Y") + "-01-03",
                 "journal_id": self.cc_journal.id,
             }
         )
-        payment.post()
-        payment_move_line = False
-        for l in payment.move_line_ids:
-            if l.account_id == self.receivable_account:
-                payment_move_line = l
-        invoice_cust_001.register_payment(payment_move_line)
-        self.assertEqual(invoice_cust_001.state, "paid")
-        aml = payment.move_line_ids.filtered(
+        payment.action_post()
+        payment_line_id = payment.move_id.line_ids.filtered(
             lambda x: x.account_id == self.receivable_account
         )
-        self.assertEqual(aml.amount_currency, -50.0)
-        self.assertEqual(aml.credit, 100.0)
+        (invoice_line_id + payment_line_id).reconcile()
+        self.assertEqual(invoice_cust_001.payment_state, "paid")
+        self.assertEqual(payment_line_id.amount_currency, -50.0)
+        self.assertEqual(payment_line_id.credit, 100.0)
         # Inventory of CC (day 3)
         # -----------------------
         # day 1:
         # * 50 CC @$0,80/CC
         # day 3:
         # * 50 CC @$2,00/CC
-        cc_ml = payment.res_currency_move_ids.mapped("move_line_ids")[0]
-        self.assertEqual(cc_ml.quantity, 50.0)
+        cc_ml = payment.res_currency_move_ids.mapped("line_ids")[0]
+        self.assertEqual(round(cc_ml.quantity, 2), 50.0)
         self.assertEqual(cc_ml.amount, 100.0)
-        self.assertEqual(cc_ml.price_unit, 2)
+        self.assertEqual(round(cc_ml.price_unit, 2), 2)
         # Balance of the To Inventory account should be 0
         to_inventory_balance = self._check_account_balance(self.to_inventory_account)
         self.assertEqual(to_inventory_balance, 0.0)
@@ -349,27 +366,30 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "rate": 0.25,
             }
         )
-        invoice_supp_001 = self.env["account.invoice"].create(
+        invoice_supp_001 = self.env["account.move"].create(
             {
                 "partner_id": self.supplier.id,
-                "account_id": self.payable_account.id,
-                "type": "in_invoice",
+                "journal_id": self.purchase_journal.id,
+                "move_type": "in_invoice",
                 "currency_id": self.currency_cc.id,
                 "company_id": self.company.id,
-                "date_invoice": time.strftime("%Y") + "-01-04",
+                "invoice_date": time.strftime("%Y") + "-01-04",
+                "invoice_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "product_id": self.env.ref("product.product_product_4").id,
+                            "quantity": 1.0,
+                            "price_unit": 60.0,
+                            "name": "product that cost 100",
+                            "account_id": self.account_expenses.id,
+                        },
+                    )
+                ],
             }
         )
-        self.env["account.invoice.line"].create(
-            {
-                "product_id": self.env.ref("product.product_product_4").id,
-                "quantity": 1.0,
-                "price_unit": 60.0,
-                "invoice_id": invoice_supp_001.id,
-                "name": "product that cost 100",
-                "account_id": self.account_expenses.id,
-            }
-        )
-        invoice_supp_001.action_invoice_open()
+        invoice_supp_001.action_post()
         # Day 5: Pay half invoice of Supp/001 (in CC)
         # -------------------------------------------
         # Market value of CC (day 5): 1 CC = $5
@@ -397,21 +417,23 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "partner_id": self.supplier.id,
                 "amount": 30,
                 "currency_id": self.currency_cc.id,
-                "payment_date": time.strftime("%Y") + "-01-05",
+                "date": time.strftime("%Y") + "-01-05",
                 "journal_id": self.cc_journal.id,
             }
         )
-        payment.post()
-        payment_move_line = False
-        for l in payment.move_line_ids:
-            if l.account_id == self.payable_account:
-                payment_move_line = l
-        invoice_supp_001.register_payment(payment_move_line)
-        self.assertEqual(invoice_supp_001.state, "open")
-        cc_ml = payment.res_currency_move_ids.mapped("move_line_ids")[0]
-        self.assertEqual(cc_ml.quantity, 30.0)
-        self.assertEqual(cc_ml.amount, 24.0)
-        self.assertEqual(cc_ml.price_unit, 0.80)
+        payment.action_post()
+        invoice_line_id = invoice_supp_001.line_ids.filtered(
+            lambda x: x.account_id == self.payable_account
+        )
+        payment_line_id = payment.move_id.line_ids.filtered(
+            lambda x: x.account_id == self.payable_account
+        )
+        (invoice_line_id + payment_line_id).reconcile()
+        self.assertEqual(invoice_supp_001.state, "posted")
+        cc_ml = payment.res_currency_move_ids.mapped("line_ids")[0]
+        self.assertEqual(round(cc_ml.quantity, 2), 30.0)
+        self.assertEqual(round(cc_ml.amount, 2), 24.0)
+        self.assertEqual(round(cc_ml.price_unit, 2), 0.80)
         ####
         # Inventory of CC (day 5)
         # -----------------------
@@ -420,7 +442,7 @@ class TestAccountCryptocurrency(common.TransactionCase):
         # day 2:
         # * 50 CC @$2,00/CC
         ####
-        # Balance of the Inventory account should be 40
+        # Balance of the Inventory account should be 116
         inventory_balance = self._check_account_balance(self.inventory_account)
         self.assertEqual(inventory_balance, 116.0)
         ####
@@ -453,20 +475,19 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "partner_id": self.supplier.id,
                 "amount": 30,
                 "currency_id": self.currency_cc.id,
-                "payment_date": time.strftime("%Y") + "-01-06",
+                "date": time.strftime("%Y") + "-01-06",
                 "journal_id": self.cc_journal.id,
             }
         )
-        payment.post()
-        payment_move_line = False
-        for l in payment.move_line_ids:
-            if l.account_id == self.payable_account:
-                payment_move_line = l
-        invoice_supp_001.register_payment(payment_move_line)
-        self.assertEqual(invoice_supp_001.state, "paid")
+        payment.action_post()
+        payment_line_id = payment.move_id.line_ids.filtered(
+            lambda x: x.account_id == self.payable_account
+        )
+        (invoice_line_id + payment_line_id).reconcile()
+        self.assertEqual(invoice_supp_001.payment_state, "paid")
         # We have two move lines
 
-        self.assertEqual(len(payment.res_currency_move_ids.mapped("move_line_ids")), 2)
+        self.assertEqual(len(payment.res_currency_move_ids.mapped("line_ids")), 2)
         ####
         # Inventory of CC (day 6)
         # -----------------------
@@ -503,29 +524,32 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "rate": 2,
             }
         )
-        invoice_cust_001 = self.env["account.invoice"].create(
+        invoice_cust_001 = self.env["account.move"].create(
             {
                 "partner_id": self.customer.id,
-                "account_id": self.receivable_account.id,
-                "type": "out_invoice",
+                "journal_id": self.sale_journal.id,
+                "move_type": "out_invoice",
                 "currency_id": self.currency_cc.id,
                 "company_id": self.company.id,
-                "date_invoice": time.strftime("%Y") + "-01-01",
+                "date": time.strftime("%Y") + "-01-01",
+                "invoice_line_ids": [
+                    (
+                        0,
+                        0,
+                        {
+                            "product_id": self.env.ref("product.product_product_4").id,
+                            "quantity": 1.0,
+                            "price_unit": 100.0,
+                            "name": "product that cost 100",
+                            "account_id": self.account_revenue.id,
+                        },
+                    )
+                ],
             }
         )
-        self.env["account.invoice.line"].create(
-            {
-                "product_id": self.env.ref("product.product_product_4").id,
-                "quantity": 1.0,
-                "price_unit": 100.0,
-                "invoice_id": invoice_cust_001.id,
-                "name": "product that cost 100",
-                "account_id": self.account_revenue.id,
-            }
-        )
-        invoice_cust_001.action_invoice_open()
-        self.assertEqual(invoice_cust_001.residual_company_signed, 50.0)
-        aml = invoice_cust_001.move_id.mapped("line_ids").filtered(
+        invoice_cust_001.action_post()
+        self.assertEqual(invoice_cust_001.amount_residual_signed, 50.0)
+        aml = invoice_cust_001.mapped("line_ids").filtered(
             lambda x: x.account_id == self.account_revenue
         )
         self.assertEqual(aml.credit, 50.0)
@@ -565,13 +589,12 @@ class TestAccountCryptocurrency(common.TransactionCase):
                 "partner_id": self.customer.id,
                 "amount": 50,
                 "currency_id": self.currency_cc.id,
-                "payment_date": time.strftime("%Y") + "-01-02",
+                "date": time.strftime("%Y") + "-01-02",
                 "journal_id": self.cc_journal.id,
             }
         )
-        payment.post()
-        payment.journal_id.update_posted = True
-        payment.cancel()
+        payment.action_post()
+        payment.action_cancel()
         # Balance of the To Inventory account should be 0
         to_inventory_balance = self._check_account_balance(self.to_inventory_account)
         self.assertEqual(to_inventory_balance, 0.0)

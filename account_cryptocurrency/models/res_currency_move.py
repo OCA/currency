@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -8,7 +8,7 @@ from odoo.exceptions import UserError, ValidationError
 _STATES = [
     ("draft", "Draft"),
     ("posted", "Posted"),
-    ("cancelled", "Cancelled"),
+    ("cancel", "Cancelled"),
 ]
 
 _DIRECTIONS = [
@@ -33,6 +33,7 @@ class ResCurrencyMove(models.Model):
         string="Payment",
         readonly=True,
         copy=False,
+        ondelete="cascade",
     )
     amount = fields.Float(
         "Amount",
@@ -90,7 +91,7 @@ class ResCurrencyMove(models.Model):
         readonly=True,
         states={"draft": [("readonly", False)]},
     )
-    move_line_ids = fields.One2many(
+    line_ids = fields.One2many(
         "res.currency.move.line",
         "move_id",
         string="Currency move lines",
@@ -102,15 +103,15 @@ class ResCurrencyMove(models.Model):
     @api.depends("currency_id", "journal_id", "direction")
     def _compute_accounts(self):
         for rec in self:
-            inventory_account = self.currency_id.with_context(
-                force_company=self.company_id.id
+            inventory_account = self.currency_id.with_company(
+                self.company_id
             ).inventory_account_id
 
             if self.direction == "inbound":
                 rec.debit_account_id = inventory_account
-                rec.credit_account_id = self.journal_id.default_credit_account_id
+                rec.credit_account_id = self.journal_id.default_account_id
             else:
-                rec.debit_account_id = self.journal_id.default_debit_account_id
+                rec.debit_account_id = self.journal_id.default_account_id
                 rec.credit_account_id = inventory_account
 
     def _get_sequence(self):
@@ -184,7 +185,7 @@ class ResCurrencyMove(models.Model):
             )
         return True
 
-    def post(self):
+    def _post(self):
         for rec in self:
             if rec.direction == "inbound":
                 move_line_data = rec._prepare_incoming_move_line()
@@ -194,13 +195,17 @@ class ResCurrencyMove(models.Model):
                 self._run_fifo()
             rec.state = "posted"
 
+    def action_post(self):
+        self._post()
+        return False
+
     def action_draft(self):
         return self.write({"state": "draft"})
 
-    def cancel(self):
-        force_cancel = self.env.context.get("force_cancel", False)
+    def action_cancel(self):
+        force_delete = self.env.context.get("force_delete", False)
         for rec in self:
-            if rec.payment_id and not force_cancel:
+            if rec.payment_id and not force_delete:
                 raise UserError(
                     _(
                         "You can not cancel a currency move "
@@ -208,14 +213,12 @@ class ResCurrencyMove(models.Model):
                         "Please cancel the payment first."
                     )
                 )
-            for move in rec.move_line_ids.mapped("account_move_ids"):
+            for move in rec.line_ids.mapped("account_move_ids"):
                 move.button_cancel()
-                move.unlink()
-            rec.move_line_ids.unlink()
-            rec.state = "cancelled"
+            rec.write({"state": "cancel"})
 
     def unlink(self):
-        if self.mapped("move_line_ids"):
+        if self.mapped("line_ids"):
             raise UserError(
                 _("You can not delete a currency move " "that is already posted")
             )

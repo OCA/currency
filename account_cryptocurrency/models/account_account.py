@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -19,7 +19,7 @@ class AccountAccount(models.Model):
                 limit=1,
             )
             if currency:
-                raise exceptions.Warning(
+                raise exceptions.ValidationError(
                     _(
                         "You cannot change the account currency as it is "
                         "already being referenced to cryptocurrency %s as an "

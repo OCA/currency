@@ -1,4 +1,4 @@
-# Copyright 2018 Eficent Business and IT Consulting Services, S.L.
+# Copyright 2021 ForgeFlow S.L.
 # Copyright 2018 Fork Sand Inc.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -31,16 +31,17 @@ class ResCurrency(models.Model):
         for rec in self:
             if (
                 rec.inventory_account_id
+                and rec.inventory_account_id.currency_id
                 and rec.inventory_account_id.currency_id != rec.id
             ):
-                raise exceptions.Warning(
+                raise exceptions.ValidationError(
                     _("The currency of the Inventory Account should be %s") % rec.name
                 )
 
     @api.constrains("inventoried", "valuation_method")
-    def _check_inventory_account_id(self):
+    def _check_currency_valuation_method(self):
         for rec in self:
             if rec.inventoried and not rec.valuation_method:
-                raise exceptions.Warning(
+                raise exceptions.ValidationError(
                     _("You must indicate a valuation method for currency %s") % rec.name
                 )

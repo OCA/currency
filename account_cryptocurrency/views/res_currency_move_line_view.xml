@@ -76,7 +76,7 @@
                         <notebook>
                             <page name="out_move_lines" string="Outgoing Move Lines">
                                 <group>
-                                    <field name="out_move_line_ids" nolabel="1" />
+                                    <field name="out_line_ids" nolabel="1" />
                                 </group>
                             </page>
                             <page name="account_moves" string="Journal Entries">
@@ -92,7 +92,6 @@
         <record id="action_currency_move_line_form" model="ir.actions.act_window">
             <field name="name">Currency Move Lines</field>
             <field name="res_model">res.currency.move.line</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_currency_move_line_search" />
         </record>

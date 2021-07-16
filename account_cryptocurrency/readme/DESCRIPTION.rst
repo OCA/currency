@@ -18,7 +18,7 @@ This module provides basic support for the management of cryptocurrencies.
    it.
 
 #. When you pay out cryptocurrencies (in exchange for goods or services
-   purchased, or if you exchanged fpr another crypto or normal currency) this
+   purchased, or if you exchanged for another crypto or normal currency) this
    constitutes again a taxable transaction. In that case the gain/loss is
    computed as the difference between the cost of the cryptocurrency that
    you pay with, and the value of what you receive back, valued in your

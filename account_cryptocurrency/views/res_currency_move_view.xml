@@ -46,14 +46,14 @@
                 <form string="Currency Move">
                     <header>
                         <button
-                            name="post"
+                            name="action_post"
                             string="Post"
                             type="object"
                             states="draft"
                             class="oe_highlight"
                         />
                         <button
-                            name="cancel"
+                            name="action_cancel"
                             string="Cancel"
                             type="object"
                             states="posted"
@@ -96,7 +96,7 @@
                         <notebook>
                             <page name="move_lines" string="Move Lines">
                                 <group>
-                                    <field name="move_line_ids" nolabel="1" />
+                                    <field name="line_ids" nolabel="1" />
                                 </group>
                             </page>
                         </notebook>
@@ -107,7 +107,6 @@
         <record id="action_currency_move_form" model="ir.actions.act_window">
             <field name="name">Currency Moves</field>
             <field name="res_model">res.currency.move</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_currency_move_search" />
         </record>
