@@ -9,5 +9,5 @@ class AccountMove(models.Model):
     _inherit = "account.move"
 
     res_currency_move_line_id = fields.Many2one(
-        'res.currency.move.line', readonly=True, copy=False,
-        ondelete='cascade')
+        "res.currency.move.line", readonly=True, copy=False, ondelete="cascade"
+    )
