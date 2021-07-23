@@ -1,6 +1,3 @@
-Configuration
-=============
-
 #. For the user that will do the configuration, make sure to activate the
    option 'Show Full Accounting Features' in the user profile.
 
