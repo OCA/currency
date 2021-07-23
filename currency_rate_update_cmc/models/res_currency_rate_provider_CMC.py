@@ -60,9 +60,9 @@ class ResCurrencyRateProviderCMC(models.Model):
             ("CMC Basic", "Coin Market Cap - Basic Plan"),
             ("CMC Standard", "Coin Market Cap - Standard Plan"),
         ],
+        ondelete={"CMC Basic": "set default", "CMC Standard": "set default"},
     )
 
-    @api.multi
     def _get_supported_currencies(self):
         self.ensure_one()
         if self.service and "CMC" in self.service:

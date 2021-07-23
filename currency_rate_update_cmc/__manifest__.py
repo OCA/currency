@@ -5,7 +5,7 @@
 
 {
     "name": "Currency Rate Update Coin Market Cap",
-    "version": "12.0.1.0.0",
+    "version": "14.0.1.0.0",
     "category": "Accounting & Finance",
     "summary": "Allows to download crypto currency exchange rates from "
     "Coin Market Cap",
