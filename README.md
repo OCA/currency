@@ -17,9 +17,9 @@ TODO: add repo description.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[currency_rate_update](currency_rate_update/) | 14.0.1.0.0 | Update exchange rates using OCA modules
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[currency_rate_update](currency_rate_update/) | 14.0.1.0.0 |  | Update exchange rates using OCA modules
 
 [//]: # (end addons)
 
