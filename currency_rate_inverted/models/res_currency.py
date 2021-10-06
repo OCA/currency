@@ -10,7 +10,8 @@ class ResCurrency(models.Model):
     _inherit = "res.currency"
 
     rate_inverted = fields.Boolean(
-        string="Inverted exchange rate", company_dependent=True,
+        string="Inverted exchange rate",
+        company_dependent=True,
     )
 
     @api.model
