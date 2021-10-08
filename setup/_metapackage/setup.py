@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-currency Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-account_cryptocurrency',
         'odoo14-addon-currency_rate_update',
     ],
     classifiers=[
