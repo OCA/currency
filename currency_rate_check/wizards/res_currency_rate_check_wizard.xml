@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_currency_rate_check_wizard_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.check.wizard.form</field>
+        <field name="model">res.currency.rate.check.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>
+                This wizard will show journal items which have mismatching amounts when considering currency exchange rates.<br/>
+                This wizard will use the rates that are currently in Odoo.<br/>
+                Only the current entity will be checked.<br/>
+                Warning: updating the amounts will override posted, reconciliation, and lock date checks.<br/>
+                The related reconciled journal items are not recomputed as they belong to entries with more than two items.<br/>
+                If a journal item does not have a directly related invoice a message of the change will not be written.<br/>
+                </div>
+                <group name="filter">
+                    <group name="date_range" colspan="2">
+                        <group>
+                            <field name="date_from"/>
+                            <field name="currency_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+                        </group>
+                        <group>
+                            <field name="date_to"/>
+                            <field name="line_limit"/>
+                            <field name="ref"/>
+                        </group>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_check" string="Check" type="object" default_focus="1" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

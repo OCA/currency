@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_currency_rate_form">
+        <field name="name">currency.check.form</field>
+        <field name="model">account.move.line.currency.check</field>
+        <!-- <field name="inherit_id" ref="base.view_currency_rate_form"/> -->
+        <field name="arch" type="xml">
+        <tree decoration-success="amount_currency==alt_amount_currency and (debit==abs(amount) or credit==abs(amount))">
+            <field name="line_id"/>
+            <field name="date"/>
+            <field name="rate_partner"/>
+            <field name="rate_company"/>
+            <field name="amount_currency" widget='monetary'/>
+            <field name="alt_amount_currency" widget='monetary'/>
+            <field name="currency_id"/>
+            <field name="amount" widget='monetary'/>
+            <field name="debit" widget='monetary'/>
+            <field name="credit" widget='monetary'/>
+            <field name="company_currency_id"/>
+        </tree>
+        </field>
+    </record>
+
+    <record id="res_currency_rate_provider_action_check_wizard" model="ir.actions.server">
+        <field name="name">Check Rates Wizard</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="currency_rate_update.model_res_currency_rate_provider"/>
+        <field name="binding_model_id" ref="currency_rate_update.model_res_currency_rate_provider"/>
+        <field name="state">code</field>
+        <field name="code">
+if len(records) == 1:
+    action = {
+        'type': 'ir.actions.act_window',
+        'res_model': 'res.currency.rate.check.wizard',
+        'views': [[False, 'form']],
+        'target': 'new',
+        'context': {
+            'default_provider_ids': [(6, False, records.ids)],
+            'default_currency_ids': [(6, False, records.mapped('currency_ids').ids)],
+            'rate_check_name_get': True,
+        },
+    }
+else:
+    raise Warning("Please choose exactly one provider.")
+        </field>
+    </record>
+
+    <record id="account_move_line_currency_check_action_use_partner" model="ir.actions.server">
+        <field name="name">Copy Amount Company Currency to debit/credit</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="currency_rate_check.model_account_move_line_currency_check"/>
+        <field name="binding_model_id" ref="currency_rate_check.model_account_move_line_currency_check"/>
+        <field name="state">code</field>
+        <field name="code">
+records.action_rebase_currency_partner()
+        </field>
+    </record>
+
+    <record id="account_move_line_currency_check_action_use_company" model="ir.actions.server">
+        <field name="name">Copy Amount Partner Currency to Amount Currency</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="currency_rate_check.model_account_move_line_currency_check"/>
+        <field name="binding_model_id" ref="currency_rate_check.model_account_move_line_currency_check"/>
+        <field name="state">code</field>
+        <field name="code">
+records.action_rebase_currency_company()
+        </field>
+    </record>
+
+</odoo>
