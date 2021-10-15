@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 from collections import defaultdict
-from datetime import timedelta
+from datetime import timedelta, datetime
 import json
 import urllib.parse
 import urllib.request
@@ -38,14 +38,15 @@ class ResCurrencyRateProviderOXR(models.Model):
     @api.multi
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
+        eod_rates = self.company_id.openexchangerates_eod_rates
         if self.service != 'OXR':
             return super()._obtain_rates(base_currency, currencies, date_from,
                                          date_to)  # pragma: no cover
 
         content = defaultdict(dict)
 
-        date = date_from
-        while date <= date_to:
+        date = date_from - timedelta(days=1) if eod_rates else date_from
+        while date <= (date_to - timedelta(days=1) if eod_rates else date_to):
             url = (
                 'https://openexchangerates.org/api/historical' +
                 '/%(date)s.json'
@@ -63,7 +64,14 @@ class ResCurrencyRateProviderOXR(models.Model):
                     if 'description' in data
                     else 'Unknown error'
                 )
-            date_content = content[date.isoformat()]
+            data_date = datetime.utcfromtimestamp(data['timestamp']).date()
+            if eod_rates and data_date != date:
+                raise UserError(
+                    "Exchange rate from incorrect date received. Got {data_date}, expected {date}".format(
+                        data_date=data_date, date=date
+                    )
+                )
+            date_content = content[(date + timedelta(days=1) if eod_rates else date).isoformat()]
             if 'rates' in data:
                 for currency, rate in data['rates'].items():
                     date_content[currency] = rate

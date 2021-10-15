@@ -26,6 +26,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="o_setting_left_pane">
+                        <field name="openexchangerates_eod_rates"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="openexchangerates_eod_rates"/>
+                    </div>
                 </div>
             </xpath>
         </field>

@@ -12,3 +12,9 @@ class ResConfigSettings(models.TransientModel):
         related='company_id.openexchangerates_app_id',
         readonly=False,
     )
+    openexchangerates_eod_rates = fields.Boolean(
+        string='End-of-day rates',
+        related='company_id.openexchangerates_eod_rates',
+        readonly=False,
+        help='Yesterday\'s end-of-day rates will be used for today.',
+    )
