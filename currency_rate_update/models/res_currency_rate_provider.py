@@ -49,7 +49,7 @@ class ResCurrencyRateProvider(models.Model):
         required=True,
         help="Currencies to be updated by this provider",
     )
-    name = fields.Char(string="Name", compute="_compute_name", store=True)
+    name = fields.Char(compute="_compute_name", store=True)
     interval_type = fields.Selection(
         string="Units of scheduled update interval",
         selection=[("days", "Day(s)"), ("weeks", "Week(s)"), ("months", "Month(s)")],
@@ -59,9 +59,7 @@ class ResCurrencyRateProvider(models.Model):
     interval_number = fields.Integer(
         string="Scheduled update interval", default=1, required=True
     )
-    update_schedule = fields.Char(
-        string="Update Schedule", compute="_compute_update_schedule"
-    )
+    update_schedule = fields.Char(compute="_compute_update_schedule")
     last_successful_run = fields.Date(string="Last successful update")
     next_run = fields.Date(
         string="Next scheduled update", default=fields.Date.today, required=True
@@ -130,27 +128,27 @@ class ResCurrencyRateProvider(models.Model):
                 ).items()
             except BaseException as e:
                 _logger.warning(
-                    'Currency Rate Provider "%s" failed to obtain data since'
-                    " %s until %s"
-                    % (
-                        provider.name,
-                        date_from,
-                        date_to,
-                    ),
+                    'Currency Rate Provider "%(name)s" failed to obtain data since'
+                    " %(date_from)s until %(date_to)s"
+                    % {
+                        "name": provider.name,
+                        "date_from": date_from,
+                        "date_to": date_to,
+                    },
                     exc_info=True,
                 )
                 provider.message_post(
                     subject=_("Currency Rate Provider Failure"),
                     body=_(
-                        'Currency Rate Provider "%s" failed to obtain data'
-                        " since %s until %s:\n%s"
+                        'Currency Rate Provider "%(name)s" failed to obtain data'
+                        " since %(date_from)s until %(date_to)s:\n%(error)s"
                     )
-                    % (
-                        provider.name,
-                        date_from,
-                        date_to,
-                        str(e) if e else _("N/A"),
-                    ),
+                    % {
+                        "name": provider.name,
+                        "date_from": date_from,
+                        "date_to": date_to,
+                        "error": str(e) if e else _("N/A"),
+                    },
                 )
                 continue
 
@@ -236,7 +234,7 @@ class ResCurrencyRateProvider(models.Model):
         value = direct
         if (
             currency_rate_inverted
-            and currency.with_context(force_company=self.company_id.id).rate_inverted
+            and currency.with_company(self.company_id).rate_inverted
         ):
             value = inverted
 
@@ -272,7 +270,7 @@ class ResCurrencyRateProvider(models.Model):
                 "Scheduled currency rates update of: %s"
                 % ", ".join(providers.mapped("name"))
             )
-            for provider in providers.with_context({"scheduled": True}):
+            for provider in providers.with_context(**{"scheduled": True}):
                 date_from = (
                     (provider.last_successful_run + relativedelta(days=1))
                     if provider.last_successful_run
