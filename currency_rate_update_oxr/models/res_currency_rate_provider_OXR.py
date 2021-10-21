@@ -67,11 +67,14 @@ class ResCurrencyRateProviderOXR(models.Model):
             data_date = datetime.utcfromtimestamp(data['timestamp']).date()
             if eod_rates and data_date != date:
                 raise UserError(
-                    "Exchange rate from incorrect date received. Got {data_date}, expected {date}".format(
+                    "Exchange rate from incorrect date received. "
+                    "Got {data_date}, expected {date}".format(
                         data_date=data_date, date=date
                     )
                 )
-            date_content = content[(date + timedelta(days=1) if eod_rates else date).isoformat()]
+            date_content = content[(
+                date + timedelta(days=1) if eod_rates else date
+            ).isoformat()]
             if 'rates' in data:
                 for currency, rate in data['rates'].items():
                     date_content[currency] = rate

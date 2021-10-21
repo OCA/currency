@@ -78,7 +78,8 @@ class TestResCurrencyRateProviderOXR(common.TransactionCase):
         else:
             currency = self.eur_currency
 
-        # If the mocked currency is the same as the company currency it wil not be created.
+        # If the mocked currency is the same as the company currency
+        # it wil not be created.
         rates = self.CurrencyRate.search([
             ('currency_id', '=', currency.id),
         ], limit=1)
