@@ -75,9 +75,9 @@ class AccountMoveLineCurrencyCheck(models.Model):
         wizard and the exchange rates in Odoo."""
         precision = self.env['decimal.precision'].precision_get('Account')
         domain = [
-                ('date', '>=', date_from),
-                ('date', '<=', date_to),
-                ('company_id', '=', self.env.user.company_id.id),
+            ('date', '>=', date_from),
+            ('date', '<=', date_to),
+            ('company_id', '=', self.env.user.company_id.id),
         ]
         if ref:
             domain.extend([
