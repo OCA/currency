@@ -38,8 +38,14 @@ class TestCurrencyRateUpdate(account_test_no_chart.TestAccountNoChartCommon):
             ],
         })
         self.rates = self.env['res.currency.rate'].create([
-            {'currency_id': self.eur_currency.id},
-            {'currency_id': self.jpy_currency.id},
+            {
+                'currency_id': self.eur_currency.id,
+                'rate': 0.87
+            },
+            {
+                'currency_id': self.jpy_currency.id,
+                'rate': 111.73
+            },
         ])
         self.currency_check_obj = self.env['account.move.line.currency.check']
         values = []
@@ -80,13 +86,22 @@ class TestCurrencyRateUpdate(account_test_no_chart.TestAccountNoChartCommon):
             self.currency_checks.mapped('move_id')
         self.assertEqual(
             self.move.line_ids[0].debit or self.move.line_ids[0].credit,
-            abs(self.move.line_ids[0].amount_currency)
+            abs(self.move.line_ids[0].currency_id._convert(
+                self.move.line_ids[0].amount_currency,
+                self.move.line_ids[0].company_currency_id,
+                self.move.line_ids[0].company_id, self.today
+            ))
         )
         self.assertEqual(
             self.move.line_ids[1].debit or self.move.line_ids[1].credit,
-            abs(self.move.line_ids[1].amount_currency)
+            abs(self.move.line_ids[1].currency_id._convert(
+                self.move.line_ids[1].amount_currency,
+                self.move.line_ids[1].company_currency_id,
+                self.move.line_ids[1].company_id, self.today
+            ))
         )
 
+        # Do the same thing but for action_rebase_currency_company
         for line in self.move.line_ids:
             if line.debit > 0:
                 line.debit += 50.0
@@ -107,9 +122,17 @@ class TestCurrencyRateUpdate(account_test_no_chart.TestAccountNoChartCommon):
         self.currency_checks.action_rebase_currency_company()
         self.assertEqual(
             self.move.line_ids[0].debit or self.move.line_ids[0].credit,
-            abs(self.move.line_ids[0].amount_currency)
+            abs(self.move.line_ids[0].currency_id._convert(
+                self.move.line_ids[0].amount_currency,
+                self.move.line_ids[0].company_currency_id,
+                self.move.line_ids[0].company_id, self.today
+            ))
         )
         self.assertEqual(
             self.move.line_ids[1].debit or self.move.line_ids[1].credit,
-            abs(self.move.line_ids[1].amount_currency)
+            abs(self.move.line_ids[1].currency_id._convert(
+                self.move.line_ids[1].amount_currency,
+                self.move.line_ids[1].company_currency_id,
+                self.move.line_ids[1].company_id, self.today
+            ))
         )
