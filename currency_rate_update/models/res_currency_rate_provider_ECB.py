@@ -19,6 +19,11 @@ class ResCurrencyRateProviderECB(models.Model):
         ondelete={"ECB": "set default"},
     )
 
+    def _get_close_time(self):
+        if self.service == "ECB":
+            return 17
+        return super()._get_close_time()
+
     def _get_supported_currencies(self):
         self.ensure_one()
         if self.service != "ECB":
