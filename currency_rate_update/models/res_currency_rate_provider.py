@@ -1,6 +1,7 @@
 # Copyright 2009-2016 Camptocamp
 # Copyright 2010 Akretion
 # Copyright 2019-2020 Brainbean Apps (https://brainbeanapps.com)
+# Copyright 2021 Tecnativa - Víctor Martínez
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 import logging
@@ -114,6 +115,9 @@ class ResCurrencyRateProvider(models.Model):
                 [("name", "in", provider._get_supported_currencies())]
             )
 
+    def _get_close_time(self):
+        return False
+
     def _update(self, date_from, date_to, newest_only=False):
         Currency = self.env["res.currency"]
         CurrencyRate = self.env["res.currency.rate"]
@@ -125,7 +129,9 @@ class ResCurrencyRateProvider(models.Model):
                     provider.currency_ids.mapped("name"),
                     date_from,
                     date_to,
-                ).items()
+                )
+                if data:
+                    data = data.items()
             except BaseException as e:
                 _logger.warning(
                     'Currency Rate Provider "%(name)s" failed to obtain data since'
@@ -273,7 +279,14 @@ class ResCurrencyRateProvider(models.Model):
                     else (provider.next_run - provider._get_next_run_period())
                 )
                 date_to = provider.next_run
-                provider._update(date_from, date_to, newest_only=True)
+                if (date_to != fields.Date.today()) or (
+                    date_to == fields.Date.today()
+                    and (
+                        not provider._get_close_time()
+                        or datetime.now().hour >= provider._get_close_time()
+                    )
+                ):
+                    provider._update(date_from, date_to, newest_only=True)
 
         _logger.info("Scheduled currency rates update complete.")
 
