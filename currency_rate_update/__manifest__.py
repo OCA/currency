@@ -5,7 +5,7 @@
 
 {
     'name': 'Currency Rate Update',
-    'version': '12.0.1.2.2',
+    'version': '12.0.1.3.0',
     'author':
         'Camptocamp, '
         'CorporateHub, '
