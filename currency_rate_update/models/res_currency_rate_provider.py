@@ -24,7 +24,7 @@ class ResCurrencyRateProvider(models.Model):
         string="Company",
         comodel_name="res.company",
         required=True,
-        default=lambda self: self._default_company_id(),
+        default=lambda self: self.env.company,
     )
     currency_name = fields.Char(
         string="Currency Name", related="company_id.currency_id.name"
@@ -249,10 +249,6 @@ class ResCurrencyRateProvider(models.Model):
             return relativedelta(weeks=self.interval_number)
         elif self.interval_type == "months":
             return relativedelta(months=self.interval_number)
-
-    @api.model
-    def _default_company_id(self):
-        return self.env["res.company"]._company_default_get()
 
     @api.model
     def _scheduled_update(self):
