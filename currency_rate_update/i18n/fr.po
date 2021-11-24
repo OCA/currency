@@ -10,14 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-11 12:43+0000\n"
-"PO-Revision-Date: 2018-04-11 12:43+0000\n"
-"Last-Translator: Quentin THEURET <odoo@kerpeo.com>, 2018\n"
+"PO-Revision-Date: 2021-11-24 12:36+0000\n"
+"Last-Translator: MaxyMoos <maxence@groine.fr>\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:117
@@ -32,9 +33,13 @@ msgid ""
 "specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
 "\" groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Les valeurs définies ici sont "
+"spécifiques à l'entreprise.\" role=\"img\" aria-label=\"Les valeurs définies "
+"ici sont spécifiques à l'entreprise.\" groups=\"base.group_multi_company\"/>"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+#, fuzzy
 msgid ""
 "<strong>! </strong>You are using European Central Bank exchange rate service "
 "with a base currency different from EUR.<br/>\n"
@@ -42,26 +47,31 @@ msgid ""
 "provides exchange rates based on EUR, other foreign currency rates are "
 "recalculated and might differ from real rates."
 msgstr ""
+"<strong>! </strong>Vous utilisez le service de données de change de la "
+"Banque Centrale Européenne avec une devise de base qui n'est pas EUR.<br/>\n"
+"                              Tant que la Banque Centrale Européenne ne "
+"fournit que des taux de change vis-à-vis de l'EUR, les autres taux de change "
+"sont recalculés et peuvent différer des taux réels."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Action requise"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_company__currency_rates_autoupdate
@@ -73,12 +83,12 @@ msgstr "Téléchargement automatique des taux de change"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__available_currency_ids
 msgid "Available Currencies"
-msgstr ""
+msgstr "Devises disponibles"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_company
@@ -123,7 +133,7 @@ msgstr "Devises à mettre à jour avec ce service"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
 msgid "Currency Code (ISO 4217)"
-msgstr ""
+msgstr "Code de devise (ISO 4217)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
@@ -144,6 +154,9 @@ msgid ""
 "Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
 "%s"
 msgstr ""
+"Le fournisseur de taux de change \"%s\" n'a pas pu récupérer de données de "
+"%s à %s :\n"
+"%s"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:164
@@ -203,27 +216,27 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_to
 msgid "End Date"
-msgstr ""
+msgstr "Date de fin"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,service:0
 msgid "European Central Bank"
-msgstr ""
+msgstr "Banque Centrale Européenne"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Abonnés (Canaux)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -234,34 +247,36 @@ msgstr "ID"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages n'ont pas été envoyés."
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:114
 #, python-format
 msgid "Inactive"
-msgstr ""
+msgstr "Inactif"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:259
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr ""
+"Taux de change non valide de la part de %(provider)s pour %(currency)s : "
+"%(rate)s"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
@@ -284,22 +299,22 @@ msgstr "Mis à jour le"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
 msgid "Last successful update"
-msgstr ""
+msgstr "Dernière mise à jour réussie"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Pièce jointe principale"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison de message"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,interval_type:0
@@ -310,42 +325,42 @@ msgstr "Mois"
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:172
 #, python-format
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__next_run
 msgid "Next scheduled update"
-msgstr ""
+msgstr "Prochaine mise à jour prévue"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of error"
-msgstr ""
+msgstr "Numéro d'erreur"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Nombre de messages requiérant une action"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec une erreur de livraison"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Nombre de messages non lus"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,service:0
@@ -356,28 +371,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__provider_id
 msgid "Provider"
-msgstr ""
+msgstr "Fournisseur"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__provider_ids
 msgid "Providers"
-msgstr ""
+msgstr "Fournisseurs"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "Rate"
-msgstr ""
+msgstr "Taux"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
 msgid "Scheduled update interval"
-msgstr ""
+msgstr "Intervalle de mise à jour automatique"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
 msgid "Scheduled update interval must be greater than zero!"
-msgstr ""
+msgstr "L'intervalle de mise à jour automatique doit être supérieur à zéro !"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
@@ -388,18 +403,18 @@ msgstr "Vous ne pouvez utiliser un service qu'une seule fois par société !"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
 msgid "Source Service"
-msgstr ""
+msgstr "Service source"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_from
 msgid "Start Date"
-msgstr ""
+msgstr "Date de début"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "The rate of the currency to the currency of rate 1"
-msgstr ""
+msgstr "Le taux de la devise vis-à-vis de la devise de taux 1"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,service:0
@@ -409,23 +424,23 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
 msgid "Units of scheduled update interval"
-msgstr ""
+msgstr "Unités de l'intervalle de mise à jour automatique"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:198
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
-msgstr ""
+msgstr "Devise inconnue de la part de %(provider)s : %(rate)s"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Messages non lus"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Nombre de messages non lus"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
@@ -436,12 +451,12 @@ msgstr "Mettre à jour maintenant"
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
 msgid "Update Rates Wizard"
-msgstr ""
+msgstr "Assistant de mise à jour des taux de change"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
 msgid "Update Schedule"
-msgstr ""
+msgstr "Mise à jour automatique tous les"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
@@ -452,12 +467,12 @@ msgstr "Mettre à jour automatiquement depuis le module currency_rate_update."
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site web"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de communication du site web"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,interval_type:0
