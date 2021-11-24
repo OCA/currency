@@ -1,4 +1,21 @@
+---Models in module 'currency_rate_update'---
+obsolete model currency.rate.update.service (renamed to res.currency.rate.provider)
+new model res.currency.rate.provider (renamed from currency.rate.update.service)
+# DONE: pre-migration: renamed models and tables
+
+new model res.currency.rate.update.wizard [transient]
+# NOTHING TO DO
+
 ---Fields in module 'currency_rate_update'---
+currency_rate_update / currency.rate.update.service / currency_list (many2many)     : DEL relation: res.currency
+currency_rate_update / currency.rate.update.service / interval_number (integer)     : now required, req_default: function
+currency_rate_update / currency.rate.update.service / interval_type (selection)     : now required, req_default: function
+currency_rate_update / currency.rate.update.service / max_delta_days (integer)      : DEL required, req_default: function
+currency_rate_update / currency.rate.update.service / message_last_post (datetime)  : DEL
+currency_rate_update / currency.rate.update.service / next_run (date)               : now required, req_default: function
+currency_rate_update / currency.rate.update.service / service (selection)           : selection_keys is now '['ECB']' ('function')
+# NOTHING TO DO
+
 currency_rate_update / res.company              / auto_currency_up (boolean)    : was renamed to currency_rates_autoupdate [nothing to do]
 # DONE: pre-migration: renamed fields
 
@@ -7,20 +24,16 @@ currency_rate_update / res.currency.rate        / message_ids (one2many)        
 currency_rate_update / res.currency.rate        / message_main_attachment_id (many2one): NEW relation: ir.attachment
 currency_rate_update / res.currency.rate        / provider_id (many2one)        : NEW relation: res.currency.rate.provider
 currency_rate_update / res.currency.rate        / website_message_ids (one2many): NEW relation: mail.message
-currency_rate_update / res.currency.rate.provider / active (boolean)              : NEW
-currency_rate_update / res.currency.rate.provider / company_id (many2one)         : NEW relation: res.company, required: required, req_default: function
-currency_rate_update / res.currency.rate.provider / currency_ids (many2many)      : NEW relation: res.currency
-currency_rate_update / res.currency.rate.provider / interval_number (integer)     : NEW required: required, req_default: function
-currency_rate_update / res.currency.rate.provider / interval_type (selection)     : NEW required: required, selection_keys: ['days', 'months', 'weeks'], req_default: function
+currency_rate_update / res.currency.rate.provider / _order (False)                : NEW
+currency_rate_update / res.currency.rate.provider / active (boolean)              : NEW hasdefault
 currency_rate_update / res.currency.rate.provider / last_successful_run (date)    : NEW
-currency_rate_update / res.currency.rate.provider / message_follower_ids (one2many): NEW relation: mail.followers
-currency_rate_update / res.currency.rate.provider / message_ids (one2many)        : NEW relation: mail.message
 currency_rate_update / res.currency.rate.provider / message_main_attachment_id (many2one): NEW relation: ir.attachment
-currency_rate_update / res.currency.rate.provider / name (char)                   : NEW
-currency_rate_update / res.currency.rate.provider / next_run (date)               : NEW required: required, req_default: function
-currency_rate_update / res.currency.rate.provider / service (selection)           : NEW required: required, selection_keys: ['ECB']
-currency_rate_update / res.currency.rate.provider / website_message_ids (one2many): NEW relation: mail.message
+currency_rate_update / res.currency.rate.provider / name (char)                   : NEW isfunction: function, stored
 # NOTHING TO DO
+
+currency_rate_update / currency.rate.update.service / currency_to_update (many2many): DEL relation: res.currency
+currency_rate_update / res.currency.rate.provider / currency_ids (many2many)      : NEW relation: res.currency, required
+# DONE: pre-migration: renamed field and table
 
 ---XML records in module 'currency_rate_update'---
 NEW ir.actions.act_window: currency_rate_update.action_res_currency_rate_provider
