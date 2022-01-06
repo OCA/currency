@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-21 21:33+0000\n"
-"PO-Revision-Date: 2021-09-30 15:34+0000\n"
+"PO-Revision-Date: 2022-01-06 14:39+0000\n"
 "Last-Translator: Yavuz Avci <yavuzavci@gmail.com>\n"
 "Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
 "Language: tr\n"
@@ -164,21 +164,21 @@ msgstr "Döviz Kuru Güncelleme Sihirbazı"
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Currency Rates Provider"
-msgstr "Döviz Kuru Sağlayıcısı"
+msgstr "Döviz Kurları Sağlayıcısı"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Currency Rates Providers"
-msgstr "Döviz Kuru Sağlayıcıları"
+msgstr "Döviz Kurları Sağlayıcıları"
 
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 #: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
 msgid "Currency Rates Update (OCA) daily"
-msgstr "Günlük Döviz Kuru Güncellemesi (OCA)"
+msgstr "Günlük Döviz Kurları Güncellemesi (OCA)"
 
 #. module: currency_rate_update
 #: selection:res.currency.rate.provider,interval_type:0
