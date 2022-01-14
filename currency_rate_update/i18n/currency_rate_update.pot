@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -134,8 +134,8 @@ msgstr ""
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid ""
-"Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
-"%s"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since %(date_from)s until %(date_to)s:\n"
+"%(error)s"
 msgstr ""
 
 #. module: currency_rate_update
@@ -175,9 +175,6 @@ msgid "Day(s)"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__display_name
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__display_name
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
@@ -206,21 +203,18 @@ msgid "Followers"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_channel_ids
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_channel_ids
-msgid "Followers (Channels)"
-msgstr ""
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_partner_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__id
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__id
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
 msgid "ID"
@@ -261,9 +255,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_company____last_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings____last_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate____last_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard____last_update
 msgid "Last Modified on"
@@ -371,11 +362,6 @@ msgid "Providers"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
-msgid "Rate"
-msgstr ""
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "SMS Delivery error"
@@ -404,6 +390,11 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_from
 msgid "Start Date"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
+msgid "Technical Rate"
 msgstr ""
 
 #. module: currency_rate_update
