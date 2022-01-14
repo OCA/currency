@@ -20,3 +20,4 @@
 * Dmytro Katyukha <firemage.dima@gmail.com>
 * Jesús Ventosinos Mayor <jesus@comunitea.com>
 * Alexey Pelykh <alexey.pelykh@brainbeanapps.com>
+* Mantas Šniukas <mantas@vialaurea.lt>
