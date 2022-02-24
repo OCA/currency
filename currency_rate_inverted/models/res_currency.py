@@ -1,3 +1,4 @@
+# Copyright 2021 Sergej Ruzki. ReSuSolutions.
 # Copyright 2021 ForgeFlow, S.L.
 # Copyright 2015 Techrifiv Solutions Pte Ltd
 # Copyright 2015 Statecraft Systems Pte Ltd
@@ -17,6 +18,9 @@ class ResCurrency(models.Model):
     @api.model
     def _get_conversion_rate(self, from_currency, to_currency, company, date):
         rate = super()._get_conversion_rate(from_currency, to_currency, company, date)
+
+        from_currency = from_currency.with_company(company)
+        to_currency = to_currency.with_company(company)
 
         if not from_currency.rate_inverted and not to_currency.rate_inverted:
             return rate
