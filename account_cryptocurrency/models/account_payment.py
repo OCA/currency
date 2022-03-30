@@ -32,7 +32,7 @@ class AccountPayment(models.Model):
         }
 
     def action_post(self):
-        """ If payment uses and inventoried currency, create the currency moves """
+        """If payment uses and inventoried currency, create the currency moves"""
         res = super().action_post()
         cc_payments = self.filtered(lambda l: l.currency_id.inventoried)
         for payment in cc_payments:

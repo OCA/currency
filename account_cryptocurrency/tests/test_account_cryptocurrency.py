@@ -510,7 +510,7 @@ class TestAccountCryptocurrency(common.TransactionCase):
         self.assertEqual(to_inventory_balance, -114.0 - 126)
 
     def test_02(self):
-        """ Cancels a payment """
+        """Cancels a payment"""
         ####
         # Day 1: Invoice Cust/001 to customer (expressed in CC)
         # Market value of CC (day 1): 1 CC = $0.5
