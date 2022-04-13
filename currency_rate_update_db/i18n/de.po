@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* currency_rate_update_db
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-13 06:37+0000\n"
+"PO-Revision-Date: 2022-04-13 06:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: currency_rate_update_db
+#: code:addons/currency_rate_update_db/services/update_service_db_markets.py:22
+#, python-format
+msgid "DB-Markets 1pm ask rate"
+msgstr "Deutsche Bank 13Uhr Geldkurs"
+
+#. module: currency_rate_update_db
+#: code:addons/currency_rate_update_db/services/update_service_db_markets.py:93
+#, python-format
+msgid "DB-Markets 1pm bid rate"
+msgstr "Deutsche Bank 13Uhr Briefkurs"
+
+#. module: currency_rate_update_db
+#: code:addons/currency_rate_update_db/services/update_service_db_markets.py:103
+#, python-format
+msgid "DB-Markets 6pm ask rate"
+msgstr "Deutsche Bank 18Uhr Geldkurs"
+
+#. module: currency_rate_update_db
+#: code:addons/currency_rate_update_db/services/update_service_db_markets.py:113
+#, python-format
+msgid "DB-Markets 6pm bid rate"
+msgstr "Deutsche Bank 18Uhr Briefkurs"
