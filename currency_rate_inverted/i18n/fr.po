@@ -24,6 +24,21 @@ msgid "Currency"
 msgstr "Devise"
 
 #. module: currency_rate_inverted
+#: model:ir.model.fields,field_description:currency_rate_inverted.field_res_currency__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: currency_rate_inverted
+#: model:ir.model.fields,field_description:currency_rate_inverted.field_res_currency__id
+msgid "ID"
+msgstr ""
+
+#. module: currency_rate_inverted
 #: model:ir.model.fields,field_description:currency_rate_inverted.field_res_currency__rate_inverted
 msgid "Inverted exchange rate"
 msgstr "Taux de change inversé"
+
+#. module: currency_rate_inverted
+#: model:ir.model.fields,field_description:currency_rate_inverted.field_res_currency____last_update
+msgid "Last Modified on"
+msgstr ""
