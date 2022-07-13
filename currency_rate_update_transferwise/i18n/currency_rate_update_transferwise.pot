@@ -1,12 +1,12 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* currency_rate_update_transferwise
+# 	* currency_rate_update_transferwise
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: <>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,8 @@ msgstr ""
 
 #. module: currency_rate_update_transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
-msgid "<span class=\"o_form_label\">TransferWise.com Provider</span>\n"
+msgid ""
+"<span class=\"o_form_label\">TransferWise.com Provider</span>\n"
 "                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 
@@ -40,19 +41,9 @@ msgid "Currency Rates Provider"
 msgstr ""
 
 #. module: currency_rate_update_transferwise
-#: selection:res.currency.rate.provider,service:0
-msgid "European Central Bank"
-msgstr ""
-
-#. module: currency_rate_update_transferwise
-#: code:addons/currency_rate_update_transferwise/models/res_currency_rate_provider_TransferWise.py:102
+#: code:addons/currency_rate_update_transferwise/models/res_currency_rate_provider_TransferWise.py:0
 #, python-format
 msgid "No TransferWise.com credentials specified!"
-msgstr ""
-
-#. module: currency_rate_update_transferwise
-#: selection:res.currency.rate.provider,service:0
-msgid "OpenExchangeRates.org"
 msgstr ""
 
 #. module: currency_rate_update_transferwise
@@ -61,8 +52,8 @@ msgid "Source Service"
 msgstr ""
 
 #. module: currency_rate_update_transferwise
+#: model:ir.model.fields.selection,name:currency_rate_update_transferwise.selection__res_currency_rate_provider__service__transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
-#: selection:res.currency.rate.provider,service:0
 msgid "TransferWise.com"
 msgstr ""
 
@@ -72,12 +63,6 @@ msgid "TransferWise.com API Key"
 msgstr ""
 
 #. module: currency_rate_update_transferwise
-#: selection:res.currency.rate.provider,service:0
-msgid "XE.com"
-msgstr ""
-
-#. module: currency_rate_update_transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
 msgid "credentials"
 msgstr ""
-
