@@ -18,7 +18,7 @@ class ResCurrencyRateProviderECB(models.Model):
 
     def _get_close_time(self):
         if self.service == "ECB":
-            return 17
+            return 19  # 18:30
         return super()._get_close_time()
 
     def _get_supported_currencies(self):
