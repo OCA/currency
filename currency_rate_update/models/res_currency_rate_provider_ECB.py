@@ -20,8 +20,25 @@ class ResCurrencyRateProviderECB(models.Model):
     )
 
     def _get_close_time(self):
+        """According to ECB closing time, today's rate data will only be available
+        from 17:30 CET.
+        https://www.ecb.europa.eu/services/contacts/working-hours/html/index.en.html
+
+        It is necessary to define a blocking time to avoid the following use case:
+        - Cron record call webservice today BEFORE time x.
+        - The webservice response will not give an error but it will not return data
+        for today.
+        - The value of last_successful_run will be updated with today's date.
+        - The value of next_run will be updated to tomorrow.
+
+        You would never get the value for today and tomorrow the same thing would happen.
+
+        CET Time is UTC+2 in summer and UTC+1 in winter:
+        (https://en.wikipedia.org/wiki/Central_European_Time).
+        Block time must be set to UTC+0
+        """
         if self.service == "ECB":
-            return 17
+            return 19  # 18:30
         return super()._get_close_time()
 
     def _get_supported_currencies(self):
