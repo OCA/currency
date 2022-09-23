@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* currency_old_rate_notify
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-23 18:41+0000\n"
+"PO-Revision-Date: 2022-09-23 18:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: currency_old_rate_notify
+#: model:ir.model,name:currency_old_rate_notify.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Taux de change"
+
+#. module: currency_old_rate_notify
+#: code:addons/currency_old_rate_notify/models/res_currency_rate.py:0
+#, python-format
+msgid "Currency rates older than %d days"
+msgstr "Taux de change de plus de %d jours"
+
+#. module: currency_old_rate_notify
+#: model:ir.actions.server,name:currency_old_rate_notify.notify_rates_too_old_cron_ir_actions_server
+#: model:ir.cron,cron_name:currency_old_rate_notify.notify_rates_too_old_cron
+#: model:ir.cron,name:currency_old_rate_notify.notify_rates_too_old_cron
+msgid "Currency rates: notify if too old"
+msgstr "Taux de change : notification si trop vieux"
+
+#. module: currency_old_rate_notify
+#: model:ir.model.fields,field_description:currency_old_rate_notify.field_res_currency_rate__display_name
+msgid "Display Name"
+msgstr "Nom à afficher"
+
+#. module: currency_old_rate_notify
+#: model:ir.model.fields,field_description:currency_old_rate_notify.field_res_currency_rate__id
+msgid "ID"
+msgstr ""
+
+#. module: currency_old_rate_notify
+#: model:ir.model.fields,field_description:currency_old_rate_notify.field_res_currency_rate____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
