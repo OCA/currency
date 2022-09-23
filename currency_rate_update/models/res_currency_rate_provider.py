@@ -269,6 +269,7 @@ class ResCurrencyRateProvider(models.Model):
                 ("next_run", "<=", fields.Date.today()),
             ]
         )
+        today = fields.Date.today()
         if providers:
             _logger.info(
                 "Scheduled currency rates update of: %s"
@@ -281,14 +282,28 @@ class ResCurrencyRateProvider(models.Model):
                     else (provider.next_run - provider._get_next_run_period())
                 )
                 date_to = provider.next_run
-                if (date_to != fields.Date.today()) or (
-                    date_to == fields.Date.today()
+                provider_utc_close_hour = provider._get_close_time()
+                current_utc_hour = datetime.now().hour
+                _logger.debug(
+                    "Provider %s date_to=%s today=%s provider close hour %s UTC, "
+                    "current hour %s UTC",
+                    provider.name,
+                    date_to,
+                    today,
+                    provider_utc_close_hour,
+                    current_utc_hour,
+                )
+                if (date_to != today) or (
+                    date_to == today
                     and (
-                        not provider._get_close_time()
-                        or datetime.now().hour >= provider._get_close_time()
+                        not provider_utc_close_hour
+                        or current_utc_hour >= provider_utc_close_hour
                     )
                 ):
                     provider._update(date_from, date_to, newest_only=True)
+                    _logger.info("Currency rates updated from %s", provider.name)
+                else:
+                    _logger.info("Skip currency rate update from %s", provider.name)
 
         _logger.info("Scheduled currency rates update complete.")
 
