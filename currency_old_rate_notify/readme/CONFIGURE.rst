@@ -1,0 +1,1 @@
+Go to the menu *Settings > Technical > Parameters > System Parameters* and select the system parameter **currency_old_rate_notify.max_days**. If you want to change the limit after which the currency rates are too old (3 days by default), you can change the number of days by changing the value of this key.

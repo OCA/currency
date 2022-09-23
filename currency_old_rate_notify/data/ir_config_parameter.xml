@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  Copyright 2022 Akretion France (http://www.akretion.com/)
+  @author: Alexis de Lattre <alexis.delattre@akretion.com>
+  License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<odoo noupdate="1">
+
+<record
+        id="currency_old_rate_notify_max_days"
+        model="ir.config_parameter"
+        forcecreate="False"
+    >
+    <field name="key">currency_old_rate_notify.max_days</field>
+    <field name="value">3</field>
+</record>
+
+</odoo>
