@@ -4,7 +4,7 @@
 
 {
     "name": "Account Cryptocurrency",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "category": "Account",
     "author": "ForgeFlow," "Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/currency",
