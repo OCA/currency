@@ -7,3 +7,4 @@
   * Alexey Pelykh <alexey.pelykh@corphub.eu>
 
 * Pimolnat Suntian <pimolnats@ecosoft.co.th>
+* SkiBY (Sergej Ruzki <sergei.ruzki@gmail.com>)
