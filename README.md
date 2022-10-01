@@ -20,7 +20,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[account_cryptocurrency](account_cryptocurrency/) | 14.0.1.0.0 |  | Manage cryptocurrencies
+[account_cryptocurrency](account_cryptocurrency/) | 14.0.1.0.1 |  | Manage cryptocurrencies
 [currency_rate_inverted](currency_rate_inverted/) | 14.0.1.0.1 |  | Allows to maintain an exchange rate using the inversion method
 [currency_rate_update](currency_rate_update/) | 14.0.1.2.0 |  | Update exchange rates using OCA modules
 [currency_rate_update_cmc](currency_rate_update_cmc/) | 14.0.1.0.0 |  | Allows to download crypto currency exchange rates from Coin Market Cap
