@@ -32,7 +32,7 @@ class ResCurrency(models.Model):
             if (
                 rec.inventory_account_id
                 and rec.inventory_account_id.currency_id
-                and rec.inventory_account_id.currency_id != rec.id
+                and rec.inventory_account_id.currency_id.id != rec.id
             ):
                 raise exceptions.ValidationError(
                     _("The currency of the Inventory Account should be %s") % rec.name
