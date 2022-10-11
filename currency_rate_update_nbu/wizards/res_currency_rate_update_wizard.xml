@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_currency_rate_update_wizard_form" model="ir.ui.view">
+        <field name="model">res.currency.rate.update.wizard</field>
+        <field
+            name="inherit_id"
+            ref="currency_rate_update.res_currency_rate_update_wizard_form"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='filter']" position="after">
+                <div class="text-muted">
+                    When using the <strong
+                    >Coin Market Cap - Basic Plan</strong> only the last rate will be fetched,
+                    the system will not take into account any date provided
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
