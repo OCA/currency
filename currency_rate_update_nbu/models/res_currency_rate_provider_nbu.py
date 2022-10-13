@@ -1,18 +1,18 @@
 # Copyright 2022 Garazd Creation (https://garazd.biz)
 # @author: Yurii Razumovskyi (garazdcreation@gmail.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
-import dateutil.parser
 import json
 import logging
 from collections import defaultdict
 from typing import List
 
+import dateutil.parser
 import requests
 from requests.exceptions import Timeout, TooManyRedirects
-from odoo.exceptions import UserError
-from odoo.tools.float_utils import float_compare
 
 from odoo import _, api, fields, models
+from odoo.exceptions import UserError
+from odoo.tools.float_utils import float_compare
 
 _logger = logging.getLogger(__name__)
 
@@ -103,9 +103,13 @@ class ResCurrencyRateProviderNBU(models.Model):
             response = requests.get(url=url, params=params, headers=headers, timeout=60)
             response_data = json.loads(response.text)
             if response.status_code != 200:
-                raise Exception(_("Failed to fetch from https://bank.gov.ua/ "
-                                  "with error code: %s and error message: %s")
-                                % (response.status_code, response.reason))
+                raise Exception(
+                    _(
+                        "Failed to fetch from https://bank.gov.ua/ "
+                        "with error code: %s and error message: %s"
+                    )
+                    % (response.status_code, response.reason)
+                )
         except (ConnectionError, Timeout, TooManyRedirects) as e:
             raise Exception(str(e))
         return response_data
@@ -123,8 +127,8 @@ class ResCurrencyRateProviderNBU(models.Model):
             currency = line.get("cc")
             if currency in currencies:
                 timestamp = fields.Date.to_string(
-                    dateutil.parser.parse(line.get("exchangedate"),
-                                          dayfirst=True))
+                    dateutil.parser.parse(line.get("exchangedate"), dayfirst=True)
+                )
                 rate = float(line.get("rate", 0))
                 if invert_calculation:
                     rate = 1.0 / rate
@@ -137,10 +141,12 @@ class ResCurrencyRateProviderNBU(models.Model):
         if self.service != "NBU":
             return super()._obtain_rates(base_currency, currencies, date_from, date_to)
         if base_currency != self.env.ref('base.UAH').name:
-            raise UserError(_('The base company currency should be "UAH" '
-                              'to get NBU rates.'))
+            raise UserError(
+                _('The base company currency should be "UAH" to get NBU rates.')
+            )
         if float_compare(
                 self.env.ref('base.UAH').rate, 1.0, precision_digits=12) != 0:
-            raise UserError(_('The base company currency rate should be '
-                              'equal to 1.0'))
+            raise UserError(
+                _('The base company currency rate should be equal to 1.0')
+            )
         return self._nbu_get_latest_rate(self.currency_ids.mapped('name'))
