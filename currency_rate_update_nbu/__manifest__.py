@@ -1,4 +1,5 @@
-# Copyright 2022 Garazd Creation
+# Copyright 2022 Garazd Creation (https://garazd.biz)
+# @author: Yurii Razumovskyi (garazdcreation@gmail.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
@@ -15,7 +16,6 @@
     ],
     "data": [
         "data/res_currency_rate_provider_data.xml",
-        "wizards/res_currency_rate_update_wizard.xml",
     ],
     "installable": True,
 }
