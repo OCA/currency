@@ -113,6 +113,7 @@ class ResCurrencyRateProviderNBU(models.Model):
     def _nbu_get_latest_rate(self, currencies: List, invert_calculation=True):
         """Get currency rates from NBU.
         :param currencies: list or currency codes to return
+        :param invert_calculation: specify to invert a rate value or not
         :return: dict
         """
         content = defaultdict(dict)
