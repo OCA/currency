@@ -14,6 +14,7 @@
         "currency_rate_update",
     ],
     "data": [
+        "data/res_currency_rate_provider_data.xml",
         "wizards/res_currency_rate_update_wizard.xml",
     ],
     "installable": True,
