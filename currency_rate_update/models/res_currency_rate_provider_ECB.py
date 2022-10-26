@@ -115,7 +115,7 @@ class ResCurrencyRateProviderECB(models.Model):
             url = url + "/eurofxref-hist.xml"
 
         handler = EcbRatesHandler(currencies, date_from, date_to)
-        with urlopen(url) as response:
+        with urlopen(url, timeout=10) as response:
             xml.sax.parse(response, handler)
         content = handler.content
         if invert_calculation:
