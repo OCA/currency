@@ -37,24 +37,17 @@
         <field name="arch" type="xml">
             <form string="Currency Rates Provider">
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button
-                            class="oe_stat_button"
-                            type="object"
-                            name="toggle_active"
-                            icon="fa-archive"
-                            groups="base.group_system"
-                        >
-                            <field
-                                name="active"
-                                widget="boolean_button"
-                                options='{"terminology": "archive"}'
-                            />
-                        </button>
-                    </div>
+                    <div class="oe_button_box" name="button_box" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
                     <group name="options">
                         <group>
                             <field name="service" />
+                            <field name="active" invisible="1" />
                             <field name="currency_name" invisible="1" />
                             <div
                                 attrs="{'invisible':['|',('service','!=','ECB'),('currency_name','=','EUR')]}"
