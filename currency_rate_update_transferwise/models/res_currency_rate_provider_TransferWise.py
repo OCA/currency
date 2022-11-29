@@ -17,7 +17,9 @@ from odoo.exceptions import UserError
 class ResCurrencyRateProviderTransferWise(models.Model):
     _inherit = "res.currency.rate.provider"
 
-    service = fields.Selection(selection_add=[("TransferWise", "TransferWise.com")],)
+    service = fields.Selection(
+        selection_add=[("TransferWise", "TransferWise.com")],
+    )
 
     def _get_supported_currencies(self):
         self.ensure_one()

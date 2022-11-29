@@ -86,5 +86,8 @@ class TestResCurrencyRateProviderTransferWise(common.TransactionCase):
         self.env.user.company_id.transferwise_api_key = "bad"
         with self.assertRaises(HTTPError):
             self.transferwise_provider._obtain_rates(
-                "USD", ["EUR"], self.today, self.today,
+                "USD",
+                ["EUR"],
+                self.today,
+                self.today,
             )

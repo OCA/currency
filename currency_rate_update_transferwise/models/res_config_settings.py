@@ -8,5 +8,7 @@ class ResConfigSettings(models.TransientModel):
     _inherit = "res.config.settings"
 
     transferwise_api_key = fields.Char(
-        string="API Key", related="company_id.transferwise_api_key", readonly=False,
+        string="API Key",
+        related="company_id.transferwise_api_key",
+        readonly=False,
     )
