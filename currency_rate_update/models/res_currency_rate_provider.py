@@ -115,9 +115,6 @@ class ResCurrencyRateProvider(models.Model):
                 [("name", "in", provider._get_supported_currencies())]
             )
 
-    def _get_close_time(self):
-        return False
-
     def _update(self, date_from, date_to, newest_only=False):
         Currency = self.env["res.currency"]
         CurrencyRate = self.env["res.currency.rate"]
@@ -159,8 +156,7 @@ class ResCurrencyRateProvider(models.Model):
                 continue
 
             if not data:
-                if is_scheduled:
-                    provider._schedule_next_run()
+                # Try again if there is no data yet
                 continue
             if newest_only:
                 data = [max(data, key=lambda x: fields.Date.from_string(x[0]))]
@@ -201,11 +197,14 @@ class ResCurrencyRateProvider(models.Model):
                         )
 
             if is_scheduled:
+                provider._schedule_last_successful_run()
                 provider._schedule_next_run()
+
+    def _schedule_last_successful_run(self):
+        self.last_successful_run = self.next_run
 
     def _schedule_next_run(self):
         self.ensure_one()
-        self.last_successful_run = self.next_run
         self.next_run = (
             datetime.combine(self.next_run, time.min) + self._get_next_run_period()
         ).date()
@@ -280,28 +279,8 @@ class ResCurrencyRateProvider(models.Model):
                     else (provider.next_run - provider._get_next_run_period())
                 )
                 date_to = provider.next_run
-                provider_utc_close_hour = provider._get_close_time()
-                current_utc_hour = datetime.now().hour
-                _logger.debug(
-                    "Provider %s date_to=%s today=%s provider close hour %s UTC, "
-                    "current hour %s UTC",
-                    provider.name,
-                    date_to,
-                    today,
-                    provider_utc_close_hour,
-                    current_utc_hour,
-                )
-                if (date_to != today) or (
-                    date_to == today
-                    and (
-                        not provider_utc_close_hour
-                        or current_utc_hour >= provider_utc_close_hour
-                    )
-                ):
-                    provider._update(date_from, date_to, newest_only=True)
-                    _logger.info("Currency rates updated from %s", provider.name)
-                else:
-                    _logger.info("Skip currency rate update from %s", provider.name)
+                provider._update(date_from, date_to, newest_only=True)
+
         _logger.info("Scheduled currency rates update complete.")
 
     def _get_supported_currencies(self):
