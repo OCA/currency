@@ -4,7 +4,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 15.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -14,6 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "%(number)s %(type)s"
@@ -131,6 +132,7 @@ msgid "Currency Rate"
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid ""
@@ -139,6 +141,7 @@ msgid ""
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Currency Rate Provider Failure"
@@ -165,7 +168,6 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
 #: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
-#: model:ir.cron,name:currency_rate_update.ir_cron_currency_rates_update_every_day
 msgid "Currency Rates Update (OCA) daily"
 msgstr ""
 
@@ -222,9 +224,7 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked, new messages require your attention."
 msgstr ""
 
@@ -237,12 +237,14 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Inactive"
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
@@ -301,6 +303,7 @@ msgid "Month(s)"
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "N/A"
@@ -343,12 +346,6 @@ msgstr ""
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
-
-#. module: currency_rate_update
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread_counter
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
-msgid "Number of unread messages"
 msgstr ""
 
 #. module: currency_rate_update
@@ -408,21 +405,10 @@ msgid "Units of scheduled update interval"
 msgstr ""
 
 #. module: currency_rate_update
+#. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
-msgstr ""
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread
-msgid "Unread Messages"
-msgstr ""
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread_counter
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
-msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: currency_rate_update
