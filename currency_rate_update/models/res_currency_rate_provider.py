@@ -260,7 +260,7 @@ class ResCurrencyRateProvider(models.Model):
     def _scheduled_update(self):
         _logger.info("Scheduled currency rates update...")
 
-        today = fields.Date.today()
+        today = fields.Date.context_today(self)
         providers = self.search(
             [
                 ("company_id.currency_rates_autoupdate", "=", True),
