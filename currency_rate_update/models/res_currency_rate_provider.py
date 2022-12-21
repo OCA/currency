@@ -115,9 +115,6 @@ class ResCurrencyRateProvider(models.Model):
                 [("name", "in", provider._get_supported_currencies())]
             )
 
-    def _get_close_time(self):
-        return False
-
     def _update(self, date_from, date_to, newest_only=False):
         Currency = self.env["res.currency"]
         CurrencyRate = self.env["res.currency.rate"]
@@ -201,14 +198,20 @@ class ResCurrencyRateProvider(models.Model):
                         )
 
             if is_scheduled:
+                provider._schedule_last_successful_run()
                 provider._schedule_next_run()
+
+    def _schedule_last_successful_run(self):
+        self.last_successful_run = self.next_run
 
     def _schedule_next_run(self):
         self.ensure_one()
-        self.last_successful_run = self.next_run
-        self.next_run = (
-            datetime.combine(self.next_run, time.min) + self._get_next_run_period()
-        ).date()
+        self.next_run = min(
+            (
+                datetime.combine(self.next_run, time.min) + self._get_next_run_period()
+            ).date(),
+            fields.Date.today(),
+        )
 
     def _process_rate(self, currency, rate):
         self.ensure_one()
@@ -279,14 +282,7 @@ class ResCurrencyRateProvider(models.Model):
                     else (provider.next_run - provider._get_next_run_period())
                 )
                 date_to = provider.next_run
-                if (date_to != fields.Date.today()) or (
-                    date_to == fields.Date.today()
-                    and (
-                        not provider._get_close_time()
-                        or datetime.now().hour >= provider._get_close_time()
-                    )
-                ):
-                    provider._update(date_from, date_to, newest_only=True)
+                provider._update(date_from, date_to, newest_only=True)
 
         _logger.info("Scheduled currency rates update complete.")
 
