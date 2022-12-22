@@ -22,7 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [currency_rate_inverted](currency_rate_inverted/) | 13.0.1.0.2 |  | Allows to maintain an exchange rate using the inversion method
-[currency_rate_update](currency_rate_update/) | 13.0.1.2.1 |  | Update exchange rates using OCA modules
+[currency_rate_update](currency_rate_update/) | 13.0.1.2.2 |  | Update exchange rates using OCA modules
 [currency_rate_update_transferwise](currency_rate_update_transferwise/) | 13.0.1.0.1 |  | Update exchange rates using TransferWise.com
 
 [//]: # (end addons)
