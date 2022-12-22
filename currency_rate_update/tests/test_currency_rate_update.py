@@ -158,7 +158,7 @@ class TestCurrencyRateUpdate(AccountingSavepointCase):
         self.ecb_provider._scheduled_update()
 
         self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 7, 5))
-        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 8))
+        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 6))
 
     def test_foreign_base_currency(self):
         self.company.currency_id = self.chf_currency
