@@ -261,14 +261,14 @@ class ResCurrencyRateProvider(models.Model):
     def _scheduled_update(self):
         _logger.info("Scheduled currency rates update...")
 
+        today = fields.Date.context_today(self)
         providers = self.search(
             [
                 ("company_id.currency_rates_autoupdate", "=", True),
                 ("active", "=", True),
-                ("next_run", "<=", fields.Date.today()),
+                ("next_run", "<=", today),
             ]
         )
-        today = fields.Date.today()
         if providers:
             _logger.info(
                 "Scheduled currency rates update of: %s"
