@@ -156,8 +156,7 @@ class ResCurrencyRateProvider(models.Model):
                 continue
 
             if not data:
-                if is_scheduled:
-                    provider._schedule_next_run()
+                # Try again if there is no data yet
                 continue
             if newest_only:
                 data = [max(data, key=lambda x: fields.Date.from_string(x[0]))]
@@ -206,12 +205,9 @@ class ResCurrencyRateProvider(models.Model):
 
     def _schedule_next_run(self):
         self.ensure_one()
-        self.next_run = min(
-            (
-                datetime.combine(self.next_run, time.min) + self._get_next_run_period()
-            ).date(),
-            fields.Date.today(),
-        )
+        self.next_run = (
+            datetime.combine(self.next_run, time.min) + self._get_next_run_period()
+        ).date()
 
     def _process_rate(self, currency, rate):
         self.ensure_one()
