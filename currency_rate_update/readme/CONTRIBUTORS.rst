@@ -22,3 +22,7 @@
 * `CorporateHub <https://corporatehub.eu/>`__
 
   * Alexey Pelykh <alexey.pelykh@corphub.eu>
+
+* `Quartile Limited <https://www.quartile.co/>`__:
+
+  * Tatsuki Kanda <kanda@quartile.co>
