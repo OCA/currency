@@ -29,7 +29,8 @@
                 <field name="update_schedule" />
                 <field name="available_currency_ids" invisible="1" />
                 <field name="currency_ids" widget="many2many_tags" />
-                <field name="next_run" />
+                <field name="daily" invisible="1" />
+                <field name="next_run" attrs="{'invisible': [('daily', '=', True)]}" />
             </tree>
         </field>
     </record>
@@ -79,7 +80,11 @@
                             <field name="last_successful_run" />
                         </group>
                         <group>
-                            <field name="next_run" />
+                            <field name="daily" invisible="1" />
+                            <field
+                                name="next_run"
+                                attrs="{'invisible': [('daily', '=', True)]}"
+                            />
                         </group>
                         <group>
                             <field name="available_currency_ids" invisible="1" />

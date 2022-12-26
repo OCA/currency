@@ -6,6 +6,7 @@ from datetime import date
 from unittest import mock
 
 from dateutil.relativedelta import relativedelta
+from freezegun import freeze_time
 
 from odoo import fields
 from odoo.tests import tagged
@@ -111,13 +112,13 @@ class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
 
     def test_update_ECB_sequence(self):
         self.ecb_provider.interval_type = "days"
-        self.ecb_provider.interval_number = 1
+        self.ecb_provider.interval_number = 2
         self.ecb_provider.last_successful_run = None
         self.ecb_provider.next_run = date(2019, 4, 1)
 
         self.ecb_provider._scheduled_update()
         self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 4, 1))
-        self.assertEqual(self.ecb_provider.next_run, date(2019, 4, 2))
+        self.assertEqual(self.ecb_provider.next_run, date(2019, 4, 3))
         rates = self.CurrencyRate.search(
             [
                 ("company_id", "=", self.company.id),
@@ -127,8 +128,8 @@ class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
         self.assertEqual(len(rates), 1)
 
         self.ecb_provider._scheduled_update()
-        self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 4, 2))
-        self.assertEqual(self.ecb_provider.next_run, date(2019, 4, 3))
+        self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 4, 3))
+        self.assertEqual(self.ecb_provider.next_run, date(2019, 4, 5))
         rates = self.CurrencyRate.search(
             [
                 ("company_id", "=", self.company.id),
@@ -141,7 +142,7 @@ class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
 
     def test_update_ECB_weekend(self):
         self.ecb_provider.interval_type = "days"
-        self.ecb_provider.interval_number = 1
+        self.ecb_provider.interval_number = 2
         self.ecb_provider.last_successful_run = None
         self.ecb_provider.next_run = date(2019, 7, 1)
 
@@ -152,13 +153,25 @@ class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
         self.ecb_provider._scheduled_update()
 
         self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 7, 5))
-        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 6))
+        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 7))
 
         self.ecb_provider._scheduled_update()
         self.ecb_provider._scheduled_update()
 
         self.assertEqual(self.ecb_provider.last_successful_run, date(2019, 7, 5))
-        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 6))
+        self.assertEqual(self.ecb_provider.next_run, date(2019, 7, 7))
+
+    @freeze_time("2022-04-19 22:00")
+    def test_update_ECB_with_daily(self):
+        self.ecb_provider.interval_type = "days"
+        self.ecb_provider.interval_number = 1
+        # Setting last_successful_run a date more than 90 days prior to the freeze_time date,
+        # to make sure that the rates are taken from '/eurofxref-hist.xml'.
+        self.ecb_provider.last_successful_run = date(2021, 4, 19)
+
+        self.ecb_provider._scheduled_update()
+
+        self.assertEqual(self.ecb_provider.last_successful_run, date(2022, 4, 19))
 
     def test_foreign_base_currency(self):
         self.company.currency_id = self.chf_currency
