@@ -194,6 +194,11 @@ msgid "Currency Rates Update (OCA) daily"
 msgstr "Mise à jour du taux de la devise"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
+msgid "Daily"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
 msgid "Day(s)"
 msgstr "Jour(s)"
