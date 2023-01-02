@@ -91,7 +91,7 @@ class ResCurrencyRateProviderHrHNB(models.Model):
             cur = '&'.join(['valuta=' + c for c in currencies])
             url += "?" + cur
 
-        res = request.urlopen(url)
+        res = request.urlopen(url, timeout=15)
         data = json.loads(res.read().decode("UTF-8"))
         return data
 
