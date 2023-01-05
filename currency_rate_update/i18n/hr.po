@@ -40,14 +40,22 @@ msgstr ""
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid ""
-"<strong>! </strong>You are using European Central Bank exchange rate service "
-"with a base currency different from EUR.<br/>\n"
-"                              As long as the European Central Bank only "
-"provides exchange rates based on EUR, other foreign currency rates are "
-"recalculated and might differ from real rates."
+"<strong>!</strong>\n"
+"                                You are using European Central Bank exchange "
+"rate\n"
+"                                service with a base currency different from "
+"EUR.\n"
+"                                <br/>\n"
+"                                As long as the European Central Bank only "
+"provides\n"
+"                                exchange rates based on EUR, other foreign "
+"currency\n"
+"                                rates are recalculated and might differ from "
+"real rates."
 msgstr ""
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "Action Needed"
 msgstr "Potrebna radnja"
@@ -59,10 +67,12 @@ msgstr "Aktivan"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Archived"
 msgstr "Arhivirano"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_attachment_count
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
 msgid "Attachment Count"
 msgstr "Broj priloga"
@@ -140,8 +150,9 @@ msgstr "Tečaj"
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid ""
-"Currency Rate Provider \"%s\" failed to obtain data since %s until %s:\n"
-"%s"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since "
+"%(date_from)s until %(date_to)s:\n"
+"%(error)s"
 msgstr ""
 
 #. module: currency_rate_update
@@ -176,6 +187,11 @@ msgid "Currency Rates Update (OCA) daily"
 msgstr "Ažuriranje tečajne liste (OCA) dnevno"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
+msgid "Daily"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
 msgid "Day(s)"
 msgstr "Dan(a)"
@@ -203,19 +219,22 @@ msgid "European Central Bank"
 msgstr "Centralna Evropska Banka"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_follower_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
 msgstr "Pratitelji"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_channel_ids
-msgid "Followers (Channels)"
-msgstr "Pratitelji (kanali)"
-
-#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_partner_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Pratitelji (partneri)"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
+msgid "Has Message"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -224,12 +243,16 @@ msgid "ID"
 msgstr "ID"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Ukoliko je označeno, nove poruke traže vašu pažnju."
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
@@ -248,6 +271,7 @@ msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
 msgstr "Neispravan tečaj iz %(provider)s za %(currency)s : %(rate)s"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_is_follower
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_is_follower
 msgid "Is Follower"
 msgstr "Je pratitelj"
@@ -276,16 +300,19 @@ msgid "Last successful update"
 msgstr "Zadnje uspješno ažuriranje"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Glavni prilog"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "Message Delivery error"
 msgstr "Greška pri isporuci"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_ids
 msgid "Messages"
 msgstr "Poruke"
@@ -312,27 +339,37 @@ msgid "Next scheduled update"
 msgstr "Sljedeće zakazano ažuriranje"
 
 #. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
+msgid "None"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Broj radnji"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 #, fuzzy
 msgid "Number of errors"
 msgstr "Broj grešaka"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Broj poruka koje traže vašu pažnju"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Broj poruka sa greškama kod isporuke"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Broj nepročitanih poruka"
@@ -348,11 +385,7 @@ msgid "Providers"
 msgstr "Servisi"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
-msgid "Rate"
-msgstr "Tečaj"
-
-#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 #, fuzzy
 msgid "SMS Delivery error"
@@ -384,6 +417,11 @@ msgid "Start Date"
 msgstr "Početni datum"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
+msgid "Technical Rate"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
 msgid "The rate of the currency to the currency of rate 1"
 msgstr "Tečaj valute naspram valute sa tečajem 1"
@@ -400,11 +438,13 @@ msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
@@ -430,11 +470,13 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr ""
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
 msgstr ""
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website communication history"
 msgstr ""
@@ -443,6 +485,12 @@ msgstr ""
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Tjedan(a)"
+
+#~ msgid "Followers (Channels)"
+#~ msgstr "Pratitelji (kanali)"
+
+#~ msgid "Rate"
+#~ msgstr "Tečaj"
 
 #~ msgid "If checked new messages require your attention."
 #~ msgstr "Ako je označeno, nove poruke zahtijevaju vašu pozornost."
