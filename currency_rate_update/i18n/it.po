@@ -39,19 +39,22 @@ msgstr ""
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid ""
-"<strong>! </strong>You are using European Central Bank exchange rate service "
-"with a base currency different from EUR.<br/>\n"
-"                              As long as the European Central Bank only "
-"provides exchange rates based on EUR, other foreign currency rates are "
-"recalculated and might differ from real rates."
+"<strong>!</strong>\n"
+"                                You are using European Central Bank exchange "
+"rate\n"
+"                                service with a base currency different from "
+"EUR.\n"
+"                                <br/>\n"
+"                                As long as the European Central Bank only "
+"provides\n"
+"                                exchange rates based on EUR, other foreign "
+"currency\n"
+"                                rates are recalculated and might differ from "
+"real rates."
 msgstr ""
-"<strong>! </strong>Stai usando i tassi di cambio dell'ECB con una valuta "
-"base diversa da EUR.<br/>\n"
-"                              Finché l'ECB fornisce solo tassi di cambio "
-"basati su EUR, le altre valute sono ricalcolate e possono essere differenti "
-"dai tassi reali."
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "Action Needed"
 msgstr "Azione Necessaria"
@@ -63,10 +66,12 @@ msgstr "Attivo"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Archived"
 msgstr "Archiviato"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_attachment_count
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
 msgid "Attachment Count"
 msgstr "Numero allegati"
@@ -182,11 +187,19 @@ msgid "Currency Rates Update (OCA) daily"
 msgstr "Aggiornamento giornaliero tassi di cambio (OCA)"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
+msgid "Daily"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
 msgid "Day(s)"
 msgstr "Giorni"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
@@ -209,33 +222,43 @@ msgid "European Central Bank"
 msgstr "Banca Centrale Europea"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_follower_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
 msgstr "Followers"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_channel_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_channel_ids
 msgid "Followers (Channels)"
 msgstr "Followers (Canali)"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_partner_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Followers (Contatti)"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
 msgid "ID"
 msgstr "ID"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "If checked, new messages require your attention."
 msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
@@ -251,14 +274,19 @@ msgstr "Non attivo"
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
-msgstr "Tasso non valido dal fornitore %(provider)s per %(currency)s : %(rate)s"
+msgstr ""
+"Tasso non valido dal fornitore %(provider)s per %(currency)s : %(rate)s"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_is_follower
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_is_follower
 msgid "Is Follower"
 msgstr "E' un follower"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company____last_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings____last_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate____last_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard____last_update
 msgid "Last Modified on"
@@ -282,16 +310,19 @@ msgid "Last successful update"
 msgstr "Ultimo aggiornamento valido"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
 msgid "Main Attachment"
 msgstr "Allegato principale"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "Message Delivery error"
 msgstr "Messaggio errore di consegna"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_ids
 msgid "Messages"
 msgstr "Messaggi"
@@ -318,26 +349,36 @@ msgid "Next scheduled update"
 msgstr "Prossimo aggiornamento pianificato"
 
 #. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
+msgid "None"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of Actions"
 msgstr "Numero di azioni"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of errors"
 msgstr "Numero di errori"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr "Numero di messaggi che richiedono un'azione"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr "Numero di messaggi con errore di consegna"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_unread_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Number of unread messages"
 msgstr "Numero di messaggi non letti"
@@ -358,6 +399,7 @@ msgid "Rate"
 msgstr "Tasso"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "Errore consegna SMS"
@@ -404,11 +446,13 @@ msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "Valuta sconosciuta da %(provider)s: %(rate)s"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread
 msgid "Unread Messages"
 msgstr "Messaggi non letti"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_unread_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contatore messaggi non letti"
@@ -434,11 +478,13 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr "Aggiorna i tassi di cambio automaticamente usando moduli OCA"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
 msgstr "Messaggi sito web"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website communication history"
 msgstr "Storico comunicazioni sito web"
@@ -447,3 +493,16 @@ msgstr "Storico comunicazioni sito web"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Settimane"
+
+#~ msgid ""
+#~ "<strong>! </strong>You are using European Central Bank exchange rate "
+#~ "service with a base currency different from EUR.<br/>\n"
+#~ "                              As long as the European Central Bank only "
+#~ "provides exchange rates based on EUR, other foreign currency rates are "
+#~ "recalculated and might differ from real rates."
+#~ msgstr ""
+#~ "<strong>! </strong>Stai usando i tassi di cambio dell'ECB con una valuta "
+#~ "base diversa da EUR.<br/>\n"
+#~ "                              Finché l'ECB fornisce solo tassi di cambio "
+#~ "basati su EUR, le altre valute sono ricalcolate e possono essere "
+#~ "differenti dai tassi reali."
