@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-11 00:39+0000\n"
-"PO-Revision-Date: 2022-06-29 21:05+0000\n"
+"PO-Revision-Date: 2023-01-16 03:19+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
-"teams/23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
+"23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2\n"
+"X-Generator: Weblate 4.14.1\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
@@ -54,6 +54,18 @@ msgid ""
 "                                rates are recalculated and might differ from "
 "real rates."
 msgstr ""
+"<strong>!</strong>\n"
+"                                 Está utilizando el tipo de cambio del "
+"servicio del Banco Central\n"
+"                                 Europeo con una moneda base diferente al "
+"EUR.\n"
+"                                 <br/>\n"
+"                                 Mientras el Banco Central Europeo sólo "
+"proporcione\n"
+"                                 tipos de cambio basados en EUR, otras tasas "
+"de moneda\n"
+"                                 extranjera se recalculan y pueden diferir "
+"de las tasas reales."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
@@ -154,6 +166,9 @@ msgid ""
 "%(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
+"El Proveedor de Tasas de Cambio \"%(name)s\" falló en obtener información "
+"desde %(date_from)s hasta %(date_to)s:\n"
+"%(error)s"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
@@ -189,7 +204,7 @@ msgstr "Actualizar Tasas de Cambio (OCA) diariamente"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
 msgid "Daily"
-msgstr ""
+msgstr "Diario"
 
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
@@ -234,7 +249,7 @@ msgstr "Seguidores (Contactos)"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Tiene un Mensaje"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -341,7 +356,7 @@ msgstr "Próxima actualización programada"
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
 msgid "None"
-msgstr ""
+msgstr "Ninguno"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction_counter
@@ -417,7 +432,7 @@ msgstr "Fecha de Inicio"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
 msgid "Technical Rate"
-msgstr ""
+msgstr "Tasa Técnica"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
