@@ -79,13 +79,23 @@ class ResCurrencyRate(models.Model):
         return max_days
 
     @api.model
+    def _notify_rates_company_domain(self):
+        return []
+
+    @api.model
+    def _notify_rates_currency_domain(self):
+        return []
+
+    @api.model
     def notify_rates_too_old(self):
         max_days = self._notify_rates_get_max_days()
         today = fields.Date.context_today(self)
         limit_date = today - timedelta(max_days)
         logger.debug("notify_rates_too_old limit_date=%s", limit_date)
-        companies = self.env["res.company"].search([])
-        currencies = self.env["res.currency"].search([])
+        companies = self.env["res.company"].search(self._notify_rates_company_domain())
+        currencies = self.env["res.currency"].search(
+            self._notify_rates_currency_domain()
+        )
         cur2companies = defaultdict(list)
         company2name = {c.id: c.display_name for c in companies}
         for currency in currencies:
