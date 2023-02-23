@@ -43,8 +43,10 @@ class ResCurrencyRate(models.Model):
                         )
                     )
         if msg:
+            # force title msg to user's lang
+            self = self.with_context(lang=user.lang)
             res = {
-                "title": _("Currency rates older than %d days") % max_days,
+                "title": _("Currency rates older than %d days", max_days),
                 "sticky": True,
                 "message": "<ul>%s</ul>" % "".join(msg),
             }
@@ -125,11 +127,11 @@ class ResCurrencyRate(models.Model):
                     user, cur2companies, company2name, max_days
                 )
                 if notify_res:
-                    user.notify_warning(**notify_res)
                     logger.info(
                         "Notifying user %s about currencies with old rates",
                         user.display_name,
                     )
+                    user.notify_warning(**notify_res)
                 else:
                     logger.info(
                         "User %s is not notified because he is not in one "
