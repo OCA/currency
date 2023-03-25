@@ -1,12 +1,12 @@
 # Copyright 2023 Yiğit Budak (https://github.com/yibudak)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 import logging
-from datetime import timedelta, date
+from datetime import date, timedelta
 
 import requests
 from lxml.etree import fromstring
 
-from odoo import models, fields, _
+from odoo import _, fields, models
 
 _logger = logging.getLogger(__name__)
 
