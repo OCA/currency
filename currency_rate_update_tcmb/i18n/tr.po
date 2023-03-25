@@ -67,7 +67,7 @@ msgstr "Döviz kuru %s tarihinde bulunamadı"
 
 #. module: currency_rate_update_tcmb
 #: model:ir.model.fields,field_description:currency_rate_update_tcmb.field_res_currency_rate_provider__service_rate_type
-msgid "Service Rate Type"
+msgid "TCMB Rate Type"
 msgstr "Döviz Kuru Türü"
 
 #. module: currency_rate_update_tcmb

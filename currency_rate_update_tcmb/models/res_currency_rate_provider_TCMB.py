@@ -25,7 +25,7 @@ class ResCurrencyRateProviderTCMB(models.Model):
             ("BanknoteBuying", "Banknote Buy"),
             ("BanknoteSelling", "Banknote Sell"),
         ],
-        string="Service Rate Type",
+        string="TCMB Rate Type",
         default="ForexBuying",
         required=True,
     )
