@@ -1,10 +1,10 @@
 # Copyright 2023 Yiğit Budak (https://github.com/yibudak)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+import logging
+import requests
+from lxml.etree import fromstring
 from datetime import timedelta, date
 from odoo import models, fields, _
-import logging
-from lxml.etree import fromstring
-import requests
 
 _logger = logging.getLogger(__name__)
 
@@ -128,7 +128,7 @@ class ResCurrencyRateProviderTCMB(models.Model):
         return res
 
     def get_tcmb_currency_data(self, url, currencies):
-        response = requests.get(url).text
+        response = requests.get(url, timeout=15).text
         dom = fromstring(response.encode("utf-8"))
 
         _logger.debug("TCMB sent a valid XML file")
