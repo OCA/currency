@@ -20,10 +20,10 @@ class ResCurrencyRateProviderTCMB(models.Model):
     )
     service_rate_type = fields.Selection(
         [
-            ("ForexBuying", _("Forex Buy")),
-            ("ForexSelling", _("Forex Sell")),
-            ("BanknoteBuying", _("Banknote Buy")),
-            ("BanknoteSelling", _("Banknote Sell")),
+            ("ForexBuying", "Forex Buy"),
+            ("ForexSelling", "Forex Sell"),
+            ("BanknoteBuying", "Banknote Buy"),
+            ("BanknoteSelling", "Banknote Sell"),
         ],
         string="Service Rate Type",
         default="ForexBuying",
@@ -88,7 +88,7 @@ class ResCurrencyRateProviderTCMB(models.Model):
                 result[rate_date] = currency_data
             except Exception:
                 _logger.error(
-                    _("No currency rate on %s" % (date_from.strftime("%Y-%m-%d")))
+                    _("No currency rate on %s") % date_from.strftime("%Y-%m-%d")
                 )
         else:
             for single_date in daterange(date_from, date_to):
@@ -108,7 +108,7 @@ class ResCurrencyRateProviderTCMB(models.Model):
                     result[rate_date] = currency_data
                 except Exception:
                     _logger.error(
-                        _("No currency rate on %s" % (single_date.strftime("%Y-%m-%d")))
+                        _("No currency rate on %s") % single_date.strftime("%Y-%m-%d")
                     )
                     continue
 
