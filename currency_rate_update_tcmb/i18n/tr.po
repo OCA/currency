@@ -1,0 +1,76 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* currency_rate_update_tcmb
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-25 18:13+0000\n"
+"PO-Revision-Date: 2023-03-25 18:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: currency_rate_update_tcmb
+#. odoo-python
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#: model:ir.model.fields.selection,name:currency_rate_update_tcmb.selection__res_currency_rate_provider__service_rate_type__banknotebuying
+#, python-format
+msgid "Banknote Buy"
+msgstr "Efektif Alış"
+
+#. module: currency_rate_update_tcmb
+#. odoo-python
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#: model:ir.model.fields.selection,name:currency_rate_update_tcmb.selection__res_currency_rate_provider__service_rate_type__banknoteselling
+#, python-format
+msgid "Banknote Sell"
+msgstr "Efektif Satış"
+
+#. module: currency_rate_update_tcmb
+#: model:ir.model.fields.selection,name:currency_rate_update_tcmb.selection__res_currency_rate_provider__service__tcmb
+msgid "Central Bank of the Republic of Turkey"
+msgstr "Türkiye Cumhuriyet Merkez Bankası"
+
+#. module: currency_rate_update_tcmb
+#: model:ir.model,name:currency_rate_update_tcmb.model_res_currency_rate_provider
+msgid "Currency Rates Provider"
+msgstr "Döviz Kuru Güncellemesi"
+
+#. module: currency_rate_update_tcmb
+#. odoo-python
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#: model:ir.model.fields.selection,name:currency_rate_update_tcmb.selection__res_currency_rate_provider__service_rate_type__forexbuying
+#, python-format
+msgid "Forex Buy"
+msgstr "Döviz Alış"
+
+#. module: currency_rate_update_tcmb
+#. odoo-python
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#: model:ir.model.fields.selection,name:currency_rate_update_tcmb.selection__res_currency_rate_provider__service_rate_type__forexselling
+#, python-format
+msgid "Forex Sell"
+msgstr "Döviz Satış"
+
+#. module: currency_rate_update_tcmb
+#. odoo-python
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#: code:addons/currency_rate_update_tcmb/models/res_currency_rate_provider_TCMB.py:0
+#, python-format
+msgid "No currency rate on %s"
+msgstr "Döviz kuru %s tarihinde bulunamadı"
+
+#. module: currency_rate_update_tcmb
+#: model:ir.model.fields,field_description:currency_rate_update_tcmb.field_res_currency_rate_provider__service_rate_type
+msgid "Service Rate Type"
+msgstr "Döviz Kuru Türü"
+
+#. module: currency_rate_update_tcmb
+#: model:ir.model.fields,field_description:currency_rate_update_tcmb.field_res_currency_rate_provider__service
+msgid "Source Service"
+msgstr "Kaynak Servis"

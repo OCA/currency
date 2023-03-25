@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record model="ir.ui.view" id="res_currency_rate_provider_form_view">
+		<field name="name">res.currency.rate.provider.form.tcmb</field>
+		<field name="model">res.currency.rate.provider</field>
+		<field name="inherit_id" ref="currency_rate_update.res_currency_rate_provider_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='available_currency_ids']"
+				position="before">
+				<field name="service_rate_type"
+					attrs="{'invisible':[('service','!=','TCMB')], 'required':[('service','=','TCMB')]}" />
+			</xpath>
+		</field>
+	</record>
+
+</odoo>
