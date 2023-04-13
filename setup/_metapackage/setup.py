@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo-addon-currency_rate_update>=15.0dev,<15.1dev',
+        'odoo-addon-currency_rate_update_xe>=15.0dev,<15.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
