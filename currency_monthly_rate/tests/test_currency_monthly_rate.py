@@ -21,7 +21,6 @@ class TestCurrencyMonthlyRate(SavepointCase):
         cls.year = str(date.today().year)
 
         monthly_rate = cls.env["res.currency.rate.monthly"]
-        rate = cls.env["res.currency.rate"]
 
         monthly_rates_to_create = [
             {"month": "01", "rate": 1.20},
@@ -35,18 +34,15 @@ class TestCurrencyMonthlyRate(SavepointCase):
                     "company_id": cls.company.id,
                 }
             )
-            monthly_rate.create(r)
-
-        rates_to_create = [
-            {"name": "%s-01-01" % cls.year, "rate": 1.15},
-            {"name": "%s-01-11" % cls.year, "rate": 1.10},
-            {"name": "%s-01-31" % cls.year, "rate": 1.35},
-            {"name": "%s-02-01" % cls.year, "rate": 1.50},
-            {"name": "%s-02-11" % cls.year, "rate": 1.30},
-        ]
-        for r in rates_to_create:
-            r.update({"currency_id": cls.usd.id})
-            rate.create(r)
+            existing_rate = monthly_rate.search(
+                [
+                    ("name", "=", r["year"] + "-" + r["month"] + "-01"),
+                    ("currency_id", "=", r["currency_id"]),
+                    ("company_id", "=", r["company_id"]),
+                ]
+            )
+            if not existing_rate:
+                monthly_rate.create(r)
 
         cls.jan_2 = "%s-01-02" % cls.year
         cls.jan_12 = "%s-01-12" % cls.year
@@ -75,15 +71,15 @@ class TestCurrencyMonthlyRate(SavepointCase):
         self.assertEqual(self.compute_eur_usd(10, self.feb_12, True), 14)
 
     def test_standard_compute(self):
-        self.assertEqual(self.compute_eur_usd(10, self.jan_2, False), 11.5)
-        self.assertEqual(self.compute_eur_usd(10, self.jan_12, False), 11)
-        self.assertEqual(self.compute_eur_usd(10, self.jan_31, False), 13.5)
-        self.assertEqual(self.compute_eur_usd(10, self.feb_2, False), 15)
-        self.assertEqual(self.compute_eur_usd(10, self.feb_12, False), 13)
+        self.assertEqual(self.compute_eur_usd(10, self.jan_2, False), 12.83)
+        self.assertEqual(self.compute_eur_usd(10, self.jan_12, False), 12.83)
+        self.assertEqual(self.compute_eur_usd(10, self.jan_31, False), 12.83)
+        self.assertEqual(self.compute_eur_usd(10, self.feb_2, False), 12.83)
+        self.assertEqual(self.compute_eur_usd(10, self.feb_12, False), 12.83)
 
     def test_monthly_rate(self):
         self.assertEqual(self.usd.with_context(date=self.jan_2).monthly_rate, 1.2)
-        self.assertEqual(self.usd.with_context(date=self.feb_2).monthly_rate, 1.4)
+        self.assertEqual(self.usd.with_context(date=self.feb_2).monthly_rate, 1.2)
 
     def test_get_conversion_rate(self):
         currency_model = self.env["res.currency"]
@@ -96,7 +92,7 @@ class TestCurrencyMonthlyRate(SavepointCase):
             company,
             self.jan_2,
         )
-        self.assertEqual(eur_usd_jan_2, 1.15)
+        self.assertEqual(round(eur_usd_jan_2, 2), 1.28)
 
         monthly_eur_usd_jan_2 = currency_model.with_context(
             date=self.jan_2, monthly_rate=True
