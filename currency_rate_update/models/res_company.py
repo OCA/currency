@@ -11,5 +11,5 @@ class ResCompany(models.Model):
     currency_rates_autoupdate = fields.Boolean(
         string="Automatic Currency Rates (OCA)",
         default=True,
-        help="Enable regular automatic currency rates updates",
+        help="Enable automatic currency rates updates in this company.",
     )
