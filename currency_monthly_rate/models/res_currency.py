@@ -17,14 +17,10 @@ class ResCurrency(models.Model):
         "res.currency.rate.monthly", "currency_id", string="Monthly rates"
     )
 
-    @api.multi
     def _select_currencies(self, date=None):
         if not date:
             date = self.env.context.get("date") or fields.Date.today()
-        company_id = (
-            self.env.context.get("company_id")
-            or self.env["res.users"]._get_company().id
-        )
+        company_id = self.env.context.get("company_id") or self.env.user.company_id.id
         # the subquery selects the first rate before 'date' for the given
         # currency/company
         query = """SELECT c.id, (SELECT r.rate
@@ -40,13 +36,11 @@ class ResCurrency(models.Model):
         self.env.cr.execute(query, (date, company_id, tuple(self.ids)))
         return dict(self._cr.fetchall())
 
-    @api.multi
     def _compute_current_monthly_rate(self):
         currency_rates = self._select_currencies()
         for currency in self:
             currency.monthly_rate = currency_rates.get(currency.id) or 1.0
 
-    @api.multi
     def _get_current_monthly_rate(self, date):
         # to be consistent with odoo currency behavior we add direct
         # interaction with date parameter

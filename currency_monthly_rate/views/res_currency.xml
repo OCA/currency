@@ -49,22 +49,21 @@
         </field>
     </record>
 
-    <act_window
-        id="act_view_currency_rates_monthly"
-        name="Currency Monthly Rates"
-        view_mode="tree,form"
-        view_id="view_currency_rate_monthly_tree"
-        domain="[('currency_id','=', active_id)]"
-        context="{'default_currency_id': active_id}"
-        res_model="res.currency.rate.monthly"
-    />
+    <record id="act_view_currency_rates_monthly" model="ir.actions.act_window">
+        <field name="name">Currency Monthly Rates</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_currency_rate_monthly_tree" />
+        <field name="domain">[('currency_id','=', active_id)]</field>
+        <field name="context">{'default_currency_id': active_id}</field>
+        <field name="res_model">res.currency.rate.monthly</field>
+    </record>
 
     <record id="view_currency_form" model="ir.ui.view">
         <field name="name">res.currency.form.inherit</field>
         <field name="model">res.currency</field>
         <field name="inherit_id" ref="base.view_currency_form" />
         <field name="arch" type="xml">
-            <xpath expr="//button[@name='toggle_active']" position="before">
+            <xpath expr="//div[@name='button_box']" position="inside">
                 <button
                     name="%(act_view_currency_rates_monthly)d"
                     string="Monthly rates"
