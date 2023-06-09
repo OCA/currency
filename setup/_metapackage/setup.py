@@ -8,6 +8,7 @@ setuptools.setup(
     description="Meta package for oca-currency Odoo addons",
     version=version,
     install_requires=[
+        'odoo-addon-currency_old_rate_notify>=16.0dev,<16.1dev',
         'odoo-addon-currency_rate_update>=16.0dev,<16.1dev',
     ],
     classifiers=[
