@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record id="view_currency_rate_monthly_search" model="ir.ui.view">
         <field name="name">res.currency.rate.monthly.search</field>
@@ -16,10 +16,10 @@
         <field name="model">res.currency.rate.monthly</field>
         <field name="arch" type="xml">
             <tree string="Currency Monthly Rates" editable="bottom">
-                <field name="year"/>
-                <field name="month"/>
-                <field name="rate"/>
-                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="year" />
+                <field name="month" />
+                <field name="rate" />
+                <field name="company_id" groups="base.group_multi_company" />
             </tree>
         </field>
     </record>
@@ -32,13 +32,16 @@
                 <sheet>
                     <group string="Rates settings">
                         <group string="Dates configuration">
-                            <field name="year"/>
-                            <field name="month"/>
+                            <field name="year" />
+                            <field name="month" />
                         </group>
                         <group string="Rates">
-                            <field name="rate"/>
-                            <field name="currency_id"/>
-                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="rate" />
+                            <field name="currency_id" />
+                            <field
+                                name="company_id"
+                                groups="base.group_multi_company"
+                            />
                         </group>
                     </group>
                 </sheet>
@@ -47,13 +50,14 @@
     </record>
 
     <act_window
-       id="act_view_currency_rates_monthly"
-       name="Currency Monthly Rates"
-       view_mode="tree,form"
-       view_id="view_currency_rate_monthly_tree"
-       domain="[('currency_id','=', active_id)]"
-       context="{'default_currency_id': active_id}"
-       res_model="res.currency.rate.monthly"/>
+        id="act_view_currency_rates_monthly"
+        name="Currency Monthly Rates"
+        view_mode="tree,form"
+        view_id="view_currency_rate_monthly_tree"
+        domain="[('currency_id','=', active_id)]"
+        context="{'default_currency_id': active_id}"
+        res_model="res.currency.rate.monthly"
+    />
 
     <record id="view_currency_form" model="ir.ui.view">
         <field name="name">res.currency.form.inherit</field>
@@ -61,13 +65,15 @@
         <field name="inherit_id" ref="base.view_currency_form" />
         <field name="arch" type="xml">
             <xpath expr="//button[@name='toggle_active']" position="before">
-                <button name="%(act_view_currency_rates_monthly)d"
-                        string="Monthly rates"
-                        type="action"
-                        class="oe_stat_button"
-                        icon="fa-money"
-                        widget="statinfo"
-                        attrs="{'invisible': [('active', '=', False)]}"/>
+                <button
+                    name="%(act_view_currency_rates_monthly)d"
+                    string="Monthly rates"
+                    type="action"
+                    class="oe_stat_button"
+                    icon="fa-money"
+                    widget="statinfo"
+                    attrs="{'invisible': [('active', '=', False)]}"
+                />
             </xpath>
             <field name="rate" position="after">
                 <field name="monthly_rate" />

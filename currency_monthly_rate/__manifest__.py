@@ -7,11 +7,11 @@
     "license": "AGPL-3",
     "category": "Generic Modules/Accounting",
     "website": "https://github.com/OCA/currency",
-    "depends": ['base'],
+    "depends": ["base"],
     "data": [
-        'security/res_groups.xml',
-        'security/ir.model.access.csv',
-        'views/res_currency.xml',
+        "security/res_groups.xml",
+        "security/ir.model.access.csv",
+        "views/res_currency.xml",
     ],
-    'installable': True,
+    "installable": True,
 }
