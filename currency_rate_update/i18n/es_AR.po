@@ -207,8 +207,8 @@ msgstr "Mostrar Nombre"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
-msgid "Enable regular automatic currency rates updates"
-msgstr "Habilitar actualización regular y automática de las tasas de cambio"
+msgid "Enable automatic currency rates updates in this company."
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_to
@@ -269,8 +269,8 @@ msgstr "Inactivo"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
-msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
-msgstr "Tasa inválida desde %(provider)s para %(currency)s : %(rate)s"
+msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_is_follower
@@ -285,6 +285,11 @@ msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
+msgid "Last Successful Update"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_uid
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_uid
 msgid "Last Updated by"
@@ -295,11 +300,6 @@ msgstr "Última actualización realizada por"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
-msgid "Last successful update"
-msgstr "Última actualización satisfactoria"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
@@ -338,8 +338,8 @@ msgstr "Nombre"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__next_run
-msgid "Next scheduled update"
-msgstr "Próxima actualización programada"
+msgid "Next Scheduled Update"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
@@ -372,6 +372,7 @@ msgstr "Número de mensajes con error de entrega"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
 msgid "Provider"
 msgstr "Proveedor"
 
@@ -388,23 +389,18 @@ msgstr "Error de entrega de SMS"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
-msgid "Scheduled update interval"
-msgstr "Intervalo de actualización programado"
+msgid "Scheduled Update Interval"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
+msgid "Scheduled Update Interval Unit"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_valid_interval_number
-msgid "Scheduled update interval must be greater than zero!"
-msgstr "¡El intervalo de actualización programado debe ser mayor a cero!"
-
-#. module: currency_rate_update
-#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
-msgid "Service can only be used in one provider per company!"
-msgstr "¡El servicio solo puede utilizar un proveedor por compañía!"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
-msgid "Source Service"
-msgstr "Recurso del Servicio"
+msgid "Scheduled update interval must be strictly positive."
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_from
@@ -422,9 +418,9 @@ msgid "The rate of the currency to the currency of rate 1"
 msgstr "La tasa de la moneda a la moneda de la tasa 1"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
-msgid "Units of scheduled update interval"
-msgstr "Unidades del intervalo de actualización programado"
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
+msgid "This provider has already been setup in this company."
+msgstr ""
 
 #. module: currency_rate_update
 #. odoo-python
@@ -469,6 +465,34 @@ msgstr "Historia de comunicación del sitio web"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Semana(s)"
+
+#~ msgid "Enable regular automatic currency rates updates"
+#~ msgstr "Habilitar actualización regular y automática de las tasas de cambio"
+
+#, python-format
+#~ msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
+#~ msgstr "Tasa inválida desde %(provider)s para %(currency)s : %(rate)s"
+
+#~ msgid "Last successful update"
+#~ msgstr "Última actualización satisfactoria"
+
+#~ msgid "Next scheduled update"
+#~ msgstr "Próxima actualización programada"
+
+#~ msgid "Scheduled update interval"
+#~ msgstr "Intervalo de actualización programado"
+
+#~ msgid "Scheduled update interval must be greater than zero!"
+#~ msgstr "¡El intervalo de actualización programado debe ser mayor a cero!"
+
+#~ msgid "Service can only be used in one provider per company!"
+#~ msgstr "¡El servicio solo puede utilizar un proveedor por compañía!"
+
+#~ msgid "Source Service"
+#~ msgstr "Recurso del Servicio"
+
+#~ msgid "Units of scheduled update interval"
+#~ msgstr "Unidades del intervalo de actualización programado"
 
 #~ msgid ""
 #~ "<strong>! </strong>You are using European Central Bank exchange rate "
