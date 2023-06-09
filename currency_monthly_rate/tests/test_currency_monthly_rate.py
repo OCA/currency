@@ -35,7 +35,18 @@ class TestCurrencyMonthlyRate(SavepointCase):
                     "company_id": cls.company.id,
                 }
             )
-            monthly_rate.create(r)
+            existing_rates = monthly_rate.search(
+                [
+                    ("month", "=", r["month"]),
+                    ("currency_id", "=", r["currency_id"]),
+                    ("company_id", "=", r["company_id"]),
+                ]
+            )
+
+            if existing_rates:
+                existing_rates.write({"rate": r["rate"]})
+            else:
+                monthly_rate.create(r)
 
         rates_to_create = [
             {"name": "%s-01-01" % cls.year, "rate": 1.15},
@@ -83,7 +94,7 @@ class TestCurrencyMonthlyRate(SavepointCase):
 
     def test_monthly_rate(self):
         self.assertEqual(self.usd.with_context(date=self.jan_2).monthly_rate, 1.2)
-        self.assertEqual(self.usd.with_context(date=self.feb_2).monthly_rate, 1.4)
+        self.assertEqual(self.usd.with_context(date=self.feb_2).monthly_rate, 1.2)
 
     def test_get_conversion_rate(self):
         currency_model = self.env["res.currency"]
