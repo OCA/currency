@@ -1,4 +1,4 @@
-To configure TransferWise.com currency rates provider credentials:
+To configure Wise.com currency rates provider credentials:
 
 # Go to *Invoicing > Configuration > Settings*
-# Fill application credentials in *Currencies > TransferWise.com Provider* section
+# Fill application credentials in *Currencies > Wise.com Provider* section

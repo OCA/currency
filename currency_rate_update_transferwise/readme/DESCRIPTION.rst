@@ -1,2 +1,2 @@
-This module adds `TransferWise.com <https://transferwise.com/>`_
+This module adds `Wise.com <https://wise.com/>`_
 currency exchange rates provider.

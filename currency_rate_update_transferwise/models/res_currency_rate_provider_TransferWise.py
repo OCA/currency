@@ -18,7 +18,8 @@ class ResCurrencyRateProviderTransferWise(models.Model):
     _inherit = "res.currency.rate.provider"
 
     service = fields.Selection(
-        selection_add=[("TransferWise", "TransferWise.com")],
+        selection_add=[("TransferWise", "Wise.com")],
+        ondelete={"TransferWise": "set default", "Wise.com": "set default"},
     )
 
     def _get_supported_currencies(self):
@@ -100,7 +101,7 @@ class ResCurrencyRateProviderTransferWise(models.Model):
         self.ensure_one()
 
         if not self.company_id.transferwise_api_key:
-            raise UserError(_("No TransferWise.com credentials specified!"))
+            raise UserError(_("No Wise.com credentials specified!"))
 
         request = urllib.request.Request(url)
         request.add_header(

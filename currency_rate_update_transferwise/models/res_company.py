@@ -8,5 +8,5 @@ class ResCompany(models.Model):
     _inherit = "res.company"
 
     transferwise_api_key = fields.Char(
-        string="TransferWise.com API Key",
+        string="Wise.com API Key",
     )
