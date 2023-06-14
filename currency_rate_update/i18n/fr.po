@@ -57,8 +57,8 @@ msgstr ""
 "<strong>!</strong>\n"
 "                                Vous utilisez le service de la Banque "
 "Centrale Européenne\n"
-"                                avec une devise de base différente de l’EUR."
-"\n"
+"                                avec une devise de base différente de "
+"l’EUR.\n"
 "                                <br/>\n"
 "                                Comme la Banque centrale européenne ne "
 "fournit que\n"
@@ -401,6 +401,7 @@ msgstr "Nombre de messages non lus"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__provider_id
 msgid "Provider"
 msgstr "Fournisseur"
 
@@ -411,6 +412,7 @@ msgstr "Fournisseurs"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "Rate"
 msgstr "Taux de change"
 
@@ -448,6 +450,7 @@ msgstr "Date de début"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_monthly__rate
 msgid "The rate of the currency to the currency of rate 1"
 msgstr "Taux de change par rapport à la devise de base ayant un taux de 1"
 
