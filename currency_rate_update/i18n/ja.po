@@ -201,7 +201,7 @@ msgstr "表示名"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
-msgid "Enable regular automatic currency rates updates"
+msgid "Enable automatic currency rates updates in this company."
 msgstr ""
 
 #. module: currency_rate_update
@@ -263,7 +263,7 @@ msgstr ""
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
-msgid "Invalid rate from %(provider)s for %(currency)s : %(rate)s"
+msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr ""
 
 #. module: currency_rate_update
@@ -279,6 +279,11 @@ msgid "Last Modified on"
 msgstr "最終更新日"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
+msgid "Last Successful Update"
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_uid
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_uid
 msgid "Last Updated by"
@@ -289,11 +294,6 @@ msgstr "最終更新者"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
 msgid "Last Updated on"
 msgstr "最終更新日"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
-msgid "Last successful update"
-msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
@@ -332,7 +332,7 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__next_run
-msgid "Next scheduled update"
+msgid "Next Scheduled Update"
 msgstr ""
 
 #. module: currency_rate_update
@@ -366,6 +366,7 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
 msgid "Provider"
 msgstr ""
 
@@ -382,22 +383,17 @@ msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
-msgid "Scheduled update interval"
+msgid "Scheduled Update Interval"
+msgstr ""
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
+msgid "Scheduled Update Interval Unit"
 msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_valid_interval_number
-msgid "Scheduled update interval must be greater than zero!"
-msgstr ""
-
-#. module: currency_rate_update
-#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
-msgid "Service can only be used in one provider per company!"
-msgstr ""
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
-msgid "Source Service"
+msgid "Scheduled update interval must be strictly positive."
 msgstr ""
 
 #. module: currency_rate_update
@@ -416,8 +412,8 @@ msgid "The rate of the currency to the currency of rate 1"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
-msgid "Units of scheduled update interval"
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
+msgid "This provider has already been setup in this company."
 msgstr ""
 
 #. module: currency_rate_update
