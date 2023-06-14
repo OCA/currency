@@ -22,12 +22,12 @@ msgstr ""
 "1 : n % 1 != 0 ? 2: 3);\n"
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__04
 msgid "April"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__08
 msgid "August"
 msgstr ""
 
@@ -85,41 +85,44 @@ msgid "Dates configuration"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__12
 msgid "December"
 msgstr ""
 
 #. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__display_name
 #: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__02
 msgid "February"
 msgstr ""
 
 #. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__id
 #: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__id
 msgid "ID"
 msgstr "ID"
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__01
 msgid "January"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__07
 msgid "July"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__06
 msgid "June"
 msgstr ""
 
 #. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency____last_update
 #: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly____last_update
 msgid "Last Modified on"
 msgstr ""
@@ -135,12 +138,12 @@ msgid "Last Updated on"
 msgstr "Paskutinį kartą atnaujinta"
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__03
 msgid "March"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__05
 msgid "May"
 msgstr ""
 
@@ -162,17 +165,18 @@ msgid "Monthly rates"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__11
 msgid "November"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__10
 msgid "October"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: sql_constraint:res.currency.rate.monthly:0
+#: model:ir.model.constraint,message:currency_monthly_rate.constraint_res_currency_rate_monthly_unique_name_per_day
+#: model:ir.model.constraint,message:currency_monthly_rate.constraint_res_currency_rate_monthly_unique_year_month
 msgid "Only one currency monthly rate per month allowed!"
 msgstr ""
 
@@ -192,7 +196,7 @@ msgid "Rates settings"
 msgstr ""
 
 #. module: currency_monthly_rate
-#: selection:res.currency.rate.monthly,month:0
+#: model:ir.model.fields.selection,name:currency_monthly_rate.selection__res_currency_rate_monthly__month__09
 msgid "September"
 msgstr ""
 
