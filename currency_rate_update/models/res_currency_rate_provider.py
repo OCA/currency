@@ -32,7 +32,7 @@ class ResCurrencyRateProvider(models.Model):
     )
     active = fields.Boolean(default=True)
     service = fields.Selection(
-        string="Source Service",
+        string="Provider",
         selection=[("none", "None")],
         default="none",
         required=True,
@@ -52,18 +52,18 @@ class ResCurrencyRateProvider(models.Model):
     )
     name = fields.Char(compute="_compute_name", store=True)
     interval_type = fields.Selection(
-        string="Units of scheduled update interval",
+        string="Scheduled Update Interval Unit",
         selection=[("days", "Day(s)"), ("weeks", "Week(s)"), ("months", "Month(s)")],
         default="days",
         required=True,
     )
     interval_number = fields.Integer(
-        string="Scheduled update interval", default=1, required=True
+        string="Scheduled Update Interval", default=1, required=True
     )
     update_schedule = fields.Char(compute="_compute_update_schedule")
-    last_successful_run = fields.Date(string="Last successful update")
+    last_successful_run = fields.Date(string="Last Successful Update")
     next_run = fields.Date(
-        string="Next scheduled update", default=fields.Date.today, required=True
+        string="Next Scheduled Update", default=fields.Date.today, required=True
     )
     daily = fields.Boolean(compute="_compute_daily", store=True)
 
@@ -71,12 +71,12 @@ class ResCurrencyRateProvider(models.Model):
         (
             "service_company_id_uniq",
             "UNIQUE(service, company_id)",
-            "Service can only be used in one provider per company!",
+            "This provider has already been setup in this company.",
         ),
         (
             "valid_interval_number",
             "CHECK(interval_number > 0)",
-            "Scheduled update interval must be greater than zero!",
+            "Scheduled update interval must be strictly positive.",
         ),
     ]
 
@@ -236,7 +236,7 @@ class ResCurrencyRateProvider(models.Model):
             direct = rate.get("direct", None)
             if inverted is None and direct is None:
                 raise UserError(
-                    _("Invalid rate from %(provider)s for %(currency)s : %(rate)s")
+                    _("Invalid rate from %(provider)s for %(currency)s: %(rate)s")
                     % {"provider": self.name, "currency": currency.name, "rate": rate}
                 )
             elif inverted is None:
