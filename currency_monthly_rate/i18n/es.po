@@ -1,0 +1,217 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * currency_monthly_rate
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-15 02:52+0000\n"
+"PO-Revision-Date: 2021-03-11 18:45+0000\n"
+"Last-Translator: Ana Suárez <ana.suarez@qubiq.es>\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "April"
+msgstr "Abril"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: currency_monthly_rate
+#: model:ir.model,name:currency_monthly_rate.model_res_currency
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+#, fuzzy
+msgid "Currency Monthly Rate"
+msgstr "Tipo de cambio mensual"
+
+#. module: currency_monthly_rate
+#: model:ir.actions.act_window,name:currency_monthly_rate.act_view_currency_rates_monthly
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_tree
+#, fuzzy
+msgid "Currency Monthly Rates"
+msgstr "Tipos de cambio mensuales"
+
+#. module: currency_monthly_rate
+#: model:ir.model,name:currency_monthly_rate.model_res_currency_rate_monthly
+#, fuzzy
+msgid "Currency monthly rate"
+msgstr "Tipo de cambio mensual"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__monthly_rate
+#, fuzzy
+msgid "Current Monthly Rate"
+msgstr "Tipo de cambio mensual"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__name
+msgid "Date"
+msgstr "Fecha"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Dates configuration"
+msgstr "Configuración de Fechas"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "December"
+msgstr "Diciembre"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "February"
+msgstr "Febrero"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__id
+msgid "ID"
+msgstr "ID"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "January"
+msgstr "Enero"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "July"
+msgstr "Julio"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "June"
+msgstr "Junio"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "March"
+msgstr "Marzo"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "May"
+msgstr "Mayo"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__month
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+msgid "Month"
+msgstr "Mes"
+
+#. module: currency_monthly_rate
+#: model:res.groups,name:currency_monthly_rate.monthly_rates_group
+#, fuzzy
+msgid "Monthly currency rates"
+msgstr "Tipos de cambio mensuales"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__monthly_rate_ids
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_form
+#, fuzzy
+msgid "Monthly rates"
+msgstr "Tasas mensuales"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "November"
+msgstr "Noviembre"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "October"
+msgstr "Octubre"
+
+#. module: currency_monthly_rate
+#: sql_constraint:res.currency.rate.monthly:0
+msgid "Only one currency monthly rate per month allowed!"
+msgstr ""
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__rate
+msgid "Rate"
+msgstr ""
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Rates"
+msgstr ""
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Rates settings"
+msgstr ""
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "September"
+msgstr "Septiembre"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,help:currency_monthly_rate.field_res_currency__monthly_rate
+msgid "The monthly rate of the currency to the currency of rate 1."
+msgstr ""
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,help:currency_monthly_rate.field_res_currency_rate_monthly__rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr ""
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__year
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+msgid "Year"
+msgstr "Año"

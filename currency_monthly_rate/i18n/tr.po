@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * currency_monthly_rate
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2018
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 11.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-15 02:52+0000\n"
+"PO-Revision-Date: 2021-09-30 15:34+0000\n"
+"Last-Translator: Yavuz Avci <yavuzavci@gmail.com>\n"
+"Language-Team: Turkish (https://www.transifex.com/oca/teams/23907/tr/)\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Weblate 4.3.2\n"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "April"
+msgstr "Nisan"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "August"
+msgstr "Ağustos"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__create_date
+msgid "Created on"
+msgstr "Oluşturulma Tarihi"
+
+#. module: currency_monthly_rate
+#: model:ir.model,name:currency_monthly_rate.model_res_currency
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__currency_id
+msgid "Currency"
+msgstr "Para Birimi"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Currency Monthly Rate"
+msgstr "Aylık Döviz Kuru"
+
+#. module: currency_monthly_rate
+#: model:ir.actions.act_window,name:currency_monthly_rate.act_view_currency_rates_monthly
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_tree
+msgid "Currency Monthly Rates"
+msgstr "Aylık Döviz Kurları"
+
+#. module: currency_monthly_rate
+#: model:ir.model,name:currency_monthly_rate.model_res_currency_rate_monthly
+msgid "Currency monthly rate"
+msgstr "Aylık döviz kuru"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__monthly_rate
+msgid "Current Monthly Rate"
+msgstr "Mevcut Aylık Döviz Kuru"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__name
+msgid "Date"
+msgstr "Tarih"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Dates configuration"
+msgstr "Tarih yapılandırması"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "December"
+msgstr "Aralık"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__display_name
+msgid "Display Name"
+msgstr "Görünüm Adı"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "February"
+msgstr "Şubat"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__id
+msgid "ID"
+msgstr "ID"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "January"
+msgstr "Ocak"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "July"
+msgstr "Temmuz"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "June"
+msgstr "Haziran"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly____last_update
+msgid "Last Modified on"
+msgstr "Son Düzenlenme Tarihi"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__write_date
+msgid "Last Updated on"
+msgstr "Son Güncellenme"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "March"
+msgstr "Mart"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "May"
+msgstr "Mayıs"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__month
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+msgid "Month"
+msgstr "Ay"
+
+#. module: currency_monthly_rate
+#: model:res.groups,name:currency_monthly_rate.monthly_rates_group
+msgid "Monthly currency rates"
+msgstr "Aylık döviz kurları"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency__monthly_rate_ids
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_form
+msgid "Monthly rates"
+msgstr "Aylık kurlar"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "November"
+msgstr "Kasım"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "October"
+msgstr "Ekim"
+
+#. module: currency_monthly_rate
+#: sql_constraint:res.currency.rate.monthly:0
+msgid "Only one currency monthly rate per month allowed!"
+msgstr "Ayda yalnızca bir tane aylık döviz kuruna izin verilir!"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__rate
+msgid "Rate"
+msgstr "Kur"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Rates"
+msgstr "Kurlar"
+
+#. module: currency_monthly_rate
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_form
+msgid "Rates settings"
+msgstr "Kur ayarları"
+
+#. module: currency_monthly_rate
+#: selection:res.currency.rate.monthly,month:0
+msgid "September"
+msgstr "Eylül"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,help:currency_monthly_rate.field_res_currency__monthly_rate
+msgid "The monthly rate of the currency to the currency of rate 1."
+msgstr "Aylık döviz kurunun oranı 1 olan döviz kuruna oranı."
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,help:currency_monthly_rate.field_res_currency_rate_monthly__rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Döviz kurunun oranı 1 olan döviz kuruna oranı"
+
+#. module: currency_monthly_rate
+#: model:ir.model.fields,field_description:currency_monthly_rate.field_res_currency_rate_monthly__year
+#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
+msgid "Year"
+msgstr "Yıl"
