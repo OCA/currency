@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_currency_search" model="ir.ui.view">
+        <field name="name">res.currency.search</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='inactive']" position="after">
+                <separator />
+                <filter
+                    name="type_none"
+                    string="None"
+                    domain="[('currency_type', '=', 'none')]"
+                />
+                <filter
+                    name="type_sell"
+                    string="Sell"
+                    domain="[('currency_type', '=', 'sell')]"
+                />
+                <filter
+                    name="type_buy"
+                    string="Buy"
+                    domain="[('currency_type', '=', 'buy')]"
+                />
+                <separator />
+                <group expand="0" name="group_by" string="Group By">
+                    <filter
+                        name="group_currency_type"
+                        string="Currency Type"
+                        context="{'group_by': 'currency_type'}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_currency_tree" model="ir.ui.view">
+        <field name="name">res.currency.tree</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='full_name']" position="after">
+                <field name="currency_type" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_currency_form" model="ir.ui.view">
+        <field name="name">res.currency.form</field>
+        <field name="model">res.currency</field>
+        <field name="inherit_id" ref="base.view_currency_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_subunit_label']" position="after">
+                <field name="currency_type" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
