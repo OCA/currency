@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-23 18:41+0000\n"
-"PO-Revision-Date: 2023-06-10 00:10+0000\n"
+"PO-Revision-Date: 2023-06-20 16:09+0000\n"
 "Last-Translator: Alexis de Lattre <alexis@via.ecp.fr>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -33,7 +33,7 @@ msgstr "Taux de change de plus de %d jours"
 #: model:ir.actions.server,name:currency_old_rate_notify.notify_rates_too_old_cron_ir_actions_server
 #: model:ir.cron,cron_name:currency_old_rate_notify.notify_rates_too_old_cron
 msgid "Currency rates: notify if too old"
-msgstr "Taux de change : notifie si trop ancien"
+msgstr "Taux de change : préviens si trop vieux"
 
 #~ msgid "Display Name"
 #~ msgstr "Nom à afficher"
