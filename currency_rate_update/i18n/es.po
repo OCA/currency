@@ -10,15 +10,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-27 00:40+0000\n"
-"PO-Revision-Date: 2019-12-03 14:04+0000\n"
-"Last-Translator: Galoperd <jvcsan@gmail.com>\n"
+"PO-Revision-Date: 2023-07-05 13:09+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
@@ -53,6 +53,19 @@ msgid ""
 "                                rates are recalculated and might differ from "
 "real rates."
 msgstr ""
+"<strong>!</strong>\n"
+"                                                                       Está "
+"utilizando el tipo de cambio del Banco Central Europeo\n"
+"                                                                       "
+"servicio con una divisa base diferente al EUR.\n"
+"                                                                       <br/>"
+"\n"
+"                                                                       "
+"Mientras el Banco Central Europeo sólo proporcione\n"
+"                                                                       tipos "
+"de cambio basados en EUR, las tasas de otra divisa extranjera\n"
+"                                                                       se "
+"recalculan y pueden diferir de las tasas reales."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
@@ -133,13 +146,12 @@ msgstr "Monedas a actualizar por este proveedor"
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
 msgid "Currency Code (ISO 4217)"
-msgstr ""
+msgstr "Código de divisa (ISO 4217)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
-#, fuzzy
 msgid "Currency Name"
-msgstr "Tipo de Cambio"
+msgstr "Nombre de la Divisa"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
@@ -154,6 +166,9 @@ msgid ""
 "%(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
+"El proveedor de cambio de divisas \" %(name)s\" no ha podido obtener datos "
+"desde %(date_from)s hasta %(date_to)s:\n"
+"%(error)s"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
@@ -189,7 +204,7 @@ msgstr "Actualización de Tipos de Cambio (OCA) diária"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
 msgid "Daily"
-msgstr ""
+msgstr "diariamente"
 
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
@@ -234,7 +249,7 @@ msgstr "Seguidores (Partners)"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "tienes un mensaje"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -326,7 +341,7 @@ msgstr "Mes(es)"
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 #, python-format
 msgid "N/A"
-msgstr ""
+msgstr "no disponible"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
@@ -341,7 +356,7 @@ msgstr "Próxima actualización programada"
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
 msgid "None"
-msgstr ""
+msgstr "ninguno/a"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction_counter
@@ -352,9 +367,8 @@ msgstr "Número de Acciones"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
-#, fuzzy
 msgid "Number of errors"
-msgstr "Número de error"
+msgstr "número de errores"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction_counter
@@ -387,9 +401,8 @@ msgstr "Proveedores"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
-#, fuzzy
 msgid "SMS Delivery error"
-msgstr "Error de Entrega de Mensaje"
+msgstr "Error de entrega de SMS"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
@@ -419,7 +432,7 @@ msgstr "Fecha Inicio"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
 msgid "Technical Rate"
-msgstr ""
+msgstr "Tasa técnica"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
