@@ -6,6 +6,7 @@
     'name': 'Currency Rate Update: OpenExchangeRates.org',
     'version': '12.0.1.0.2',
     'category': 'Financial Management/Configuration',
+    'website': 'https://github.com/OCA/currency',
     'summary': 'Update exchange rates using OpenExchangeRates.org',
     'author':
         'CorporateHub, '

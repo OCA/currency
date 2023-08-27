@@ -10,6 +10,7 @@
     'author':
         'CorporateHub, '
         'Odoo Community Association (OCA)',
+    'website': 'https://github.com/OCA/currency',
     'license': 'AGPL-3',
     'installable': True,
     'application': False,
