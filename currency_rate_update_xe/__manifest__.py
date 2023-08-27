@@ -6,6 +6,7 @@
     'name': 'Currency Rate Update: XE.com',
     'version': '12.0.1.0.0',
     'category': 'Financial Management/Configuration',
+    'website': 'https://github.com/OCA/currency',
     'summary': 'Update exchange rates using XE.com',
     'author':
         'CorporateHub, '
