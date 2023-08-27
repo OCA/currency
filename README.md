@@ -17,7 +17,17 @@ Currency related Addons (crypto currencies, rate conversion, integrations with t
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_cryptocurrency](account_cryptocurrency/) | 12.0.1.0.0 |  | Manage cryptocurrencies
+[currency_monthly_rate](currency_monthly_rate/) | 12.0.1.0.0 |  | Currency Monthly Rate
+[currency_rate_inverted](currency_rate_inverted/) | 12.0.1.0.0 |  | Allows to maintain an exchange rate using the inversion method
+[currency_rate_update](currency_rate_update/) | 12.0.1.3.0 |  | Update exchange rates using OCA modules
+[currency_rate_update_oxr](currency_rate_update_oxr/) | 12.0.1.0.2 |  | Update exchange rates using OpenExchangeRates.org
+[currency_rate_update_transferwise](currency_rate_update_transferwise/) | 12.0.1.0.0 |  | Update exchange rates using TransferWise.com
+[currency_rate_update_xe](currency_rate_update_xe/) | 12.0.1.0.0 |  | Update exchange rates using XE.com
 
 [//]: # (end addons)
 
