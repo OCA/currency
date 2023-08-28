@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [currency_monthly_rate](currency_monthly_rate/) | 14.0.1.1.0 |  | Currency Monthly Rate
 [currency_old_rate_notify](currency_old_rate_notify/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Notify accounting managers when currency rates are too old
 [currency_rate_inverted](currency_rate_inverted/) | 14.0.1.0.2 |  | Allows to maintain an exchange rate using the inversion method
-[currency_rate_update](currency_rate_update/) | 14.0.1.3.0 |  | Update exchange rates using OCA modules
+[currency_rate_update](currency_rate_update/) | 14.0.1.3.1 |  | Update exchange rates using OCA modules
 [currency_rate_update_cmc](currency_rate_update_cmc/) | 14.0.1.0.0 |  | Allows to download crypto currency exchange rates from Coin Market Cap
 
 [//]: # (end addons)
