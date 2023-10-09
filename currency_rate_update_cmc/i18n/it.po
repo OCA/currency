@@ -75,6 +75,7 @@ msgstr ""
 #. module: currency_rate_update_cmc
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_cmc.res_currency_rate_update_wizard_form
 msgid ""
-"When using the <strong>Coin Market Cap - Basic Plan</strong> only the last rate will be fetched,\n"
+"When using the <strong>Coin Market Cap - Basic Plan</strong> only the last "
+"rate will be fetched,\n"
 "                    the system will not take into account any date provided"
 msgstr ""
