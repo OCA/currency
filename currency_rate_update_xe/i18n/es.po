@@ -21,7 +21,8 @@ msgstr ""
 #: code:addons/currency_rate_update_xe/models/res_currency_rate_provider_XE.py:0
 #, python-format
 msgid "Couldn't fetch data. Please contact your administrator."
-msgstr "No se pudieron obtener los datos. Por favor, contacte a su administrador."
+msgstr ""
+"No se pudieron obtener los datos. Por favor, contacte a su administrador."
 
 #. module: currency_rate_update_xe
 #: model:ir.model,name:currency_rate_update_xe.model_res_currency_rate_provider
