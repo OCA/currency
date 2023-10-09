@@ -372,7 +372,8 @@ msgstr "Intervallo di aggiornamento pianificato"
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
 msgid "Scheduled update interval must be greater than zero!"
-msgstr "L'intervallo di aggiornamento pianificato deve essere maggiore di zero!"
+msgstr ""
+"L'intervallo di aggiornamento pianificato deve essere maggiore di zero!"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
