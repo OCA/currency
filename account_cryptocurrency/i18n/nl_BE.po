@@ -25,23 +25,18 @@ msgid "Account"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model,name:account_cryptocurrency.model_account_move
-msgid "Account Entry"
-msgstr ""
-
-#. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_journal_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__journal_id
 msgid "Account Journal"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_amount
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_amount
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__amount
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__amount
 msgid "Amount"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,help:account_cryptocurrency.field_res_currency_move_line_amount
+#: model:ir.model.fields,help:account_cryptocurrency.field_res_currency_move_line__amount
 msgid "Amount in company currency"
 msgstr ""
 
@@ -51,7 +46,7 @@ msgid "Bank Statement"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 msgid "Cancel"
 msgstr ""
 
@@ -61,40 +56,40 @@ msgid "Cancelled"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_company_id
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_company_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__company_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__company_id
 msgid "Company"
 msgstr "Bedrijf"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_company_currency
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__company_currency
 msgid "Company currency"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_create_uid
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_create_uid
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__create_uid
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__create_uid
 msgid "Created by"
 msgstr "Gemaakt door"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_create_date
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_create_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__create_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__create_date
 msgid "Created on"
 msgstr "Gemaakt op"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_credit_account_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__credit_account_id
 msgid "Credit Account"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_account_payment_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_account_payment_form
 msgid "Crypto moves"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_form
 msgid "Cryptocurrency"
 msgstr ""
 
@@ -105,16 +100,16 @@ msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_res_currency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_currency_id
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_currency_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__currency_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__currency_id
 msgid "Currency"
 msgstr ""
 
 #. module: account_cryptocurrency
 #: model:ir.model,name:account_cryptocurrency.model_res_currency_move
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_move_id
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__move_id
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
 msgid "Currency Move"
 msgstr ""
 
@@ -126,8 +121,8 @@ msgstr ""
 #. module: account_cryptocurrency
 #: model:ir.actions.act_window,name:account_cryptocurrency.action_currency_move_line_form
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move_line
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_search
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_tree
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_search
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_tree
 msgid "Currency Move Lines"
 msgstr ""
 
@@ -135,13 +130,13 @@ msgstr ""
 #: model:ir.actions.act_window,name:account_cryptocurrency.action_currency_move_form
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_currency_moves
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_search
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_tree
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_search
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_tree
 msgid "Currency Moves"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_move_line_ids
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__move_line_ids
 msgid "Currency move lines"
 msgstr ""
 
@@ -152,24 +147,24 @@ msgid "Currency moves"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_debit_account_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__debit_account_id
 msgid "Debit Account"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_direction
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_direction
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__direction
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__direction
 msgid "Direction"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_display_name
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_display_name
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__display_name
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__display_name
 msgid "Display Name"
 msgstr "Schermnaam"
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 #: selection:res.currency.move,state:0
 msgid "Draft"
 msgstr ""
@@ -180,73 +175,74 @@ msgid "First-in-First-Out"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_payment_has_currency_move_ids
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_payment__has_currency_move_ids
 msgid "Has Currency Move"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_id
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__id
 msgid "ID"
 msgstr "ID"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_in_move_line_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__in_move_line_id
 msgid "Incoming move line"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_inventoried
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency__inventoried
 msgid "Inventoried"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_inventory_account_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency__inventory_account_id
 msgid "Inventory Account"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: code:addons/account_cryptocurrency/models/res_currency_move.py:155
+#: code:addons/account_cryptocurrency/models/res_currency_move.py:157
 #, python-format
 msgid "It was not possible to find enough currency units from incoming moves"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_account_move_ids
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
+#: model:ir.model,name:account_cryptocurrency.model_account_move
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__account_move_ids
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
 msgid "Journal Entries"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move___last_update
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line___last_update
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move____last_update
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line____last_update
 msgid "Last Modified on"
 msgstr "Laatst Aangepast op"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_write_uid
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_write_uid
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__write_uid
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__write_uid
 msgid "Last Updated by"
 msgstr "Laatst bijgewerkt door"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_write_date
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_write_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__write_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__write_date
 msgid "Last Updated on"
 msgstr "Laatst bijgewerkt op"
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__date
 msgid "Move Date"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 msgid "Move Lines"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_name
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__name
 msgid "Name"
 msgstr ""
 
@@ -258,18 +254,18 @@ msgid "New"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_out_move_line_ids
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__out_move_line_ids
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_form
 msgid "Outgoing Move Lines"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_payment_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__payment_id
 msgid "Payment"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_date
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__date
 msgid "Payment Date"
 msgstr ""
 
@@ -279,7 +275,7 @@ msgid "Payments"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
+#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_form
 msgid "Post"
 msgstr ""
 
@@ -289,12 +285,12 @@ msgid "Posted"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_price_unit
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__price_unit
 msgid "Price Unit"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_quantity
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__quantity
 msgid "Quantity"
 msgstr ""
 
@@ -304,18 +300,23 @@ msgid "Receive"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line_remaining_qty
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_line__remaining_qty
 msgid "Remaing quantity"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_payment_res_currency_move_ids
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_payment__res_currency_move_ids
 msgid "Res Currency Move"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_move_res_currency_move_line_id
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_account_move__res_currency_move_line_id
 msgid "Res Currency Move Line"
+msgstr ""
+
+#. module: account_cryptocurrency
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency__rounding
+msgid "Rounding Factor"
 msgstr ""
 
 #. module: account_cryptocurrency
@@ -324,17 +325,17 @@ msgid "Send"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move_state
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_move__state
 msgid "State"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,help:account_cryptocurrency.field_account_payment_has_currency_move_ids
+#: model:ir.model.fields,help:account_cryptocurrency.field_account_payment__has_currency_move_ids
 msgid "Technical field used for usability purposes"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: code:addons/account_cryptocurrency/models/res_currency_move.py:196
+#: code:addons/account_cryptocurrency/models/res_currency_move.py:198
 #, python-format
 msgid "The amount must always be positive."
 msgstr ""
@@ -346,12 +347,12 @@ msgid "The currency of the Inventory Account should be %s"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency_valuation_method
+#: model:ir.model.fields,field_description:account_cryptocurrency.field_res_currency__valuation_method
 msgid "Valuation Method"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: code:addons/account_cryptocurrency/models/res_currency_move.py:177
+#: code:addons/account_cryptocurrency/models/res_currency_move.py:179
 #, python-format
 msgid ""
 "You can not cancel a currency move that is linked to a payment. Please "
@@ -359,13 +360,13 @@ msgid ""
 msgstr ""
 
 #. module: account_cryptocurrency
-#: code:addons/account_cryptocurrency/models/res_currency_move_line.py:142
+#: code:addons/account_cryptocurrency/models/res_currency_move_line.py:138
 #, python-format
 msgid "You can not delete a currency move linethat is already posted"
 msgstr ""
 
 #. module: account_cryptocurrency
-#: code:addons/account_cryptocurrency/models/res_currency_move.py:188
+#: code:addons/account_cryptocurrency/models/res_currency_move.py:190
 #, python-format
 msgid "You can not delete a currency move that is already posted"
 msgstr ""
