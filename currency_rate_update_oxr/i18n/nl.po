@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* currency_rate_update_oxr
+# 	* currency_rate_update_oxr
 #
 msgid ""
 msgstr ""
@@ -18,13 +18,16 @@ msgstr ""
 
 #. module: currency_rate_update_oxr
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_oxr.res_config_settings_view_form
-msgid "<span class=\"o_form_label\">OpenExchangeRates.org Provider</span>\n"
-"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
+msgid ""
+"<span class=\"o_form_label\">OpenExchangeRates.org Provider</span>\n"
+"                        <span class=\"fa fa-lg fa-building-o\" title="
+"\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values "
+"set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
 "<span class=\"o_form_label\">OpenExchangeRates.org Provider</span>\n"
-"                        <span class=\"fa fa-lg fa-building-o\" title=\"Values"
-" set here are company-specific.\" role=\"img\" aria-label=\"Values set here "
-"are company-specific.\" groups=\"base.group_multi_company\"/>"
+"                        <span class=\"fa fa-lg fa-building-o\" title="
+"\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values "
+"set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 
 #. module: currency_rate_update_oxr
 #: model:ir.model.fields,field_description:currency_rate_update_oxr.field_res_config_settings__openexchangerates_app_id
