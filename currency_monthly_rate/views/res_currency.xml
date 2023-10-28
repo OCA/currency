@@ -15,7 +15,7 @@
         <field name="name">res.currency.rate.monthly.tree</field>
         <field name="model">res.currency.rate.monthly</field>
         <field name="arch" type="xml">
-            <tree string="Currency Monthly Rates" editable="bottom">
+            <tree editable="bottom">
                 <field name="year" />
                 <field name="month" />
                 <field name="rate" />
