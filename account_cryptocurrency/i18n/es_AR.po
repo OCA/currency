@@ -11,8 +11,8 @@ msgstr ""
 "POT-Creation-Date: 2018-04-11 12:43+0000\n"
 "PO-Revision-Date: 2023-10-29 08:28+0000\n"
 "Last-Translator: Ignacio Buioli <ibuioli@gmail.com>\n"
-"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/teams/"
-"23907/es_AR/)\n"
+"Language-Team: Spanish (Argentina) (https://www.transifex.com/oca/"
+"teams/23907/es_AR/)\n"
 "Language: es_AR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,7 +123,6 @@ msgstr "Línea de Movimiento de Moneda"
 #: model:ir.actions.act_window,name:account_cryptocurrency.action_currency_move_line_form
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move_line
 #: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_search
-#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_tree
 msgid "Currency Move Lines"
 msgstr "Líneas de Movimiento de Moneda"
 
@@ -132,7 +131,6 @@ msgstr "Líneas de Movimiento de Moneda"
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_currency_moves
 #: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_search
-#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_tree
 msgid "Currency Moves"
 msgstr "Movimientos de Moneda"
 

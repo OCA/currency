@@ -122,7 +122,6 @@ msgstr ""
 #: model:ir.actions.act_window,name:account_cryptocurrency.action_currency_move_line_form
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move_line
 #: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_search
-#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_line_tree
 msgid "Currency Move Lines"
 msgstr ""
 
@@ -131,7 +130,6 @@ msgstr ""
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_action_currency_move
 #: model:ir.ui.menu,name:account_cryptocurrency.menu_currency_moves
 #: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_search
-#: model_terms:ir.ui.view,arch_db:account_cryptocurrency.view_currency_move_tree
 msgid "Currency Moves"
 msgstr ""
 
