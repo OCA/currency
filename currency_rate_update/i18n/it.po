@@ -258,9 +258,7 @@ msgstr "Se selezionata, nuovi messaggi richiedono attenzione."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Se selezionata, alcuni messaggi hanno un errore di consegna."
 
@@ -401,12 +399,6 @@ msgid "Rate"
 msgstr "Tasso"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr "Errore consegna SMS"
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
 msgid "Scheduled update interval"
 msgstr "Intervallo aggiornamento pianificato"
@@ -496,6 +488,9 @@ msgstr "Storico comunicazioni sito web"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Settimana(e)"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Errore consegna SMS"
 
 #~ msgid ""
 #~ "<strong>! </strong>You are using European Central Bank exchange rate "
