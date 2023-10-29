@@ -59,7 +59,6 @@ msgstr "Tipo de cambio mensual"
 #. module: currency_monthly_rate
 #: model:ir.actions.act_window,name:currency_monthly_rate.act_view_currency_rates_monthly
 #: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_search
-#: model_terms:ir.ui.view,arch_db:currency_monthly_rate.view_currency_rate_monthly_tree
 #, fuzzy
 msgid "Currency Monthly Rates"
 msgstr "Tipos de cambio mensuales"
