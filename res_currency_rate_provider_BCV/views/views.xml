@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <record id="res_currency_rate_update_wizard_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.update.wizard.form</field>
+        <field name="model">res.currency.rate.update.wizard</field>
+        <field name="inherit_id" ref="currency_rate_update.res_currency_rate_update_wizard_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//group[@name='date_range']" position="attributes">
+            <attribute name="invisible">1</attribute>
+          </xpath>
+          <xpath expr="//group[@name='filter']" position="inside">
+            <h2>Se tomará la tasa de Hoy</h2>
+          </xpath>
+
+        </field>
+    </record>
+</odoo>
