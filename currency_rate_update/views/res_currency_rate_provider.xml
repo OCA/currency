@@ -27,10 +27,10 @@
                 <field name="service" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <field name="update_schedule" />
-                <field name="available_currency_ids" invisible="1" />
+                <field name="available_currency_ids" column_invisible="True" />
                 <field name="currency_ids" widget="many2many_tags" />
-                <field name="daily" invisible="1" />
-                <field name="next_run" attrs="{'invisible': [('daily', '=', True)]}" />
+                <field name="daily" column_invisible="True" />
+                <field name="next_run" invisible="daily" />
             </tree>
         </field>
     </record>
@@ -44,7 +44,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active"
                     />
                     <group name="options">
                         <group>
@@ -52,7 +52,7 @@
                             <field name="service" />
                             <field name="currency_name" invisible="1" />
                             <div
-                                attrs="{'invisible':['|',('service','!=','ECB'),('currency_name','=','EUR')]}"
+                                invisible="service != 'ECB' or currency_name == 'EUR'"
                                 class="alert alert-warning"
                                 colspan="2"
                                 role="alert"
@@ -81,10 +81,7 @@
                         </group>
                         <group>
                             <field name="daily" invisible="1" />
-                            <field
-                                name="next_run"
-                                attrs="{'invisible': [('daily', '=', True)]}"
-                            />
+                            <field name="next_run" invisible="daily" />
                         </group>
                         <group>
                             <field name="available_currency_ids" invisible="1" />

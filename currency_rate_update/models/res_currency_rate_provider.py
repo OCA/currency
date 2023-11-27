@@ -139,13 +139,14 @@ class ResCurrencyRateProvider(models.Model):
                     data = data.items()
             except BaseException as e:
                 _logger.warning(
-                    'Currency Rate Provider "%(name)s" failed to obtain data since'
-                    " %(date_from)s until %(date_to)s"
-                    % {
-                        "name": provider.name,
-                        "date_from": date_from,
-                        "date_to": date_to,
-                    },
+                    (
+                        'Currency Rate Provider "{name}" failed to obtain data since'
+                        " {date_from} until {date_to}"
+                    ).format(
+                        name=provider.name,
+                        date_from=date_from,
+                        date_to=date_to,
+                    ),
                     exc_info=True,
                 )
                 provider.message_post(
@@ -231,7 +232,7 @@ class ResCurrencyRateProvider(models.Model):
             limit=1,
         )
 
-        if type(rate) is dict:
+        if isinstance(rate, dict):
             inverted = rate.get("inverted", None)
             direct = rate.get("direct", None)
             if inverted is None and direct is None:
