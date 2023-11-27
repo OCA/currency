@@ -184,7 +184,6 @@ msgstr "Servisi za ažuriranje tečaja"
 
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
-#: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 msgid "Currency Rates Update (OCA) daily"
 msgstr "Ažuriranje tečajne liste (OCA) dnevno"
 
@@ -252,7 +251,9 @@ msgstr "Ukoliko je označeno, nove poruke traže vašu pažnju."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr ""
 
@@ -277,12 +278,6 @@ msgid "Is Follower"
 msgstr "Je pratitelj"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard____last_update
-msgid "Last Modified on"
-msgstr "Zadnje modificirano"
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
 msgid "Last Successful Update"
 msgstr ""
@@ -298,12 +293,6 @@ msgstr "Zadnji ažurirao"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
 msgid "Last Updated on"
 msgstr "Zadnje ažuriranje"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Glavni prilog"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
@@ -379,6 +368,13 @@ msgstr "Servis"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__provider_ids
 msgid "Providers"
 msgstr "Servisi"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
+#, fuzzy
+msgid "SMS Delivery error"
+msgstr "Greška pri isporuci"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
@@ -459,9 +455,11 @@ msgstr ""
 msgid "Week(s)"
 msgstr "Tjedan(a)"
 
-#, fuzzy
-#~ msgid "SMS Delivery error"
-#~ msgstr "Greška pri isporuci"
+#~ msgid "Last Modified on"
+#~ msgstr "Zadnje modificirano"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Glavni prilog"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Broj poruka koje traže vašu pažnju"

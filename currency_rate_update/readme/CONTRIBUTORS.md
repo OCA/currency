@@ -23,3 +23,5 @@
   - Alexey Pelykh \<<alexey.pelykh@corphub.eu>\>
 - [Quartile Limited](https://www.quartile.co/):
   - Tatsuki Kanda \<<kanda@quartile.co>\>
+- [Komit Company Limited](https://komit-consulting.com/):
+  - Quoc Pham Ngoc \<<quoc-pn@komit-consulting.com>\>
