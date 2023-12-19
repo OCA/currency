@@ -6,13 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2023-12-19 14:36+0000\n"
+"Last-Translator: Ivorra78 <informatica@totmaterial.es>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
 
 #. module: currency_rate_update_transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
@@ -20,75 +22,80 @@ msgid ""
 "<span class=\"o_form_label\">TransferWise.com Provider</span>\n"
 "                        <span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" aria-label=\"Values set here are company-specific.\" groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"o_form_label\">Proveedor de TransferWise.com</span>\n"
+"                                                    <span class=\"fa fa-lg "
+"fa-building-o\" title=\"Values set here are company-specific.\" role=\"img\" "
+"aria-label=\"Values set here are company-specific.\" groups=\"base."
+"group_multi_company\"/>"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_config_settings__transferwise_api_key
 msgid "API Key"
-msgstr ""
+msgstr "Clave API"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model,name:currency_rate_update_transferwise.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model,name:currency_rate_update_transferwise.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "Ajustes de Config"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model,name:currency_rate_update_transferwise.model_res_currency_rate_provider
 msgid "Currency Rates Provider"
-msgstr ""
+msgstr "Proveedor de Tipos de Cambio"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_company__display_name
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_currency_rate_provider__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Mostrar Nombre"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_company__id
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_config_settings__id
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_currency_rate_provider__id
 msgid "ID"
-msgstr ""
+msgstr "ID (identificación)"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_company____last_update
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_config_settings____last_update
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_currency_rate_provider____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última Modificación el"
 
 #. module: currency_rate_update_transferwise
 #: code:addons/currency_rate_update_transferwise/models/res_currency_rate_provider_TransferWise.py:0
 #, python-format
 msgid "No Wise.com credentials specified!"
-msgstr ""
+msgstr "¡No se han especificado credenciales de Wise.com!"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_currency_rate_provider__service
 msgid "Source Service"
-msgstr ""
+msgstr "Servicio Fuente"
 
 #. module: currency_rate_update_transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
 msgid "TransferWise.com"
-msgstr ""
+msgstr "TransferWise.com"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields.selection,name:currency_rate_update_transferwise.selection__res_currency_rate_provider__service__transferwise
 msgid "Wise.com"
-msgstr ""
+msgstr "Wise.com"
 
 #. module: currency_rate_update_transferwise
 #: model:ir.model.fields,field_description:currency_rate_update_transferwise.field_res_company__transferwise_api_key
 msgid "Wise.com API Key"
-msgstr ""
+msgstr "Wise.com Clave API"
 
 #. module: currency_rate_update_transferwise
 #: model_terms:ir.ui.view,arch_db:currency_rate_update_transferwise.res_config_settings_view_form
 msgid "credentials"
-msgstr ""
+msgstr "Credenciales"
