@@ -3,10 +3,10 @@
 
 from datetime import date
 
-from odoo.tests.common import SavepointCase
+from odoo.tests.common import TransactionCase
 
 
-class TestCurrencyMonthlyRate(SavepointCase):
+class TestCurrencyMonthlyRate(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
