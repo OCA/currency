@@ -198,7 +198,6 @@ msgstr "Proveedores de Tipos de Cambio"
 
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
-#: model:ir.cron,cron_name:currency_rate_update.ir_cron_currency_rates_update_every_day
 msgid "Currency Rates Update (OCA) daily"
 msgstr "Actualización de Tipos de Cambio (OCA) diária"
 
@@ -267,7 +266,9 @@ msgstr "Si activado, los nuevos mensajes requieren su atención."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "Si activado, algunos mensajes tienen un error de entrega."
 
@@ -292,12 +293,6 @@ msgid "Is Follower"
 msgstr "Es Seguidor"
 
 #. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider____last_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard____last_update
-msgid "Last Modified on"
-msgstr "Última modificación en"
-
-#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
 msgid "Last Successful Update"
 msgstr "Última actualización correcta"
@@ -313,12 +308,6 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_main_attachment_id
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_main_attachment_id
-msgid "Main Attachment"
-msgstr "Adjunto Principal"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
@@ -393,6 +382,12 @@ msgstr "Proveedor"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__provider_ids
 msgid "Providers"
 msgstr "Proveedores"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de Entrega de Mensaje"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
@@ -474,8 +469,11 @@ msgstr "Histórico de comunicación web"
 msgid "Week(s)"
 msgstr "Semana(s)"
 
-#~ msgid "SMS Delivery error"
-#~ msgstr "Error de Entrega de Mensaje"
+#~ msgid "Last Modified on"
+#~ msgstr "Última modificación en"
+
+#~ msgid "Main Attachment"
+#~ msgstr "Adjunto Principal"
 
 #~ msgid "Number of messages which requires an action"
 #~ msgstr "Número de mensajes que requieren una acción"
