@@ -6,7 +6,7 @@ from odoo import fields
 from odoo.tests import common
 
 
-class TestResCurrencyRateProviderXE(common.TransactionCase):
+class TestResCurrencyRateProviderXE(common.SavepointCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
