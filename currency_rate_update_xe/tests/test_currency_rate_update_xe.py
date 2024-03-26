@@ -7,32 +7,31 @@ from odoo.tests import common
 
 
 class TestResCurrencyRateProviderXE(common.TransactionCase):
-    @classmethod
-    def setUpClass(cls):
-        super().setUpClass()
+    def setUp(self):
+        super().setUp()
 
-        cls.Company = cls.env["res.company"]
-        cls.CurrencyRate = cls.env["res.currency.rate"]
-        cls.CurrencyRateProvider = cls.env["res.currency.rate.provider"]
+        self.Company = self.env["res.company"]
+        self.CurrencyRate = self.env["res.currency.rate"]
+        self.CurrencyRateProvider = self.env["res.currency.rate.provider"]
 
-        cls.today = fields.Date.today()
-        cls.eur_currency = cls.env.ref("base.EUR")
-        cls.usd_currency = cls.env.ref("base.USD")
-        cls.company = cls.Company.create(
-            {"name": "Test company", "currency_id": cls.eur_currency.id}
+        self.today = fields.Date.today()
+        self.eur_currency = self.env.ref("base.EUR")
+        self.usd_currency = self.env.ref("base.USD")
+        self.company = self.Company.create(
+            {"name": "Test company", "currency_id": self.eur_currency.id}
         )
-        cls.env.user.company_ids += cls.company
-        cls.env.company = cls.company
-        cls.xe_provider = cls.CurrencyRateProvider.create(
+        self.env.user.company_ids += self.company
+        self.env.company = self.company
+        self.xe_provider = self.CurrencyRateProvider.create(
             {
                 "service": "XE",
                 "currency_ids": [
-                    (4, cls.usd_currency.id),
-                    (4, cls.eur_currency.id),
+                    (4, self.usd_currency.id),
+                    (4, self.eur_currency.id),
                 ],
             }
         )
-        cls.CurrencyRate.search([]).unlink()
+        self.CurrencyRate.search([]).unlink()
 
     def test_cron(self):
         self.xe_provider._scheduled_update()
