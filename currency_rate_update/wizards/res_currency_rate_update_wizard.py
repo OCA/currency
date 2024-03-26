@@ -1,7 +1,10 @@
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+import logging
 
 from odoo import fields, models
+
+logger = logging.getLogger(__name__)
 
 
 class ResCurrencyRateUpdateWizard(models.TransientModel):
@@ -25,5 +28,9 @@ class ResCurrencyRateUpdateWizard(models.TransientModel):
         self.ensure_one()
 
         self.provider_ids._update(self.date_from, self.date_to)
+        logger.info(
+            f"Update currency for {', '.join(self.provider_ids.mapped('name'))} "
+            f"from {self.date_from} to {self.date_to}"
+        )
 
         return {"type": "ir.actions.act_window_close"}
