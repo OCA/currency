@@ -28,6 +28,7 @@ addon | version | maintainers | summary
 [currency_rate_update](currency_rate_update/) | 14.0.1.3.2 |  | Update exchange rates using OCA modules
 [currency_rate_update_cmc](currency_rate_update_cmc/) | 14.0.1.0.0 |  | Allows to download crypto currency exchange rates from Coin Market Cap
 [currency_rate_update_transferwise](currency_rate_update_transferwise/) | 14.0.1.0.0 |  | Update exchange rates using TransferWise.com
+[currency_rate_update_xe](currency_rate_update_xe/) | 14.0.1.0.0 |  | Update exchange rates using XE.com
 
 [//]: # (end addons)
 

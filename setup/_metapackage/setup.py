@@ -15,6 +15,7 @@ setuptools.setup(
         'odoo14-addon-currency_rate_update',
         'odoo14-addon-currency_rate_update_cmc',
         'odoo14-addon-currency_rate_update_transferwise',
+        'odoo14-addon-currency_rate_update_xe',
     ],
     classifiers=[
         'Programming Language :: Python',
