@@ -253,7 +253,7 @@ class ResCurrencyRateProviderXE(models.Model):
         url,
     ):
         try:
-            return requests.request("GET", url)
+            return requests.request("GET", url, timeout=10)
         except Exception as e:
             raise UserError(
                 _("Couldn't fetch data. Please contact your administrator.")
