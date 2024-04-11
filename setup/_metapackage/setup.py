@@ -10,6 +10,7 @@ setuptools.setup(
     install_requires=[
         'odoo-addon-currency_old_rate_notify>=16.0dev,<16.1dev',
         'odoo-addon-currency_rate_update>=16.0dev,<16.1dev',
+        'odoo-addon-currency_rate_update_xe>=16.0dev,<16.1dev',
     ],
     classifiers=[
         'Programming Language :: Python',
