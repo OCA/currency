@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 
+import requests
+
 from odoo import fields
 from odoo.tests import common
 
@@ -9,6 +11,7 @@ from odoo.tests import common
 class TestResCurrencyRateProviderXE(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
+        cls._super_send = requests.Session.send
         super().setUpClass()
 
         cls.Company = cls.env["res.company"]
@@ -33,6 +36,11 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
             }
         )
         cls.CurrencyRate.search([]).unlink()
+
+    @classmethod
+    def _request_handler(cls, s, r, /, **kw):
+        """Don't block external requests."""
+        return cls._super_send(s, r, **kw)
 
     def test_cron(self):
         self.xe_provider._scheduled_update()
