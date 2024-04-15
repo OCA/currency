@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [currency_rate_update](currency_rate_update/) | 17.0.1.0.0 |  | Update exchange rates using OCA modules
+[currency_rate_update_xe](currency_rate_update_xe/) | 17.0.1.0.0 |  | Update exchange rates using XE.com
 
 [//]: # (end addons)
 
