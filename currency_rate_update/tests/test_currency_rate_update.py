@@ -165,8 +165,8 @@ class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
     def test_update_ECB_with_daily(self):
         self.ecb_provider.interval_type = "days"
         self.ecb_provider.interval_number = 1
-        # Setting last_successful_run a date more than 90 days prior to the freeze_time date,
-        # to make sure that the rates are taken from '/eurofxref-hist.xml'.
+        # Setting last_successful_run a date more than 90 days prior to the freeze_time
+        # date, to make sure that the rates are taken from '/eurofxref-hist.xml'.
         self.ecb_provider.last_successful_run = date(2021, 4, 19)
 
         self.ecb_provider._scheduled_update()
