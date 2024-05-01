@@ -242,7 +242,9 @@ class ResCurrencyRateProviderXE(models.Model):
         content = {}
         current_date = date_from
         while current_date <= date_to:
-            url = f"{base_url}/?from={base_currency}&date={current_date.strftime('%Y-%m-%d')}"
+            url = f"{base_url}/"
+            url += f"?from={base_currency}"
+            url += f"&date={current_date.strftime('%Y-%m-%d')}"
             data = self._request_data(url)
             content[current_date] = self._parse_data(data, currencies)
             current_date += timedelta(days=1)
