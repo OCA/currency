@@ -15,5 +15,6 @@
     "data": [
         "data/ir_config_parameter.xml",
         "data/ir_cron.xml",
+        "wizards/res_config_settings.xml",
     ],
 }
