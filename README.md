@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[currency_old_rate_notify](currency_old_rate_notify/) | 16.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Notify accounting managers when currency rates are too old
+[currency_old_rate_notify](currency_old_rate_notify/) | 16.0.1.1.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Notify accounting managers when currency rates are too old
 [currency_rate_update](currency_rate_update/) | 16.0.1.1.2 |  | Update exchange rates using OCA modules
 [currency_rate_update_xe](currency_rate_update_xe/) | 16.0.1.0.0 |  | Update exchange rates using XE.com
 
