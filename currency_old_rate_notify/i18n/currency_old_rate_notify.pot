@@ -14,6 +14,21 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: currency_old_rate_notify
+#: model_terms:ir.ui.view,arch_db:currency_old_rate_notify.res_config_settings_view_form
+msgid "<span class=\"col-lg-1 o_light_label oe_inline\">days</span>"
+msgstr ""
+
+#. module: currency_old_rate_notify
+#: model_terms:ir.ui.view,arch_db:currency_old_rate_notify.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Warn when currency rates are too old</span>"
+msgstr ""
+
+#. module: currency_old_rate_notify
+#: model:ir.model,name:currency_old_rate_notify.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: currency_old_rate_notify
 #: model:ir.model,name:currency_old_rate_notify.model_res_currency_rate
 msgid "Currency Rate"
 msgstr ""
@@ -29,4 +44,9 @@ msgstr ""
 #: model:ir.actions.server,name:currency_old_rate_notify.notify_rates_too_old_cron_ir_actions_server
 #: model:ir.cron,cron_name:currency_old_rate_notify.notify_rates_too_old_cron
 msgid "Currency rates: notify if too old"
+msgstr ""
+
+#. module: currency_old_rate_notify
+#: model:ir.model.fields,field_description:currency_old_rate_notify.field_res_config_settings__currency_old_rate_notify_days
+msgid "Warn when currency rates are older than"
 msgstr ""
