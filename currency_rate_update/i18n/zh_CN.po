@@ -34,8 +34,8 @@ msgid ""
 "specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
 "\" groups=\"base.group_multi_company\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"此处设置的值每公司不同\" role="
-"\"img\" aria-label=\"此处设置的值每公司不同\" groups=\"base."
+"<span class=\"fa fa-lg fa-building-o\" title=\"此处设置的值每公司不同\" "
+"role=\"img\" aria-label=\"此处设置的值每公司不同\" groups=\"base."
 "group_multi_company\"/>"
 
 #. module: currency_rate_update
@@ -259,9 +259,7 @@ msgstr "如勾选，新的消息需要你的注意。"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_sms_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
-#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
 msgstr "如勾选，部分消息有发送错误。"
 
@@ -375,12 +373,6 @@ msgstr "提供商"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__provider_ids
 msgid "Providers"
 msgstr "提供商"
-
-#. module: currency_rate_update
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_sms_error
-#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_sms_error
-msgid "SMS Delivery error"
-msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
