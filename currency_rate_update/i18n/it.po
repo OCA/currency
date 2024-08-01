@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-27 00:40+0000\n"
-"PO-Revision-Date: 2024-01-18 11:34+0000\n"
+"PO-Revision-Date: 2024-08-01 12:58+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #. module: currency_rate_update
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:117
@@ -367,13 +367,12 @@ msgstr ""
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
 msgid "Scheduled update interval"
-msgstr "Intervallo di aggiornamento pianificato"
+msgstr "Intervallo aggiornamento pianificato"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
 msgid "Scheduled update interval must be greater than zero!"
-msgstr ""
-"L'intervallo di aggiornamento pianificato deve essere maggiore di zero!"
+msgstr "L'intervallo aggiornamento pianificato deve essere maggiore di zero!"
 
 #. module: currency_rate_update
 #: sql_constraint:res.currency.rate.provider:0
