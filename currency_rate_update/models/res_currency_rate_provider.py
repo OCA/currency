@@ -140,8 +140,8 @@ class ResCurrencyRateProvider(models.Model):
             except BaseException as e:
                 _logger.warning(
                     (
-                        f'Currency Rate Provider "{provider.name}" failed to obtain data since'
-                        f" {date_from} until {date_to}"
+                        f'Currency Rate Provider "{provider.name}" failed to '
+                        f"obtain data since {date_from} until {date_to}"
                     ),
                     exc_info=True,
                 )
@@ -280,10 +280,8 @@ class ResCurrencyRateProvider(models.Model):
             ]
         )
         if providers:
-            _logger.info(
-                "Scheduled currency rates update of: %s"
-                % ", ".join(providers.mapped("name"))
-            )
+            provider_names = ", ".join(providers.mapped("name"))
+            _logger.info(f"Scheduled currency rates update of: {provider_names}")
             for provider in providers.with_context(**{"scheduled": True}):
                 date_from = (
                     (provider.last_successful_run + relativedelta(days=1))
