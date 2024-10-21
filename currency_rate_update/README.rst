@@ -17,13 +17,13 @@ Currency Rate Update
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fcurrency-lightgray.png?logo=github
-    :target: https://github.com/OCA/currency/tree/17.0/currency_rate_update
+    :target: https://github.com/OCA/currency/tree/18.0/currency_rate_update
     :alt: OCA/currency
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/currency-17-0/currency-17-0-currency_rate_update
+    :target: https://translation.odoo-community.org/projects/currency-18-0/currency-18-0-currency_rate_update
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
-    :target: https://runboat.odoo-community.org/builds?repo=OCA/currency&target_branch=17.0
+    :target: https://runboat.odoo-community.org/builds?repo=OCA/currency&target_branch=18.0
     :alt: Try me on Runboat
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
@@ -31,13 +31,13 @@ Currency Rate Update
 This module provides base for building exchange rates providers and
 bundles following built-in providers:
 
-   -  **European Central Bank** (ported by Grzegorz Grzelak -
-      OpenGLOBE.pl): reference rates are based on the regular daily
-      query procedure between central banks within and outside the
-      European System of Central Banks, which normally takes place at
-      2:15 p.m. (14:15) ECB time. Source is in EUR, for more details see
-      `corresponding ECB
-      page <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html>`__.
+   - **European Central Bank** (ported by Grzegorz Grzelak -
+     OpenGLOBE.pl): reference rates are based on the regular daily query
+     procedure between central banks within and outside the European
+     System of Central Banks, which normally takes place at 2:15 p.m.
+     (14:15) ECB time. Source is in EUR, for more details see
+     `corresponding ECB
+     page <https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html>`__.
 
 This module is compatible with ``currency_rate_inverted`` module
 provided by OCA, that allows to maintain exchange rates in inverted
@@ -76,7 +76,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/currency/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/currency/issues/new?body=module:%20currency_rate_update%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/currency/issues/new?body=module:%20currency_rate_update%0Aversion:%2018.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -92,38 +92,38 @@ Authors
 Contributors
 ------------
 
--  Nicolas Bessi <nicolas.bessi@camptocamp.com>
--  Jean-Baptiste Aubort <jean-baptiste.aubort@camptocamp.com>
--  Joël Grand-Guillaume <joel.grandguillaume@camptocamp.com>
--  Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl> (ECB, NBP)
--  Vincent Renaville <vincent.renaville@camptocamp.com>
--  Yannick Vaucher <yannick.vaucher@camptocamp.com>
--  Guewen Baconnier <guewen.baconnier@camptocamp.com>
--  Lorenzo Battistini <lorenzo.battistini@agilebg.com> (Port to V7)
--  Agustin Cruz <openpyme.mx> (BdM)
--  Jacque-Etienne Baudoux <je@bcim.be>
--  Juan Jose Scarafia <jjscarafia@paintballrosario.com.ar>
--  Mathieu Benoi <mathben963@gmail.com>
--  Fekete Mihai <feketemihai@gmail.com> (Port to V8)
--  Dorin Hongu <dhongu@gmail.com> (BNR)
--  Paul McDermott
--  Alexis de Lattre <alexis@via.ecp.fr>
--  Miku Laitinen
--  Assem Bayahi
--  Daniel Dico <ddico@oerp.ca> (BOC)
--  Dmytro Katyukha <firemage.dima@gmail.com>
--  Jesús Ventosinos Mayor <jesus@comunitea.com>
--  `CorporateHub <https://corporatehub.eu/>`__
+- Nicolas Bessi <nicolas.bessi@camptocamp.com>
+- Jean-Baptiste Aubort <jean-baptiste.aubort@camptocamp.com>
+- Joël Grand-Guillaume <joel.grandguillaume@camptocamp.com>
+- Grzegorz Grzelak <grzegorz.grzelak@openglobe.pl> (ECB, NBP)
+- Vincent Renaville <vincent.renaville@camptocamp.com>
+- Yannick Vaucher <yannick.vaucher@camptocamp.com>
+- Guewen Baconnier <guewen.baconnier@camptocamp.com>
+- Lorenzo Battistini <lorenzo.battistini@agilebg.com> (Port to V7)
+- Agustin Cruz <openpyme.mx> (BdM)
+- Jacque-Etienne Baudoux <je@bcim.be>
+- Juan Jose Scarafia <jjscarafia@paintballrosario.com.ar>
+- Mathieu Benoi <mathben963@gmail.com>
+- Fekete Mihai <feketemihai@gmail.com> (Port to V8)
+- Dorin Hongu <dhongu@gmail.com> (BNR)
+- Paul McDermott
+- Alexis de Lattre <alexis@via.ecp.fr>
+- Miku Laitinen
+- Assem Bayahi
+- Daniel Dico <ddico@oerp.ca> (BOC)
+- Dmytro Katyukha <firemage.dima@gmail.com>
+- Jesús Ventosinos Mayor <jesus@comunitea.com>
+- `CorporateHub <https://corporatehub.eu/>`__
 
-   -  Alexey Pelykh <alexey.pelykh@corphub.eu>
+  - Alexey Pelykh <alexey.pelykh@corphub.eu>
 
--  `Quartile Limited <https://www.quartile.co/>`__:
+- `Quartile Limited <https://www.quartile.co/>`__:
 
-   -  Tatsuki Kanda <kanda@quartile.co>
+  - Tatsuki Kanda <kanda@quartile.co>
 
--  `Komit Company Limited <https://komit-consulting.com/>`__:
+- `Komit Company Limited <https://komit-consulting.com/>`__:
 
-   -  Quoc Pham Ngoc <quoc-pn@komit-consulting.com>
+  - Quoc Pham Ngoc <quoc-pn@komit-consulting.com>
 
 Maintainers
 -----------
@@ -138,6 +138,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/currency <https://github.com/OCA/currency/tree/17.0/currency_rate_update>`_ project on GitHub.
+This module is part of the `OCA/currency <https://github.com/OCA/currency/tree/18.0/currency_rate_update>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
