@@ -1,7 +1,7 @@
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from odoo import fields, models
+from odoo import Command, api, fields, models
 
 
 class ResCurrencyRateUpdateWizard(models.TransientModel):
@@ -21,9 +21,15 @@ class ResCurrencyRateUpdateWizard(models.TransientModel):
         column2="provider_id",
     )
 
+    @api.model
+    def default_get(self, fields_list):
+        res = super().default_get(fields_list)
+        if self._context.get(
+            "active_model"
+        ) == "res.currency.rate.provider" and self._context.get("active_ids"):
+            res["provider_ids"] = [Command.set(self._context["active_ids"])]
+        return res
+
     def action_update(self):
         self.ensure_one()
-
         self.provider_ids._update(self.date_from, self.date_to)
-
-        return {"type": "ir.actions.act_window_close"}
