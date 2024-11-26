@@ -8,7 +8,7 @@
         <field name="name">res.currency.rate.provider.filter</field>
         <field name="model">res.currency.rate.provider</field>
         <field name="arch" type="xml">
-            <search string="Currency Rates Providers">
+            <search>
                 <field name="service" />
                 <field name="company_id" groups="base.group_multi_company" />
                 <filter
@@ -38,7 +38,14 @@
         <field name="name">res.currency.rate.provider.form</field>
         <field name="model">res.currency.rate.provider</field>
         <field name="arch" type="xml">
-            <form string="Currency Rates Provider">
+            <form>
+                <header>
+                    <button
+                        name="%(res_currency_rate_update_wizard_action)d"
+                        type="action"
+                        string="Update Rates Now"
+                    />
+                </header>
                 <sheet>
                     <widget
                         name="web_ribbon"
@@ -96,34 +103,6 @@
                 </sheet>
                 <chatter />
             </form>
-        </field>
-    </record>
-    <record
-        id="action_res_currency_rate_provider_update_wizard"
-        model="ir.actions.server"
-    >
-        <field name="name">Update Rates Wizard</field>
-        <field name="type">ir.actions.server</field>
-        <field
-            name="model_id"
-            ref="currency_rate_update.model_res_currency_rate_provider"
-        />
-        <field
-            name="binding_model_id"
-            ref="currency_rate_update.model_res_currency_rate_provider"
-        />
-        <field name="state">code</field>
-        <field name="code">
-            if records:
-                action = {
-                    'type': 'ir.actions.act_window',
-                    'res_model': 'res.currency.rate.update.wizard',
-                    'views': [[False, 'form']],
-                    'target': 'new',
-                    'context': {
-                        'default_provider_ids': [(6, False, records.ids)],
-                    },
-                }
         </field>
     </record>
     <record model="ir.actions.act_window" id="action_res_currency_rate_provider">
