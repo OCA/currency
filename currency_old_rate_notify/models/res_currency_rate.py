@@ -41,10 +41,6 @@ class ResCurrencyRate(models.Model):
                 "title": _("Currency rates older than %d days", max_days),
                 "sticky": True,
                 "message": f"<ul>{''.join(msg)}</ul>",
-                # TODO remove once bug is fixed in the PR to mig web_notify in v16
-                # https://github.com/OCA/web/pull/2412
-                # We also need the fix for HTML in "message
-                "target": user.partner_id,
             }
         return res
 

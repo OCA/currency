@@ -11,8 +11,6 @@
         <field name="user_id" ref="base.user_root" />
         <field name="interval_number">1</field>
         <field name="interval_type">days</field>
-        <field name="numbercall">-1</field>
-        <!-- don't limit the number of calls -->
         <field name="model_id" ref="base.model_res_currency_rate" />
         <field name="state">code</field>
         <field name="code">model.notify_rates_too_old()</field>
