@@ -1,0 +1,4 @@
+Go to the menu *Invoicing \> Configuration \> Settings*: in the
+**Currencies** section, you can change the limit above which users
+receive a warning if the last currency rate is older than this number of
+days (3 by default).

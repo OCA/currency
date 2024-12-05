@@ -5,14 +5,12 @@
   License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 -->
 <odoo noupdate="1">
-
-<record
+    <record
         id="currency_old_rate_notify_max_days"
         model="ir.config_parameter"
         forcecreate="False"
     >
-    <field name="key">currency_old_rate_notify.max_days</field>
-    <field name="value">3</field>
-</record>
-
+        <field name="key">currency_old_rate_notify.max_days</field>
+        <field name="value">3</field>
+    </record>
 </odoo>
