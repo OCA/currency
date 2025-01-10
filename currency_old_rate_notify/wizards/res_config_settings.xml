@@ -9,34 +9,15 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="account.res_config_settings_view_form" />
         <field name="arch" type="xml">
-            <div id="main_currency" position="after">
-                <div
-                    name="currency_old_rate_notify_days"
-                    class="col-12 col-lg-6 o_setting_box"
+            <setting id="main_currency" position="after">
+                <setting
+                    id="currency_old_rate_notify_days"
+                    string="Warn when currency rates are too old"
+                    help="Define the number of days"
                 >
-                    <div class="o_setting_left_pane" />
-                    <div class="o_setting_right_pane">
-                        <span
-                            class="o_form_label"
-                        >Warn when currency rates are too old</span>
-                        <div class="content-group">
-                            <div class="row mt8">
-                                <label
-                                    for="currency_old_rate_notify_days"
-                                    class="col-lg-6 o_light_label oe_inline"
-                                />
-                                <field
-                                    name="currency_old_rate_notify_days"
-                                    class="col-lg-1 oe_inline"
-                                />
-                                <span
-                                    class="col-lg-1 o_light_label oe_inline"
-                                >days</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    <field name="currency_old_rate_notify_days" />
+                </setting>
+            </setting>
         </field>
     </record>
 </odoo>

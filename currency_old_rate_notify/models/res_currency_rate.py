@@ -30,18 +30,10 @@ class ResCurrencyRate(models.Model):
                 if len(user_company_ids) == 1:
                     msg.append("<li>%s</li>" % cur_code)
                 else:
-                    msg.append(
-                        "<li>%s (%s)</li>"
-                        % (
-                            cur_code,
-                            ", ".join(
-                                [
-                                    company2name[c_id]
-                                    for c_id in intersection_company_ids
-                                ]
-                            ),
-                        )
+                    company_list_msg = ", ".join(
+                        [company2name[c_id] for c_id in intersection_company_ids]
                     )
+                    msg.append(f"<li>{cur_code} ({company_list_msg})</li>")
         if msg:
             # force title msg to user's lang
             self = self.with_context(lang=user.lang)
@@ -49,10 +41,6 @@ class ResCurrencyRate(models.Model):
                 "title": _("Currency rates older than %d days", max_days),
                 "sticky": True,
                 "message": "<ul>%s</ul>" % "".join(msg),
-                # TODO remove once bug is fixed in the PR to mig web_notify in v16
-                # https://github.com/OCA/web/pull/2412
-                # We also need the fix for HTML in "message
-                "target": user.partner_id,
             }
         return res
 
