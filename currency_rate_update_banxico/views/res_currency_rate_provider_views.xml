@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="res_currency_rate_provider_view_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.provider.view.form</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field
+            name="inherit_id"
+            ref="currency_rate_update.res_currency_rate_provider_form_view"
+        />
+        <field name="arch" type="xml">
+            <field name="service" position="after">
+                <field
+                    name="banxico_token"
+                    invisible="service != 'banxico'"
+                    required="service == 'banxico'"
+                />
+                <div
+                    invisible="service != 'banxico' or currency_name == 'MXN'"
+                    class="alert alert-warning"
+                    colspan="2"
+                    role="alert"
+                >
+                    <strong>!</strong>
+                    You are using Bank of Mexico exchange rate
+                    service with a base currency different from MXN.
+                    <br />
+                    As long as the Bank of Mexico only provides
+                    exchange rates based on MXN, other foreign currency
+                    rates are recalculated and might differ from real rates.
+                </div>
+            </field>
+        </field>
+    </record>
+
+</odoo>
