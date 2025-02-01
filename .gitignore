@@ -1,7 +1,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+<<<<<<< before updating
 *$py.class
+=======
+/.venv
+/.pytest_cache
+/.ruff_cache
+>>>>>>> after updating
 
 # C extensions
 *.so
@@ -26,6 +32,19 @@ var/
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
+
+# Windows installers
+*.msi
+
+# Debian packages
+*.deb
+
+# Redhat packages
+*.rpm
+
+# MacOS packages
+*.dmg
+*.pkg
 
 # Installer logs
 pip-log.txt
