@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record model="ir.ui.view" id="res_currency_rate_provider_filter">
+        <field name="name">res.currency.rate.provider.filter</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="service" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <filter
+                    name="active"
+                    string="Archived"
+                    domain="[('active', '=', False)]"
+                />
+            </search>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_currency_rate_provider_tree_view">
+        <field name="name">res.currency.rate.provider.list</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="service" />
+                <field name="company_id" groups="base.group_multi_company" />
+                <field name="update_schedule" />
+                <field name="available_currency_ids" column_invisible="True" />
+                <field name="currency_ids" widget="many2many_tags" />
+                <field name="daily" column_invisible="True" />
+                <field name="next_run" invisible="True" />
+            </list>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="res_currency_rate_provider_form_view">
+        <field name="name">res.currency.rate.provider.form</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button
+                        name="%(res_currency_rate_update_wizard_action)d"
+                        type="action"
+                        string="Update Rates Now"
+                    />
+                </header>
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        invisible="active"
+                    />
+                    <group name="options">
+                        <group>
+                            <field name="active" invisible="1" />
+                            <field name="service" />
+                            <field name="currency_name" invisible="1" />
+                            <div
+                                invisible="service != 'ECB' or currency_name == 'EUR'"
+                                class="alert alert-warning"
+                                colspan="2"
+                                role="alert"
+                            >
+                                <strong>!</strong>
+                                You are using European Central Bank exchange rate
+                                service with a base currency different from EUR.
+                                <br />
+                                As long as the European Central Bank only provides
+                                exchange rates based on EUR, other foreign currency
+                                rates are recalculated and might differ from real rates.
+                            </div>
+                        </group>
+                        <group groups="base.group_multi_company">
+                            <field name="company_id" />
+                        </group>
+                        <group>
+                            <label for="interval_number" />
+                            <div class="o_row">
+                                <field name="interval_number" class="ml8" />
+                                <field name="interval_type" />
+                            </div>
+                        </group>
+                        <group>
+                            <field name="last_successful_run" />
+                        </group>
+                        <group>
+                            <field name="daily" invisible="1" />
+                            <field name="next_run" invisible="daily" />
+                        </group>
+                        <group>
+                            <field name="available_currency_ids" invisible="1" />
+                            <field
+                                name="currency_ids"
+                                widget="many2many_tags"
+                                options="{'no_create_edit': True}"
+                                domain="[('id', 'in', available_currency_ids)]"
+                            />
+                        </group>
+                    </group>
+                </sheet>
+                <chatter />
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_res_currency_rate_provider">
+        <field name="name">Currency Rates Providers</field>
+        <field name="res_model">res.currency.rate.provider</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem
+        id="menu_res_currency_rate_provider"
+        action="action_res_currency_rate_provider"
+        parent="account.account_account_menu"
+        sequence="30"
+    />
+</odoo>

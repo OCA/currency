@@ -1,0 +1,464 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * currency_rate_update
+#
+# Translators:
+# OCA Transbot <transbot@odoo-community.org>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-11 00:39+0000\n"
+"PO-Revision-Date: 2024-06-05 14:38+0000\n"
+"Last-Translator: jakobkrabbe <jakob@syscare.se>\n"
+"Language-Team: Swedish (https://www.transifex.com/oca/teams/23907/sv/)\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.17\n"
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "%(number)s %(type)s"
+msgstr "%(number)s %(type)s"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
+"\" groups=\"base.group_multi_company\"/>"
+msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Värdena som anges här är "
+"företagsspecifika.\" role=\"img\" aria-label=\"Värdena som anges här är "
+"företagsspecifika.\" groups=\"base.group_multi_company\"/>"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid ""
+"<strong>!</strong>\n"
+"                                You are using European Central Bank exchange "
+"rate\n"
+"                                service with a base currency different from "
+"EUR.\n"
+"                                <br/>\n"
+"                                As long as the European Central Bank only "
+"provides\n"
+"                                exchange rates based on EUR, other foreign "
+"currency\n"
+"                                rates are recalculated and might differ from "
+"real rates."
+msgstr ""
+"<strong>!</strong>\n"
+"                                Du använder Europeiska centralbankens "
+"växelkurs\n"
+"                                tjänst med en annan basvaluta än EUR.\n"
+"                                <br/>\n"
+"                                Så länge som Europeiska centralbanken endast "
+"tillhandahåller\n"
+"                                växelkurser baserade på EUR, räknas andra "
+"utländska\n"
+"                                omräknas andra valutakurser och kan skilja "
+"sig från de verkliga kurserna."
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
+msgid "Action Needed"
+msgstr "Åtgärder krävs"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Archived"
+msgstr "Arkiverad"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_attachment_count
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
+msgid "Attachment Count"
+msgstr "Antal bifogade filer"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__currency_rates_autoupdate
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
+msgid "Automatic Currency Rates (OCA)"
+msgstr "Automatiska valutakurser (OCA)"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__available_currency_ids
+msgid "Available Currencies"
+msgstr "Tillgängliga valutor"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
+msgid "Cancel"
+msgstr "Avbryt"
+
+#. module: currency_rate_update
+#: model:ir.model,name:currency_rate_update.model_res_company
+msgid "Companies"
+msgstr "Företag"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__company_id
+msgid "Company"
+msgstr "Bolag"
+
+#. module: currency_rate_update
+#: model:ir.model,name:currency_rate_update.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigureringsinställningar"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_uid
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__create_uid
+msgid "Created by"
+msgstr "Skapad av"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_date
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__create_date
+msgid "Created on"
+msgstr "Skapad den"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
+msgid "Currencies"
+msgstr "Valuta"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
+msgid "Currencies to be updated by this provider"
+msgstr "Valutor som ska uppdateras av denna leverantör"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
+msgid "Currency Code (ISO 4217)"
+msgstr "Valutakod (ISO 4217)"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
+msgid "Currency Name"
+msgstr "Valuta Namn"
+
+#. module: currency_rate_update
+#: model:ir.model,name:currency_rate_update.model_res_currency_rate
+msgid "Currency Rate"
+msgstr "Valutakurs"
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid ""
+"Currency Rate Provider \"%(name)s\" failed to obtain data since "
+"%(date_from)s until %(date_to)s:\n"
+"%(error)s"
+msgstr ""
+"Valutakursleverantören \"%(name)s\" kunde inte hämta data från %(date_from)s "
+"till %(date_to)s:\n"
+"%(error)s"
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "Currency Rate Provider Failure"
+msgstr "Misslyckande med leverantör av valutakurser"
+
+#. module: currency_rate_update
+#: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
+msgid "Currency Rate Update Wizard"
+msgstr "Guiden för uppdatering av valutakurser"
+
+#. module: currency_rate_update
+#: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Currency Rates Provider"
+msgstr "Leverantör av valutakurser"
+
+#. module: currency_rate_update
+#: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
+#: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
+msgid "Currency Rates Providers"
+msgstr "Leverantörer av valutakurser"
+
+#. module: currency_rate_update
+#: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
+msgid "Currency Rates Update (OCA) daily"
+msgstr "Uppdatering av valutakurser (OCA) dagligen"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
+msgid "Daily"
+msgstr "Dagligen"
+
+#. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
+msgid "Day(s)"
+msgstr "Dag(ar)"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
+msgid "Display Name"
+msgstr "Visa namn"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
+#: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
+msgid "Enable automatic currency rates updates in this company."
+msgstr "Aktivera automatiska uppdateringar av valutakurser i detta företag."
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_to
+msgid "End Date"
+msgstr "Slutdatum"
+
+#. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__ecb
+msgid "European Central Bank"
+msgstr "Europeiska centralbanken"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_follower_ids
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
+msgid "Followers"
+msgstr "Följare"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_partner_ids
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Följare (Partners)"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
+msgid "Has Message"
+msgstr "Har meddelande"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Om den är markerad kräver nya meddelanden din uppmärksamhet."
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Om kryssrutan är markerad får vissa meddelanden ett leveransfel."
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
+msgstr "Ogiltig kurs från %(provider)s för %(currency)s: %(rate)s"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_is_follower
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_is_follower
+msgid "Is Follower"
+msgstr "Är följare"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__last_successful_run
+msgid "Last Successful Update"
+msgstr "Senaste lyckade uppdateringen"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_uid
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Senast uppdaterad av"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_date
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
+msgid "Last Updated on"
+msgstr "Senast uppdaterad"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error
+msgid "Message Delivery error"
+msgstr "Fel vid leverans av meddelande"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_ids
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_ids
+msgid "Messages"
+msgstr "Meddelanden"
+
+#. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__months
+msgid "Month(s)"
+msgstr "Månad(er)"
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "N/A"
+msgstr "N/A"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
+msgid "Name"
+msgstr "Namn"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__next_run
+msgid "Next Scheduled Update"
+msgstr "Nästa schemalagda uppdatering"
+
+#. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__none
+msgid "None"
+msgstr "Ingen"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction_counter
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Antal åtgärder"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error_counter
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
+msgid "Number of errors"
+msgstr "Antal fel"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction_counter
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Antal meddelanden som kräver åtgärder"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error_counter
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Antal meddelanden med leveransfel"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__service
+msgid "Provider"
+msgstr "Leverantör"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__provider_ids
+msgid "Providers"
+msgstr "Leverantörer"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_number
+msgid "Scheduled Update Interval"
+msgstr "Schemalagt uppdateringsintervall"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__interval_type
+msgid "Scheduled Update Interval Unit"
+msgstr "Schemalagt uppdateringsintervall Enhet"
+
+#. module: currency_rate_update
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_valid_interval_number
+msgid "Scheduled update interval must be strictly positive."
+msgstr "Det schemalagda uppdateringsintervallet måste vara strikt positivt."
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_from
+msgid "Start Date"
+msgstr "Startdatum"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__rate
+msgid "Technical Rate"
+msgstr "Teknisk taxa"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__rate
+msgid "The rate of the currency to the currency of rate 1"
+msgstr "Valutans kurs i förhållande till valutan för kurs 1"
+
+#. module: currency_rate_update
+#: model:ir.model.constraint,message:currency_rate_update.constraint_res_currency_rate_provider_service_company_id_uniq
+msgid "This provider has already been setup in this company."
+msgstr "Denna leverantör har redan installerats i det här företaget."
+
+#. module: currency_rate_update
+#. odoo-python
+#: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
+#, python-format
+msgid "Unknown currency from %(provider)s: %(rate)s"
+msgstr "Okänd valuta från %(provider)s: %(rate)s"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
+msgid "Update"
+msgstr "Uppdatering"
+
+#. module: currency_rate_update
+#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
+msgid "Update Rates Wizard"
+msgstr "Guiden Uppdatera priser"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
+msgid "Update Schedule"
+msgstr "Uppdatering av schema"
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid "Update exchange rates automatically using OCA modules"
+msgstr "Uppdatera valutakurser automatiskt med hjälp av OCA-moduler"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
+msgid "Website Messages"
+msgstr "Webbplatsmeddelanden"
+
+#. module: currency_rate_update
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__website_message_ids
+#: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__website_message_ids
+msgid "Website communication history"
+msgstr "Webbplatsens kommunikationshistorik"
+
+#. module: currency_rate_update
+#: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
+msgid "Week(s)"
+msgstr "Vecka(n)"
+
+#~ msgid "SMS Delivery error"
+#~ msgstr "Fel vid leverans av SMS"
+
+#~ msgid "Last Modified on"
+#~ msgstr "Senast redigerad"
