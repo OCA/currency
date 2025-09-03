@@ -22,7 +22,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
 
@@ -33,10 +32,9 @@ msgid ""
 "specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
 "\" groups=\"base.group_multi_company\"/>"
 msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title="
-"\"Burada ayarlanan değerler şirkete özeldir.\" role=\"img\" aria-label="
-"\"Burada ayarlanan değerler şirkete özeldir.\" groups="
-"\"base.group_multi_company\"/>"
+"<span class=\"fa fa-lg fa-building-o\" title=\"Burada ayarlanan değerler "
+"şirkete özeldir.\" role=\"img\" aria-label=\"Burada ayarlanan değerler "
+"şirkete özeldir.\" groups=\"base.group_multi_company\"/>"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
@@ -161,7 +159,6 @@ msgstr "Para Birimi Oranı"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid ""
 "Currency Rate Provider \"%(name)s\" failed to obtain data since "
 "%(date_from)s until %(date_to)s:\n"
@@ -174,7 +171,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Döviz Kuru Sağlayıcısı Arızası"
 
@@ -185,14 +181,12 @@ msgstr "Döviz Kuru Güncelleme Sihirbazı"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Currency Rates Provider"
 msgstr "Kur Güncelleme Servisi"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Currency Rates Providers"
 msgstr "Kur Güncelleme Servisleri"
 
@@ -272,14 +266,12 @@ msgstr "İşaretliyse,bazı mesajlar gönderi hatası içermektedir."
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Inactive"
 msgstr "Pasif"
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr "%(provider)s den geçersiz oran %(currency)s: %(rate)s"
 
@@ -326,7 +318,6 @@ msgstr "Aylar(lar)"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "N/A"
 msgstr ""
 
@@ -418,7 +409,6 @@ msgstr "Bu sağlayıcı bu şirkette zaten kurulmuş."
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "Bilinmeyen para birimi: %(provider)s: %(rate)s"
 
@@ -428,9 +418,14 @@ msgid "Update"
 msgstr "Güncelle"
 
 #. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
-msgid "Update Rates Wizard"
-msgstr "Oranları Güncelleme Sihirbazı"
+#: model:ir.actions.act_window,name:currency_rate_update.res_currency_rate_update_wizard_action
+msgid "Update Currency Rates"
+msgstr ""
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Update Rates Now"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
@@ -458,6 +453,9 @@ msgstr "Website iletişim geçmişi"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Hafta(lar)"
+
+#~ msgid "Update Rates Wizard"
+#~ msgstr "Oranları Güncelleme Sihirbazı"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Son güncellenme"

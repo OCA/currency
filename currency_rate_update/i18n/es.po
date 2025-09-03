@@ -23,7 +23,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "%(number)s %(type)s"
 msgstr "%(number)s%(type)s"
 
@@ -161,7 +160,6 @@ msgstr "Tipo de Cambio"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid ""
 "Currency Rate Provider \"%(name)s\" failed to obtain data since "
 "%(date_from)s until %(date_to)s:\n"
@@ -174,7 +172,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Fallo de Proveedor de Tipo de Cambio"
 
@@ -185,14 +182,12 @@ msgstr "Guía de Actualización de Tipo de Cambio"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Currency Rates Provider"
 msgstr "Proveedor de Tipos de Cambio"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Currency Rates Providers"
 msgstr "Proveedores de Tipos de Cambio"
 
@@ -273,14 +268,12 @@ msgstr "Si activado, algunos mensajes tienen un error de entrega."
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Inactive"
 msgstr "Inactivo"
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr "Tarifa no válida de %(provider)s para %(currency)s: %(rate)s"
 
@@ -327,7 +320,6 @@ msgstr "Mes(es)"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "N/A"
 msgstr "NO DISPONIBLE"
 
@@ -420,7 +412,6 @@ msgstr "Este proveedor ya se ha establecido en esta compañía."
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "Tipo de cambio desconocido %(provider)s: %(rate)s"
 
@@ -430,9 +421,14 @@ msgid "Update"
 msgstr "Actualizar"
 
 #. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
-msgid "Update Rates Wizard"
-msgstr "Guía de Actualización de Tipos de Cambio"
+#: model:ir.actions.act_window,name:currency_rate_update.res_currency_rate_update_wizard_action
+msgid "Update Currency Rates"
+msgstr ""
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Update Rates Now"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
@@ -460,6 +456,9 @@ msgstr "Histórico de comunicación web"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Semana(s)"
+
+#~ msgid "Update Rates Wizard"
+#~ msgstr "Guía de Actualización de Tipos de Cambio"
 
 #~ msgid "SMS Delivery error"
 #~ msgstr "Error de Entrega de Mensaje"

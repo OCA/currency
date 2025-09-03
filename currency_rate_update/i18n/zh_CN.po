@@ -23,7 +23,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
 
@@ -156,7 +155,6 @@ msgstr "汇率"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid ""
 "Currency Rate Provider \"%(name)s\" failed to obtain data since "
 "%(date_from)s until %(date_to)s:\n"
@@ -168,7 +166,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "汇率提供商失败"
 
@@ -179,14 +176,12 @@ msgstr "汇率更新向导"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Currency Rates Provider"
 msgstr "汇率更新服务提供商"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Currency Rates Providers"
 msgstr "汇率更新服务提供商"
 
@@ -266,14 +261,12 @@ msgstr "如勾选，部分消息有发送错误。"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Inactive"
 msgstr "未启用"
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr "从 %(provider)s 取到的 %(currency)s汇率不正确: %(rate)s"
 
@@ -320,7 +313,6 @@ msgstr "月"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "N/A"
 msgstr "不适用"
 
@@ -412,7 +404,6 @@ msgstr "此提供商在此公司已定义。"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "未知币种%(provider)s: %(rate)s"
 
@@ -422,9 +413,14 @@ msgid "Update"
 msgstr "更新"
 
 #. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
-msgid "Update Rates Wizard"
-msgstr "更新汇率向导"
+#: model:ir.actions.act_window,name:currency_rate_update.res_currency_rate_update_wizard_action
+msgid "Update Currency Rates"
+msgstr ""
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Update Rates Now"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
@@ -452,6 +448,9 @@ msgstr "网站沟通历史"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "周"
+
+#~ msgid "Update Rates Wizard"
+#~ msgstr "更新汇率向导"
 
 #~ msgid "Last Modified on"
 #~ msgstr "最后更新时间"
