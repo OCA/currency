@@ -21,7 +21,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "%(number)s %(type)s"
 msgstr ""
 
@@ -147,7 +146,6 @@ msgstr "Währungskursaktualisierung"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid ""
 "Currency Rate Provider \"%(name)s\" failed to obtain data since "
 "%(date_from)s until %(date_to)s:\n"
@@ -157,7 +155,7 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, fuzzy, python-format
+#, fuzzy
 msgid "Currency Rate Provider Failure"
 msgstr "Währungskursaktualisierung"
 
@@ -169,7 +167,6 @@ msgstr "Währungskursaktualisierung"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 #, fuzzy
 msgid "Currency Rates Provider"
 msgstr "Währungskursaktualisierung"
@@ -177,7 +174,6 @@ msgstr "Währungskursaktualisierung"
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 #, fuzzy
 msgid "Currency Rates Providers"
 msgstr "Währungsaktualisierungsdienst"
@@ -259,14 +255,12 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Inactive"
 msgstr ""
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr ""
 
@@ -313,7 +307,6 @@ msgstr "Monat(e)"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "N/A"
 msgstr ""
 
@@ -405,7 +398,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr ""
 
@@ -415,8 +407,13 @@ msgid "Update"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
-msgid "Update Rates Wizard"
+#: model:ir.actions.act_window,name:currency_rate_update.res_currency_rate_update_wizard_action
+msgid "Update Currency Rates"
+msgstr ""
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Update Rates Now"
 msgstr ""
 
 #. module: currency_rate_update
