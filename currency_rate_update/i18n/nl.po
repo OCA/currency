@@ -22,7 +22,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "%(number)s %(type)s"
 msgstr ""
 
@@ -145,7 +144,6 @@ msgstr "Wisselkoers"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid ""
 "Currency Rate Provider \"%(name)s\" failed to obtain data since "
 "%(date_from)s until %(date_to)s:\n"
@@ -158,7 +156,6 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Currency Rate Provider Failure"
 msgstr "Fout van wisselkoers aanbieder"
 
@@ -169,14 +166,12 @@ msgstr "Wisselkoers update wizard"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Currency Rates Provider"
 msgstr "Wisselkoers aanbieder"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 msgid "Currency Rates Providers"
 msgstr "Wisselkoers aanbieders"
 
@@ -257,14 +252,12 @@ msgstr ""
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Inactive"
 msgstr "Inactief"
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Invalid rate from %(provider)s for %(currency)s: %(rate)s"
 msgstr "Ongeldige koers van %(provider)s voor %(currency)s: %(rate)s"
 
@@ -311,7 +304,6 @@ msgstr "Maanden"
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "N/A"
 msgstr "N/A"
 
@@ -403,7 +395,6 @@ msgstr "Deze aanbieder is al ingesteld in dit bedrijf."
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
-#, python-format
 msgid "Unknown currency from %(provider)s: %(rate)s"
 msgstr "Onbekende valuta van %(provider)s: %(rate)s"
 
@@ -413,9 +404,14 @@ msgid "Update"
 msgstr ""
 
 #. module: currency_rate_update
-#: model:ir.actions.server,name:currency_rate_update.action_res_currency_rate_provider_update_wizard
-msgid "Update Rates Wizard"
-msgstr "Wizard Tarieven bijwerken"
+#: model:ir.actions.act_window,name:currency_rate_update.res_currency_rate_update_wizard_action
+msgid "Update Currency Rates"
+msgstr ""
+
+#. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
+msgid "Update Rates Now"
+msgstr ""
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__update_schedule
@@ -443,6 +439,9 @@ msgstr "Geschiedenis website communicatie"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Week/weken"
+
+#~ msgid "Update Rates Wizard"
+#~ msgstr "Wizard Tarieven bijwerken"
 
 #~ msgid "Last Modified on"
 #~ msgstr "Laatst bijgewerkt op"
