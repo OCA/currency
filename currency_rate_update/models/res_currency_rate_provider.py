@@ -9,7 +9,7 @@ from datetime import datetime, time
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
@@ -67,18 +67,15 @@ class ResCurrencyRateProvider(models.Model):
     )
     daily = fields.Boolean(compute="_compute_daily", store=True)
 
-    _sql_constraints = [
-        (
-            "service_company_id_uniq",
-            "UNIQUE(service, company_id)",
-            "This provider has already been setup in this company.",
-        ),
-        (
-            "valid_interval_number",
-            "CHECK(interval_number > 0)",
-            "Scheduled update interval must be strictly positive.",
-        ),
-    ]
+    _service_company_id_uniq = models.Constraint(
+        "UNIQUE(service, company_id)",
+        "This provider has already been setup in this company.",
+    )
+
+    _valid_interval_number = models.Constraint(
+        "CHECK(interval_number > 0)",
+        "Scheduled update interval must be strictly positive.",
+    )
 
     @api.depends("service")
     def _compute_name(self):
@@ -94,18 +91,19 @@ class ResCurrencyRateProvider(models.Model):
     def _compute_update_schedule(self):
         for provider in self:
             if not provider.active:
-                provider.update_schedule = _("Inactive")
+                provider.update_schedule = self.env._("Inactive")
                 continue
 
-            provider.update_schedule = _("%(number)s %(type)s") % {
-                "number": provider.interval_number,
-                "type": list(
+            provider.update_schedule = self.env._(
+                "%(number)s %(type)s",
+                number=provider.interval_number,
+                type=list(
                     filter(
                         lambda x: x[0] == provider.interval_type,
                         self._fields["interval_type"].selection,
                     )
                 )[0][1],
-            }
+            )
 
     @api.depends("service")
     def _compute_available_currency_ids(self):
@@ -146,17 +144,15 @@ class ResCurrencyRateProvider(models.Model):
                     exc_info=True,
                 )
                 provider.message_post(
-                    subject=_("Currency Rate Provider Failure"),
-                    body=_(
+                    subject=self.env._("Currency Rate Provider Failure"),
+                    body=self.env._(
                         'Currency Rate Provider "%(name)s" failed to obtain data'
-                        " since %(date_from)s until %(date_to)s:\n%(error)s"
-                    )
-                    % {
-                        "name": provider.name,
-                        "date_from": date_from,
-                        "date_to": date_to,
-                        "error": str(e) if e else _("N/A"),
-                    },
+                        " since %(date_from)s until %(date_to)s:\n%(error)s",
+                        name=provider.name,
+                        date_from=date_from,
+                        date_to=date_to,
+                        error=str(e) if e else self.env._("N/A"),
+                    ),
                 )
                 continue
 
@@ -178,8 +174,11 @@ class ResCurrencyRateProvider(models.Model):
                     currency = Currency.search([("name", "=", currency_name)], limit=1)
                     if not currency:
                         raise UserError(
-                            _("Unknown currency from %(provider)s: %(rate)s")
-                            % {"provider": provider.name, "rate": rate}
+                            self.env._(
+                                "Unknown currency from %(provider)s: %(rate)s",
+                                provider=provider.name,
+                                rate=rate,
+                            )
                         )
                     rate = provider._process_rate(currency, rate)
 
@@ -233,8 +232,12 @@ class ResCurrencyRateProvider(models.Model):
             direct = rate.get("direct", None)
             if inverted is None and direct is None:
                 raise UserError(
-                    _("Invalid rate from %(provider)s for %(currency)s: %(rate)s")
-                    % {"provider": self.name, "currency": currency.name, "rate": rate}
+                    self.env._(
+                        "Invalid rate from %(provider)s for %(currency)s: %(rate)s",
+                        provider=self.name,
+                        currency=currency.name,
+                        rate=rate,
+                    )
                 )
             elif inverted is None:
                 inverted = 1 / direct

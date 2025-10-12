@@ -24,10 +24,10 @@ class ResCurrencyRateUpdateWizard(models.TransientModel):
     @api.model
     def default_get(self, fields_list):
         res = super().default_get(fields_list)
-        if self._context.get(
+        if self.env.context.get(
             "active_model"
-        ) == "res.currency.rate.provider" and self._context.get("active_ids"):
-            res["provider_ids"] = [Command.set(self._context["active_ids"])]
+        ) == "res.currency.rate.provider" and self.env.context.get("active_ids"):
+            res["provider_ids"] = [Command.set(self.env.context["active_ids"])]
         return res
 
     def action_update(self):
