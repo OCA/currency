@@ -6,7 +6,7 @@
             <field name="symbol">USDT</field>
             <field name="rounding">0.01</field>
             <field name="position">after</field>
-            <field name="active" eval="False"/>
+            <field name="active" eval="False" />
             <field name="currency_unit_label">USDT</field>
             <field name="currency_subunit_label">Cents</field>
         </record>
@@ -17,7 +17,7 @@
             <field name="symbol">USDC</field>
             <field name="rounding">0.01</field>
             <field name="position">after</field>
-            <field name="active" eval="False"/>
+            <field name="active" eval="False" />
             <field name="currency_unit_label">USDC</field>
             <field name="currency_subunit_label">Cents</field>
         </record>

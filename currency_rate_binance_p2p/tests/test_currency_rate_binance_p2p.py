@@ -1,12 +1,11 @@
-from odoo.tests.common import TransactionCase, tagged
-from unittest.mock import patch, Mock
-from datetime import datetime
-
 import logging
+from unittest.mock import Mock, patch
+
+from odoo.tests.common import TransactionCase, tagged
 
 _logger = logging.getLogger(__name__)
 
-PATCH_PATH = "odoo.addons.currency_rate_binance_p2p.models.res_currency_rate_provider.requests.post"
+PATCH_PATH = "requests.post"
 
 
 @tagged("post_install", "-at_install")
