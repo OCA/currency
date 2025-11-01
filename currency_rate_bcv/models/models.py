@@ -12,8 +12,14 @@ _logger = logging.getLogger(__name__)
 
 TIMEOUT = 5000
 REQUEST_URL = "http://www.bcv.org.ve/"
-XPATH_MAPPING_CURRENCIES = {"EUR": "euro", "CNY": "yuan", "TRY": "lira", "RUB": "rublo", "USD": "dolar"}
-CARACAS_TZ = pytz.timezone("America/Caracas")  # se necesita porque la hora de bcv es de vzla
+XPATH_MAPPING_CURRENCIES = {
+    "EUR": "euro",
+    "CNY": "yuan",
+    "TRY": "lira",
+    "RUB": "rublo",
+    "USD": "dolar",
+}
+CARACAS_TZ = pytz.timezone("America/Caracas")
 
 
 class ResCompany(models.Model):
@@ -57,9 +63,9 @@ class ResCompany(models.Model):
         htmlelem = etree.fromstring(fetched_data.content, etree.HTMLParser())
         dt = datetime.now(CARACAS_TZ)
 
-        currency_ve_ids = self.env.ref("base.VES", raise_if_not_found=False) + self.env.ref(
-            "base.VEF", raise_if_not_found=False
-        )
+        currency_ve_ids = self.env.ref(
+            "base.VES", raise_if_not_found=False
+        ) + self.env.ref("base.VEF", raise_if_not_found=False)
 
         for currency_name in available_currency_names:
             try:

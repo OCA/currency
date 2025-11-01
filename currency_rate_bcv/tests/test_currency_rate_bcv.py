@@ -1,5 +1,6 @@
+from unittest.mock import Mock, patch
+
 from odoo.tests.common import TransactionCase, tagged
-from unittest.mock import patch, Mock
 
 BCV_HTML = """
 <html>
@@ -76,7 +77,9 @@ class TestBCVRateProvider(TransactionCase):
 
         usd = self.env.ref("base.USD")
         eur = self.env.ref("base.EUR")
-        ves = self.env.ref("base.VES", raise_if_not_found=False) or self.env.ref("base.VEF", raise_if_not_found=False)
+        ves = self.env.ref("base.VES", raise_if_not_found=False) or self.env.ref(
+            "base.VEF", raise_if_not_found=False
+        )
 
         base_currency = ves or usd
         currencies = [usd.name, eur.name]

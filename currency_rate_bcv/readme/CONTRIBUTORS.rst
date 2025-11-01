@@ -1,2 +1,0 @@
-* Luis Pinzón elpinzon@gmail.com
-* Anderson Armeya anderson.armeya@gmail.com
