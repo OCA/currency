@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_res_currency_rate_provider_form_binance" model="ir.ui.view">
+        <field name="name">res.currency.rate.provider.form.binance</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field name="inherit_id" ref="currency_rate_update.res_currency_rate_provider_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='currency_ids']" position="before">
+                <field name="p2p_transaction_type" invisible="service != 'bnb_p2p'"/>
+            </xpath>
+            <xpath expr="//button[@name='%(currency_rate_update.res_currency_rate_update_wizard_action)d']" position="attributes">
+                <attribute name="invisible">service == 'bnb_p2p'</attribute>
+            </xpath>
+            <xpath expr="//button[@name='%(currency_rate_update.res_currency_rate_update_wizard_action)d']" position="after">
+                <button
+                    name="%(currency_rate_update.res_currency_rate_update_wizard_action)d"
+                    type="action"
+                    string="Update Rates Now"
+                    confirm="Rate synchronization with Binance does not allow a date range, it will take the current offers"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
