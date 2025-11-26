@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-11 00:39+0000\n"
-"PO-Revision-Date: 2017-05-11 00:39+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
+"PO-Revision-Date: 2025-11-26 05:42+0000\n"
+"Last-Translator: Ryoko Tsuda <ryoko@quartile.co>\n"
 "Language-Team: Japanese (https://www.transifex.com/oca/teams/23907/ja/)\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #. module: currency_rate_update
 #. odoo-python
@@ -31,6 +32,10 @@ msgid ""
 "specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
 "\" groups=\"base.group_multi_company\"/>"
 msgstr ""
+"<span class=\"fa fa-lg fa-building-o\" title="
+"\"ここで設定される値は、会社ごとに異なります。\" role=\"img\" aria-label="
+"\"Values set here are company-specific.\" groups=\"base.group_multi_company\""
+"/>"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
@@ -48,50 +53,57 @@ msgid ""
 "                                rates are recalculated and might differ from "
 "real rates."
 msgstr ""
+"<strong>!</strong>\n"
+"                                "
+"欧州中央銀行の為替レートサービスを利用していますが、基軸通貨がユーロ（EUR）以"
+"外となっています。<br/>\n"
+"                               "
+"欧州中央銀行が提供する為替レートはユーロベースのみであるため、その他の外貨レ"
+"ートは再計算され、実際のレートと異なる場合があります。"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "要アクション"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__active
 msgid "Active"
-msgstr ""
+msgstr "有効"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_filter
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid "Archived"
-msgstr ""
+msgstr "アーカイブ済"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_attachment_count
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "添付数"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 msgid "Automatic Currency Rates (OCA)"
-msgstr ""
+msgstr "自動通貨レート (OCA)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__available_currency_ids
 msgid "Available Currencies"
-msgstr ""
+msgstr "利用可能な通貨"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_update_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "キャンセル"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "会社"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__company_id
@@ -101,7 +113,7 @@ msgstr "会社"
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_config_settings
 msgid "Config Settings"
-msgstr ""
+msgstr "コンフィグ設定"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_uid
@@ -118,27 +130,27 @@ msgstr "作成日"
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
 msgid "Currencies"
-msgstr ""
+msgstr "通貨"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_ids
 msgid "Currencies to be updated by this provider"
-msgstr ""
+msgstr "このプロバイダーによって更新される通貨"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__currency_name
 msgid "Currency Code (ISO 4217)"
-msgstr ""
+msgstr "通貨コード (ISO 4217)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_name
 msgid "Currency Name"
-msgstr ""
+msgstr "通貨名"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate
 msgid "Currency Rate"
-msgstr ""
+msgstr "通貨レート"
 
 #. module: currency_rate_update
 #. odoo-python
@@ -148,43 +160,46 @@ msgid ""
 "%(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
+"通貨レートプロバイダー \"%(name)s\" は %(date_from)s から "
+"%(date_to)sまでのデータを取得できませんでした:\n"
+"%(error)s"
 
 #. module: currency_rate_update
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid "Currency Rate Provider Failure"
-msgstr ""
+msgstr "通貨レートプロバイダー障害"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_update_wizard
 msgid "Currency Rate Update Wizard"
-msgstr ""
+msgstr "通貨レート更新ウィザード"
 
 #. module: currency_rate_update
 #: model:ir.model,name:currency_rate_update.model_res_currency_rate_provider
 msgid "Currency Rates Provider"
-msgstr ""
+msgstr "通貨レートプロバイダー"
 
 #. module: currency_rate_update
 #: model:ir.actions.act_window,name:currency_rate_update.action_res_currency_rate_provider
 #: model:ir.ui.menu,name:currency_rate_update.menu_res_currency_rate_provider
 msgid "Currency Rates Providers"
-msgstr ""
+msgstr "通貨レートプロバイダー"
 
 #. module: currency_rate_update
 #: model:ir.actions.server,name:currency_rate_update.ir_cron_currency_rates_update_every_day_ir_actions_server
 msgid "Currency Rates Update (OCA) daily"
-msgstr ""
+msgstr "通貨レート更新 (OCA) 日次"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__daily
 msgid "Daily"
-msgstr ""
+msgstr "日次"
 
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__days
 msgid "Day(s)"
-msgstr ""
+msgstr "日"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
@@ -196,35 +211,35 @@ msgstr "表示名"
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
 #: model:ir.model.fields,help:currency_rate_update.field_res_config_settings__currency_rates_autoupdate
 msgid "Enable automatic currency rates updates in this company."
-msgstr ""
+msgstr "この会社で自動為替レート更新を有効にする。"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__date_to
 msgid "End Date"
-msgstr ""
+msgstr "終了日"
 
 #. module: currency_rate_update
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__service__ecb
 msgid "European Central Bank"
-msgstr ""
+msgstr "欧州中央銀行"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_follower_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "フォロワー"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_partner_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "フォロワー (取引先)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__has_message
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "メッセージあり"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
@@ -236,7 +251,7 @@ msgstr "ID"
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_needaction
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "チェックした場合は、新しいメッセージに注意が必要です。"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
