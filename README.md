@@ -17,7 +17,11 @@ currency
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[currency_rate_update](currency_rate_update/) | 19.0.1.0.1 |  | Update exchange rates using OCA modules
 
 [//]: # (end addons)
 
