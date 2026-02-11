@@ -1,0 +1,31 @@
+# Indonesian translation of currency_rate_update_BI
+# Copyright (C) 2026 PT Solusi Aglis Indonesia
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2026-01-01 00:00+0700\n"
+"Last-Translator: PT Solusi Aglis Indonesia <info@solusiaglis.co.id>\n"
+"Language-Team: Indonesian\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: currency_rate_update_BI
+#: model_terms:res.currency.rate.provider,service:currency_rate_update_BI.service_bi
+msgid "Bank Indonesia (Kurs Transaksi)"
+msgstr "Bank Indonesia (Kurs Transaksi)"
+
+#. module: currency_rate_update_BI
+#: code:addons/currency_rate_update_BI/models/res_currency_rate_provider_BI.py:0
+msgid "Cannot connect to Bank Indonesia webservice.\nPlease check your internet connection.\nURL: %(url)s\nError: %(error)s"
+msgstr "Tidak dapat terhubung ke webservice Bank Indonesia.\nMohon periksa koneksi internet Anda.\nURL: %(url)s\nError: %(error)s"
+
+#. module: currency_rate_update_BI
+#: code:addons/currency_rate_update_BI/models/res_currency_rate_provider_BI.py:0
+msgid "Bank Indonesia provider: Company base currency %(currency)s is not supported. BI supports IDR as base or any of: %(list)s"
+msgstr "Provider Bank Indonesia: Mata uang dasar perusahaan %(currency)s tidak didukung. BI mendukung IDR sebagai dasar atau salah satu dari: %(list)s"
