@@ -1,9 +1,10 @@
 [project]
 name = "odoo-addons-oca-currency"
-version = "18.0.20251103.0"
+version = "18.0.20260217.0"
 dependencies = [
     "odoo-addon-currency_old_rate_notify==18.0.*",
     "odoo-addon-currency_rate_update==18.0.*",
+    "odoo-addon-currency_rate_update_xe==18.0.*",
 ]
 classifiers=[
     "Programming Language :: Python",
