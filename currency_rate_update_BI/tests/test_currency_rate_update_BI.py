@@ -510,3 +510,91 @@ class TestResCurrencyRateProviderBI(common.TransactionCase):
         result = self.bi_provider._convert_foreign_base_rates(rates_by_date, "USD")
         self.assertNotIn("2026-02-06", result)  # Skipped
         self.assertIn("2026-02-07", result)
+
+    @patch(
+        "odoo.addons.currency_rate_update_BI.models"
+        ".res_currency_rate_provider_BI.urlopen",
+        side_effect=_mock_urlopen,
+    )
+    def test_foreign_base_with_idr_selected(self, mock_urlopen):
+        """Test that IDR can be selected and has correct rate when base is USD."""
+        from datetime import date
+
+        # Create USD-based company
+        usd_company = self.Company.create(
+            {"name": "Test US Company IDR", "currency_id": self.usd_currency.id}
+        )
+
+        bi_provider_usd = self.CurrencyRateProvider.with_company(usd_company).create(
+            {
+                "service": "BI",
+                "currency_ids": [
+                    (4, self.idr_currency.id),
+                    (4, self.eur_currency.id),
+                ],
+                "company_id": usd_company.id,
+            }
+        )
+
+        wizard = (
+            self.env["res.currency.rate.update.wizard"]
+            .with_context(default_provider_ids=[(6, False, bi_provider_usd.ids)])
+            .with_company(usd_company)
+            .create(
+                {
+                    "date_from": date(2026, 2, 6),
+                    "date_to": date(2026, 2, 6),
+                }
+            )
+        )
+        wizard.action_update()
+
+        # Check IDR rate was created
+        idr_rate = self.CurrencyRate.search(
+            [
+                ("provider_id", "=", bi_provider_usd.id),
+                ("currency_id", "=", self.idr_currency.id),
+                ("name", "=", date(2026, 2, 6)),
+            ],
+            limit=1,
+        )
+        self.assertTrue(idr_rate, "IDR rate for USD base should exist")
+
+        # IDR/USD rate from BI: (16741.87 + 16910.13) / 2 = 16826.0
+        expected_rate = 16826.0
+        self.assertAlmostEqual(idr_rate.rate, expected_rate, places=1)
+
+        # Also verify EUR cross-rate still works
+        eur_rate = self.CurrencyRate.search(
+            [
+                ("provider_id", "=", bi_provider_usd.id),
+                ("currency_id", "=", self.eur_currency.id),
+                ("name", "=", date(2026, 2, 6)),
+            ],
+            limit=1,
+        )
+        self.assertTrue(eur_rate, "EUR rate should also exist")
+        expected_eur_rate = 16826.0 / 17513.0
+        self.assertAlmostEqual(eur_rate.rate, expected_eur_rate, places=4)
+
+    def test_supported_currencies_idr_base(self):
+        """Test that IDR is NOT in supported currencies when base is IDR."""
+        currencies = self.bi_provider._get_supported_currencies()
+        self.assertNotIn("IDR", currencies)
+
+    def test_supported_currencies_usd_base(self):
+        """Test that IDR IS in supported currencies when base is USD."""
+        usd_company = self.Company.create(
+            {"name": "Test US Company", "currency_id": self.usd_currency.id}
+        )
+        bi_provider_usd = self.CurrencyRateProvider.with_company(usd_company).create(
+            {
+                "service": "BI",
+                "currency_ids": [],
+                "company_id": usd_company.id,
+            }
+        )
+        currencies = bi_provider_usd._get_supported_currencies()
+        self.assertIn("IDR", currencies)
+        self.assertIn("USD", currencies)
+        self.assertIn("EUR", currencies)

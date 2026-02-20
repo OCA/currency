@@ -66,7 +66,16 @@ class ResCurrencyRateProviderBI(models.Model):
         self.ensure_one()
         if self.service != "BI":
             return super()._get_supported_currencies()
-        return BI_SUPPORTED_CURRENCIES
+
+        # Start with currencies that BI publishes rates for
+        supported = BI_SUPPORTED_CURRENCIES.copy()
+
+        # If company base is not IDR, add IDR to supported list
+        # This allows selecting IDR to get its rate when base is foreign (e.g., USD)
+        if self.company_id.currency_id.name != "IDR":
+            supported.append("IDR")
+
+        return supported
 
     def _obtain_rates(self, base_currency, currencies, date_from, date_to):
         self.ensure_one()
@@ -181,6 +190,11 @@ class ResCurrencyRateProviderBI(models.Model):
                 # e.g. EUR/USD = (IDR/USD) / (IDR/EUR) = 16826 / 18500 ≈ 0.9095
                 cross_rate = base_idr / rate_idr
                 content[date_str][curr] = cross_rate
+
+            # Add IDR rate if needed
+            # When base is USD and BI provides 16826 IDR/USD,
+            # the rate is simply 16826 (direct rate: IDR per 1 USD)
+            content[date_str]["IDR"] = base_idr
         return content
 
     def _parse_bi_response(self, xml_data, expected_currency):
