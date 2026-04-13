@@ -26,18 +26,6 @@ msgid "%(number)s %(type)s"
 msgstr ""
 
 #. module: currency_rate_update
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title="
-"\"ここで設定される値は、会社ごとに異なります。\" role=\"img\" aria-label="
-"\"Values set here are company-specific.\" groups=\"base.group_multi_company\""
-"/>"
-
-#. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid ""
 "<strong>!</strong>\n"
@@ -54,12 +42,11 @@ msgid ""
 "real rates."
 msgstr ""
 "<strong>!</strong>\n"
-"                                "
-"欧州中央銀行の為替レートサービスを利用していますが、基軸通貨がユーロ（EUR）以"
-"外となっています。<br/>\n"
-"                               "
-"欧州中央銀行が提供する為替レートはユーロベースのみであるため、その他の外貨レ"
-"ートは再計算され、実際のレートと異なる場合があります。"
+"                                欧州中央銀行の為替レートサービスを利用してい"
+"ますが、基軸通貨がユーロ（EUR）以外となっています。<br/>\n"
+"                               欧州中央銀行が提供する為替レートはユーロベース"
+"のみであるため、その他の外貨レートは再計算され、実際のレートと異なる場合があ"
+"ります。"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_needaction
@@ -156,12 +143,12 @@ msgstr "為替レート"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid ""
-"Currency Rate Provider \"%(name)s\" failed to obtain data since "
-"%(date_from)s until %(date_to)s:\n"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since %"
+"(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
-"為替レートプロバイダー \"%(name)s\" は %(date_from)s から "
-"%(date_to)sまでのデータを取得できませんでした:\n"
+"為替レートプロバイダー \"%(name)s\" は %(date_from)s から %(date_to)sまでの"
+"データを取得できませんでした:\n"
 "%(error)s"
 
 #. module: currency_rate_update
@@ -434,6 +421,11 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr "OCAモジュールを使用して為替レートを自動的に更新"
 
 #. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid "Values set here are company-specific."
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
@@ -449,6 +441,15 @@ msgstr "ウェブサイト通信履歴"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "週"
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"ここで設定される値は、会社"
+#~ "ごとに異なります。\" role=\"img\" aria-label=\"Values set here are "
+#~ "company-specific.\" groups=\"base.group_multi_company\"/>"
 
 #~ msgid "Last Modified on"
 #~ msgstr "最終更新日"
