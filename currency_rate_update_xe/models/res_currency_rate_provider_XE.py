@@ -253,7 +253,15 @@ class ResCurrencyRateProviderXE(models.Model):
         url,
     ):
         try:
-            return requests.request("GET", url, timeout=10)
+            # XE.com returns 403 to requests without a User-Agent header.
+            response = requests.request(
+                "GET",
+                url,
+                timeout=10,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            response.raise_for_status()
+            return response
         except Exception as e:
             raise UserError(
                 _("Couldn't fetch data. Please contact your administrator.")
