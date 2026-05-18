@@ -3,6 +3,7 @@
 
 
 import requests
+from dateutil.relativedelta import relativedelta
 
 from odoo import fields
 from odoo.tests import common
@@ -43,6 +44,13 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
         return cls._super_send(s, r, **kw)
 
     def test_cron(self):
+        # Pretend the provider already ran yesterday so _scheduled_update only
+        # fetches today's rate (via the "latest" endpoint). Without this, a
+        # fresh provider's next_run defaults to today and _scheduled_update
+        # computes date_from = today - 1 day, producing one rate per day in
+        # the range — which is correct behaviour but makes this assertion
+        # depend on whether XE returns a rate for the past-day URL.
+        self.xe_provider.last_successful_run = self.today - relativedelta(days=1)
         self.xe_provider._scheduled_update()
         rates = self.CurrencyRate.search([])
         self.assertEqual(len(rates), 1)
