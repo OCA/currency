@@ -26,17 +26,6 @@ msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
 
 #. module: currency_rate_update
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Šeit norādītās vērtības ir "
-"atkarīgas no uzņēmuma.\" role=\"img\" aria-label=\"Values set here are "
-"company-specific.\" groups=\"base.group_multi_company\"/>"
-
-#. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid ""
 "<strong>!</strong>\n"
@@ -160,12 +149,12 @@ msgstr "Valūtas kurss"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid ""
-"Currency Rate Provider \"%(name)s\" failed to obtain data since "
-"%(date_from)s until %(date_to)s:\n"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since %"
+"(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
-"Valūtas kursa nodrošinātājam \"%(name)s\" neizdevās iegūt datus no "
-"%(date_from)s līdz %(date_to)s:\n"
+"Valūtas kursa nodrošinātājam \"%(name)s\" neizdevās iegūt datus no %"
+"(date_from)s līdz %(date_to)s:\n"
 "%(error)s"
 
 #. module: currency_rate_update
@@ -206,6 +195,9 @@ msgid "Day(s)"
 msgstr "Diena(-as)"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
@@ -246,6 +238,9 @@ msgid "Has Message"
 msgstr "Ir ziņojums"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
 msgid "ID"
@@ -438,6 +433,11 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr "Automātiska valūtas kursu atjaunināšana, izmantojot OCA moduļus"
 
 #. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid "Values set here are company-specific."
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
@@ -453,3 +453,12 @@ msgstr "Tīmekļa vietnes saziņas vēsture"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Nedēļa(-as)"
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Šeit norādītās vērtības ir "
+#~ "atkarīgas no uzņēmuma.\" role=\"img\" aria-label=\"Values set here are "
+#~ "company-specific.\" groups=\"base.group_multi_company\"/>"

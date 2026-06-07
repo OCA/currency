@@ -27,17 +27,6 @@ msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
 
 #. module: currency_rate_update
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"此处设置的值每公司不同\" "
-"role=\"img\" aria-label=\"此处设置的值每公司不同\" groups=\"base."
-"group_multi_company\"/>"
-
-#. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
 msgid ""
 "<strong>!</strong>\n"
@@ -156,8 +145,8 @@ msgstr "汇率"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid ""
-"Currency Rate Provider \"%(name)s\" failed to obtain data since "
-"%(date_from)s until %(date_to)s:\n"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since %"
+"(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
 "汇率提供商 \"%(name)s\" 获取数据失败， 日期从 %(date_from)s 到 %(date_to)s:\n"
@@ -201,6 +190,9 @@ msgid "Day(s)"
 msgstr "天"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
@@ -241,6 +233,9 @@ msgid "Has Message"
 msgstr "有新消息"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
 msgid "ID"
@@ -433,6 +428,11 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr "用OCA模块自动更新汇率"
 
 #. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid "Values set here are company-specific."
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
@@ -448,6 +448,15 @@ msgstr "网站沟通历史"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "周"
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"此处设置的值每公司不同\" "
+#~ "role=\"img\" aria-label=\"此处设置的值每公司不同\" "
+#~ "groups=\"base.group_multi_company\"/>"
 
 #~ msgid "Update Rates Wizard"
 #~ msgstr "更新汇率向导"

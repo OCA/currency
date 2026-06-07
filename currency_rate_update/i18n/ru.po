@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || ("
-"n%100>=11 && n%100<=14)? 2 : 3);\n"
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Generator: Weblate 5.10.4\n"
 
 #. module: currency_rate_update
@@ -26,19 +26,6 @@ msgstr ""
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid "%(number)s %(type)s"
 msgstr "%(number)s %(type)s"
-
-#. module: currency_rate_update
-#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
-msgid ""
-"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
-"specific.\" role=\"img\" aria-label=\"Values set here are company-specific."
-"\" groups=\"base.group_multi_company\"/>"
-msgstr ""
-"<span class=\"fa fa-lg fa-building-o\" title="
-"\"Значения, установленные здесь, зависят от конкретной компании.\" role="
-"\"img\" aria-label="
-"\"Значения, установленные здесь, зависят от конкретной компании.\" groups="
-"\"base.group_multi_company\"/>"
 
 #. module: currency_rate_update
 #: model_terms:ir.ui.view,arch_db:currency_rate_update.res_currency_rate_provider_form_view
@@ -163,8 +150,8 @@ msgstr "Курс валют"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid ""
-"Currency Rate Provider \"%(name)s\" failed to obtain data since "
-"%(date_from)s until %(date_to)s:\n"
+"Currency Rate Provider \"%(name)s\" failed to obtain data since %"
+"(date_from)s until %(date_to)s:\n"
 "%(error)s"
 msgstr ""
 "У поставщика курсов валют \"%(name)s\" не удалось получить данные за период "
@@ -209,6 +196,9 @@ msgid "Day(s)"
 msgstr "День (-и)"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
@@ -249,6 +239,9 @@ msgid "Has Message"
 msgstr "Имеет сообщение"
 
 #. module: currency_rate_update
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_company__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_config_settings__id
+#: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__id
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__id
 msgid "ID"
@@ -441,6 +434,11 @@ msgid "Update exchange rates automatically using OCA modules"
 msgstr "Автоматическое обновление курсов валют с помощью модулей OCA"
 
 #. module: currency_rate_update
+#: model_terms:ir.ui.view,arch_db:currency_rate_update.res_config_settings_view_form
+msgid "Values set here are company-specific."
+msgstr ""
+
+#. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__website_message_ids
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__website_message_ids
 msgid "Website Messages"
@@ -456,3 +454,13 @@ msgstr "История общения на сайте"
 #: model:ir.model.fields.selection,name:currency_rate_update.selection__res_currency_rate_provider__interval_type__weeks
 msgid "Week(s)"
 msgstr "Неделя(-и)"
+
+#~ msgid ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are "
+#~ "company-specific.\" role=\"img\" aria-label=\"Values set here are company-"
+#~ "specific.\" groups=\"base.group_multi_company\"/>"
+#~ msgstr ""
+#~ "<span class=\"fa fa-lg fa-building-o\" title=\"Значения, установленные "
+#~ "здесь, зависят от конкретной компании.\" role=\"img\" aria-"
+#~ "label=\"Значения, установленные здесь, зависят от конкретной компании.\" "
+#~ "groups=\"base.group_multi_company\"/>"
