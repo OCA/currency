@@ -1,13 +1,18 @@
 # Copyright 2023 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-from datetime import date, timedelta
+import base64
+from datetime import date
 
 import requests
-from lxml import etree
 
 from odoo import _, fields, models
 from odoo.exceptions import UserError
+
+# Public credentials embedded in xe.com's own front-end, required to reach its
+# JSON converter endpoint.
+XE_API_URL = "https://www.xe.com/api/protected/midmarket-converter/"
+XE_API_TOKEN = base64.b64encode(b"lodestar:pugsnax").decode()
 
 
 class ResCurrencyRateProviderXE(models.Model):
@@ -221,66 +226,42 @@ class ResCurrencyRateProviderXE(models.Model):
         self.ensure_one()
         if self.service != "XE":
             return super()._obtain_rates(base_currency, currencies, date_from, date_to)
-        base_url = "http://www.xe.com/currencytables"
-        if date_from < date.today():
-            return self._get_historical_rate(
-                base_url, currencies, date_from, date_to, base_currency
+        # XE.com blocks automated requests to its public HTML pages
+        # (CloudFront answers 403 regardless of the User-Agent sent), so we
+        # read the JSON endpoint that powers xe.com's own converter instead.
+        # That endpoint only exposes the latest mid-market rates, hence we
+        # always return today's rates regardless of the requested range.
+        api_rates = self._get_xe_rates()
+        base_rate = api_rates.get(base_currency)
+        if not base_rate:
+            raise UserError(
+                _("XE.com didn't return a rate for the base currency %s.")
+                % base_currency
             )
-        else:
-            return self._get_latest_rate(base_url, currencies, base_currency)
+        rates = {}
+        for currency in currencies:
+            if currency == base_currency:
+                continue
+            rate = api_rates.get(currency)
+            if rate:
+                # API rates are USD-based; make them relative to base_currency.
+                rates[currency] = rate / base_rate
+        return {date.today(): rates}
 
-    def _get_latest_rate(self, base_url, currencies, base_currency):
-        """Get all the exchange rates for today"""
-        url = f"{base_url}/?from={base_currency}"
-        data = self._request_data(url)
-        return {date.today(): self._parse_data(data, currencies)}
-
-    def _get_historical_rate(
-        self, base_url, currencies, date_from, date_to, base_currency
-    ):
-        """Get all the exchange rates from 'date_from' to 'date_to'"""
-        content = {}
-        current_date = date_from
-        today = date.today()
-        while current_date <= date_to:
-            if current_date >= today:
-                # XE returns 404 for ?date=YYYY-MM-DD when the date is today
-                # or in the future; fall back to the latest endpoint.
-                url = f"{base_url}/?from={base_currency}"
-            else:
-                day = current_date.strftime("%Y-%m-%d")
-                url = f"{base_url}/?from={base_currency}&date={day}"
-            data = self._request_data(url)
-            content[current_date] = self._parse_data(data, currencies)
-            current_date += timedelta(days=1)
-        return content
-
-    def _request_data(
-        self,
-        url,
-    ):
+    def _get_xe_rates(self):
+        """Return the latest mid-market rates (USD-based) from XE.com."""
         try:
-            # XE.com returns 403 to requests without a User-Agent header.
-            response = requests.request(
-                "GET",
-                url,
-                timeout=10,
-                headers={"User-Agent": "Mozilla/5.0"},
+            response = requests.get(
+                XE_API_URL,
+                timeout=30,
+                headers={
+                    "Authorization": "Basic %s" % XE_API_TOKEN,
+                    "User-Agent": "Mozilla/5.0",
+                },
             )
             response.raise_for_status()
-            return response
         except Exception as e:
             raise UserError(
                 _("Couldn't fetch data. Please contact your administrator.")
             ) from e
-
-    def _parse_data(self, data, currencies):
-        result = {}
-        html_elem = etree.fromstring(data.content, etree.HTMLParser())
-        rows_elem = html_elem.xpath(".//div[@id='table-section']//tbody/tr")
-        for row_elem in rows_elem:
-            currency_code = "".join(row_elem.find(".//th").itertext()).strip()
-            if currency_code in currencies:
-                rate = float(row_elem.find("td[2]").text.replace(",", ""))
-                result[currency_code] = rate
-        return result
+        return response.json().get("rates", {})

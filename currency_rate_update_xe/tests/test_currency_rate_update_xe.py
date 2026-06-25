@@ -37,12 +37,9 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
         cls.CurrencyRate.search([]).unlink()
 
     def test_cron(self):
-        # Pretend the provider already ran yesterday so _scheduled_update only
-        # fetches today's rate (via the "latest" endpoint). Without this, a
-        # fresh provider's next_run defaults to today and _scheduled_update
-        # computes date_from = today - 1 day, producing one rate per day in
-        # the range — which is correct behaviour but makes this assertion
-        # depend on whether XE returns a rate for the past-day URL.
+        # Pretend the provider already ran yesterday so _scheduled_update
+        # fetches a single day. The XE provider always returns today's
+        # mid-market rates from the API, so exactly one rate (USD) is created.
         self.xe_provider.last_successful_run = self.today - relativedelta(days=1)
         self.xe_provider._scheduled_update()
         rates = self.CurrencyRate.search([])
