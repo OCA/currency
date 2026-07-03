@@ -221,7 +221,7 @@ class ResCurrencyRateProviderXE(models.Model):
         self.ensure_one()
         if self.service != "XE":
             return super()._obtain_rates(base_currency, currencies, date_from, date_to)
-        base_url = "http://www.xe.com/currencytables"
+        base_url = "https://www.xe.com/currencytables"
         if date_from < date.today():
             return self._get_historical_rate(
                 base_url, currencies, date_from, date_to, base_currency
@@ -255,7 +255,24 @@ class ResCurrencyRateProviderXE(models.Model):
         url,
     ):
         try:
-            return requests.request("GET", url, timeout=10)
+            response = requests.request(
+                "GET",
+                url,
+                timeout=10,
+                headers={
+                    "User-Agent": (
+                        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+                        " (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+                    )
+                },
+            )
+            response.raise_for_status()
+            return response
+        except requests.HTTPError as e:
+            raise UserError(
+                _("XE.com returned HTTP %s. Please contact your administrator.")
+                % e.response.status_code
+            ) from e
         except Exception as e:
             raise UserError(
                 _("Couldn't fetch data. Please contact your administrator.")
