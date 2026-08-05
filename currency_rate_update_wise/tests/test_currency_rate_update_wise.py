@@ -80,6 +80,28 @@ class TestResCurrencyRateProviderWise(common.TransactionCase):
         rates = self.CurrencyRate.search([("currency_id", "=", usd_currency.id)])
         self.assertTrue(rates)
 
+    def test_single_day_window_is_widened(self):
+        # Wise answers HTTP 400 when "from" equals "to", which is exactly what
+        # a scheduled run asks for once the rates are up to date. The provider
+        # must widen the window instead of sending a zero-length range.
+        captured = []
+
+        def _capture(_self, _url, params=None):
+            captured.append(params)
+            return []
+
+        with mock.patch(_retrieve, _capture):
+            self.wise_provider._obtain_rates("USD", ["EUR"], self.today, self.today)
+
+        self.assertTrue(captured, "no request was issued")
+        for params in captured:
+            self.assertNotEqual(
+                params["from"],
+                params["to"],
+                "Wise rejects a zero-length window with HTTP 400",
+            )
+            self.assertEqual(params["from"], str(self.today))
+
     def test_no_credentials(self):
         self.env.user.company_id.wise_api_key = None
         with self.assertRaises(UserError):
