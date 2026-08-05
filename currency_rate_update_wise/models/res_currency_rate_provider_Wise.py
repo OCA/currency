@@ -82,11 +82,18 @@ class ResCurrencyRateProviderWise(models.Model):
             since = date_from
             until = since + step
             while since <= date_to:
+                # Wise answers HTTP 400 when "from" equals "to". That is
+                # exactly the shape of a scheduled run once the rates are up
+                # to date: the provider then asks for the single missing day.
+                # Widening the window by one day is enough — the endpoint only
+                # ever returns the days it actually has, so no spurious rate
+                # is created.
+                window_end = max(min(until, date_to), since + timedelta(days=1))
                 params = {
                     "source": base_currency,
                     "target": currency,
                     "from": str(since),
-                    "to": str(min(until, date_to)),
+                    "to": str(window_end),
                     "group": "day",
                 }
                 data = self._wise_provider_retrieve(WISE_API_URL, params)
