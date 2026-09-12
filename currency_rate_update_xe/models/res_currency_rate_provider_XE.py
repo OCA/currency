@@ -241,8 +241,16 @@ class ResCurrencyRateProviderXE(models.Model):
         """Get all the exchange rates from 'date_from' to 'date_to'"""
         content = {}
         current_date = date_from
+        today = date.today()
         while current_date <= date_to:
-            url = f"{base_url}/?from={base_currency}&date={current_date.strftime('%Y-%m-%d')}"
+            if current_date >= today:
+                # XE.com returns HTTP 404 for ``?date=YYYY-MM-DD`` when the
+                # requested date is today or in the future; fall back to the
+                # latest endpoint (same URL as ``_get_latest_rate``).
+                url = f"{base_url}/?from={base_currency}"
+            else:
+                day = current_date.strftime("%Y-%m-%d")
+                url = f"{base_url}/?from={base_currency}&date={day}"
             data = self._request_data(url)
             content[current_date] = self._parse_data(data, currencies)
             current_date += timedelta(days=1)
@@ -253,7 +261,15 @@ class ResCurrencyRateProviderXE(models.Model):
         url,
     ):
         try:
-            return requests.request("GET", url)
+            # XE.com returns HTTP 403 to requests without a User-Agent header.
+            response = requests.request(
+                "GET",
+                url,
+                timeout=10,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            response.raise_for_status()
+            return response
         except Exception as e:
             raise UserError(
                 _("Couldn't fetch data. Please contact your administrator.")
