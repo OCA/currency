@@ -285,7 +285,7 @@ class ResCurrencyRateProvider(models.Model):
         if providers:
             provider_names = ", ".join(providers.mapped("name"))
             _logger.info(f"Scheduled currency rates update of: {provider_names}")
-            for provider in providers.with_context(**{"scheduled": True}):
+            for provider in providers.with_context(scheduled=True):
                 date_from = (
                     (provider.last_successful_run + relativedelta(days=1))
                     if provider.last_successful_run
