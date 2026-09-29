@@ -6,11 +6,10 @@ from odoo import fields, models
 
 class ResCurrencyRate(models.Model):
     _name = "res.currency.rate"
-    _inherit = ["res.currency.rate", "mail.thread"]
+    _inherit = ("res.currency.rate", "mail.thread")
 
     rate = fields.Float(tracking=True)
     provider_id = fields.Many2one(
-        string="Provider",
         comodel_name="res.currency.rate.provider",
         ondelete="restrict",
         tracking=True,

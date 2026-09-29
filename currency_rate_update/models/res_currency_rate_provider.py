@@ -18,11 +18,10 @@ _logger = logging.getLogger(__name__)
 class ResCurrencyRateProvider(models.Model):
     _name = "res.currency.rate.provider"
     _description = "Currency Rates Provider"
-    _inherit = ["mail.thread"]
+    _inherit = "mail.thread"
     _order = "name"
 
     company_id = fields.Many2one(
-        string="Company",
         comodel_name="res.company",
         required=True,
         default=lambda self: self.env.company,
@@ -80,12 +79,14 @@ class ResCurrencyRateProvider(models.Model):
     @api.depends("service")
     def _compute_name(self):
         for provider in self:
-            provider.name = list(
-                filter(
-                    lambda x: x[0] == provider.service,
-                    self._fields["service"].selection,
-                )
-            )[0][1]
+            provider.name = next(
+                (
+                    x[1]
+                    for x in self._fields["service"].selection
+                    if x[0] == provider.service
+                ),
+                False,
+            )
 
     @api.depends("active", "interval_type", "interval_number")
     def _compute_update_schedule(self):
@@ -94,15 +95,18 @@ class ResCurrencyRateProvider(models.Model):
                 provider.update_schedule = self.env._("Inactive")
                 continue
 
+            interval_type_label = next(
+                (
+                    x[1]
+                    for x in self._fields["interval_type"].selection
+                    if x[0] == provider.interval_type
+                ),
+                "",
+            )
             provider.update_schedule = self.env._(
                 "%(number)s %(type)s",
                 number=provider.interval_number,
-                type=list(
-                    filter(
-                        lambda x: x[0] == provider.interval_type,
-                        self._fields["interval_type"].selection,
-                    )
-                )[0][1],
+                type=interval_type_label,
             )
 
     @api.depends("service")

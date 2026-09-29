@@ -5,7 +5,7 @@
 
 import xml.sax
 from collections import defaultdict
-from datetime import date, timedelta
+from datetime import timedelta
 from urllib.request import urlopen
 from xml.sax import make_parser
 
@@ -86,9 +86,10 @@ class ResCurrencyRateProviderECB(models.Model):
 
         # Depending on the date range, different URLs are used
         url = "https://www.ecb.europa.eu/stats/eurofxref"
-        if date_from == date_to and date_from == date.today():
+        today = fields.Date.today()
+        if date_from == date_to and date_from == today:
             url = url + "/eurofxref-daily.xml"
-        elif (date.today() - date_from) / timedelta(days=90) < 1.0:
+        elif (today - date_from) / timedelta(days=90) < 1.0:
             url = url + "/eurofxref-hist-90d.xml"
         else:
             url = url + "/eurofxref-hist.xml"
@@ -100,9 +101,9 @@ class ResCurrencyRateProviderECB(models.Model):
             parser.parse(response)
         content = handler.content
         if invert_calculation:
-            for k in content.keys():
+            for k in content:
                 base_rate = float(content[k][base_currency])
-                for rate in content[k].keys():
+                for rate in content[k]:
                     content[k][rate] = str(float(content[k][rate]) / base_rate)
                 content[k]["EUR"] = str(1.0 / base_rate)
         return content
@@ -119,7 +120,7 @@ class EcbRatesHandler(xml.sax.ContentHandler):
     def startElement(self, name, attrs):
         if name == "Cube" and "time" in attrs:
             self.date = fields.Date.from_string(attrs["time"])
-        elif name == "Cube" and all([x in attrs for x in ["currency", "rate"]]):
+        elif name == "Cube" and all(x in attrs for x in ["currency", "rate"]):
             currency = attrs["currency"]
             rate = attrs["rate"]
             if (

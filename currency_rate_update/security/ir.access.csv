@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+access_res_currency_rate_update_service_admin,res.currency.rate.provider,res.currency.rate.provider,base.group_system,crud,
+access_res_currency_rate_update_service_manager,res.currency.rate.provider,res.currency.rate.provider,account.group_account_manager,r,
+access_res_currency_rate_update_wizard,res.currency.rate.update.wizard,res.currency.rate.update.wizard,account.group_account_manager,crud,
+res_currency_rate_provider_multicompany,Current Rates Provider multi-company,res.currency.rate.provider,,crud,"['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]"
