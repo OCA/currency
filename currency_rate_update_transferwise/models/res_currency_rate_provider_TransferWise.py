@@ -59,6 +59,13 @@ class ResCurrencyRateProviderTransferWise(models.Model):
             since = date_from
             until = since + step
             while since <= date_to:
+                # The API answers HTTP 400 when "from" equals "to". That is
+                # exactly the shape of a scheduled run once the rates are up
+                # to date: the provider then asks for the single missing day.
+                # Widening the window by one day is enough — the endpoint only
+                # ever returns the days it actually has, so no spurious rate
+                # is created.
+                window_end = max(min(until, date_to), since + timedelta(days=1))
                 url = (
                     "https://api.transferwise.com/v1/rates"
                     + "?from=%(from)s"
@@ -70,7 +77,7 @@ class ResCurrencyRateProviderTransferWise(models.Model):
                     "source": base_currency,
                     "target": currency,
                     "from": str(since),
-                    "to": str(min(until, date_to)),
+                    "to": str(window_end),
                 }
                 data = json.loads(self._transferwise_provider_retrieve(url))
                 if "error" in data and data["error"]:
