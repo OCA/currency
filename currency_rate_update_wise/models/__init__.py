@@ -2,4 +2,4 @@
 
 from . import res_company
 from . import res_config_settings
-from . import res_currency_rate_provider_TransferWise
+from . import res_currency_rate_provider_Wise
