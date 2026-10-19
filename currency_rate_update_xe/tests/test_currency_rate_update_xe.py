@@ -1,10 +1,11 @@
 # Copyright 2023 Tecnativa - Ernesto Tejeda
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
-
 import requests
+from freezegun import freeze_time
 
 from odoo import fields
+from odoo.fields import Command
 from odoo.tests import common
 
 
@@ -42,12 +43,14 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
         """Don't block external requests."""
         return cls._super_send(s, r, **kw)
 
+    @freeze_time("2026-10-16")
     def test_cron(self):
         self.xe_provider._scheduled_update()
         rates = self.CurrencyRate.search([])
         self.assertEqual(len(rates), 1)
         self.assertEqual(rates.currency_id, self.usd_currency)
 
+    @freeze_time("2026-10-19")
     def test_wizard(self):
         wizard = (
             self.env["res.currency.rate.update.wizard"]
@@ -58,3 +61,31 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
         rates = self.CurrencyRate.search([])
         self.assertEqual(len(rates), 1)
         self.assertEqual(rates.currency_id, self.usd_currency)
+
+    @freeze_time("2026-10-19")
+    def test_wizard_jod(self):
+        jod_currency = self.env.ref("base.JOD")
+        jod_currency.active = True
+        self.xe_provider.write(
+            {
+                "currency_ids": [Command.set([jod_currency.id])],
+            }
+        )
+        wizard = (
+            self.env["res.currency.rate.update.wizard"]
+            .with_context(default_provider_ids=[(6, False, self.xe_provider.ids)])
+            .create(
+                {
+                    "date_from": "2026-10-15",
+                    "date_to": "2026-10-16",
+                }
+            )
+        )
+        wizard.action_update()
+        self.assertEqual(len(jod_currency.rate_ids), 2)
+        self.assertIn(
+            fields.Date.from_string("2026-10-15"), jod_currency.rate_ids.mapped("name")
+        )
+        self.assertIn(
+            fields.Date.from_string("2026-10-16"), jod_currency.rate_ids.mapped("name")
+        )
