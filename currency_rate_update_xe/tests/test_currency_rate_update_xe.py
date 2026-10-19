@@ -2,6 +2,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 
+from dateutil.relativedelta import relativedelta
+
 from odoo import fields
 from odoo.tests import common
 
@@ -35,6 +37,10 @@ class TestResCurrencyRateProviderXE(common.TransactionCase):
         cls.CurrencyRate.search([]).unlink()
 
     def test_cron(self):
+        # Pretend the provider already ran yesterday so _scheduled_update
+        # fetches a single day. The XE provider always returns today's
+        # mid-market rates from the API, so exactly one rate (USD) is created.
+        self.xe_provider.last_successful_run = self.today - relativedelta(days=1)
         self.xe_provider._scheduled_update()
         rates = self.CurrencyRate.search([])
         self.assertEqual(len(rates), 1)
