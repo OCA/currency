@@ -37,3 +37,10 @@ msgstr "Gestore"
 #: model:ir.model.fields.selection,name:currency_rate_update_xe.selection__res_currency_rate_provider__service__xe
 msgid "XE.com"
 msgstr "XE.com"
+
+#. module: currency_rate_update_xe
+#. odoo-python
+#: code:addons/currency_rate_update_xe/models/res_currency_rate_provider_XE.py:0
+#, python-format
+msgid "XE.com returned HTTP %s. Please contact your administrator."
+msgstr ""
