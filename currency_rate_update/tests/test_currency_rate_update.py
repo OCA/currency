@@ -2,7 +2,8 @@
 # Copyright 2019 Brainbean Apps (https://brainbeanapps.com)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from datetime import date
+import io
+from datetime import date, timedelta
 from unittest import mock
 
 from dateutil.relativedelta import relativedelta
@@ -18,11 +19,38 @@ _file_ns = _module_ns + ".models.res_currency_rate_provider_ecb"
 _ECB_provider_class = _file_ns + ".ResCurrencyRateProviderECB"
 
 
+def _fake_ecb_xml():
+    """ECB-like XML with USD and CHF rates for every weekday since 2019, so that
+    the tests do not depend on the ECB web service."""
+    cubes = []
+    day = date(2019, 1, 1)
+    last_day = fields.Date.today() + timedelta(days=1)
+    while day <= last_day:
+        if day.weekday() < 5:
+            cubes.append(
+                f'<Cube time="{day.isoformat()}">'
+                '<Cube currency="USD" rate="1.1"/><Cube currency="CHF" rate="0.95"/>'
+                "</Cube>"
+            )
+        day += timedelta(days=1)
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<gesmes:Envelope xmlns:gesmes="http://www.gesmes.org/xml/2002-08-01" '
+        'xmlns="http://www.ecb.int/vocabulary/2002-08-01/eurofxref">'
+        "<Cube>" + "".join(cubes) + "</Cube></gesmes:Envelope>"
+    ).encode()
+
+
+def _fake_urlopen(url, timeout=None):
+    return io.BytesIO(_fake_ecb_xml())
+
+
 @tagged("post_install", "-at_install")
 class TestCurrencyRateUpdate(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.startClassPatcher(mock.patch(_file_ns + ".urlopen", _fake_urlopen))
 
         cls.Company = cls.env["res.company"]
         cls.CurrencyRate = cls.env["res.currency.rate"]
