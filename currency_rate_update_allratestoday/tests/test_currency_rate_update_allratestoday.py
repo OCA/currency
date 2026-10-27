@@ -223,11 +223,8 @@ class TestResCurrencyRateProviderAllRatesToday(common.TransactionCase):
 
     def test_no_table_for_publisher(self):
         provider = self._provider(bank="nope")
-        with (
-            mock.patch(GET, return_value=FakeResponse(404)),
-            self.assertRaises(UserError),
-        ):
-            provider._get_supported_currencies()
+        with mock.patch(GET, return_value=FakeResponse(404)):
+            self.assertEqual(provider._get_supported_currencies(), [])
         with (
             mock.patch(GET, return_value=FakeResponse(404)),
             self.assertRaises(UserError),
