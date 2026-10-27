@@ -3,6 +3,7 @@
 
 from unittest import mock
 
+import requests
 from freezegun import freeze_time
 
 from odoo import fields
@@ -219,3 +220,76 @@ class TestResCurrencyRateProviderAllRatesToday(common.TransactionCase):
                 self.assertRaises(UserError),
             ):
                 provider._get_supported_currencies()
+
+    def test_no_table_for_publisher(self):
+        provider = self._provider(bank="nope")
+        with (
+            mock.patch(GET, return_value=FakeResponse(404)),
+            self.assertRaises(UserError),
+        ):
+            provider._get_supported_currencies()
+        with (
+            mock.patch(GET, return_value=FakeResponse(404)),
+            self.assertRaises(UserError),
+        ):
+            provider._obtain_rates(
+                "EUR",
+                ["USD"],
+                fields.Date.from_string("2026-10-27"),
+                fields.Date.from_string("2026-10-27"),
+            )
+
+    def test_network_and_shape_errors_are_user_errors(self):
+        provider = self._provider()
+        bad = [
+            FakeResponse(200, None, text="<html>"),
+            FakeResponse(200, {"rate_date": "2026-10-27"}),
+            FakeResponse(200, {"rates": []}),
+        ]
+        for response in bad:
+            with (
+                mock.patch(GET, return_value=response),
+                self.assertRaises(UserError),
+            ):
+                provider._get_supported_currencies()
+        with (
+            mock.patch(GET, side_effect=requests.ConnectionError("down")),
+            self.assertRaises(UserError),
+        ):
+            provider._get_supported_currencies()
+
+    @freeze_time("2026-10-27")
+    def test_company_currency_missing_from_table(self):
+        # Company in EUR, publisher table without any EUR row.
+        provider = self._provider(bank="rbi", currencies=self.usd)
+        table = {
+            "bank": "rbi",
+            "rate_date": "2026-10-27",
+            "rates": [
+                {"base": "USD", "quote": "INR", "type": "reference", "value": 88.0}
+            ],
+        }
+        with (
+            mock.patch(GET, return_value=FakeResponse(200, table)),
+            self.assertRaises(UserError),
+        ):
+            provider._obtain_rates(
+                "EUR",
+                ["USD"],
+                fields.Date.from_string("2026-10-27"),
+                fields.Date.from_string("2026-10-27"),
+            )
+
+    @freeze_time("2026-10-27")
+    def test_range_too_long_with_key(self):
+        provider = self._provider(key="art_live_test")
+        with (
+            mock.patch(GET, return_value=FakeResponse(200, ECB_LATEST)),
+            self.assertRaises(UserError),
+        ):
+            provider._obtain_rates(
+                "EUR",
+                ["USD"],
+                fields.Date.from_string("2024-01-01"),
+                fields.Date.from_string("2026-10-27"),
+            )
