@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Copyright 2026 AllRatesToday (https://allratestoday.com)
+    License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+-->
+<odoo>
+    <record model="ir.ui.view" id="res_currency_rate_provider_form_view">
+        <field name="name">res.currency.rate.provider.form.allratestoday</field>
+        <field name="model">res.currency.rate.provider</field>
+        <field
+            name="inherit_id"
+            ref="currency_rate_update.res_currency_rate_provider_form_view"
+        />
+        <field name="arch" type="xml">
+            <field name="service" position="after">
+                <field
+                    name="allratestoday_bank"
+                    invisible="service != 'AllRatesToday'"
+                    required="service == 'AllRatesToday'"
+                />
+                <field
+                    name="allratestoday_api_key"
+                    invisible="service != 'AllRatesToday'"
+                    password="True"
+                />
+                <field
+                    name="allratestoday_rate_type"
+                    invisible="service != 'AllRatesToday'"
+                />
+                <div
+                    invisible="service != 'AllRatesToday'"
+                    class="alert alert-info"
+                    colspan="2"
+                    role="alert"
+                >
+                    Rates come from the table the chosen publisher printed for the
+                    day (its official reference rates), rebased to the company
+                    currency. Publisher codes:
+                    <a
+                        href="https://allratestoday.com/central-bank-rates-api/institutions/"
+                        target="_blank"
+                    >allratestoday.com/central-bank-rates-api/institutions/</a>
+                </div>
+            </field>
+        </field>
+    </record>
+</odoo>
