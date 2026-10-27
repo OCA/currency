@@ -111,11 +111,12 @@ class TestResCurrencyRateProviderAllRatesToday(common.TransactionCase):
         provider = self._provider(key="art_live_test")
         with mock.patch(GET, return_value=FakeResponse(200, ECB_LATEST)) as get:
             provider._scheduled_update()
-        url = get.call_args[0][0]
-        self.assertIn("/api/v1/central-bank/ecb/latest", url)
-        self.assertEqual(
-            get.call_args[1]["headers"]["Authorization"], "Bearer art_live_test"
-        )
+        urls = [c[0][0] for c in get.call_args_list]
+        self.assertTrue(any("/api/v1/central-bank/ecb/latest" in u for u in urls))
+        for call in get.call_args_list:
+            self.assertEqual(
+                call[1]["headers"]["Authorization"], "Bearer art_live_test"
+            )
 
     @freeze_time("2026-10-27")
     def test_rebase_when_home_currency_is_quote_side(self):
@@ -176,7 +177,22 @@ class TestResCurrencyRateProviderAllRatesToday(common.TransactionCase):
         )
 
     @freeze_time("2026-10-27")
-    def test_history_without_key_is_refused(self):
+    def test_keyless_range_serves_latest_only(self):
+        # The cron asks from the day after the last run; without a key the
+        # latest table is served and older days are skipped, not refused.
+        provider = self._provider()
+        with mock.patch(GET, return_value=FakeResponse(200, ECB_LATEST)) as get:
+            content = provider._obtain_rates(
+                "EUR",
+                ["USD"],
+                fields.Date.from_string("2026-10-20"),
+                fields.Date.from_string("2026-10-27"),
+            )
+        self.assertEqual(get.call_count, 1)
+        self.assertEqual(list(content), ["2026-10-27"])
+
+    @freeze_time("2026-10-27")
+    def test_purely_past_range_without_key_is_refused(self):
         provider = self._provider()
         with (
             mock.patch(GET, return_value=FakeResponse(200, ECB_LATEST)),
@@ -186,7 +202,7 @@ class TestResCurrencyRateProviderAllRatesToday(common.TransactionCase):
                 "EUR",
                 ["USD"],
                 fields.Date.from_string("2026-10-20"),
-                fields.Date.from_string("2026-10-27"),
+                fields.Date.from_string("2026-10-24"),
             )
 
     def test_bad_bank_code(self):

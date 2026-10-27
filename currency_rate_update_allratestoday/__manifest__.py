@@ -13,6 +13,5 @@
     "installable": True,
     "application": False,
     "depends": ["currency_rate_update"],
-    "external_dependencies": {"python": ["requests"]},
     "data": ["views/res_currency_rate_provider.xml"],
 }

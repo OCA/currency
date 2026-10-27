@@ -168,17 +168,24 @@ class ResCurrencyRateProviderAllRatesToday(models.Model):
             )
 
         # Dates before the latest table come from the dated endpoint, one call
-        # per day. It answers with the newest table on or before the requested
-        # day, so the result is keyed by the date it actually carries.
+        # per day, which needs a key on a paid plan. Keyless providers get the
+        # latest table only: the scheduled update always asks from the day
+        # after the last run, so a missing key must not turn into an error
+        # every night. It is an error only when nothing in the range is served.
         history_to = min(date_to, latest_date - timedelta(days=1), date.today())
-        if date_from <= history_to:
-            if not (self.allratestoday_api_key or "").strip():
-                raise UserError(
-                    _(
-                        "Past dates need an AllRatesToday API key on a paid plan. "
-                        "Without a key only the latest published table is available."
-                    )
+        has_key = bool((self.allratestoday_api_key or "").strip())
+        if date_from <= history_to and not has_key:
+            if content:
+                return content
+            raise UserError(
+                _(
+                    "Past dates need an AllRatesToday API key on a paid plan. "
+                    "Without a key only the latest published table (%s) is "
+                    "available.",
+                    latest["rate_date"],
                 )
+            )
+        if date_from <= history_to:
             if (history_to - date_from).days > MAX_HISTORY_DAYS:
                 raise UserError(
                     _(
