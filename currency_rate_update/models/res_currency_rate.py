@@ -10,7 +10,6 @@ class ResCurrencyRate(models.Model):
 
     rate = fields.Float(tracking=True)
     provider_id = fields.Many2one(
-        string="Provider",
         comodel_name="res.currency.rate.provider",
         ondelete="restrict",
         tracking=True,
