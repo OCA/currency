@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-04-13 07:50+0000\n"
-"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
+"PO-Revision-Date: 2026-11-11 12:46+0000\n"
+"Last-Translator: Carlos Dauden <carlos.dauden@tecnativa.com>\n"
 "Language-Team: none\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
@@ -37,20 +37,20 @@ msgstr "Ajustes de configuración"
 #. module: currency_old_rate_notify
 #: model:ir.model,name:currency_old_rate_notify.model_res_currency_rate
 msgid "Currency Rate"
-msgstr "Valor de divisa"
+msgstr "Tipo de cambio"
 
 #. module: currency_old_rate_notify
 #. odoo-python
 #: code:addons/currency_old_rate_notify/models/res_currency_rate.py:0
 #, python-format
 msgid "Currency rates older than %d days"
-msgstr "Divisas con una antigüedad superior a %d días"
+msgstr "Tipos de cambio con una antigüedad superior a %d días"
 
 #. module: currency_old_rate_notify
 #: model:ir.actions.server,name:currency_old_rate_notify.notify_rates_too_old_cron_ir_actions_server
 #: model:ir.cron,cron_name:currency_old_rate_notify.notify_rates_too_old_cron
 msgid "Currency rates: notify if too old"
-msgstr "Tipos de divisa: notificar si son demasiado antiguos"
+msgstr "Tipos de cambio: notificar si son demasiado antiguos"
 
 #. module: currency_old_rate_notify
 #: model:ir.model.fields,field_description:currency_old_rate_notify.field_res_config_settings__currency_old_rate_notify_days
