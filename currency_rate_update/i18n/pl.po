@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-11 00:39+0000\n"
-"PO-Revision-Date: 2026-11-11 10:46+0000\n"
+"PO-Revision-Date: 2026-11-11 13:46+0000\n"
 "Last-Translator: leszekszczepkowski <leszekszczepkowski@gmail.com>\n"
 "Language-Team: Polish (https://www.transifex.com/oca/teams/23907/pl/)\n"
 "Language: pl\n"
@@ -113,13 +113,13 @@ msgstr "Konfiguracja ustawień"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_uid
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__create_uid
 msgid "Created by"
-msgstr "Utworzone przez"
+msgstr "Utworzył(a)"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__create_date
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__create_date
 msgid "Created on"
-msgstr "Utworzono"
+msgstr "Data utworzenia"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__currency_ids
@@ -202,7 +202,7 @@ msgstr "Dni"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__display_name
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__display_name
 msgid "Display Name"
-msgstr "Wyświetlana nazwa "
+msgstr "Nazwa wyświetlana"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,help:currency_rate_update.field_res_company__currency_rates_autoupdate
@@ -257,7 +257,8 @@ msgstr "Jeśli zaznaczone, nowe wiadomości wymagają twojej uwagi."
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr "Jeśli zaznaczone, niektóre wiadomości mają błąd doręczenia."
+msgstr ""
+"Jeśli zaznaczone, niektóre wiadomości napotkały błędy podczas doręczenia."
 
 #. module: currency_rate_update
 #. odoo-python
@@ -287,13 +288,13 @@ msgstr "Ostatnia udana aktualizacja"
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_uid
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_uid
 msgid "Last Updated by"
-msgstr "Ostatnio modyfikowane przez"
+msgstr "Ostatnio aktualizowane przez"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__write_date
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_update_wizard__write_date
 msgid "Last Updated on"
-msgstr "Ostatnia zmiana"
+msgstr "Data ostatniej aktualizacji"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__message_has_error
@@ -316,7 +317,7 @@ msgstr "Miesiące"
 #. odoo-python
 #: code:addons/currency_rate_update/models/res_currency_rate_provider.py:0
 msgid "N/A"
-msgstr "n/d"
+msgstr "nd."
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate_provider__name
@@ -355,7 +356,7 @@ msgstr "Liczba wiadomości wymagających akcji"
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate__message_has_error_counter
 #: model:ir.model.fields,help:currency_rate_update.field_res_currency_rate_provider__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr "Liczba wiadomości z błędem doręczenia"
+msgstr "Liczba wiadomości z błędami przy doręczeniu"
 
 #. module: currency_rate_update
 #: model:ir.model.fields,field_description:currency_rate_update.field_res_currency_rate__provider_id
