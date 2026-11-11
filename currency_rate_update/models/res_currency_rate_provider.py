@@ -90,6 +90,18 @@ class ResCurrencyRateProvider(models.Model):
                 )
             )[0][1]
 
+    @api.depends("service")
+    @api.depends_context("lang")
+    def _compute_display_name(self):
+        """Show the provider name in the language of the user.
+
+        ``name`` is stored (and used for ordering), so it keeps the untranslated
+        label of the selection; the translated label is only needed to display it.
+        """
+        labels = dict(self._fields["service"]._description_selection(self.env))
+        for provider in self:
+            provider.display_name = labels.get(provider.service) or provider.name
+
     @api.depends("active", "interval_type", "interval_number")
     def _compute_update_schedule(self):
         for provider in self:
