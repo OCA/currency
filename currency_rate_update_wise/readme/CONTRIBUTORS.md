@@ -1,0 +1,4 @@
+- [CorporateHub](https://corporatehub.eu/)
+  - Alexey Pelykh \<alexey.pelykh@corphub.eu\>
+- [Altixia](https://altixia.com)
+  - Claude Perrin \<klodr@users.noreply.github.com\>
