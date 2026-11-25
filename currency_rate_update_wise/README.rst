@@ -17,10 +17,10 @@ Currency Rate Update: Wise.com
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fcurrency-lightgray.png?logo=github
-    :target: https://github.com/OCA/currency/tree/14.0/currency_rate_update_transferwise
+    :target: https://github.com/OCA/currency/tree/14.0/currency_rate_update_wise
     :alt: OCA/currency
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
-    :target: https://translation.odoo-community.org/projects/currency-14-0/currency-14-0-currency_rate_update_transferwise
+    :target: https://translation.odoo-community.org/projects/currency-14-0/currency-14-0-currency_rate_update_wise
     :alt: Translate me on Weblate
 .. |badge5| image:: https://img.shields.io/badge/runboat-Try%20me-875A7B.png
     :target: https://runboat.odoo-community.org/builds?repo=OCA/currency&target_branch=14.0
@@ -28,8 +28,28 @@ Currency Rate Update: Wise.com
 
 |badge1| |badge2| |badge3| |badge4| |badge5|
 
-This module adds `Wise.com <https://wise.com/>`_
-currency exchange rates provider.
+This module adds `Wise.com <https://wise.com/>`_ as a currency exchange rates
+provider for ``currency_rate_update``.
+
+It is meant as a *worldwide* complement to the built-in ECB provider: the ECB
+provider gives the official European, EUR-centric daily reference, while Wise
+provides a global rate source with the following advantages:
+
+* **Rate quality**: Wise returns the interbank mid-market rate. On a working day,
+  aligned with the ECB fixing, it tracks the ECB reference very closely (closer
+  than xe.com in our measurements) and applies no markup to the published rate.
+* **Worldwide coverage**: Wise quotes around 164 currencies, against the 29 of
+  the ECB reference list, including currencies the ECB does not publish (e.g.
+  AED, COP). ECB stays the European reference; Wise extends accurate rates to
+  the rest of the world.
+* **Stable API**: rates are fetched through an authenticated JSON API rather than
+  by scraping a web page, which keeps updates robust over time.
+* **Efficient and historical**: only the configured currency pairs are requested
+  (not a whole table), and past rates can be retrieved by timestamp or date
+  range (daily/hourly/minute granularity), which is useful for backfill and
+  corrections.
+
+A Wise.com API token is required (see Configuration).
 
 **Table of contents**
 
@@ -44,13 +64,20 @@ To configure Wise.com currency rates provider credentials:
 # Go to *Invoicing > Configuration > Settings*
 # Fill application credentials in *Currencies > Wise.com Provider* section
 
+.. note::
+
+   The API key is stored and sent as an opaque string of any length, so both the
+   current UUID-format personal tokens and the JWT format Wise is migrating
+   towards are supported. If a legacy UUID token is configured, a warning is
+   logged inviting you to regenerate it as JWT.
+
 Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues <https://github.com/OCA/currency/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/OCA/currency/issues/new?body=module:%20currency_rate_update_transferwise%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/OCA/currency/issues/new?body=module:%20currency_rate_update_wise%0Aversion:%2014.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -61,6 +88,7 @@ Authors
 ~~~~~~~
 
 * CorporateHub
+* Altixia
 
 Contributors
 ~~~~~~~~~~~~
@@ -68,6 +96,10 @@ Contributors
 * `CorporateHub <https://corporatehub.eu/>`__
 
   * Alexey Pelykh <alexey.pelykh@corphub.eu>
+
+* `Altixia <https://altixia.com>`__
+
+  * Claude Perrin <klodr@users.noreply.github.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -82,6 +114,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/currency <https://github.com/OCA/currency/tree/14.0/currency_rate_update_transferwise>`_ project on GitHub.
+This module is part of the `OCA/currency <https://github.com/OCA/currency/tree/14.0/currency_rate_update_wise>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
